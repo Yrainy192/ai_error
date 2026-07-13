@@ -1,0 +1,7 @@
+{
+    "0_1": "speaker/ves_timeouw.wav",
+    "1_1": "speaker/ves_one_come.wav",
+    "1_2": "speaker/ves_two_come.wav",
+    "1_3": "speaker/ves_three_come.wav",
+    "default": "speaker/test.wav"
+}

@@ -1,0 +1,234 @@
+[2026-07-13 16:08:45.278] [rknn] [info] logger init success
+[2026-07-13 16:08:45.278] [rknn] [info] program start
+[2026-07-13 16:08:45.278] [rknn] [info] === 程序启动 ===
+[2026-07-13 16:08:45.426] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 16:08:45.426] [rknn] [info] [TaskManager] mysql attached
+[2026-07-13 16:08:45.426] [rknn] [info] TCP服务已后台启动
+[2026-07-13 16:08:45.426] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 16:08:45.426] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 16:08:45.426] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 16:08:45.496] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 16:08:45.496] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 16:08:45.496] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 16:08:45.886] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 16:08:56.006] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 16:09:05.955] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=2
+[2026-07-13 16:09:07.010] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 16:09:17.909] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=3
+[2026-07-13 16:09:18.026] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:07:10.421] [rknn] [info] logger init success
+[2026-07-13 17:07:10.421] [rknn] [info] program start
+[2026-07-13 17:07:10.421] [rknn] [info] === 程序启动 ===
+[2026-07-13 17:07:10.563] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 17:07:10.575] [rknn] [info] [TaskManager] mysql attached
+[2026-07-13 17:07:10.576] [rknn] [info] TCP服务已后台启动
+[2026-07-13 17:07:10.576] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 17:07:10.576] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 17:07:10.576] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 17:07:10.637] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:07:10.637] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:07:10.637] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:07:11.017] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:07:11.507] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=1
+[2026-07-13 17:07:12.946] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=2
+[2026-07-13 17:07:22.016] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:09:53.939] [rknn] [info] logger init success
+[2026-07-13 17:09:53.940] [rknn] [info] program start
+[2026-07-13 17:09:53.940] [rknn] [info] === 程序启动 ===
+[2026-07-13 17:09:54.049] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 17:09:54.071] [rknn] [error] 数据库表初始化失败
+[2026-07-13 17:09:54.072] [rknn] [error] 启动失败: init tables failed
+[2026-07-13 17:09:54.072] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 17:09:54.072] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 17:09:54.072] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 17:09:54.150] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:09:54.150] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:09:54.150] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:09:54.658] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:09:56.644] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=1
+[2026-07-13 17:11:33.185] [rknn] [info] logger init success
+[2026-07-13 17:11:33.185] [rknn] [info] program start
+[2026-07-13 17:11:33.185] [rknn] [info] === 程序启动 ===
+[2026-07-13 17:11:33.263] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 17:11:33.312] [rknn] [error] 数据库表初始化失败
+[2026-07-13 17:11:33.312] [rknn] [error] 启动失败: init tables failed
+[2026-07-13 17:11:33.313] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 17:11:33.313] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 17:11:33.313] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 17:11:33.375] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:11:33.375] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:11:33.375] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:11:33.890] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:11:42.181] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=1
+[2026-07-13 17:11:44.026] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:12:03.106] [rknn] [info] logger init success
+[2026-07-13 17:12:03.106] [rknn] [info] program start
+[2026-07-13 17:12:03.106] [rknn] [info] === 程序启动 ===
+[2026-07-13 17:12:03.164] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 17:12:03.183] [rknn] [error] 数据库表初始化失败
+[2026-07-13 17:12:03.183] [rknn] [error] 启动失败: init tables failed
+[2026-07-13 17:12:03.184] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 17:12:03.184] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 17:12:03.184] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 17:12:03.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:12:03.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:12:03.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:12:03.649] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:12:11.684] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=1
+[2026-07-13 17:12:14.005] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:12:25.011] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:12:36.022] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:12:47.008] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:12:54.049] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=2
+[2026-07-13 17:12:58.008] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:13:35.680] [rknn] [info] logger init success
+[2026-07-13 17:13:35.680] [rknn] [info] program start
+[2026-07-13 17:13:35.680] [rknn] [info] === 程序启动 ===
+[2026-07-13 17:13:35.811] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 17:13:35.875] [rknn] [info] [TaskManager] mysql attached
+[2026-07-13 17:13:35.876] [rknn] [info] TCP服务已后台启动
+[2026-07-13 17:13:35.877] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 17:13:35.877] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 17:13:35.877] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 17:13:35.930] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:13:35.930] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:13:35.930] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 17:13:36.431] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:13:47.016] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:13:58.019] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:14:04.240] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=1
+[2026-07-13 17:14:06.877] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=5
+[2026-07-13 17:14:09.019] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 17:14:12.401] [rknn] [warning] [ALARM] NO TASK cam=2 roi=5 id=6
+[2026-07-13 18:16:38.709] [rknn] [info] logger init success
+[2026-07-13 18:16:38.709] [rknn] [info] program start
+[2026-07-13 18:16:38.709] [rknn] [info] === 程序启动 ===
+[2026-07-13 18:16:38.839] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 18:16:38.887] [rknn] [info] [TaskManager] mysql attached
+[2026-07-13 18:16:38.887] [rknn] [info] TCP服务已后台启动
+[2026-07-13 18:16:38.888] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 18:16:38.888] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 18:16:38.888] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 18:16:38.976] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:16:38.976] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:16:38.977] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:16:39.510] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:16:39.510] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937799510
+[2026-07-13 18:16:39.510] [rknn] [warning] [RingBuffer] no keyframe before 1783937794510
+[2026-07-13 18:16:39.510] [rknn] [info] [AI Error Recorder cam1] before packets=6
+[2026-07-13 18:16:44.542] [rknn] [info] [Recorder] TS saved 138 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181639510.ts
+[2026-07-13 18:16:50.007] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:16:50.008] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937810008
+[2026-07-13 18:16:50.008] [rknn] [info] [AI Error Recorder cam1] before packets=269
+[2026-07-13 18:16:55.084] [rknn] [info] [Recorder] TS saved 414 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181650008.ts
+[2026-07-13 18:17:01.019] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:17:01.019] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937821019
+[2026-07-13 18:17:01.019] [rknn] [info] [AI Error Recorder cam1] before packets=295
+[2026-07-13 18:17:06.089] [rknn] [info] [Recorder] TS saved 463 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181701019.ts
+[2026-07-13 18:17:12.017] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:17:12.017] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937832017
+[2026-07-13 18:17:12.017] [rknn] [info] [AI Error Recorder cam1] before packets=318
+[2026-07-13 18:17:17.082] [rknn] [info] [Recorder] TS saved 513 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181712017.ts
+[2026-07-13 18:17:23.006] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:17:23.006] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937843006
+[2026-07-13 18:17:23.007] [rknn] [info] [AI Error Recorder cam1] before packets=343
+[2026-07-13 18:18:00.954] [rknn] [info] logger init success
+[2026-07-13 18:18:00.955] [rknn] [info] program start
+[2026-07-13 18:18:00.955] [rknn] [info] === 程序启动 ===
+[2026-07-13 18:18:01.043] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 18:18:01.115] [rknn] [info] [TaskManager] mysql attached
+[2026-07-13 18:18:01.116] [rknn] [info] TCP服务已后台启动
+[2026-07-13 18:18:01.116] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 18:18:01.116] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 18:18:01.116] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 18:18:01.185] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:18:01.186] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:18:01.186] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:18:01.678] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:18:01.679] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937881679
+[2026-07-13 18:18:01.679] [rknn] [warning] [RingBuffer] no keyframe before 1783937876679
+[2026-07-13 18:18:01.679] [rknn] [info] [AI Error Recorder cam1] before packets=6
+[2026-07-13 18:18:06.717] [rknn] [info] [Recorder] TS saved 136 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181801679.ts
+[2026-07-13 18:18:12.014] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:18:12.015] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937892015
+[2026-07-13 18:18:12.016] [rknn] [info] [AI Error Recorder cam1] before packets=265
+[2026-07-13 18:18:17.074] [rknn] [info] [Recorder] TS saved 405 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181812015.ts
+[2026-07-13 18:18:19.605] [rknn] [warning] [ALARM] NO TASK cam=2 roi=8 id=1
+[2026-07-13 18:18:19.605] [rknn] [info] [AI Error] cam=2 roi=8 grid=24 trigger event 1783937899605
+[2026-07-13 18:18:19.607] [rknn] [info] [AI Error Recorder cam2] before packets=154
+[2026-07-13 18:18:23.019] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:18:23.020] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937903020
+[2026-07-13 18:18:23.020] [rknn] [info] [AI Error Recorder cam1] before packets=289
+[2026-07-13 18:18:24.668] [rknn] [info] [Recorder] TS saved 284 packets -> /home/admin/Rtsp/video/cam2/20260713/AI_error/181819605.ts
+[2026-07-13 18:18:28.088] [rknn] [info] [Recorder] TS saved 454 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181823020.ts
+[2026-07-13 18:18:34.019] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:18:34.019] [rknn] [info] [AI Error] cam=1 roi=3 grid=11 trigger event 1783937914019
+[2026-07-13 18:18:34.020] [rknn] [info] [AI Error Recorder cam1] before packets=314
+[2026-07-13 18:18:39.088] [rknn] [info] [Recorder] TS saved 502 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/181834019.ts
+[2026-07-13 18:21:07.300] [rknn] [info] logger init success
+[2026-07-13 18:21:07.301] [rknn] [info] program start
+[2026-07-13 18:21:07.301] [rknn] [info] === 程序启动 ===
+[2026-07-13 18:21:07.408] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-13 18:21:07.447] [rknn] [info] [TaskManager] mysql attached
+[2026-07-13 18:21:07.448] [rknn] [info] TCP服务已后台启动
+[2026-07-13 18:21:07.448] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-13 18:21:07.448] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-13 18:21:07.448] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-13 18:21:07.513] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:21:07.514] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:21:07.514] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-13 18:21:07.909] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:21:07.910] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938067910
+[2026-07-13 18:21:07.910] [rknn] [warning] [RingBuffer] no keyframe before 1783938062910
+[2026-07-13 18:21:07.910] [rknn] [info] [AI Error Recorder cam1] before packets=4
+[2026-07-13 18:21:12.944] [rknn] [info] [Recorder] TS saved 133 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/182107910.ts
+[2026-07-13 18:21:18.013] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:21:18.013] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938078013
+[2026-07-13 18:21:18.013] [rknn] [info] [AI Error Recorder cam1] before packets=258
+[2026-07-13 18:21:23.071] [rknn] [info] [Recorder] TS saved 390 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/182118013.ts
+[2026-07-13 18:21:29.028] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:21:29.028] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938089028
+[2026-07-13 18:21:29.029] [rknn] [info] [AI Error Recorder cam1] before packets=281
+[2026-07-13 18:21:34.094] [rknn] [info] [Recorder] TS saved 437 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/182129028.ts
+[2026-07-13 18:21:40.005] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:21:40.005] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938100005
+[2026-07-13 18:21:40.006] [rknn] [info] [AI Error Recorder cam1] before packets=305
+[2026-07-13 18:21:45.084] [rknn] [info] [Recorder] TS saved 485 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/182140005.ts
+[2026-07-13 18:21:51.011] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:21:51.012] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938111011
+[2026-07-13 18:21:51.012] [rknn] [info] [AI Error Recorder cam1] before packets=331
+[2026-07-13 18:21:56.092] [rknn] [info] [Recorder] TS saved 537 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/182151011.ts
+[2026-07-13 18:22:02.023] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:22:02.024] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938122024
+[2026-07-13 18:22:02.024] [rknn] [info] [AI Error Recorder cam1] before packets=356
+[2026-07-13 18:22:07.101] [rknn] [info] [Recorder] TS saved 589 packets -> /home/admin/Rtsp/video/cam1/20260713/AI_error/182202024.ts
+[2026-07-13 18:22:13.023] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=2
+[2026-07-13 18:22:13.023] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1783938133023
+[2026-07-13 18:22:13.023] [rknn] [info] [AI Error Recorder cam1] before packets=131

@@ -1,0 +1,14 @@
+{
+    "cmake.sourceDirectory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp",
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "clangd.path": "/usr/bin/clangd",
+    "clang-format.executable": "/usr/bin/clang-format",
+    "editor.formatOnSave": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    }
+}

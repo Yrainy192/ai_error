@@ -1,0 +1,112 @@
+[
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/main.cc.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/main.cc",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/main.cc"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/postprocess.cc.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.cc",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.cc"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/rknpu2/yolov8.cc.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/rknpu2/yolov8.cc",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/rknpu2/yolov8.cc"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++  -I/usr/include/eigen3 -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/main.cc",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/main.cc"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/postprocess.cc.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.cc",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.cc"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/rknpu2/yolov8_zero_copy.cc",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/rknpu2/yolov8_zero_copy.cc"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Object.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build",
+  "command": "/usr/bin/c++ -DZERO_COPY -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4  -o CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/lapjv.cpp.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.cpp",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.cpp"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/utils.out",
+  "command": "/usr/bin/cc  -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils  -o CMakeFiles/fileutils.dir/file_utils.c.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/file_utils.c",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/file_utils.c"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/utils.out",
+  "command": "/usr/bin/cc  -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils  -o CMakeFiles/imagedrawing.dir/image_drawing.c.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_drawing.c",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_drawing.c"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/utils.out",
+  "command": "/usr/bin/cc  -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include  -o CMakeFiles/imageutils.dir/image_utils.c.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.c",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.c"
+},
+{
+  "directory": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/utils.out",
+  "command": "/usr/bin/cc  -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/libsndfile/include  -o CMakeFiles/audioutils.dir/audio_utils.c.o -c /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/audio_utils.c",
+  "file": "/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/audio_utils.c"
+}
+]
