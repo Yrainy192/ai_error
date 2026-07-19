@@ -192,7 +192,7 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             }
         }
 
-        task_manager->updateLogic(3);
+        task_manager->updateLogic(1);
         update_display(img, results, cam_id, roi_manager.get(cam_id));
     }
 }
@@ -209,9 +209,9 @@ void start_service() {
     try {
         static MysqlClient mysql_client(host, user, password, database, port);
         task_manager.setMysqlClient(&mysql_client);
-        static TCPClient tcp_client("192.168.70.33", 2059, &task_manager, &mysql_client);
+        // static TCPClient tcp_client("192.168.70.33", 2059, &task_manager, &mysql_client);
 
-        // static TCPClient tcp_client("127.0.0.1", 9000, &task_manager, &mysql_client);
+        static TCPClient tcp_client("127.0.0.1", 9000, &task_manager, &mysql_client);
         //  启动 TCP线程（后台运行）
         std::thread([]() {
             tcp_client.start();
@@ -229,10 +229,6 @@ void start_service() {
 }
 
 int main() {
-
-    // H265Recorder recorder(rtsp.getH265Cache());
-
-    // task_manager.setRecorder(&recorder);
 
     task_manager.initGridMap();
     roi_manager.load("/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/roi_config.json");

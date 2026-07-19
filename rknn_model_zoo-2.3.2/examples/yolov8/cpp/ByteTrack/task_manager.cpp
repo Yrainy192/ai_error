@@ -11,7 +11,6 @@ static uint64_t getMonoTimeUs() {
 
 void TaskManager::setMysqlClient(MysqlClient *db) {
     mysql_client = db;
-
     spdlog::info("[TaskManager] mysql attached");
 }
 
@@ -35,13 +34,6 @@ void TaskManager::setRecorder(int cam_id, H265Recorder *recorder) {
 void TaskManager::setSpeaker(SdkManager *spk) { speaker = spk; }
 
 void TaskManager::setAlarmCallback(AlarmCallback cb) { alarm_callback = cb; }
-
-// void TaskManager::emitAlarm(int cam_id, int roi_id, int type) {
-//     if (alarm_callback) {
-//         uint64_t now = getMonoTimeUs();
-//         alarm_callback(cam_id, roi_id, now, type);
-//     }
-// }
 
 // =========================
 void TaskManager::initGridMap() {
@@ -239,7 +231,6 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id) {
                 } else {
                     triggerRecord(cam_id, t.code, VideoType::DOWN);
                 }
-
                 break;
             }
         }
@@ -252,10 +243,6 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id) {
     // =========================
     if (state.state == ROIState::OCCUPIED) {
         if (id != state.stable_id) {
-            // std::cout << "[ALARM] WRONG PACKAGE cam="
-            //           << cam_id
-            //           << " roi=" << roi_id
-            //           << " id=" << id << std::endl;
             spdlog::warn("[ALARM] WRONG PACKAGE  cam={} roi={} id={}", cam_id, roi_id, id);
             // std::string key = "cam" + std::to_string(cam_id) + "_roi_" + std::to_string(roi_id);
             // speaker->updateAlarm(key, "play -id 1 -s test.wav -v 50", 10);
@@ -278,18 +265,6 @@ void TaskManager::updateLogic(int timeout_sec) {
                 if (!t.entered && now - t.create_time > timeout_sec) {
                     t.state = TIMEOUT;
                     spdlog::warn("[ALARM] TASK TIMEOUT code={} roi={}", t.code, t.roi_id);
-                    // emitAlarm(t.cam_id, t.roi_id, ALARM_TASK_TIMEOUT);
-                    //   alarms.push_back({t.cam_id, t.roi_id, t.code});
-                    //   // speaker->post("play -id 1 -s test.wav -d 1 -v 50 -fast");
-                    //   std::string cmd = "play -id 1 -s test.wav -d 1 -v 50 -fast";
-                    //   if (audio_mgr) {
-                    //       audio_mgr->post(cmd);
-                    //   }
-                    //只需要控制蜂鸣器响即可
-                    // uint64_t now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-                    //                       std::chrono::system_clock::now().time_since_epoch())
-                    //                       .count();
-                    // spdlog::info("[Recorder] trigger event time={}", now_ms);
 
                     if (t.cam_id == 0) {
                         triggerRecord(t.cam_id, t.code, VideoType::UP_ERROR);
