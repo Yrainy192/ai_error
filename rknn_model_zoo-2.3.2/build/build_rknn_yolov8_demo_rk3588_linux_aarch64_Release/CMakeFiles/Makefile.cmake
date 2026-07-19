@@ -7,12 +7,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/CMakeLists.txt"
+  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/CMakeLists.txt"
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
-  "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/CMakeLists.txt"
-  "/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/CMakeLists.txt"
+  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/CMakeLists.txt"
+  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/CMakeLists.txt"
   "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake"
   "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
   "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake"

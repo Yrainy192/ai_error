@@ -4,7 +4,7 @@
 # compile C with /usr/bin/aarch64-linux-gnu-gcc
 C_DEFINES = -DLIBRGA_IM2D_HANDLE
 
-C_INCLUDES = -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include
+C_INCLUDES = -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include
 
 C_FLAGS = -O3 -DNDEBUG
 

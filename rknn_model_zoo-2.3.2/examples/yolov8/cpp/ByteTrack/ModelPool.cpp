@@ -1,22 +1,51 @@
 #include "ModelPool.h"
 
-int ModelPool::init(const std::string &model_path, int num_models) {
+// int ModelPool::init(const std::string &model_path, int num_models) {
 
+//     models.resize(num_models);
+
+//     for (int i = 0; i < num_models; i++) {
+
+//         models[i] = std::make_shared<ModelItem>();
+
+//         models[i]->core_id = i;
+
+//         int ret = init_yolov8_model(model_path.c_str(), &models[i]->ctx, i);
+
+//         if (ret != 0) {
+//             printf("init model %d failed\n", i);
+
+//             return -1;
+//         }
+//     }
+
+//     return 0;
+// }
+
+int ModelPool::init(const std::string &model_path, int num_models) {
     models.resize(num_models);
 
     for (int i = 0; i < num_models; i++) {
-
         models[i] = std::make_shared<ModelItem>();
 
-        models[i]->core_id = i;
+        // 两个模型共享一个NPU core
+        int core_id = i / 2;
 
-        int ret = init_yolov8_model(model_path.c_str(), &models[i]->ctx, i);
+        // 防止超过NPU核心数量
+        if (core_id > 2) {
+            core_id = 2;
+        }
+
+        models[i]->core_id = core_id;
+
+        int ret = init_yolov8_model(model_path.c_str(), &models[i]->ctx, core_id);
 
         if (ret != 0) {
             printf("init model %d failed\n", i);
-
             return -1;
         }
+
+        printf("model %d bind NPU core %d\n", i, core_id);
     }
 
     return 0;

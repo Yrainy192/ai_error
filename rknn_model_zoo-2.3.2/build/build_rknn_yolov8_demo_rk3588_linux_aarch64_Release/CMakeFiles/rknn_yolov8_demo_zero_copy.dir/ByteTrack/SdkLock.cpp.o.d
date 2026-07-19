@@ -1,7 +1,7 @@
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkLock.cpp \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkLock.cpp \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkLock.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkLock.h \
  /usr/include/c++/11/mutex /usr/include/c++/11/tuple \
  /usr/include/c++/11/utility \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \

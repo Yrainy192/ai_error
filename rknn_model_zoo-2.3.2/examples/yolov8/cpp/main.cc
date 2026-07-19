@@ -57,6 +57,7 @@ using namespace cv;
 #include <memory>
 #include <unordered_map>
 
+#include "AlarmLight.h"
 #include "DisplayManager.h"
 #include "Frame.h"
 #include "H265RingBuffer.h"
@@ -230,8 +231,19 @@ void start_service() {
 
 int main() {
 
+    InitLogger();
+    spdlog::info("program start");
+
+    AlarmLight alarm("192.168.70.8", 23);
+    if (!alarm.connect()) {
+        spdlog::info("alarm light connect failed");
+    };
+
+    task_manager.setAlarmLight(&alarm);
+
     task_manager.initGridMap();
-    roi_manager.load("/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/roi_config.json");
+    roi_manager.load(
+        "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/roi_config.json");
 
     AudioManager audio;
     audio.start();
@@ -240,7 +252,7 @@ int main() {
 
     VoiceManager voice_mgr;
     voice_mgr.load(
-        "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice.json");
+        "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice.json");
 
     task_manager.setVoiceManager(&voice_mgr);
 
@@ -248,7 +260,7 @@ int main() {
 
     if (!speaker.init(
             "init -node 300 -ip eth1 -path "
-            "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ -debug -noalsa")) {
+            "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ -debug -noalsa")) {
         std::cout << "init failed\n";
         return 1;
     }
@@ -262,31 +274,37 @@ int main() {
     //  double fps = 25;
     // // ⭐先初始化录像
     // init_video_writers(width, height, fps);
-    InitLogger();
-    spdlog::info("program start");
-
     start_service();
 
     // 2. Tracker 初始化（每路一个）
     tracker_map[0] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     tracker_map[1] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     tracker_map[2] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-
-    // 3. RTSP 管理（不改）
+    tracker_map[3] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    tracker_map[4] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    // tracker_map[5] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    //  3. RTSP 管理（不改）
     RtspManager manager;
-    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101");
-    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101");
+
     manager.addStream("rtsp://192.168.70.12:554/"
                       "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
                       "cam0");
-    manager.addStream("rtsp://192.168.70.10:554/"
-                      "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-                      "cam1");
+    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101", "cam1");
+
     manager.addStream("rtsp://192.168.70.11:554/"
                       "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
                       "cam2");
 
-    for (int i = 0; i < 3; i++) {
+    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101", "cam3");
+
+    manager.addStream("rtsp://192.168.70.10:554/"
+                      "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
+                      "cam4");
+
+    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101",
+    // "cam5");
+
+    for (int i = 0; i < 5; i++) {
         auto stream = manager.get(i);
         if (stream) {
             task_manager.setRecorder(i, stream->getRecorder());
@@ -294,28 +312,34 @@ int main() {
     }
 
     //  4. RGA worker（⭐关键新增）
-    rga_workers.resize(3);
-    for (int i = 0; i < 3; i++) {
+    rga_workers.resize(5);
+    for (int i = 0; i < 5; i++) {
         rga_workers[i] = std::make_unique<RgaWorker>();
     }
 
-    // 5. 模型池（3 core）
-    std::string model_path = "/home/admin/Rtsp/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"
-                             "rknn_yolov8_demo/model/yolov8best.rknn";
+    // 5. 模型池（6 core）
+    std::string model_path =
+        "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"
+        "rknn_yolov8_demo/model/yolov8best.rknn";
     ModelPool modelPool;
-    modelPool.init(model_path, 3);
+    modelPool.init(model_path, 5);
 
     // 6. 启动推理线程（每路一个）
     std::thread t0(infer_worker, 0, 0, &manager, &modelPool, &task_manager);
     std::thread t1(infer_worker, 1, 1, &manager, &modelPool, &task_manager);
     std::thread t2(infer_worker, 2, 2, &manager, &modelPool, &task_manager);
+    std::thread t3(infer_worker, 3, 3, &manager, &modelPool, &task_manager);
+    std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
+    // std::thread t5(infer_worker, 5, 5, &manager, &modelPool, &task_manager);
 
-    // 7. UI窗口
+    // // 7. UI窗口
     cv::namedWindow("cam0");
     cv::namedWindow("cam1");
-    cv::namedWindow("cam2");
-
-    // 8. 显示线程（主线程）
+    // cv::namedWindow("cam2");
+    // cv::namedWindow("cam3");
+    // cv::namedWindow("cam4");
+    // cv::namedWindow("cam5");
+    //   8. 显示线程（主线程）
     while (true) {
         {
             std::lock_guard<std::mutex> lock(g_display[0].mtx);
@@ -328,11 +352,26 @@ int main() {
             if (!g_display[1].img.empty())
                 cv::imshow("cam1", g_display[1].img);
         }
-        {
-            std::lock_guard<std::mutex> lock(g_display[2].mtx);
-            if (!g_display[2].img.empty())
-                cv::imshow("cam2", g_display[2].img);
-        }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[2].mtx);
+        //     if (!g_display[2].img.empty())
+        //         cv::imshow("cam2", g_display[2].img);
+        // }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
+        //     if (!g_display[3].img.empty())
+        //         cv::imshow("cam3", g_display[3].img);
+        // }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[4].mtx);
+        //     if (!g_display[4].img.empty())
+        //         cv::imshow("cam4", g_display[4].img);
+        // }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[5].mtx);
+        //     if (!g_display[5].img.empty())
+        //         cv::imshow("cam5", g_display[5].img);
+        // }
         if (cv::waitKey(1) == 27)
             break;
     }
@@ -342,7 +381,9 @@ int main() {
     t0.join();
     t1.join();
     t2.join();
-
+    t3.join();
+    t4.join();
+    // t5.join();
     manager.stopAll();
 
     return 0;

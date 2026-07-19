@@ -1,5 +1,5 @@
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/rknpu2/yolov8_zero_copy.cc \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/rknpu2/yolov8_zero_copy.cc \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -104,13 +104,13 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/aarch64-linux-gnu/bits/wchar.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/allocator.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++allocator.h \
  /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
@@ -127,6 +127,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: \
  /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/range_access.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/file_utils.h
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.h

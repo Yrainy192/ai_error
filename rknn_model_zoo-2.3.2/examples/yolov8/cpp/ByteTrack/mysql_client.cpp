@@ -65,7 +65,9 @@ bool MysqlClient::initTables() {
           "id BIGINT AUTO_INCREMENT PRIMARY KEY,"
           "grid VARCHAR(64),"
           "create_time DATETIME,"
-          "video VARCHAR(255)"
+          "beep_state TINYINT(1) DEFAULT 1,"
+          "video VARCHAR(255),"
+          "package_id VARCHAR(64)"
           ")";
 
     if (!executeQuery(sql)) {
@@ -219,20 +221,45 @@ bool MysqlClient::updateVideo(const std::string &code, const std::string &video,
     return executeQuery(sql);
 }
 
-bool MysqlClient::saveAIError(const std::string &grid, const std::string &time,
-                              const std::string &video) {
+bool MysqlClient::upAIError(const std::string &grid, const std::string &time,
+                            const std::string &video, const std::string &package_id) {
     std::lock_guard<std::mutex> lock(mysql_mutex);
 
-    char escapedGrid[128];
-    char escapedVideo[512];
+    char escapedGrid[128] = {0};
+    char escapedTime[128] = {0};
+    char escapedVideo[512] = {0};
+    char escapedPackageId[256] = {0};
 
     mysql_real_escape_string(conn, escapedGrid, grid.c_str(), grid.length());
 
+    mysql_real_escape_string(conn, escapedTime, time.c_str(), time.length());
+
     mysql_real_escape_string(conn, escapedVideo, video.c_str(), video.length());
 
-    std::string sql = "INSERT INTO AI_error(grid,create_time,video) VALUES('" +
-                      std::string(escapedGrid) + "','" + time + "','" + std::string(escapedVideo) +
-                      "')";
+    mysql_real_escape_string(conn, escapedPackageId, package_id.c_str(), package_id.length());
+
+    std::string sql = "INSERT INTO ai_error "
+                      "(grid, create_time, beep_state, video, package_id) VALUES ('" +
+                      std::string(escapedGrid) + "', '" + std::string(escapedTime) + "', 1, '" +
+                      std::string(escapedVideo) + "', '" + std::string(escapedPackageId) + "')";
+
+    return executeQuery(sql);
+}
+
+bool MysqlClient::clearAIError(const std::string &grid) {
+
+    std::lock_guard<std::mutex> lock(mysql_mutex);
+
+    char escapedGrid[128];
+
+    mysql_real_escape_string(conn, escapedGrid, grid.c_str(), grid.length());
+
+    std::string sql = "UPDATE ai_error "
+                      "SET beep_state=0 "
+                      "WHERE grid='" +
+                      std::string(escapedGrid) +
+                      "' "
+                      "AND beep_state=1";
 
     return executeQuery(sql);
 }

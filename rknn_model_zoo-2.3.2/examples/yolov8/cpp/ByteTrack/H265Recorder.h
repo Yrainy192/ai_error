@@ -17,7 +17,7 @@ class H265Recorder {
 
     void saveEvent(uint64_t event_time_ms, const std::string &code, VideoType type);
 
-    void saveAIError(uint64_t event_time_ms, const std::string &grid);
+    void saveAIError(uint64_t event_time_ms, const std::string &grid, const std::string &id);
 
   private:
     void savePackets(const std::vector<H265Packet> &packets, const std::string &filename);

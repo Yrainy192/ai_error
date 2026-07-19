@@ -54,6 +54,15 @@ bool RgaWorker::process(const Frame &f, image_buffer_t &out) {
 
     rga_buffer_t dst = wrapbuffer_virtualaddr(rgb->data(), 640, 640, RK_FORMAT_RGB_888);
 
+    // rga_buffer_t src = wrapbuffer_virtualaddr(f.data->data(), f.width, f.height, f.width,
+    // f.height,
+    //                                           RK_FORMAT_YCbCr_420_SP);
+
+    // rga_buffer_t dst = wrapbuffer_virtualaddr(rgb->data(), 640, 640, 640, 640,
+    // RK_FORMAT_RGB_888);
+
+    // printf("RGA fail camera=%d\n", f.id);
+
     im_rect srect = {0, 0, f.width, f.height};
 
     im_rect drect = {lb.pad_x, lb.pad_y, lb.new_w, lb.new_h};

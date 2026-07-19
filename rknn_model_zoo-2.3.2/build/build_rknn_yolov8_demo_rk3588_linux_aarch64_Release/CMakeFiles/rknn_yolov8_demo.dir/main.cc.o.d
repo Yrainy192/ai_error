@@ -1,10 +1,10 @@
 CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/main.cc \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/main.cc \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/file_utils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_drawing.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_drawing.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
  /usr/include/rockchip/mpp_frame.h /usr/include/rockchip/mpp_buffer.h \
  /usr/include/rockchip/rk_type.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
@@ -30,10 +30,10 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/rockchip/rk_venc_cmd.h /usr/include/rockchip/rk_venc_rc.h \
  /usr/include/rockchip/rk_venc_cfg.h /usr/include/rockchip/rk_venc_ref.h \
  /usr/include/rockchip/mpp_task.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -596,9 +596,9 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/gstreamer-1.0/gst/base/gstbasesink.h \
  /usr/include/gstreamer-1.0/gst/base/base-prelude.h \
  /usr/include/gstreamer-1.0/gst/app/app-prelude.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
@@ -787,9 +787,9 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.h \
  /usr/include/rga/RgaUtils.h /usr/include/rga/im2d.h \
  /usr/include/rga/im2d_version.h /usr/include/rga/im2d_type.h \
  /usr/include/rga/rga.h /usr/include/rga/im2d_common.h \
@@ -797,7 +797,7 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/rga/im2d_task.h /usr/include/rga/im2d_mpi.h \
  /usr/include/rga/im2d.hpp /usr/include/rga/im2d.h \
  /usr/include/rga/im2d_expand.h /usr/include/rga/rga.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/config.h \
  /usr/include/jsoncpp/json/allocator.h \
  /usr/include/jsoncpp/json/version.h \
@@ -805,8 +805,8 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/jsoncpp/json/forwards.h /usr/include/jsoncpp/json/reader.h \
  /usr/include/jsoncpp/json/value.h /usr/include/c++/11/stack \
  /usr/include/c++/11/bits/stl_stack.h /usr/include/jsoncpp/json/writer.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/VideoType.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/VideoType.h \
  /usr/include/mysql/mysql.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
  /usr/include/mysql/field_types.h /usr/include/mysql/my_list.h \
@@ -821,27 +821,28 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/DisplayManager.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/roi_manager.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Frame.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspManager.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspStream.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspUtils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AlarmLight.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/DisplayManager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/roi_manager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Frame.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspManager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspStream.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspUtils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.h \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/TrackerUtils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/logger.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/task_manager.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AudioManager.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice_manager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/TrackerUtils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/logger.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/task_manager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AudioManager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice_manager.h \
  /usr/include/nlohmann/json.hpp /usr/include/c++/11/iterator \
  /usr/include/c++/11/bits/stream_iterator.h /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h \

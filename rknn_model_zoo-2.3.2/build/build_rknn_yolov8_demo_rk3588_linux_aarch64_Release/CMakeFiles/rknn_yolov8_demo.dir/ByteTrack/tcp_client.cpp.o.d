@@ -1,7 +1,7 @@
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.cpp \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.cpp \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/config.h \
  /usr/include/c++/11/cstddef \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
@@ -201,8 +201,8 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: \
  /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/VideoType.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/VideoType.h \
  /usr/include/mysql/mysql.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h \
  /usr/include/mysql/field_types.h /usr/include/mysql/my_list.h \
@@ -215,15 +215,16 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: \
  /usr/include/mysql/errmsg.h /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/task_manager.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AudioManager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/task_manager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AlarmLight.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AudioManager.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/condition_variable \
  /usr/include/c++/11/queue /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_queue.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice_manager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice_manager.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
@@ -323,8 +324,9 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: \
  /usr/include/nlohmann/ordered_map.hpp \
  /usr/include/nlohmann/detail/macro_unscope.hpp \
  /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /usr/include/arpa/inet.h /usr/include/netinet/in.h \
- /usr/include/aarch64-linux-gnu/sys/socket.h \
+ /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
+ /usr/include/c++/11/bits/stl_multiset.h /usr/include/arpa/inet.h \
+ /usr/include/netinet/in.h /usr/include/aarch64-linux-gnu/sys/socket.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/aarch64-linux-gnu/bits/socket.h \
  /usr/include/aarch64-linux-gnu/bits/socket_type.h \

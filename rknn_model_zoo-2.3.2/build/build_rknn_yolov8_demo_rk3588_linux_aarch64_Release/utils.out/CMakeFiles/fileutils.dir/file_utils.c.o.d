@@ -1,5 +1,5 @@
 utils.out/CMakeFiles/fileutils.dir/file_utils.c.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/file_utils.c \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

@@ -1,8 +1,8 @@
-# Install script for directory: /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils
+# Install script for directory: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/admin/Rtsp/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/rknn_yolov8_demo")
+  set(CMAKE_INSTALL_PREFIX "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/rknn_yolov8_demo")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

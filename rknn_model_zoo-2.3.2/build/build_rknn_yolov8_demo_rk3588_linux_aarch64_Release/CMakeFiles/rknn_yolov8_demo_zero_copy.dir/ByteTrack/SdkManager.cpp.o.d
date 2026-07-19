@@ -1,7 +1,7 @@
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.cpp \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.cpp \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -170,7 +170,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.o: \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_set.h \
  /usr/include/c++/11/bits/erase_if.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/sdkcommand.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/sdkcommand.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
  /usr/include/c++/11/ios /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \

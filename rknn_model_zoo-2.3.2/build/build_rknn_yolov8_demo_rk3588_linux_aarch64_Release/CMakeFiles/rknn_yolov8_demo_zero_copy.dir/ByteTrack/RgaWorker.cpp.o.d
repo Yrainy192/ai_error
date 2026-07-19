@@ -1,7 +1,7 @@
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.cpp \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.cpp \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.h \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -121,10 +121,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Frame.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Frame.h \
  /usr/include/c++/11/cstdint \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
  /usr/include/rga/RgaUtils.h /usr/include/rga/im2d.h \
  /usr/include/rga/im2d_version.h /usr/include/rga/im2d_type.h \
  /usr/include/rga/rga.h /usr/include/rga/im2d_common.h \

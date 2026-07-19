@@ -40,7 +40,7 @@ def handle_client(conn, addr):
                 "car": str(randint(1, 16)),
                 "pc": str(randint(1, 5)),
                 "code": f"YT{seq:09d}",
-                "grid": 10,
+                "grid": 1,
                 "time": datetime.now().strftime("%Y%m%d%H%M%S%f")[:-3],
                 "pick_type": "in",
                 "floor": "1",

@@ -1,8 +1,8 @@
-# Install script for directory: /home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty
+# Install script for directory: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/admin/Rtsp/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/rknn_yolov8_demo")
+  set(CMAKE_INSTALL_PREFIX "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/rknn_yolov8_demo")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,10 +43,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE PROGRAM FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE PROGRAM FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE PROGRAM FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/librga/Linux/aarch64/librga.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE PROGRAM FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/librga/Linux/aarch64/librga.so")
 endif()
 

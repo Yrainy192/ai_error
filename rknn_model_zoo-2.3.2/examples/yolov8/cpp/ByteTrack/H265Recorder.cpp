@@ -48,127 +48,15 @@ std::string H265Recorder::getDateDir(uint64_t time_ms) {
     return ss.str();
 }
 
-// void H265Recorder::saveEvent(uint64_t event_time_ms) {
-//     if (!cache) {
-//         spdlog::error("[Recorder] cache null");
-//         return;
-//     }
-
-//     std::string dir =
-//         "/home/admin/Rtsp/video/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
-
-//     /*
-//      * 防止uint64_t减法溢出
-//      */
-//     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
-
-//     /*
-//      * 获取事件前5秒
-//      */
-//     auto before = cache->getRange(start_time, event_time_ms);
-
-//     // spdlog::info("[{}] before range packets={} time={} -> {} duration={}ms", camera_id,
-//     //              before.size(), before.empty() ? 0 : before.front().real_time_ms,
-//     //              before.empty() ? 0 : before.back().real_time_ms,
-//     //              before.empty() ? 0 : before.back().real_time_ms -
-//     before.front().real_time_ms);
-
-//     spdlog::info("[Recorder {}] before packets={}", camera_id, before.size());
-
-//     std::thread([this, before, event_time_ms, dir]() {
-//         /*
-//          * 等待事件后5秒
-//          */
-//         std::this_thread::sleep_for(std::chrono::seconds(5));
-
-//         /*
-//          * 获取事件后5秒
-//          */
-//         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
-
-//         spdlog::info("[{}] after range packets={} time={} -> {} duration={}ms", camera_id,
-//                      after.size(), after.empty() ? 0 : after.front().real_time_ms,
-//                      after.empty() ? 0 : after.back().real_time_ms,
-//                      after.empty() ? 0 : after.back().real_time_ms - after.front().real_time_ms);
-
-//         std::vector<H265Packet> all;
-
-//         all.reserve(before.size() + after.size());
-
-//         all.insert(all.end(), before.begin(), before.end());
-
-//         all.insert(all.end(), after.begin(), after.end());
-
-//         if (all.empty()) {
-//             spdlog::warn("[Recorder] no packets");
-
-//             return;
-//         }
-
-//         /*
-//          * PTS排序
-//          */
-//         std::sort(all.begin(), all.end(),
-//                   [](const H265Packet &a, const H265Packet &b) { return a.pts < b.pts; });
-
-//         /*
-//          * 找第一个关键帧
-//          *
-//          * 避免TS从P帧开始
-//          */
-//         size_t start_index = 0;
-
-//         bool found_keyframe = false;
-
-//         for (size_t i = 0; i < all.size(); i++) {
-//             if (all[i].keyframe) {
-//                 start_index = i;
-//                 found_keyframe = true;
-//                 break;
-//             }
-//         }
-
-//         if (!found_keyframe) {
-//             spdlog::error("[Recorder] no keyframe found");
-
-//             return;
-//         }
-
-//         /*
-//          * 删除第一个I帧之前的数据
-//          */
-//         if (start_index > 0) {
-//             all.erase(all.begin(), all.begin() + start_index);
-//         }
-
-//         /*
-//          * 再检查一次
-//          */
-//         if (all.empty()) {
-//             spdlog::error("[Recorder] empty after trim");
-
-//             return;
-//         }
-
-//         /*
-//          * 输出TS
-//          */
-//         std::filesystem::create_directories(dir);
-
-//         std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
-
-//         savePackets(all, filename);
-//     }).detach();
-// }
-
-void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid) {
+void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
+                               const std::string &id) {
     if (!cache) {
         spdlog::error("[Recorder] cache null");
         return;
     }
 
     std::string dir =
-        "/home/admin/Rtsp/video/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
+        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
@@ -176,7 +64,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid) 
 
     spdlog::info("[AI Error Recorder {}] before packets={}", camera_id, before.size());
 
-    std::thread([this, before, event_time_ms, dir, grid]() {
+    std::thread([this, before, event_time_ms, dir, grid, id]() {
         // 等待后5秒数据
         std::this_thread::sleep_for(std::chrono::seconds(5));
 
@@ -236,7 +124,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid) 
 
         // 保存数据库
         if (mysql_client) {
-            std::string video_url = filename.substr(filename.find("/video/") + 7);
+            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
             std::time_t now = std::time(nullptr);
 
@@ -245,7 +133,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid) 
             std::strftime(timeBuffer, sizeof(timeBuffer), "%Y-%m-%d %H:%M:%S",
                           std::localtime(&now));
 
-            mysql_client->saveAIError(grid, timeBuffer, video_url);
+            mysql_client->upAIError(grid, timeBuffer, video_url, id);
 
         } else {
             spdlog::warn("[AI Error Recorder] mysql_client null");
@@ -259,7 +147,7 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         return;
     }
     std::string dir =
-        "/home/admin/Rtsp/video/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
+        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
@@ -327,7 +215,7 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         savePackets(all, filename);
 
         if (mysql_client) {
-            std::string video_url = filename.substr(filename.find("/video/") + 7);
+            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
             mysql_client->updateVideo(code, video_url, type);
         } else {

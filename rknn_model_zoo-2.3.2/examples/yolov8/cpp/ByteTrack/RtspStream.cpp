@@ -124,7 +124,7 @@ void RtspStream::run() {
 }
 
 void RtspStream::buildPipeline() {
-    std::string record_file = "/home/admin/Rtsp/rknn_model_zoo-2.3.2/video/" + camera_id + ".ts";
+    std::string record_file = "/home/admin/Videos/" + camera_id + ".ts";
     std::string pipeline_str =
 
         "rtspsrc location=" + rtsp_url +
@@ -225,7 +225,6 @@ GstFlowReturn RtspStream::on_h265_sample(GstElement *sink) {
     }
 
     gst_sample_unref(sample);
-
     return GST_FLOW_OK;
 }
 
@@ -272,7 +271,7 @@ std::string RtspStream::makeRecordDir() {
     localtime_r(&tt, &tm_time);
     char date[16];
     strftime(date, sizeof(date), "%Y%m%d", &tm_time);
-    std::string dir = "/home/admin/Rtsp/video/" + camera_id + "/" + date;
+    std::string dir = "/home/admin/Videos/" + camera_id + "/" + date;
     fs::create_directories(dir);
     return dir;
 }
@@ -289,14 +288,3 @@ gchar *RtspStream::format_location_cb(GstElement *, guint, gpointer user_data) {
     std::string filename = dir + "/" + time_name;
     return g_strdup(filename.c_str());
 }
-
-// std::string rtsp_url;
-// GstElement *pipeline = nullptr;
-// std::thread worker;
-// std::atomic<bool> running{false};
-// std::mutex frame_mutex;
-// Frame latest_frame;
-// std::mutex record_mutex;
-// std::string record_file;
-// std::string camera_id;
-// GstElement *recorder;

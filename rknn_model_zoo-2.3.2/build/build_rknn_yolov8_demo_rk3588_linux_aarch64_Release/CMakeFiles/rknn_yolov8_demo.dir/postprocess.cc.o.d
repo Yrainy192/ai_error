@@ -1,8 +1,8 @@
 CMakeFiles/rknn_yolov8_demo.dir/postprocess.cc.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.cc \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.cc \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -18,8 +18,8 @@ CMakeFiles/rknn_yolov8_demo.dir/postprocess.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/wchar.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -55,8 +55,8 @@ CMakeFiles/rknn_yolov8_demo.dir/postprocess.cc.o: \
  /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/range_access.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
  /usr/include/c++/11/math.h /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/aarch64-linux-gnu/bits/math-vector.h \
  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \

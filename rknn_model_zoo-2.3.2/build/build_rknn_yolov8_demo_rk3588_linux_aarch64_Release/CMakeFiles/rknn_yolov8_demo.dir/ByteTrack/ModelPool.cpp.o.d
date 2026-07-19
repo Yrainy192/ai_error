@@ -1,7 +1,7 @@
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.cpp \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.cpp \
  /usr/include/stdc-predef.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.h \
  /usr/include/c++/11/cstring \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -162,9 +162,9 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_utils.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h

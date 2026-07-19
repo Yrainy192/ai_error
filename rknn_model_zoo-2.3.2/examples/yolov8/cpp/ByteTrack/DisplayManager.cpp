@@ -1,6 +1,6 @@
 #include "DisplayManager.h"
 
-DisplayFrame g_display[3];
+DisplayFrame g_display[6];
 
 void draw_rois(cv::Mat &img, const std::vector<ROI> &rois) {
 

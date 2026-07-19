@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o"
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.o"

@@ -1,5 +1,5 @@
 utils.out/CMakeFiles/audioutils.dir/audio_utils.c.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/audio_utils.c \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/audio_utils.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -54,7 +54,7 @@ utils.out/CMakeFiles/audioutils.dir/audio_utils.c.o: \
  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/libsndfile/include/sndfile.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/libsndfile/include/sndfile.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/aarch64-linux-gnu/bits/wchar.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h /usr/include/math.h \
@@ -65,4 +65,4 @@ utils.out/CMakeFiles/audioutils.dir/audio_utils.c.o: \
  /usr/include/aarch64-linux-gnu/bits/fp-fast.h \
  /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/aarch64-linux-gnu/bits/mathcalls.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/audio_utils.h
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/audio_utils.h

@@ -20,7 +20,10 @@ class MysqlClient {
 
     bool updateVideo(const std::string &code, const std::string &video, VideoType type);
 
-    bool saveAIError(const std::string &grid, const std::string &time, const std::string &video);
+    bool upAIError(const std::string &grid, const std::string &time, const std::string &video,
+                   const std::string &package_id);
+
+    bool clearAIError(const std::string &grid);
 
   private:
     MYSQL *conn;

@@ -1,5 +1,5 @@
 utils.out/CMakeFiles/imagedrawing.dir/image_drawing.c.o: \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_drawing.c \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_drawing.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -67,6 +67,6 @@ utils.out/CMakeFiles/imagedrawing.dir/image_drawing.c.o: \
  /usr/include/aarch64-linux-gnu/bits/fp-fast.h \
  /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/aarch64-linux-gnu/bits/mathcalls.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/image_drawing.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/common.h \
- /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/font.h
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_drawing.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/font.h

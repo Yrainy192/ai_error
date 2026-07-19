@@ -1,8 +1,8 @@
-# Install script for directory: /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp
+# Install script for directory: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/admin/Rtsp/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/rknn_yolov8_demo")
+  set(CMAKE_INSTALL_PREFIX "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/rknn_yolov8_demo")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy"
          RPATH "$ORIGIN/../lib")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/rknn_yolov8_demo_zero_copy")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/rknn_yolov8_demo_zero_copy")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy"
-         OLD_RPATH "/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64:"
+         OLD_RPATH "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64:"
          NEW_RPATH "$ORIGIN/../lib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/aarch64-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy")
@@ -69,12 +69,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo"
          RPATH "$ORIGIN/../lib")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/rknn_yolov8_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/rknn_yolov8_demo")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo"
-         OLD_RPATH "/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64:"
+         OLD_RPATH "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64:"
          NEW_RPATH "$ORIGIN/../lib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/aarch64-linux-gnu-strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo")
@@ -83,25 +83,25 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/bus.jpg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/bus.jpg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/coco_80_labels_list.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/coco_80_labels_list.txt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES
-    "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolobest.rknn"
-    "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8.rknn"
-    "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8best.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolobest.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8best.rknn"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/3rdparty.out/cmake_install.cmake")
-  include("/home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/utils.out/cmake_install.cmake")
+  include("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/3rdparty.out/cmake_install.cmake")
+  include("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/utils.out/cmake_install.cmake")
 
 endif()
 
@@ -113,5 +113,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils/file_utils.c" "utils.out/CMakeFiles/fileutils.dir/file_utils.c.o" "gcc" "utils.out/CMakeFiles/fileutils.dir/file_utils.c.o.d"
+  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.c" "utils.out/CMakeFiles/fileutils.dir/file_utils.c.o" "gcc" "utils.out/CMakeFiles/fileutils.dir/file_utils.c.o.d"
   )
 
 # Targets to which this target links.

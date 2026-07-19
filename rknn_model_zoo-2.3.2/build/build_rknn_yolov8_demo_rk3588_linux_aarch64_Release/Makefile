@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp
+CMAKE_SOURCE_DIR = /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release
+CMAKE_BINARY_DIR = /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/CMakeFiles /home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/CMakeFiles /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/build/build_rknn_yolov8_demo_rk3588_linux_aarch64_Release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -238,6 +238,33 @@ audioutils: cmake_check_build_system
 audioutils/fast:
 	$(MAKE) $(MAKESILENT) -f utils.out/CMakeFiles/audioutils.dir/build.make utils.out/CMakeFiles/audioutils.dir/build
 .PHONY : audioutils/fast
+
+ByteTrack/AlarmLight.o: ByteTrack/AlarmLight.cpp.o
+.PHONY : ByteTrack/AlarmLight.o
+
+# target to build an object file
+ByteTrack/AlarmLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o
+.PHONY : ByteTrack/AlarmLight.cpp.o
+
+ByteTrack/AlarmLight.i: ByteTrack/AlarmLight.cpp.i
+.PHONY : ByteTrack/AlarmLight.i
+
+# target to preprocess a source file
+ByteTrack/AlarmLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.i
+.PHONY : ByteTrack/AlarmLight.cpp.i
+
+ByteTrack/AlarmLight.s: ByteTrack/AlarmLight.cpp.s
+.PHONY : ByteTrack/AlarmLight.s
+
+# target to generate assembly for a file
+ByteTrack/AlarmLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.s
+.PHONY : ByteTrack/AlarmLight.cpp.s
 
 ByteTrack/AudioManager.o: ByteTrack/AudioManager.cpp.o
 .PHONY : ByteTrack/AudioManager.o
@@ -1007,6 +1034,9 @@ help:
 	@echo "... imageutils"
 	@echo "... rknn_yolov8_demo"
 	@echo "... rknn_yolov8_demo_zero_copy"
+	@echo "... ByteTrack/AlarmLight.o"
+	@echo "... ByteTrack/AlarmLight.i"
+	@echo "... ByteTrack/AlarmLight.s"
 	@echo "... ByteTrack/AudioManager.o"
 	@echo "... ByteTrack/AudioManager.i"
 	@echo "... ByteTrack/AudioManager.s"
