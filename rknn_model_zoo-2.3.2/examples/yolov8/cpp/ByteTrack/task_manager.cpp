@@ -1,9 +1,9 @@
 #include "task_manager.h"
+#include "AIFrameCache.h"
 #include "SdkManager.h"
 #include <chrono>
 #include <iostream>
 #include <spdlog/spdlog.h>
-#include <unistd.h>
 
 static uint64_t getMonoTimeUs() {
     auto now = std::chrono::steady_clock::now();
@@ -105,6 +105,13 @@ void TaskManager::setTask(const std::string &code, const std::string &grid, int 
     cam_tasks[cam_id].push_back(t);
 }
 
+void TaskManager::setAICache(int cam_id, AIFrameCache *cache) {
+    if (ai_caches.size() <= cam_id)
+        ai_caches.resize(cam_id + 1);
+
+    ai_caches[cam_id] = cache;
+}
+
 void TaskManager::triggerLongAlarm(int slave_id) {
     if (!alarm_light_)
         return;
@@ -155,7 +162,8 @@ void TaskManager::triggerShortAlarm(int slave_id) {
         spdlog::info("短报警启动 slave={}", slave_id);
 
         // 持续3秒
-        sleep(3);
+        // sleep(3);
+        std::this_thread::sleep_for(std::chrono::seconds(3));
 
         bool can_off = false;
 
@@ -325,7 +333,7 @@ void TaskManager::cleanupCache(int cam_id, int roi_id) {
 }
 
 // 核心状态机
-void TaskManager::updateEnter(int cam_id, int roi_id, int id) {
+void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
     std::lock_guard<std::mutex> lock(mutex);
 
     auto &state = roi_state[cam_id][roi_id];
@@ -372,6 +380,26 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id) {
     // NO TASK
     // =========================
     if (!has_task) {
+        // ==========================
+        // 记录AI事件时间
+        // ==========================
+        AIEvent event;
+        event.cam_id = cam_id;
+        event.roi_id = roi_id;
+        event.track_id = id;
+        // NO_TASK发生时间
+        event.event_pts = pts;
+        // 前5秒
+        if (pts > 5 * GST_SECOND) {
+            event.start_pts = pts - 5 * GST_SECOND;
+        } else {
+            event.start_pts = 0;
+        }
+        // 后10秒
+        event.end_pts = pts + 10 * GST_SECOND;
+        // 加入事件队列
+        pending_events.push_back(event);
+
         spdlog::warn("[ALARM] NO TASK cam={} roi={} id={}", cam_id, roi_id, id);
         std::string wav;
         if (voice_mgr) {
@@ -391,7 +419,8 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id) {
         if (audio_mgr) {
             audio_mgr->post(cmd);
         }
-        triggerAIError(cam_id, roi_id, std::to_string(id));
+
+        triggerAIError(cam_id, roi_id, std::to_string(id), pts);
 
         state.decision_time[id] = time(nullptr);
         return;

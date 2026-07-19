@@ -71,5 +71,7 @@ class RtspStream {
     // H265Recorder h265_recorder{&h265_cache};
     std::unique_ptr<H265Recorder> h265_recorder;
 
+    std::atomic<uint64_t> frame_counter{0};
+
     std::mutex frame_mutex;
 };

@@ -316,6 +316,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: \
  /usr/include/c++/11/bits/stl_multiset.h \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIFrameCache.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIFrame.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.h \
  /usr/include/c++/11/iostream /usr/local/include/spdlog/spdlog.h \
  /usr/local/include/spdlog/common.h /usr/local/include/spdlog/tweakme.h \
@@ -331,12 +333,4 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: \
  /usr/local/include/spdlog/details/log_msg_buffer.h \
  /usr/local/include/spdlog/details/circular_q.h \
  /usr/local/include/spdlog/version.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
- /usr/include/unistd.h /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
- /usr/include/aarch64-linux-gnu/bits/environments.h \
- /usr/include/aarch64-linux-gnu/bits/confname.h \
- /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
- /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
- /usr/include/aarch64-linux-gnu/bits/unistd.h \
- /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h
+ /usr/local/include/spdlog/details/synchronous_factory.h

@@ -35,30 +35,20 @@ class H265RingBuffer {
   public:
     // keep_time_ms:
     // 保存多少毫秒
-    //
     // 例如:
     // 15000 = 保存15秒
-    //
     explicit H265RingBuffer(uint64_t keep_time_ms = 15000);
-
     // 插入一个H265包
     void push(const H265Packet &packet);
-
     // 获取时间范围
-    //
     // start_ms:
     // 开始时间
-    //
     // end_ms:
     // 结束时间
-    //
     // 自动向前找最近I帧
-    //
     std::vector<H265Packet> getRange(uint64_t start_ms, uint64_t end_ms);
-
     // 当前缓存数量
     size_t size();
-
     // 清空
     void clear();
 

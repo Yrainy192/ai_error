@@ -57,6 +57,7 @@ using namespace cv;
 #include <memory>
 #include <unordered_map>
 
+#include "AIFrameCache.h"
 #include "AlarmLight.h"
 #include "DisplayManager.h"
 #include "Frame.h"
@@ -110,7 +111,7 @@ using namespace cv;
 // }
 
 //===============================================已经实现视频存储功能==========================================================//
-
+std::vector<std::unique_ptr<AIFrameCache>> ai_caches;
 TaskManager task_manager;
 // RtspStream rtsp;
 ROIManager roi_manager;
@@ -120,6 +121,8 @@ std::mutex g_log_mutex;
 std::unordered_map<int, std::unique_ptr<byte_track::BYTETracker>> tracker_map;
 
 std::vector<std::unique_ptr<RgaWorker>> rga_workers;
+
+std::vector<uint64_t> last_ai_frame_id;
 
 image_buffer_t frame_to_image_buffer(Frame &f) {
     image_buffer_t img;
@@ -151,8 +154,13 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
     while (true) {
         auto &rga = *rga_workers[cam_id];
         Frame raw = get_frame_from_rtsp(*manager, cam_id);
+
         if (!raw.data)
             continue;
+        if (raw.frame_id == last_ai_frame_id[cam_id]) {
+            continue;
+        }
+        last_ai_frame_id[cam_id] = raw.frame_id;
         // image_buffer_t img = frame_to_image_buffer(raw);
 
         // // =========================
@@ -167,9 +175,24 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
 
         auto objects = convertToByteTrackObjects(results);
         auto tracks = tracker.update(objects);
-        // print_tracks(tracks,0);
         auto res = handle_tracks(tracks, cam_id);
-
+        AIFrame ai;
+        ai.frame_id = raw.frame_id;
+        ai.pts = raw.pts;
+        ai.real_time_ms = raw.real_time_ms;
+        for (auto &r : res) {
+            DetectionInfo d;
+            d.track_id = r.track_id;
+            d.confidence = r.score;
+            d.x = r.x;
+            d.y = r.y;
+            d.w = r.w;
+            d.h = r.h;
+            ai.objects.push_back(d);
+        }
+        ai_caches[cam_id]->push(ai);
+        // spdlog::info("AI cache cam={} frame={} pts={} objects={}", cam_id, ai.frame_id, ai.pts,
+        //              ai.objects.size());
         std::unordered_map<int, std::vector<int>> roi_map;
 
         for (auto &r : res) {
@@ -182,14 +205,14 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             int roi_id = kv.first;
 
             for (int id : kv.second) {
-                task_manager->updateEnter(cam_id, roi_id, id);
+                task_manager->updateEnter(cam_id, roi_id, id, raw.pts);
             }
         }
 
         // 空ROI
         for (auto &roi : roi_manager.get(cam_id)) {
             if (roi_map.find(roi.id) == roi_map.end()) {
-                task_manager->updateEnter(cam_id, roi.id, -1);
+                task_manager->updateEnter(cam_id, roi.id, -1, raw.pts);
             }
         }
 
@@ -316,7 +339,12 @@ int main() {
     for (int i = 0; i < 5; i++) {
         rga_workers[i] = std::make_unique<RgaWorker>();
     }
-
+    last_ai_frame_id.resize(5, UINT64_MAX);
+    // 5. AI JSON缓存
+    ai_caches.resize(5);
+    for (int i = 0; i < 5; i++) {
+        ai_caches[i] = std::make_unique<AIFrameCache>();
+    }
     // 5. 模型池（6 core）
     std::string model_path =
         "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.o"
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o"
@@ -11,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o.d"
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.o"
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o"

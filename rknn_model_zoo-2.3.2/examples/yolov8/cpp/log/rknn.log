@@ -4304,3 +4304,531 @@ rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/1
 [2026-07-19 18:02:03.008] [rknn] [info] 短报警关闭灯 slave=1
 [2026-07-19 18:02:05.245] [rknn] [info] [Recorder] TS saved 274 packets -> /home/admin/Videos/cam1/20260719/event/180200007.ts
 [2026-07-19 18:02:08.222] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 19:20:08.188] [rknn] [info] logger init success
+[2026-07-19 19:20:08.188] [rknn] [info] program start
+[2026-07-19 19:20:08.190] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 19:20:08.191] [rknn] [info] === 程序启动 ===
+[2026-07-19 19:20:08.278] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 19:20:08.327] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 19:20:08.327] [rknn] [info] TCP服务已后台启动
+[2026-07-19 19:20:08.327] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 19:20:08.328] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 19:20:08.328] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 19:20:08.328] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 19:20:08.328] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 19:20:08.328] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 19:20:08.341] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 19:20:08.395] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:20:08.395] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:20:08.395] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:20:08.395] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:20:08.395] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:20:08.885] [rknn] [info] AI cache cam=1 frame=0 pts=242718772 objects=0
+[2026-07-19 19:20:08.910] [rknn] [info] AI cache cam=1 frame=0 pts=242718772 objects=0
+[2026-07-19 19:20:08.932] [rknn] [info] AI cache cam=1 frame=0 pts=242718772 objects=0
+[2026-07-19 19:20:08.954] [rknn] [info] AI cache cam=1 frame=0 pts=242718772 objects=0
+[2026-07-19 19:20:08.974] [rknn] [info] AI cache cam=1 frame=0 pts=282718772 objects=0
+[2026-07-19 19:20:08.996] [rknn] [info] AI cache cam=1 frame=0 pts=282718772 objects=0
+[2026-07-19 19:20:09.019] [rknn] [info] AI cache cam=1 frame=0 pts=322718772 objects=0
+[2026-07-19 19:20:09.039] [rknn] [info] AI cache cam=1 frame=0 pts=362718772 objects=0
+[2026-07-19 19:20:09.059] [rknn] [info] AI cache cam=1 frame=0 pts=402718772 objects=0
+[2026-07-19 19:20:09.081] [rknn] [info] AI cache cam=1 frame=0 pts=442718772 objects=0
+[2026-07-19 19:20:09.103] [rknn] [info] AI cache cam=1 frame=0 pts=482718772 objects=0
+[2026-07-19 19:20:09.126] [rknn] [info] AI cache cam=1 frame=0 pts=562718772 objects=0
+[2026-07-19 19:20:09.146] [rknn] [info] AI cache cam=1 frame=0 pts=602718772 objects=0
+[2026-07-19 19:20:09.166] [rknn] [info] AI cache cam=1 frame=0 pts=602718772 objects=0
+[2026-07-19 19:20:09.186] [rknn] [info] AI cache cam=1 frame=0 pts=602718772 objects=0
+[2026-07-19 19:20:09.205] [rknn] [info] AI cache cam=1 frame=0 pts=642718772 objects=0
+[2026-07-19 19:20:09.224] [rknn] [info] AI cache cam=1 frame=0 pts=642718772 objects=0
+[2026-07-19 19:20:09.244] [rknn] [info] AI cache cam=1 frame=0 pts=682718772 objects=0
+[2026-07-19 19:20:09.263] [rknn] [info] AI cache cam=1 frame=0 pts=722718772 objects=0
+[2026-07-19 19:20:09.283] [rknn] [info] AI cache cam=1 frame=0 pts=722718772 objects=0
+[2026-07-19 19:20:09.303] [rknn] [info] AI cache cam=1 frame=0 pts=722718772 objects=0
+[2026-07-19 19:20:09.323] [rknn] [info] AI cache cam=1 frame=0 pts=762718772 objects=0
+[2026-07-19 19:20:09.345] [rknn] [info] AI cache cam=1 frame=0 pts=762718772 objects=0
+[2026-07-19 19:20:09.371] [rknn] [info] AI cache cam=1 frame=0 pts=802718772 objects=0
+[2026-07-19 19:20:09.393] [rknn] [info] AI cache cam=1 frame=0 pts=842718772 objects=0
+[2026-07-19 19:20:09.416] [rknn] [info] AI cache cam=1 frame=0 pts=842718772 objects=0
+[2026-07-19 19:20:09.438] [rknn] [info] AI cache cam=1 frame=0 pts=882718772 objects=0
+[2026-07-19 19:20:09.460] [rknn] [info] AI cache cam=1 frame=0 pts=882718772 objects=0
+[2026-07-19 19:20:09.483] [rknn] [info] AI cache cam=1 frame=0 pts=922718772 objects=0
+[2026-07-19 19:20:09.504] [rknn] [info] AI cache cam=1 frame=0 pts=922718772 objects=0
+[2026-07-19 19:20:09.524] [rknn] [info] AI cache cam=1 frame=0 pts=962718772 objects=0
+[2026-07-19 19:20:09.545] [rknn] [info] AI cache cam=1 frame=0 pts=962718772 objects=0
+[2026-07-19 19:20:09.566] [rknn] [info] AI cache cam=1 frame=0 pts=1002718772 objects=0
+[2026-07-19 19:20:09.586] [rknn] [info] AI cache cam=1 frame=0 pts=1042718772 objects=0
+[2026-07-19 19:20:09.606] [rknn] [info] AI cache cam=1 frame=0 pts=1042718772 objects=0
+[2026-07-19 19:20:09.625] [rknn] [info] AI cache cam=1 frame=0 pts=1082718772 objects=0
+[2026-07-19 19:20:09.646] [rknn] [info] AI cache cam=1 frame=0 pts=1082718772 objects=0
+[2026-07-19 19:20:09.666] [rknn] [info] AI cache cam=1 frame=0 pts=1082718772 objects=0
+[2026-07-19 19:20:09.687] [rknn] [info] AI cache cam=1 frame=0 pts=1122718772 objects=0
+[2026-07-19 19:20:09.708] [rknn] [info] AI cache cam=1 frame=0 pts=1122718772 objects=0
+[2026-07-19 19:20:09.729] [rknn] [info] AI cache cam=1 frame=0 pts=1162718772 objects=0
+[2026-07-19 19:20:09.749] [rknn] [info] AI cache cam=1 frame=0 pts=1202718772 objects=0
+[2026-07-19 19:20:09.769] [rknn] [info] AI cache cam=1 frame=0 pts=1202718772 objects=0
+[2026-07-19 19:20:09.789] [rknn] [info] AI cache cam=1 frame=0 pts=1242718772 objects=0
+[2026-07-19 19:20:09.819] [rknn] [info] AI cache cam=1 frame=0 pts=1242718772 objects=0
+[2026-07-19 19:20:09.838] [rknn] [info] AI cache cam=1 frame=0 pts=1282718772 objects=0
+[2026-07-19 19:20:09.860] [rknn] [info] AI cache cam=1 frame=0 pts=1282718772 objects=0
+[2026-07-19 19:20:09.884] [rknn] [info] AI cache cam=1 frame=0 pts=1322718772 objects=0
+[2026-07-19 19:20:09.905] [rknn] [info] AI cache cam=1 frame=0 pts=1322718772 objects=0
+[2026-07-19 19:20:09.929] [rknn] [info] AI cache cam=1 frame=0 pts=1362718772 objects=0
+[2026-07-19 19:20:09.950] [rknn] [info] AI cache cam=1 frame=0 pts=1362718772 objects=0
+[2026-07-19 19:20:09.971] [rknn] [info] AI cache cam=1 frame=0 pts=1402718772 objects=0
+[2026-07-19 19:20:09.996] [rknn] [info] AI cache cam=1 frame=0 pts=1402718772 objects=0
+[2026-07-19 19:20:10.021] [rknn] [info] AI cache cam=1 frame=0 pts=1442718772 objects=0
+[2026-07-19 19:20:10.021] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 19:20:10.021] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 19:20:10.021] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784460010021
+[2026-07-19 19:20:10.022] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 19:20:10.022] [rknn] [info] [Recorder] trigger event time=1784460010022
+[2026-07-19 19:20:10.022] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 19:20:10.043] [rknn] [info] AI cache cam=1 frame=0 pts=1442718772 objects=0
+[2026-07-19 19:20:10.066] [rknn] [info] AI cache cam=1 frame=0 pts=1482718772 objects=0
+[2026-07-19 19:20:10.089] [rknn] [info] AI cache cam=1 frame=0 pts=1482718772 objects=0
+[2026-07-19 19:20:10.114] [rknn] [info] AI cache cam=1 frame=0 pts=1522718772 objects=0
+[2026-07-19 19:20:10.136] [rknn] [info] AI cache cam=1 frame=0 pts=1562718772 objects=0
+[2026-07-19 19:20:10.156] [rknn] [info] AI cache cam=1 frame=0 pts=1562718772 objects=0
+[2026-07-19 19:20:10.177] [rknn] [info] AI cache cam=1 frame=0 pts=1602644243 objects=0
+[2026-07-19 19:20:10.197] [rknn] [info] AI cache cam=1 frame=0 pts=1602644243 objects=0
+[2026-07-19 19:20:10.219] [rknn] [info] AI cache cam=1 frame=0 pts=1642601785 objects=0
+[2026-07-19 19:20:10.240] [rknn] [info] AI cache cam=1 frame=0 pts=1682578876 objects=0
+[2026-07-19 19:20:10.261] [rknn] [info] AI cache cam=1 frame=0 pts=1682578876 objects=0
+[2026-07-19 19:20:10.282] [rknn] [info] AI cache cam=1 frame=0 pts=1721816124 objects=0
+[2026-07-19 19:20:10.306] [rknn] [info] AI cache cam=1 frame=0 pts=1721816124 objects=0
+[2026-07-19 19:20:10.331] [rknn] [info] AI cache cam=1 frame=0 pts=1761452151 objects=0
+[2026-07-19 19:20:10.355] [rknn] [info] AI cache cam=1 frame=0 pts=1761452151 objects=0
+[2026-07-19 19:20:10.376] [rknn] [info] AI cache cam=1 frame=0 pts=1801290211 objects=0
+[2026-07-19 19:20:10.399] [rknn] [info] AI cache cam=1 frame=0 pts=1840900466 objects=0
+[2026-07-19 19:20:10.424] [rknn] [info] AI cache cam=1 frame=0 pts=1840900466 objects=0
+[2026-07-19 19:20:10.448] [rknn] [info] AI cache cam=1 frame=0 pts=1880753055 objects=0
+[2026-07-19 19:20:10.476] [rknn] [info] AI cache cam=1 frame=0 pts=1880753055 objects=0
+[2026-07-19 19:20:10.500] [rknn] [info] AI cache cam=1 frame=0 pts=1920702379 objects=0
+[2026-07-19 19:20:10.520] [rknn] [info] AI cache cam=1 frame=0 pts=1960686741 objects=0
+[2026-07-19 19:20:10.541] [rknn] [info] AI cache cam=1 frame=0 pts=1960686741 objects=0
+[2026-07-19 19:20:10.565] [rknn] [info] AI cache cam=1 frame=0 pts=2000682477 objects=0
+[2026-07-19 19:20:10.588] [rknn] [info] AI cache cam=1 frame=0 pts=2000682477 objects=0
+[2026-07-19 19:20:10.608] [rknn] [info] AI cache cam=1 frame=0 pts=2040681471 objects=0
+[2026-07-19 19:20:10.628] [rknn] [info] AI cache cam=1 frame=0 pts=2080681271 objects=0
+[2026-07-19 19:20:10.647] [rknn] [info] AI cache cam=1 frame=0 pts=2080681271 objects=0
+[2026-07-19 19:20:10.669] [rknn] [info] AI cache cam=1 frame=0 pts=2080681271 objects=0
+[2026-07-19 19:20:10.688] [rknn] [info] AI cache cam=1 frame=0 pts=2120681239 objects=0
+[2026-07-19 19:20:10.709] [rknn] [info] AI cache cam=1 frame=0 pts=2120681239 objects=0
+[2026-07-19 19:20:10.730] [rknn] [info] AI cache cam=1 frame=0 pts=2160681235 objects=0
+[2026-07-19 19:20:10.753] [rknn] [info] AI cache cam=1 frame=0 pts=2200681235 objects=0
+[2026-07-19 19:20:10.775] [rknn] [info] AI cache cam=1 frame=0 pts=2200681235 objects=0
+[2026-07-19 19:20:10.797] [rknn] [info] AI cache cam=1 frame=0 pts=2233945789 objects=0
+[2026-07-19 19:20:10.818] [rknn] [info] AI cache cam=1 frame=0 pts=2273945789 objects=0
+[2026-07-19 19:20:10.839] [rknn] [info] AI cache cam=1 frame=0 pts=2273945789 objects=0
+[2026-07-19 19:20:10.861] [rknn] [info] AI cache cam=1 frame=0 pts=2273945789 objects=0
+[2026-07-19 19:20:10.887] [rknn] [info] AI cache cam=1 frame=0 pts=2313945789 objects=0
+[2026-07-19 19:20:10.909] [rknn] [info] AI cache cam=1 frame=0 pts=2353945789 objects=0
+[2026-07-19 19:20:10.936] [rknn] [info] AI cache cam=1 frame=0 pts=2353945789 objects=0
+[2026-07-19 19:20:10.958] [rknn] [info] AI cache cam=1 frame=0 pts=2393945789 objects=0
+[2026-07-19 19:20:10.975] [rknn] [info] AI cache cam=1 frame=0 pts=2393945789 objects=0
+[2026-07-19 19:20:10.996] [rknn] [info] AI cache cam=1 frame=0 pts=2433945789 objects=0
+[2026-07-19 19:20:11.018] [rknn] [info] AI cache cam=1 frame=0 pts=2433945789 objects=0
+[2026-07-19 19:20:11.039] [rknn] [info] AI cache cam=1 frame=0 pts=2473945789 objects=0
+[2026-07-19 19:20:11.059] [rknn] [info] AI cache cam=1 frame=0 pts=2473945789 objects=0
+[2026-07-19 19:20:11.081] [rknn] [info] AI cache cam=1 frame=0 pts=2513945789 objects=0
+[2026-07-19 19:20:11.104] [rknn] [info] AI cache cam=1 frame=0 pts=2513945789 objects=0
+[2026-07-19 19:20:11.125] [rknn] [info] AI cache cam=1 frame=0 pts=2553945789 objects=0
+[2026-07-19 19:20:11.147] [rknn] [info] AI cache cam=1 frame=0 pts=2553945789 objects=0
+[2026-07-19 19:20:11.168] [rknn] [info] AI cache cam=1 frame=0 pts=2593945789 objects=0
+[2026-07-19 19:20:11.189] [rknn] [info] AI cache cam=1 frame=0 pts=2633945789 objects=0
+[2026-07-19 19:20:11.212] [rknn] [info] AI cache cam=1 frame=0 pts=2633945789 objects=0
+[2026-07-19 19:20:11.234] [rknn] [info] AI cache cam=1 frame=0 pts=2633945789 objects=0
+[2026-07-19 19:20:11.255] [rknn] [info] AI cache cam=1 frame=0 pts=2673945789 objects=0
+[2026-07-19 19:20:11.275] [rknn] [info] AI cache cam=1 frame=0 pts=2713945789 objects=0
+[2026-07-19 19:20:11.297] [rknn] [info] AI cache cam=1 frame=0 pts=2713945789 objects=0
+[2026-07-19 19:20:11.318] [rknn] [info] AI cache cam=1 frame=0 pts=2753945789 objects=0
+[2026-07-19 19:20:11.345] [rknn] [info] AI cache cam=1 frame=0 pts=2753945789 objects=0
+[2026-07-19 19:20:11.367] [rknn] [info] AI cache cam=1 frame=0 pts=2793945789 objects=0
+[2026-07-19 19:20:11.387] [rknn] [info] AI cache cam=1 frame=0 pts=2793945789 objects=0
+[2026-07-19 19:20:11.413] [rknn] [info] AI cache cam=1 frame=0 pts=2833945789 objects=0
+[2026-07-19 19:20:11.441] [rknn] [info] AI cache cam=1 frame=0 pts=2873945789 objects=0
+[2026-07-19 19:20:11.465] [rknn] [info] AI cache cam=1 frame=0 pts=2873945789 objects=0
+[2026-07-19 19:20:11.486] [rknn] [info] AI cache cam=1 frame=0 pts=2873945789 objects=0
+[2026-07-19 19:20:11.507] [rknn] [info] AI cache cam=1 frame=0 pts=2913945789 objects=0
+[2026-07-19 19:20:11.530] [rknn] [info] AI cache cam=1 frame=0 pts=2953945789 objects=0
+[2026-07-19 19:20:11.551] [rknn] [info] AI cache cam=1 frame=0 pts=2993945789 objects=0
+[2026-07-19 19:20:11.572] [rknn] [info] AI cache cam=1 frame=0 pts=2993945789 objects=0
+[2026-07-19 19:20:11.595] [rknn] [info] AI cache cam=1 frame=0 pts=2993945789 objects=0
+[2026-07-19 19:20:11.615] [rknn] [info] AI cache cam=1 frame=0 pts=3033945789 objects=0
+[2026-07-19 19:20:11.635] [rknn] [info] AI cache cam=1 frame=0 pts=3073945789 objects=0
+[2026-07-19 19:20:11.656] [rknn] [info] AI cache cam=1 frame=0 pts=3073945789 objects=0
+[2026-07-19 19:20:11.677] [rknn] [info] AI cache cam=1 frame=0 pts=3113945789 objects=0
+[2026-07-19 19:20:11.701] [rknn] [info] AI cache cam=1 frame=0 pts=3113945789 objects=0
+[2026-07-19 19:20:11.724] [rknn] [info] AI cache cam=1 frame=0 pts=3153945789 objects=0
+[2026-07-19 19:20:11.747] [rknn] [info] AI cache cam=1 frame=0 pts=3193945789 objects=0
+[2026-07-19 19:20:11.769] [rknn] [info] AI cache cam=1 frame=0 pts=3193945789 objects=0
+[2026-07-19 19:20:11.790] [rknn] [info] AI cache cam=1 frame=0 pts=3193945789 objects=0
+[2026-07-19 19:20:11.814] [rknn] [info] AI cache cam=1 frame=0 pts=3233945789 objects=0
+[2026-07-19 19:20:11.836] [rknn] [info] AI cache cam=1 frame=0 pts=3273945789 objects=0
+[2026-07-19 19:20:11.858] [rknn] [info] AI cache cam=1 frame=0 pts=3273945789 objects=0
+[2026-07-19 19:20:11.883] [rknn] [info] AI cache cam=1 frame=0 pts=3313945789 objects=0
+[2026-07-19 19:20:11.911] [rknn] [info] AI cache cam=1 frame=0 pts=3313945789 objects=0
+[2026-07-19 19:20:11.936] [rknn] [info] AI cache cam=1 frame=0 pts=3353945789 objects=0
+[2026-07-19 19:20:11.958] [rknn] [info] AI cache cam=1 frame=0 pts=3393945789 objects=0
+[2026-07-19 19:20:11.983] [rknn] [info] AI cache cam=1 frame=0 pts=3393945789 objects=0
+[2026-07-19 19:20:12.003] [rknn] [info] AI cache cam=1 frame=0 pts=3433945789 objects=0
+[2026-07-19 19:20:12.024] [rknn] [info] AI cache cam=1 frame=0 pts=3433945789 objects=0
+[2026-07-19 19:20:12.045] [rknn] [info] AI cache cam=1 frame=0 pts=3473945789 objects=0
+[2026-07-19 19:20:12.067] [rknn] [info] AI cache cam=1 frame=0 pts=3513945789 objects=0
+[2026-07-19 19:20:12.088] [rknn] [info] AI cache cam=1 frame=0 pts=3513945789 objects=0
+[2026-07-19 19:20:12.112] [rknn] [info] AI cache cam=1 frame=0 pts=3553945789 objects=0
+[2026-07-19 19:20:12.136] [rknn] [info] AI cache cam=1 frame=0 pts=3553945789 objects=0
+[2026-07-19 19:20:12.157] [rknn] [info] AI cache cam=1 frame=0 pts=3593945789 objects=0
+[2026-07-19 19:20:12.180] [rknn] [info] AI cache cam=1 frame=0 pts=3593945789 objects=0
+[2026-07-19 19:20:12.202] [rknn] [info] AI cache cam=1 frame=0 pts=3633945789 objects=0
+[2026-07-19 19:20:12.222] [rknn] [info] AI cache cam=1 frame=0 pts=3673945789 objects=0
+[2026-07-19 19:20:12.242] [rknn] [info] AI cache cam=1 frame=0 pts=3673945789 objects=0
+[2026-07-19 19:20:12.271] [rknn] [info] AI cache cam=1 frame=0 pts=3673945789 objects=0
+[2026-07-19 19:20:12.292] [rknn] [info] AI cache cam=1 frame=0 pts=3713945789 objects=0
+[2026-07-19 19:20:12.314] [rknn] [info] AI cache cam=1 frame=0 pts=3753945789 objects=0
+[2026-07-19 19:20:12.335] [rknn] [info] AI cache cam=1 frame=0 pts=3753945789 objects=0
+[2026-07-19 19:20:12.356] [rknn] [info] AI cache cam=1 frame=0 pts=3793945789 objects=0
+[2026-07-19 19:20:12.377] [rknn] [info] AI cache cam=1 frame=0 pts=3793945789 objects=0
+[2026-07-19 19:20:12.398] [rknn] [info] AI cache cam=1 frame=0 pts=3833945789 objects=0
+[2026-07-19 19:20:12.420] [rknn] [info] AI cache cam=1 frame=0 pts=3833945789 objects=0
+[2026-07-19 19:20:12.442] [rknn] [info] AI cache cam=1 frame=0 pts=3873945789 objects=0
+[2026-07-19 19:20:12.466] [rknn] [info] AI cache cam=1 frame=0 pts=3873945789 objects=0
+[2026-07-19 19:20:12.488] [rknn] [info] AI cache cam=1 frame=0 pts=3913945789 objects=0
+[2026-07-19 19:20:12.509] [rknn] [info] AI cache cam=1 frame=0 pts=3913945789 objects=0
+[2026-07-19 19:20:12.531] [rknn] [info] AI cache cam=1 frame=0 pts=3953945789 objects=0
+[2026-07-19 19:20:12.552] [rknn] [info] AI cache cam=1 frame=0 pts=3953945789 objects=0
+[2026-07-19 19:20:12.574] [rknn] [info] AI cache cam=1 frame=0 pts=3993945789 objects=0
+[2026-07-19 19:20:12.597] [rknn] [info] AI cache cam=1 frame=0 pts=4033945789 objects=0
+[2026-07-19 19:20:12.622] [rknn] [info] AI cache cam=1 frame=0 pts=4033945789 objects=0
+[2026-07-19 19:20:12.643] [rknn] [info] AI cache cam=1 frame=0 pts=4073945789 objects=0
+[2026-07-19 19:20:12.666] [rknn] [info] AI cache cam=1 frame=0 pts=4073945789 objects=0
+[2026-07-19 19:20:12.688] [rknn] [info] AI cache cam=1 frame=0 pts=4113945789 objects=0
+[2026-07-19 19:20:12.709] [rknn] [info] AI cache cam=1 frame=0 pts=4153945789 objects=0
+[2026-07-19 19:20:12.731] [rknn] [info] AI cache cam=1 frame=0 pts=4153945789 objects=0
+[2026-07-19 19:20:12.756] [rknn] [info] AI cache cam=1 frame=0 pts=4153945789 objects=0
+[2026-07-19 19:20:12.777] [rknn] [info] AI cache cam=1 frame=0 pts=4193945789 objects=0
+[2026-07-19 19:20:12.799] [rknn] [info] AI cache cam=1 frame=0 pts=4233945789 objects=0
+[2026-07-19 19:20:12.822] [rknn] [info] AI cache cam=1 frame=0 pts=4233945789 objects=0
+[2026-07-19 19:20:12.843] [rknn] [info] AI cache cam=1 frame=0 pts=4273999941 objects=0
+[2026-07-19 19:20:12.865] [rknn] [info] AI cache cam=1 frame=0 pts=4273999941 objects=0
+[2026-07-19 19:20:12.886] [rknn] [info] AI cache cam=1 frame=0 pts=4314053659 objects=0
+[2026-07-19 19:20:12.907] [rknn] [info] AI cache cam=1 frame=0 pts=4314053659 objects=0
+[2026-07-19 19:20:12.931] [rknn] [info] AI cache cam=1 frame=0 pts=4314053659 objects=0
+[2026-07-19 19:20:12.956] [rknn] [info] AI cache cam=1 frame=0 pts=4314053659 objects=0
+[2026-07-19 19:20:12.981] [rknn] [info] AI cache cam=1 frame=0 pts=4354106948 objects=0
+[2026-07-19 19:20:13.004] [rknn] [info] AI cache cam=1 frame=0 pts=4354106948 objects=0
+[2026-07-19 19:20:13.026] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 19:20:13.029] [rknn] [info] AI cache cam=1 frame=0 pts=4354106948 objects=0
+[2026-07-19 19:20:13.052] [rknn] [info] AI cache cam=1 frame=0 pts=4354106948 objects=0
+[2026-07-19 19:20:13.078] [rknn] [info] AI cache cam=1 frame=0 pts=4394159810 objects=0
+[2026-07-19 19:20:13.099] [rknn] [info] AI cache cam=1 frame=0 pts=4394159810 objects=0
+[2026-07-19 19:20:13.123] [rknn] [info] AI cache cam=1 frame=0 pts=4434212249 objects=0
+[2026-07-19 19:20:13.145] [rknn] [info] AI cache cam=1 frame=0 pts=4474264269 objects=0
+[2026-07-19 19:20:13.165] [rknn] [info] AI cache cam=1 frame=0 pts=4474264269 objects=0
+[2026-07-19 19:20:13.185] [rknn] [info] AI cache cam=1 frame=0 pts=4514315873 objects=0
+[2026-07-19 19:20:13.206] [rknn] [info] AI cache cam=1 frame=0 pts=4554367064 objects=0
+[2026-07-19 19:20:13.227] [rknn] [info] AI cache cam=1 frame=0 pts=4554367064 objects=0
+[2026-07-19 19:20:13.250] [rknn] [info] AI cache cam=1 frame=0 pts=4594417845 objects=0
+[2026-07-19 19:20:13.272] [rknn] [info] AI cache cam=1 frame=0 pts=4594417845 objects=0
+[2026-07-19 19:20:13.297] [rknn] [info] AI cache cam=1 frame=0 pts=4634468220 objects=0
+[2026-07-19 19:20:13.318] [rknn] [info] AI cache cam=1 frame=0 pts=4674518192 objects=0
+[2026-07-19 19:20:13.338] [rknn] [info] AI cache cam=1 frame=0 pts=4714567764 objects=0
+[2026-07-19 19:20:13.358] [rknn] [info] AI cache cam=1 frame=0 pts=4714567764 objects=0
+[2026-07-19 19:20:13.380] [rknn] [info] AI cache cam=1 frame=0 pts=4754616940 objects=0
+[2026-07-19 19:20:13.400] [rknn] [info] AI cache cam=1 frame=0 pts=4794617047 objects=0
+[2026-07-19 19:20:13.422] [rknn] [info] AI cache cam=1 frame=0 pts=4794617047 objects=0
+[2026-07-19 19:20:13.445] [rknn] [info] AI cache cam=1 frame=0 pts=4834617153 objects=0
+[2026-07-19 19:20:13.467] [rknn] [info] AI cache cam=1 frame=0 pts=4874617259 objects=0
+[2026-07-19 19:20:13.489] [rknn] [info] AI cache cam=1 frame=0 pts=4914617364 objects=0
+[2026-07-19 19:20:13.509] [rknn] [info] AI cache cam=1 frame=0 pts=4914617364 objects=0
+[2026-07-19 19:20:13.532] [rknn] [info] AI cache cam=1 frame=0 pts=4954617468 objects=0
+[2026-07-19 19:20:13.556] [rknn] [info] AI cache cam=1 frame=0 pts=4994617571 objects=0
+[2026-07-19 19:20:13.580] [rknn] [info] AI cache cam=1 frame=0 pts=4994617571 objects=0
+[2026-07-19 19:20:13.603] [rknn] [info] AI cache cam=1 frame=0 pts=5034617673 objects=0
+[2026-07-19 19:20:13.623] [rknn] [info] AI cache cam=1 frame=0 pts=5034617673 objects=0
+[2026-07-19 19:20:13.646] [rknn] [info] AI cache cam=1 frame=0 pts=5074617774 objects=0
+[2026-07-19 19:20:13.670] [rknn] [info] AI cache cam=1 frame=0 pts=5074617774 objects=0
+[2026-07-19 19:20:13.692] [rknn] [info] AI cache cam=1 frame=0 pts=5114617875 objects=0
+[2026-07-19 19:20:13.715] [rknn] [info] AI cache cam=1 frame=0 pts=5154617975 objects=0
+[2026-07-19 19:20:13.740] [rknn] [info] AI cache cam=1 frame=0 pts=5154617975 objects=0
+[2026-07-19 19:20:13.761] [rknn] [info] AI cache cam=1 frame=0 pts=5194618074 objects=0
+[2026-07-19 19:20:13.780] [rknn] [info] AI cache cam=1 frame=0 pts=5194618074 objects=0
+[2026-07-19 19:20:13.802] [rknn] [info] AI cache cam=1 frame=0 pts=5234618172 objects=0
+[2026-07-19 19:20:13.823] [rknn] [info] AI cache cam=1 frame=0 pts=5234618172 objects=0
+[2026-07-19 19:20:13.845] [rknn] [info] AI cache cam=1 frame=0 pts=5274618269 objects=0
+[2026-07-19 19:20:13.867] [rknn] [info] AI cache cam=1 frame=0 pts=5314618366 objects=0
+[2026-07-19 19:20:13.889] [rknn] [info] AI cache cam=1 frame=0 pts=5314618366 objects=0
+[2026-07-19 19:20:13.911] [rknn] [info] AI cache cam=1 frame=0 pts=5314618366 objects=0
+[2026-07-19 19:20:13.933] [rknn] [info] AI cache cam=1 frame=0 pts=5354618462 objects=0
+[2026-07-19 19:20:13.956] [rknn] [info] AI cache cam=1 frame=0 pts=5354618462 objects=0
+[2026-07-19 19:20:13.982] [rknn] [info] AI cache cam=1 frame=0 pts=5394618557 objects=0
+[2026-07-19 19:20:14.002] [rknn] [info] AI cache cam=1 frame=0 pts=5434618651 objects=0
+[2026-07-19 19:20:14.024] [rknn] [info] AI cache cam=1 frame=0 pts=5434618651 objects=0
+[2026-07-19 19:20:14.047] [rknn] [info] AI cache cam=1 frame=0 pts=5474618745 objects=0
+[2026-07-19 19:20:14.070] [rknn] [info] AI cache cam=1 frame=0 pts=5474618745 objects=0
+[2026-07-19 19:20:14.093] [rknn] [info] AI cache cam=1 frame=0 pts=5514618838 objects=0
+[2026-07-19 19:20:14.119] [rknn] [info] AI cache cam=1 frame=0 pts=5514618838 objects=0
+[2026-07-19 19:20:14.142] [rknn] [info] AI cache cam=1 frame=0 pts=5554618930 objects=0
+[2026-07-19 19:20:14.164] [rknn] [info] AI cache cam=1 frame=0 pts=5554618930 objects=0
+[2026-07-19 19:20:14.184] [rknn] [info] AI cache cam=1 frame=0 pts=5594619021 objects=0
+[2026-07-19 19:20:14.206] [rknn] [info] AI cache cam=1 frame=0 pts=5634619112 objects=0
+[2026-07-19 19:20:14.228] [rknn] [info] AI cache cam=1 frame=0 pts=5634619112 objects=0
+[2026-07-19 19:20:14.249] [rknn] [info] AI cache cam=1 frame=0 pts=5674619202 objects=0
+[2026-07-19 19:20:14.269] [rknn] [info] AI cache cam=1 frame=0 pts=5674619202 objects=0
+[2026-07-19 19:20:14.295] [rknn] [info] AI cache cam=1 frame=0 pts=5714619291 objects=0
+[2026-07-19 19:20:14.317] [rknn] [info] AI cache cam=1 frame=0 pts=5714619291 objects=0
+[2026-07-19 19:20:14.341] [rknn] [info] AI cache cam=1 frame=0 pts=5754619380 objects=0
+[2026-07-19 19:20:14.369] [rknn] [info] AI cache cam=1 frame=0 pts=5794619468 objects=0
+[2026-07-19 19:20:14.393] [rknn] [info] AI cache cam=1 frame=0 pts=5794619468 objects=0
+[2026-07-19 19:20:14.416] [rknn] [info] AI cache cam=1 frame=0 pts=5834619555 objects=0
+[2026-07-19 19:20:14.440] [rknn] [info] AI cache cam=1 frame=0 pts=5874619641 objects=0
+[2026-07-19 19:20:14.462] [rknn] [info] AI cache cam=1 frame=0 pts=5874619641 objects=0
+[2026-07-19 19:20:14.482] [rknn] [info] AI cache cam=1 frame=0 pts=5914619727 objects=0
+[2026-07-19 19:20:14.503] [rknn] [info] AI cache cam=1 frame=0 pts=5914619727 objects=0
+[2026-07-19 19:20:14.524] [rknn] [info] AI cache cam=1 frame=0 pts=5914619727 objects=0
+[2026-07-19 19:20:14.546] [rknn] [info] AI cache cam=1 frame=0 pts=5954619812 objects=0
+[2026-07-19 19:20:14.568] [rknn] [info] AI cache cam=1 frame=0 pts=5994619896 objects=0
+[2026-07-19 19:20:14.589] [rknn] [info] AI cache cam=1 frame=0 pts=5994619896 objects=0
+[2026-07-19 19:20:14.609] [rknn] [info] AI cache cam=1 frame=0 pts=6034619980 objects=0
+[2026-07-19 19:20:14.630] [rknn] [info] AI cache cam=1 frame=0 pts=6034619980 objects=0
+[2026-07-19 19:20:14.652] [rknn] [info] AI cache cam=1 frame=0 pts=6074620063 objects=0
+[2026-07-19 19:20:14.674] [rknn] [info] AI cache cam=1 frame=0 pts=6074620063 objects=0
+[2026-07-19 19:20:14.696] [rknn] [info] AI cache cam=1 frame=0 pts=6114620145 objects=0
+[2026-07-19 19:20:14.720] [rknn] [info] AI cache cam=1 frame=0 pts=6114620145 objects=0
+[2026-07-19 19:20:14.739] [rknn] [info] AI cache cam=1 frame=0 pts=6154620227 objects=0
+[2026-07-19 19:20:14.761] [rknn] [info] AI cache cam=1 frame=0 pts=6154620227 objects=0
+[2026-07-19 19:20:14.783] [rknn] [info] AI cache cam=1 frame=0 pts=6154620227 objects=0
+[2026-07-19 19:20:14.806] [rknn] [info] AI cache cam=1 frame=0 pts=6154620227 objects=0
+[2026-07-19 19:20:14.828] [rknn] [info] AI cache cam=1 frame=0 pts=6194620308 objects=0
+[2026-07-19 19:20:14.852] [rknn] [info] AI cache cam=1 frame=0 pts=6234620388 objects=0
+[2026-07-19 19:20:14.873] [rknn] [info] AI cache cam=1 frame=0 pts=6274620468 objects=0
+[2026-07-19 19:20:14.895] [rknn] [info] AI cache cam=1 frame=0 pts=6274620468 objects=0
+[2026-07-19 19:20:14.917] [rknn] [info] AI cache cam=1 frame=0 pts=6314620547 objects=0
+[2026-07-19 19:31:12.832] [rknn] [info] logger init success
+[2026-07-19 19:31:12.832] [rknn] [info] program start
+[2026-07-19 19:31:12.834] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 19:31:12.837] [rknn] [info] === 程序启动 ===
+[2026-07-19 19:31:12.926] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 19:31:12.967] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 19:31:12.967] [rknn] [info] TCP服务已后台启动
+[2026-07-19 19:31:12.967] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 19:31:12.968] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 19:31:12.968] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 19:31:12.968] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 19:31:12.968] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 19:31:12.968] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 19:31:12.982] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 19:31:13.035] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:31:13.035] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:31:13.035] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:31:13.036] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:31:13.036] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 19:31:13.383] [rknn] [info] AI cache cam=1 frame=0 pts=193088506 objects=0
+[2026-07-19 19:31:13.429] [rknn] [info] AI cache cam=1 frame=1 pts=233088506 objects=0
+[2026-07-19 19:31:13.451] [rknn] [info] AI cache cam=1 frame=2 pts=273085536 objects=0
+[2026-07-19 19:31:13.479] [rknn] [info] AI cache cam=1 frame=3 pts=313078863 objects=0
+[2026-07-19 19:31:13.507] [rknn] [info] AI cache cam=1 frame=4 pts=353063510 objects=0
+[2026-07-19 19:31:13.547] [rknn] [info] AI cache cam=1 frame=5 pts=393039674 objects=0
+[2026-07-19 19:31:13.589] [rknn] [info] AI cache cam=1 frame=6 pts=433005693 objects=0
+[2026-07-19 19:31:13.634] [rknn] [info] AI cache cam=1 frame=7 pts=472960106 objects=0
+[2026-07-19 19:31:13.662] [rknn] [info] AI cache cam=1 frame=8 pts=512901731 objects=0
+[2026-07-19 19:31:13.709] [rknn] [info] AI cache cam=1 frame=9 pts=552829742 objects=0
+[2026-07-19 19:31:13.748] [rknn] [info] AI cache cam=1 frame=10 pts=592743746 objects=0
+[2026-07-19 19:31:13.787] [rknn] [info] AI cache cam=1 frame=11 pts=632643853 objects=0
+[2026-07-19 19:31:13.819] [rknn] [info] AI cache cam=1 frame=12 pts=672530725 objects=0
+[2026-07-19 19:31:13.868] [rknn] [info] AI cache cam=1 frame=13 pts=712405605 objects=0
+[2026-07-19 19:31:13.908] [rknn] [info] AI cache cam=1 frame=14 pts=752270304 objects=0
+[2026-07-19 19:31:13.947] [rknn] [info] AI cache cam=1 frame=15 pts=792127161 objects=0
+[2026-07-19 19:31:13.990] [rknn] [info] AI cache cam=1 frame=16 pts=831978954 objects=0
+[2026-07-19 19:31:14.051] [rknn] [info] AI cache cam=1 frame=17 pts=871828775 objects=0
+[2026-07-19 19:31:14.051] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 19:31:14.051] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 19:31:14.052] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784460674052
+[2026-07-19 19:31:14.052] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 19:31:14.052] [rknn] [info] [Recorder] trigger event time=1784460674052
+[2026-07-19 19:31:14.052] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 19:31:14.099] [rknn] [info] AI cache cam=1 frame=18 pts=911679871 objects=0
+[2026-07-19 19:31:14.143] [rknn] [info] AI cache cam=1 frame=19 pts=951535465 objects=0
+[2026-07-19 19:31:14.178] [rknn] [info] AI cache cam=1 frame=20 pts=991398563 objects=0
+[2026-07-19 19:31:14.217] [rknn] [info] AI cache cam=1 frame=21 pts=1031271778 objects=0
+[2026-07-19 19:31:14.251] [rknn] [info] AI cache cam=1 frame=22 pts=1071157176 objects=0
+[2026-07-19 19:31:14.288] [rknn] [info] AI cache cam=1 frame=23 pts=1111056169 objects=0
+[2026-07-19 19:31:14.323] [rknn] [info] AI cache cam=1 frame=24 pts=1150969459 objects=0
+[2026-07-19 19:31:14.370] [rknn] [info] AI cache cam=1 frame=25 pts=1190897050 objects=0
+[2026-07-19 19:31:14.417] [rknn] [info] AI cache cam=1 frame=26 pts=1230838312 objects=0
+[2026-07-19 19:31:14.464] [rknn] [info] AI cache cam=1 frame=27 pts=1270792097 objects=0
+[2026-07-19 19:31:14.505] [rknn] [info] AI cache cam=1 frame=28 pts=1310756888 objects=0
+[2026-07-19 19:31:14.542] [rknn] [info] AI cache cam=1 frame=29 pts=1338971895 objects=0
+[2026-07-19 19:31:14.581] [rknn] [info] AI cache cam=1 frame=30 pts=1370602729 objects=0
+[2026-07-19 19:31:14.624] [rknn] [info] AI cache cam=1 frame=31 pts=1404883426 objects=0
+[2026-07-19 19:31:14.659] [rknn] [info] AI cache cam=1 frame=32 pts=1441131811 objects=0
+[2026-07-19 19:31:14.701] [rknn] [info] AI cache cam=1 frame=33 pts=1478776260 objects=0
+[2026-07-19 19:31:14.736] [rknn] [info] AI cache cam=1 frame=34 pts=1517364992 objects=0
+[2026-07-19 19:31:14.784] [rknn] [info] AI cache cam=1 frame=35 pts=1556561009 objects=0
+[2026-07-19 19:31:14.830] [rknn] [info] AI cache cam=1 frame=36 pts=1596127212 objects=0
+[2026-07-19 19:31:14.866] [rknn] [info] AI cache cam=1 frame=37 pts=1635906528 objects=0
+[2026-07-19 19:31:14.906] [rknn] [info] AI cache cam=1 frame=38 pts=1675801221 objects=0
+[2026-07-19 19:31:14.952] [rknn] [info] AI cache cam=1 frame=39 pts=1715754367 objects=0
+[2026-07-19 19:31:14.991] [rknn] [info] AI cache cam=1 frame=40 pts=1755735066 objects=0
+[2026-07-19 19:31:15.028] [rknn] [info] AI cache cam=1 frame=41 pts=1795727766 objects=0
+[2026-07-19 19:31:15.073] [rknn] [info] AI cache cam=1 frame=42 pts=1835725257 objects=0
+[2026-07-19 19:31:15.109] [rknn] [info] AI cache cam=1 frame=43 pts=1875724482 objects=0
+[2026-07-19 19:31:15.146] [rknn] [info] AI cache cam=1 frame=44 pts=1915724271 objects=0
+[2026-07-19 19:31:15.184] [rknn] [info] AI cache cam=1 frame=45 pts=1955724221 objects=0
+[2026-07-19 19:31:15.221] [rknn] [info] AI cache cam=1 frame=46 pts=1995724211 objects=0
+[2026-07-19 19:31:15.261] [rknn] [info] AI cache cam=1 frame=47 pts=2035724210 objects=0
+[2026-07-19 19:31:15.299] [rknn] [info] AI cache cam=1 frame=48 pts=2075724210 objects=0
+[2026-07-19 19:31:15.344] [rknn] [info] AI cache cam=1 frame=49 pts=2115724210 objects=0
+[2026-07-19 19:31:15.382] [rknn] [info] AI cache cam=1 frame=50 pts=2155724209 objects=0
+[2026-07-19 19:31:15.417] [rknn] [info] AI cache cam=1 frame=51 pts=2195724209 objects=0
+[2026-07-19 19:31:15.459] [rknn] [info] AI cache cam=1 frame=52 pts=2235724209 objects=0
+[2026-07-19 19:31:15.482] [rknn] [info] AI cache cam=1 frame=53 pts=2275724209 objects=0
+[2026-07-19 19:31:15.504] [rknn] [info] AI cache cam=1 frame=54 pts=2315724209 objects=0
+[2026-07-19 19:31:15.543] [rknn] [info] AI cache cam=1 frame=55 pts=2355724209 objects=0
+[2026-07-19 19:31:15.577] [rknn] [info] AI cache cam=1 frame=56 pts=2395724209 objects=0
+[2026-07-19 19:31:15.625] [rknn] [info] AI cache cam=1 frame=57 pts=2435724209 objects=0
+[2026-07-19 19:31:15.663] [rknn] [info] AI cache cam=1 frame=58 pts=2475724209 objects=0
+[2026-07-19 19:31:15.711] [rknn] [info] AI cache cam=1 frame=59 pts=2515724209 objects=0
+[2026-07-19 19:31:15.741] [rknn] [info] AI cache cam=1 frame=60 pts=2555724209 objects=0
+[2026-07-19 19:31:15.784] [rknn] [info] AI cache cam=1 frame=61 pts=2595724209 objects=0
+[2026-07-19 19:31:15.819] [rknn] [info] AI cache cam=1 frame=62 pts=2635724209 objects=0
+[2026-07-19 19:31:15.861] [rknn] [info] AI cache cam=1 frame=63 pts=2675724209 objects=0
+[2026-07-19 19:31:15.903] [rknn] [info] AI cache cam=1 frame=64 pts=2715724209 objects=0
+[2026-07-19 19:31:15.960] [rknn] [info] AI cache cam=1 frame=65 pts=2755724209 objects=0
+[2026-07-19 19:31:15.990] [rknn] [info] AI cache cam=1 frame=66 pts=2795724209 objects=0
+[2026-07-19 19:31:16.037] [rknn] [info] AI cache cam=1 frame=67 pts=2835724209 objects=0
+[2026-07-19 19:31:16.074] [rknn] [info] AI cache cam=1 frame=68 pts=2875724209 objects=0
+[2026-07-19 19:31:16.121] [rknn] [info] AI cache cam=1 frame=69 pts=2915724209 objects=0
+[2026-07-19 19:31:16.162] [rknn] [info] AI cache cam=1 frame=70 pts=2955724209 objects=0
+[2026-07-19 19:31:16.205] [rknn] [info] AI cache cam=1 frame=71 pts=2995724209 objects=0
+[2026-07-19 19:31:16.247] [rknn] [info] AI cache cam=1 frame=72 pts=3035724209 objects=0
+[2026-07-19 19:31:16.295] [rknn] [info] AI cache cam=1 frame=73 pts=3075724209 objects=0
+[2026-07-19 19:31:16.345] [rknn] [info] AI cache cam=1 frame=74 pts=3115724209 objects=0
+[2026-07-19 19:31:16.384] [rknn] [info] AI cache cam=1 frame=75 pts=3155724209 objects=0
+[2026-07-19 19:31:16.421] [rknn] [info] AI cache cam=1 frame=76 pts=3195724209 objects=0
+[2026-07-19 19:31:16.460] [rknn] [info] AI cache cam=1 frame=77 pts=3235724209 objects=0
+[2026-07-19 19:31:16.504] [rknn] [info] AI cache cam=1 frame=78 pts=3275724209 objects=0
+[2026-07-19 19:31:16.554] [rknn] [info] AI cache cam=1 frame=79 pts=3315724209 objects=0
+[2026-07-19 19:31:16.599] [rknn] [info] AI cache cam=1 frame=80 pts=3356005415 objects=0
+[2026-07-19 19:31:16.649] [rknn] [info] AI cache cam=1 frame=81 pts=3396284371 objects=0
+[2026-07-19 19:31:16.690] [rknn] [info] AI cache cam=1 frame=82 pts=3436561095 objects=0
+[2026-07-19 19:31:16.740] [rknn] [info] AI cache cam=1 frame=83 pts=3476835605 objects=0
+[2026-07-19 19:31:16.774] [rknn] [info] AI cache cam=1 frame=84 pts=3517107332 objects=0
+[2026-07-19 19:31:16.809] [rknn] [info] AI cache cam=1 frame=85 pts=3557376885 objects=0
+[2026-07-19 19:31:16.854] [rknn] [info] AI cache cam=1 frame=86 pts=3597644282 objects=0
+[2026-07-19 19:31:16.891] [rknn] [info] AI cache cam=1 frame=87 pts=3637909539 objects=0
+[2026-07-19 19:31:16.932] [rknn] [info] AI cache cam=1 frame=88 pts=3678172674 objects=0
+[2026-07-19 19:31:16.956] [rknn] [info] AI cache cam=1 frame=89 pts=3718433704 objects=0
+[2026-07-19 19:31:16.988] [rknn] [info] AI cache cam=1 frame=90 pts=3758692646 objects=0
+[2026-07-19 19:31:17.019] [rknn] [info] AI cache cam=1 frame=91 pts=3798949516 objects=0
+[2026-07-19 19:31:17.053] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 19:31:17.056] [rknn] [info] AI cache cam=1 frame=92 pts=3839204332 objects=0
+[2026-07-19 19:31:17.082] [rknn] [info] AI cache cam=1 frame=93 pts=3879457109 objects=0
+[2026-07-19 19:31:17.119] [rknn] [info] AI cache cam=1 frame=94 pts=3919707864 objects=0
+[2026-07-19 19:31:17.171] [rknn] [info] AI cache cam=1 frame=95 pts=3959956613 objects=0
+[2026-07-19 19:31:17.197] [rknn] [info] AI cache cam=1 frame=96 pts=4000203372 objects=0
+[2026-07-19 19:31:17.234] [rknn] [info] AI cache cam=1 frame=97 pts=4040448157 objects=0
+[2026-07-19 19:31:17.281] [rknn] [info] AI cache cam=1 frame=98 pts=4080690983 objects=0
+[2026-07-19 19:31:17.321] [rknn] [info] AI cache cam=1 frame=99 pts=4120931867 objects=0
+[2026-07-19 19:31:17.354] [rknn] [info] AI cache cam=1 frame=100 pts=4161170824 objects=0
+[2026-07-19 19:31:17.389] [rknn] [info] AI cache cam=1 frame=101 pts=4201407869 objects=0
+[2026-07-19 19:31:17.488] [rknn] [info] AI cache cam=1 frame=102 pts=4241643018 objects=0
+[2026-07-19 19:31:17.746] [rknn] [info] AI cache cam=1 frame=103 pts=4281876285 objects=0
+[2026-07-19 19:31:17.797] [rknn] [info] AI cache cam=1 frame=104 pts=4321838576 objects=0
+[2026-07-19 19:31:17.825] [rknn] [info] AI cache cam=1 frame=105 pts=4361801168 objects=0
+[2026-07-19 19:31:17.848] [rknn] [info] AI cache cam=1 frame=111 pts=4601582923 objects=0
+[2026-07-19 19:31:17.869] [rknn] [info] AI cache cam=1 frame=113 pts=4681512481 objects=0
+[2026-07-19 19:31:17.888] [rknn] [info] AI cache cam=1 frame=114 pts=4721477682 objects=0
+[2026-07-19 19:31:17.947] [rknn] [info] AI cache cam=1 frame=115 pts=4761443161 objects=0
+[2026-07-19 19:31:17.982] [rknn] [info] AI cache cam=1 frame=116 pts=4801408917 objects=0
+[2026-07-19 19:31:18.012] [rknn] [info] AI cache cam=1 frame=117 pts=4841374947 objects=0
+[2026-07-19 19:31:18.100] [rknn] [info] AI cache cam=1 frame=118 pts=4881341248 objects=0
+[2026-07-19 19:31:18.125] [rknn] [info] AI cache cam=1 frame=119 pts=4921307819 objects=0
+[2026-07-19 19:31:18.151] [rknn] [info] AI cache cam=1 frame=120 pts=4961274657 objects=0
+[2026-07-19 19:31:18.187] [rknn] [info] AI cache cam=1 frame=121 pts=5001241761 objects=0
+[2026-07-19 19:31:18.226] [rknn] [info] AI cache cam=1 frame=122 pts=5041209128 objects=0
+[2026-07-19 19:31:18.265] [rknn] [info] AI cache cam=1 frame=123 pts=5081176756 objects=0
+[2026-07-19 19:31:18.306] [rknn] [info] AI cache cam=1 frame=124 pts=5121144643 objects=0
+[2026-07-19 19:31:18.342] [rknn] [info] AI cache cam=1 frame=125 pts=5161112787 objects=0
+[2026-07-19 19:31:18.378] [rknn] [info] AI cache cam=1 frame=126 pts=5201081186 objects=0
+[2026-07-19 19:31:18.437] [rknn] [info] AI cache cam=1 frame=127 pts=5241049837 objects=0
+[2026-07-19 19:31:18.465] [rknn] [info] AI cache cam=1 frame=128 pts=5281018739 objects=0
+[2026-07-19 19:31:18.510] [rknn] [info] AI cache cam=1 frame=129 pts=5320987890 objects=0
+[2026-07-19 19:31:18.549] [rknn] [info] AI cache cam=1 frame=130 pts=5360957288 objects=0
+[2026-07-19 19:31:18.602] [rknn] [info] AI cache cam=1 frame=131 pts=5400926931 objects=0
+[2026-07-19 19:31:18.640] [rknn] [info] AI cache cam=1 frame=132 pts=5440896816 objects=0
+[2026-07-19 19:31:18.677] [rknn] [info] AI cache cam=1 frame=133 pts=5480866942 objects=0
+[2026-07-19 19:31:18.704] [rknn] [info] AI cache cam=1 frame=134 pts=5520837307 objects=0
+[2026-07-19 19:31:18.754] [rknn] [info] AI cache cam=1 frame=135 pts=5560807909 objects=0
+[2026-07-19 19:31:18.790] [rknn] [info] AI cache cam=1 frame=136 pts=5600778747 objects=0
+[2026-07-19 19:31:18.837] [rknn] [info] AI cache cam=1 frame=137 pts=5640749818 objects=0
+[2026-07-19 19:31:18.875] [rknn] [info] AI cache cam=1 frame=138 pts=5680721120 objects=0
+[2026-07-19 19:31:18.925] [rknn] [info] AI cache cam=1 frame=139 pts=5720692652 objects=0
+[2026-07-19 19:31:18.954] [rknn] [info] AI cache cam=1 frame=140 pts=5760664412 objects=0
+[2026-07-19 19:31:19.003] [rknn] [info] AI cache cam=1 frame=141 pts=5800636398 objects=0
+[2026-07-19 19:31:19.041] [rknn] [info] AI cache cam=1 frame=142 pts=5840608608 objects=0
+[2026-07-19 19:31:19.052] [rknn] [warning] [Recorder] no packets
+[2026-07-19 19:31:19.078] [rknn] [info] AI cache cam=1 frame=143 pts=5880581040 objects=0
+[2026-07-19 19:31:19.121] [rknn] [info] AI cache cam=1 frame=144 pts=5920553693 objects=0
+[2026-07-19 19:31:19.160] [rknn] [info] AI cache cam=1 frame=145 pts=5960526564 objects=0
+[2026-07-19 19:31:19.196] [rknn] [info] AI cache cam=1 frame=146 pts=6000499652 objects=0
+[2026-07-19 19:31:19.237] [rknn] [info] AI cache cam=1 frame=147 pts=6040472956 objects=0
+[2026-07-19 19:31:19.273] [rknn] [info] AI cache cam=1 frame=148 pts=6080446473 objects=0
+[2026-07-19 19:31:19.320] [rknn] [info] AI cache cam=1 frame=149 pts=6120420202 objects=0
+[2026-07-19 19:31:19.356] [rknn] [info] AI cache cam=1 frame=150 pts=6160394141 objects=0
+[2026-07-19 19:31:19.404] [rknn] [info] AI cache cam=1 frame=151 pts=6200368289 objects=0
+[2026-07-19 19:31:19.465] [rknn] [info] AI cache cam=1 frame=152 pts=6240342644 objects=0
+[2026-07-19 19:31:19.491] [rknn] [info] AI cache cam=1 frame=153 pts=6280317204 objects=0
+[2026-07-19 19:31:19.518] [rknn] [info] AI cache cam=1 frame=154 pts=6320291967 objects=0
+[2026-07-19 19:31:19.544] [rknn] [info] AI cache cam=1 frame=155 pts=6360339353 objects=0
+[2026-07-19 19:31:19.576] [rknn] [info] AI cache cam=1 frame=156 pts=6400386360 objects=0
+[2026-07-19 19:31:19.645] [rknn] [info] AI cache cam=1 frame=157 pts=6440432991 objects=0
+[2026-07-19 19:31:19.674] [rknn] [info] AI cache cam=1 frame=158 pts=6480479249 objects=0
+[2026-07-19 19:31:19.722] [rknn] [info] AI cache cam=1 frame=159 pts=6520525137 objects=0
+[2026-07-19 19:31:19.757] [rknn] [info] AI cache cam=1 frame=160 pts=6560570658 objects=0
+[2026-07-19 19:31:19.798] [rknn] [info] AI cache cam=1 frame=161 pts=6600615815 objects=0
+[2026-07-19 19:31:19.836] [rknn] [info] AI cache cam=1 frame=162 pts=6640660611 objects=0
+[2026-07-19 19:31:19.881] [rknn] [info] AI cache cam=1 frame=163 pts=6680705048 objects=0
+[2026-07-19 19:31:19.916] [rknn] [info] AI cache cam=1 frame=164 pts=6720749130 objects=0
+[2026-07-19 19:31:19.967] [rknn] [info] AI cache cam=1 frame=165 pts=6760792859 objects=0
+[2026-07-19 19:31:20.006] [rknn] [info] AI cache cam=1 frame=166 pts=6800836238 objects=0
+[2026-07-19 19:31:20.047] [rknn] [info] AI cache cam=1 frame=167 pts=6840879270 objects=0
+[2026-07-19 19:31:20.086] [rknn] [info] AI cache cam=1 frame=168 pts=6880921958 objects=0
+[2026-07-19 19:31:20.142] [rknn] [info] AI cache cam=1 frame=169 pts=6920964305 objects=0
+[2026-07-19 19:31:20.176] [rknn] [info] AI cache cam=1 frame=170 pts=6961006313 objects=0
+[2026-07-19 19:31:20.215] [rknn] [info] AI cache cam=1 frame=171 pts=7001047985 objects=0
+[2026-07-19 19:31:20.244] [rknn] [info] AI cache cam=1 frame=172 pts=7041089323 objects=0
+[2026-07-19 19:31:20.272] [rknn] [info] AI cache cam=1 frame=173 pts=7081130331 objects=0
+[2026-07-19 19:31:20.314] [rknn] [info] AI cache cam=1 frame=174 pts=7121171011 objects=0
+[2026-07-19 19:31:20.339] [rknn] [info] AI cache cam=1 frame=175 pts=7161187076 objects=0
+[2026-07-19 19:31:20.365] [rknn] [info] AI cache cam=1 frame=176 pts=7201171734 objects=0
+[2026-07-19 19:31:20.408] [rknn] [info] AI cache cam=1 frame=177 pts=7241156515 objects=0
+[2026-07-19 19:31:20.433] [rknn] [info] AI cache cam=1 frame=178 pts=7281141418 objects=0
+[2026-07-19 19:31:20.473] [rknn] [info] AI cache cam=1 frame=179 pts=7321126441 objects=0
+[2026-07-19 19:31:20.511] [rknn] [info] AI cache cam=1 frame=180 pts=7361110175 objects=0
+[2026-07-19 19:31:20.548] [rknn] [info] AI cache cam=1 frame=181 pts=7401094039 objects=0
+[2026-07-19 19:31:20.588] [rknn] [info] AI cache cam=1 frame=182 pts=7441078032 objects=0
+[2026-07-19 19:31:20.635] [rknn] [info] AI cache cam=1 frame=183 pts=7481062153 objects=0
+[2026-07-19 19:31:20.687] [rknn] [info] AI cache cam=1 frame=184 pts=7521046401 objects=0
+[2026-07-19 19:31:20.727] [rknn] [info] AI cache cam=1 frame=185 pts=7561030775 objects=0
+[2026-07-19 19:31:20.759] [rknn] [info] AI cache cam=1 frame=186 pts=7601015274 objects=0
+[2026-07-19 19:31:20.802] [rknn] [info] AI cache cam=1 frame=187 pts=7640999897 objects=0
+[2026-07-19 19:31:20.843] [rknn] [info] AI cache cam=1 frame=188 pts=7680984643 objects=0
+[2026-07-19 19:31:20.879] [rknn] [info] AI cache cam=1 frame=189 pts=7720969511 objects=0
+[2026-07-19 19:31:20.911] [rknn] [info] AI cache cam=1 frame=190 pts=7760954500 objects=0
+[2026-07-19 19:31:20.960] [rknn] [info] AI cache cam=1 frame=191 pts=7800939609 objects=0
+[2026-07-19 19:31:20.993] [rknn] [info] AI cache cam=1 frame=192 pts=7840924838 objects=0
+[2026-07-19 19:31:21.048] [rknn] [info] AI cache cam=1 frame=193 pts=7880910185 objects=0
+[2026-07-19 19:31:21.078] [rknn] [info] AI cache cam=1 frame=194 pts=7920875638 objects=0
+[2026-07-19 19:31:21.130] [rknn] [info] AI cache cam=1 frame=195 pts=7960827272 objects=0
+[2026-07-19 19:31:21.167] [rknn] [info] AI cache cam=1 frame=196 pts=8000779293 objects=0

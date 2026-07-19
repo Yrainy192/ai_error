@@ -239,6 +239,33 @@ audioutils/fast:
 	$(MAKE) $(MAKESILENT) -f utils.out/CMakeFiles/audioutils.dir/build.make utils.out/CMakeFiles/audioutils.dir/build
 .PHONY : audioutils/fast
 
+ByteTrack/AIFrameCache.o: ByteTrack/AIFrameCache.cpp.o
+.PHONY : ByteTrack/AIFrameCache.o
+
+# target to build an object file
+ByteTrack/AIFrameCache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o
+.PHONY : ByteTrack/AIFrameCache.cpp.o
+
+ByteTrack/AIFrameCache.i: ByteTrack/AIFrameCache.cpp.i
+.PHONY : ByteTrack/AIFrameCache.i
+
+# target to preprocess a source file
+ByteTrack/AIFrameCache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.i
+.PHONY : ByteTrack/AIFrameCache.cpp.i
+
+ByteTrack/AIFrameCache.s: ByteTrack/AIFrameCache.cpp.s
+.PHONY : ByteTrack/AIFrameCache.s
+
+# target to generate assembly for a file
+ByteTrack/AIFrameCache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.s
+.PHONY : ByteTrack/AIFrameCache.cpp.s
+
 ByteTrack/AlarmLight.o: ByteTrack/AlarmLight.cpp.o
 .PHONY : ByteTrack/AlarmLight.o
 
@@ -400,6 +427,33 @@ ByteTrack/H265RingBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.s
 .PHONY : ByteTrack/H265RingBuffer.cpp.s
+
+ByteTrack/JsonRecorder.o: ByteTrack/JsonRecorder.cpp.o
+.PHONY : ByteTrack/JsonRecorder.o
+
+# target to build an object file
+ByteTrack/JsonRecorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/JsonRecorder.cpp.o
+.PHONY : ByteTrack/JsonRecorder.cpp.o
+
+ByteTrack/JsonRecorder.i: ByteTrack/JsonRecorder.cpp.i
+.PHONY : ByteTrack/JsonRecorder.i
+
+# target to preprocess a source file
+ByteTrack/JsonRecorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/JsonRecorder.cpp.i
+.PHONY : ByteTrack/JsonRecorder.cpp.i
+
+ByteTrack/JsonRecorder.s: ByteTrack/JsonRecorder.cpp.s
+.PHONY : ByteTrack/JsonRecorder.s
+
+# target to generate assembly for a file
+ByteTrack/JsonRecorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/JsonRecorder.cpp.s
+.PHONY : ByteTrack/JsonRecorder.cpp.s
 
 ByteTrack/KalmanFilter.o: ByteTrack/KalmanFilter.cpp.o
 .PHONY : ByteTrack/KalmanFilter.o
@@ -1034,6 +1088,9 @@ help:
 	@echo "... imageutils"
 	@echo "... rknn_yolov8_demo"
 	@echo "... rknn_yolov8_demo_zero_copy"
+	@echo "... ByteTrack/AIFrameCache.o"
+	@echo "... ByteTrack/AIFrameCache.i"
+	@echo "... ByteTrack/AIFrameCache.s"
 	@echo "... ByteTrack/AlarmLight.o"
 	@echo "... ByteTrack/AlarmLight.i"
 	@echo "... ByteTrack/AlarmLight.s"
@@ -1052,6 +1109,9 @@ help:
 	@echo "... ByteTrack/H265RingBuffer.o"
 	@echo "... ByteTrack/H265RingBuffer.i"
 	@echo "... ByteTrack/H265RingBuffer.s"
+	@echo "... ByteTrack/JsonRecorder.o"
+	@echo "... ByteTrack/JsonRecorder.i"
+	@echo "... ByteTrack/JsonRecorder.s"
 	@echo "... ByteTrack/KalmanFilter.o"
 	@echo "... ByteTrack/KalmanFilter.i"
 	@echo "... ByteTrack/KalmanFilter.s"

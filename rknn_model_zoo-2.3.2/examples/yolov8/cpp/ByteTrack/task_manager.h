@@ -2,13 +2,16 @@
 #ifndef TASK_MANAGER_H
 #define TASK_MANAGER_H
 
+#include "AIFrameCache.h"
 #include "AlarmLight.h"
 #include "AudioManager.h"
 #include "H265Recorder.h"
 #include "VideoType.h"
 #include "mysql_client.h"
 #include "voice_manager.h"
+#include <atomic>
 #include <ctime>
+#include <deque>
 #include <fstream>
 #include <functional>
 #include <map>
@@ -16,6 +19,7 @@
 #include <nlohmann/json.hpp>
 #include <set>
 #include <string>
+#include <thread>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
@@ -25,6 +29,20 @@ class SdkManager;
 class H265Recorder;
 
 using json = nlohmann::json;
+
+struct AIEvent {
+    int cam_id;
+
+    int roi_id;
+
+    int track_id;
+
+    uint64_t event_pts;
+
+    uint64_t start_pts;
+
+    uint64_t end_pts;
+};
 
 class Alarm {
 
@@ -116,7 +134,7 @@ class TaskManager {
 
     void setAlarmCallback(AlarmCallback cb);
 
-    void updateEnter(int cam_id, int roi_id, int id);
+    void updateEnter(int cam_id, int roi_id, int id, uint64_t pts);
 
     void updateLogic(int timeout_sec);
 
@@ -141,6 +159,12 @@ class TaskManager {
     void triggerShortAlarm(int slave_id);
     //长报警等待人工解除
     void triggerLongAlarm(int slave_id);
+
+    void setAICache(int cam_id, AIFrameCache *cache);
+
+    void startAIEventWorker();
+
+    void stopAIEventWorker();
 
   private:
     std::mutex mutex;
@@ -170,6 +194,18 @@ class TaskManager {
 
     std::unordered_set<int> long_alarm_active_;
     std::mutex alarm_mutex_;
+
+    // 每个摄像头AI缓存
+    std::vector<AIFrameCache *> ai_caches;
+
+    // 等待处理的AI事件
+    std::deque<AIEvent> pending_ai_events;
+
+    std::mutex ai_event_mutex;
+
+    std::thread ai_event_worker;
+
+    std::atomic<bool> ai_event_running{false};
 };
 
 #endif

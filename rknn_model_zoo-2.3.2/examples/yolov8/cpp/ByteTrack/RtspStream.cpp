@@ -253,7 +253,16 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
     f.data = frame_data;
     f.width = 1920;
     f.height = 1080;
-    f.timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
+    // f.timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
+    // 新增
+
+    f.frame_id = frame_counter.fetch_add(1);
+
+    f.pts = GST_BUFFER_PTS(buffer);
+
+    f.real_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                         std::chrono::system_clock::now().time_since_epoch())
+                         .count();
     {
         std::lock_guard<std::mutex> lock(frame_mutex);
         latest_frame = f;
