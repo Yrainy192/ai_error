@@ -238,19 +238,48 @@ bool AlarmLight::readStatus(uint8_t slave_id, uint16_t &status) {
     return true;
 }
 
+// bool AlarmLight::waitAlarmClear(uint8_t slave_id) {
+//     while (true) {
+//         uint16_t status = 0;
+//         if (!readStatus(slave_id, status)) {
+//             return false;
+//         }
+//         // std::cout << "报警灯 " << (uint16_t)status << " 已处理" << std::endl;
+//         if (status == 0x0000) {
+
+//             std::cout << "报警灯 " << (int)slave_id << " 已处理" << std::endl;
+//             return true;
+//         }
+//         std::cout << "报警灯 " << (int)slave_id << " 报警中" << std::endl;
+//         usleep(500000);
+//     }
+// }
 bool AlarmLight::waitAlarmClear(uint8_t slave_id) {
+    bool alarm_started = false;
+
     while (true) {
         uint16_t status = 0;
-        if (!readStatus(slave_id, status)) {
-            return false;
-        }
-        // std::cout << "报警灯 " << (uint16_t)status << " 已处理" << std::endl;
-        if (status == 0x0000) {
 
+        if (!readStatus(slave_id, status)) {
+            std::cout << "读取报警灯状态失败 slave=" << (int)slave_id << std::endl;
+
+            // 不要认为报警结束
+            usleep(500000);
+            continue;
+        }
+
+        std::cout << "alarm slave=" << (int)slave_id << " status=" << status << std::endl;
+
+        if (status != 0) {
+            alarm_started = true;
+        }
+
+        if (alarm_started && status == 0) {
             std::cout << "报警灯 " << (int)slave_id << " 已处理" << std::endl;
+
             return true;
         }
-        std::cout << "报警灯 " << (int)slave_id << " 报警中" << std::endl;
+
         usleep(500000);
     }
 }

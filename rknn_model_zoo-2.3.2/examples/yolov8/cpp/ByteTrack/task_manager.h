@@ -17,6 +17,7 @@
 #include <set>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 using AlarmCallback = std::function<void(int cam_id, int roi_id, uint64_t event_time, int type)>;
 
@@ -167,9 +168,8 @@ class TaskManager {
 
     AlarmCallback alarm_callback;
 
+    std::unordered_set<int> long_alarm_active_;
     std::mutex alarm_mutex_;
-
-    std::set<int> active_alarm_;
 };
 
 #endif

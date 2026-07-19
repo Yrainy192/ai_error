@@ -3482,3 +3482,825 @@ rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0
 [2026-07-19 16:58:50.014] [rknn] [info] [Recorder cam0] before packets=0
 [2026-07-19 16:58:50.014] [rknn] [info] [Recorder] trigger event time=1784451530014
 [2026-07-19 16:58:50.014] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:23:20.500] [rknn] [info] logger init success
+[2026-07-19 17:23:20.501] [rknn] [info] program start
+[2026-07-19 17:23:20.503] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:23:20.505] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:23:20.575] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:23:20.614] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:23:20.615] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:23:20.615] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:23:20.617] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:23:20.617] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:23:20.617] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:23:20.617] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:23:20.617] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:23:20.630] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:23:20.709] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:23:20.710] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:23:20.710] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:23:20.710] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:23:20.710] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:23:22.010] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:23:22.010] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:23:22.011] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784453002011
+[2026-07-19 17:23:22.011] [rknn] [info] [ShortAlarm] ref_count=1 slave=32
+[2026-07-19 17:23:22.011] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:23:22.011] [rknn] [info] [Recorder] trigger event time=1784453002011
+[2026-07-19 17:23:22.011] [rknn] [info] [ShortAlarm] 开启成功 slave=32
+[2026-07-19 17:23:25.012] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=32
+[2026-07-19 17:23:25.012] [rknn] [info] [ShortAlarm] 关闭 slave=32
+[2026-07-19 17:23:27.012] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:23:30.638] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:23:32.026] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:23:32.027] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:23:32.027] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784453012027
+[2026-07-19 17:23:32.027] [rknn] [info] [ShortAlarm] ref_count=1 slave=1
+[2026-07-19 17:23:32.027] [rknn] [info] [ShortAlarm] 开启成功 slave=1
+[2026-07-19 17:23:32.028] [rknn] [info] [Recorder cam1] before packets=150
+[2026-07-19 17:23:32.028] [rknn] [info] [Recorder] trigger event time=1784453012028
+[2026-07-19 17:23:35.027] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:23:35.027] [rknn] [info] [ShortAlarm] 关闭 slave=1
+[2026-07-19 17:23:37.283] [rknn] [info] [Recorder] TS saved 300 packets -> /home/admin/Videos/cam1/20260719/event/172332027.ts
+[2026-07-19 17:23:37.794] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=3
+[2026-07-19 17:23:37.794] [rknn] [info] [LongAlarm] trigger slave=3
+[2026-07-19 17:23:37.794] [rknn] [info] [LongAlarm] ref_count=1 slave=3
+[2026-07-19 17:23:37.794] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784453017794
+[2026-07-19 17:23:37.795] [rknn] [info] [LongAlarm] 开启成功 slave=3
+[2026-07-19 17:23:37.795] [rknn] [info] [LongAlarm] 等待人工复位 slave=3
+[2026-07-19 17:23:37.795] [rknn] [info] [LongAlarm] ref_count after dec=0 slave=3
+[2026-07-19 17:23:37.795] [rknn] [info] [LongAlarm] 关闭 slave=3
+[2026-07-19 17:23:37.795] [rknn] [info] [AI Error Recorder cam1] before packets=144
+[2026-07-19 17:23:39.656] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=4
+[2026-07-19 17:23:39.656] [rknn] [info] [LongAlarm] trigger slave=2
+[2026-07-19 17:23:39.656] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784453019656
+[2026-07-19 17:23:39.657] [rknn] [info] [AI Error Recorder cam1] before packets=141
+[2026-07-19 17:23:39.658] [rknn] [info] [LongAlarm] ref_count=1 slave=2
+[2026-07-19 17:23:39.658] [rknn] [info] [LongAlarm] 开启成功 slave=2
+[2026-07-19 17:23:39.658] [rknn] [info] [LongAlarm] 等待人工复位 slave=2
+[2026-07-19 17:23:39.659] [rknn] [info] [LongAlarm] ref_count after dec=0 slave=2
+[2026-07-19 17:23:39.659] [rknn] [info] [LongAlarm] 关闭 slave=2
+[2026-07-19 17:23:40.678] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:23:41.178] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=6
+[2026-07-19 17:23:41.179] [rknn] [info] [LongAlarm] trigger slave=3
+[2026-07-19 17:23:41.179] [rknn] [info] [LongAlarm] ref_count=1 slave=3
+[2026-07-19 17:23:41.179] [rknn] [info] [LongAlarm] 开启成功 slave=3
+[2026-07-19 17:23:41.179] [rknn] [info] [LongAlarm] 等待人工复位 slave=3
+[2026-07-19 17:23:41.179] [rknn] [info] [LongAlarm] ref_count after dec=0 slave=3
+[2026-07-19 17:23:41.179] [rknn] [info] [LongAlarm] 关闭 slave=3
+[2026-07-19 17:23:41.179] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784453021179
+[2026-07-19 17:23:41.180] [rknn] [info] [AI Error Recorder cam1] before packets=129
+[2026-07-19 17:23:42.018] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:23:42.018] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:23:42.018] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784453022018
+[2026-07-19 17:23:42.018] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:23:42.018] [rknn] [info] [Recorder] trigger event time=1784453022018
+[2026-07-19 17:23:42.023] [rknn] [info] [ShortAlarm] ref_count=1 slave=32
+[2026-07-19 17:23:42.023] [rknn] [info] [ShortAlarm] 开启成功 slave=32
+[2026-07-19 17:23:42.980] [rknn] [info] [Recorder] TS saved 288 packets -> /home/admin/Videos/cam1/20260719/AI_error/172337794.ts
+[2026-07-19 17:23:44.859] [rknn] [info] [Recorder] TS saved 282 packets -> /home/admin/Videos/cam1/20260719/AI_error/172339656.ts
+[2026-07-19 17:23:45.024] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=32
+[2026-07-19 17:23:45.024] [rknn] [info] [ShortAlarm] 关闭 slave=32
+[2026-07-19 17:23:45.180] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=9
+[2026-07-19 17:23:45.180] [rknn] [info] [LongAlarm] trigger slave=2
+[2026-07-19 17:23:45.180] [rknn] [info] [LongAlarm] ref_count=1 slave=2
+[2026-07-19 17:23:45.180] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784453025180
+[2026-07-19 17:23:45.181] [rknn] [info] [LongAlarm] 开启成功 slave=2
+[2026-07-19 17:23:45.181] [rknn] [info] [LongAlarm] 等待人工复位 slave=2
+[2026-07-19 17:23:45.181] [rknn] [info] [LongAlarm] ref_count after dec=0 slave=2
+[2026-07-19 17:23:45.181] [rknn] [info] [LongAlarm] 关闭 slave=2
+[2026-07-19 17:23:45.181] [rknn] [info] [AI Error Recorder cam1] before packets=129
+[2026-07-19 17:23:45.295] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=9
+[2026-07-19 17:23:45.295] [rknn] [info] [LongAlarm] trigger slave=1
+[2026-07-19 17:23:45.296] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784453025296
+[2026-07-19 17:23:45.296] [rknn] [info] [AI Error Recorder cam1] before packets=132
+[2026-07-19 17:23:45.297] [rknn] [info] [LongAlarm] ref_count=1 slave=1
+[2026-07-19 17:23:45.297] [rknn] [info] [LongAlarm] 开启成功 slave=1
+[2026-07-19 17:23:45.297] [rknn] [info] [LongAlarm] 等待人工复位 slave=1
+[2026-07-19 17:23:45.297] [rknn] [info] [LongAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:23:45.297] [rknn] [info] [LongAlarm] 关闭 slave=1
+[2026-07-19 17:23:46.388] [rknn] [info] [Recorder] TS saved 259 packets -> /home/admin/Videos/cam1/20260719/AI_error/172341179.ts
+[2026-07-19 17:23:47.024] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:23:50.357] [rknn] [info] [Recorder] TS saved 258 packets -> /home/admin/Videos/cam1/20260719/AI_error/172345180.ts
+[2026-07-19 17:23:50.479] [rknn] [info] [Recorder] TS saved 265 packets -> /home/admin/Videos/cam1/20260719/AI_error/172345296.ts
+[2026-07-19 17:23:50.634] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:23:52.013] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:23:52.013] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:23:52.013] [rknn] [info] [Recorder] cam=1 code=YT000000002 trigger event 1784453032013
+[2026-07-19 17:23:52.013] [rknn] [info] [ShortAlarm] ref_count=1 slave=1
+[2026-07-19 17:23:52.014] [rknn] [info] [ShortAlarm] 开启成功 slave=1
+[2026-07-19 17:23:52.014] [rknn] [info] [Recorder cam1] before packets=150
+[2026-07-19 17:23:52.015] [rknn] [info] [Recorder] trigger event time=1784453032015
+[2026-07-19 17:23:55.014] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:23:55.014] [rknn] [info] [ShortAlarm] 关闭 slave=1
+[2026-07-19 17:23:57.235] [rknn] [info] [Recorder] TS saved 301 packets -> /home/admin/Videos/cam1/20260719/event/172352013.ts
+[2026-07-19 17:24:00.630] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:24:02.017] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:24:02.017] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:24:02.017] [rknn] [info] [Recorder] cam=0 code=YT000000003 trigger event 1784453042017
+[2026-07-19 17:24:02.017] [rknn] [info] [ShortAlarm] ref_count=1 slave=32
+[2026-07-19 17:24:02.018] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:24:02.018] [rknn] [info] [Recorder] trigger event time=1784453042018
+[2026-07-19 17:24:02.020] [rknn] [info] [ShortAlarm] 开启成功 slave=32
+[2026-07-19 17:24:05.020] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=32
+[2026-07-19 17:24:05.020] [rknn] [info] [ShortAlarm] 关闭 slave=32
+[2026-07-19 17:24:06.583] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=20
+[2026-07-19 17:24:06.583] [rknn] [info] [LongAlarm] trigger slave=1
+[2026-07-19 17:24:06.583] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784453046583
+[2026-07-19 17:24:06.584] [rknn] [info] [AI Error Recorder cam1] before packets=140
+[2026-07-19 17:24:06.588] [rknn] [info] [LongAlarm] ref_count=1 slave=1
+[2026-07-19 17:24:06.588] [rknn] [info] [LongAlarm] 开启成功 slave=1
+[2026-07-19 17:24:06.588] [rknn] [info] [LongAlarm] 等待人工复位 slave=1
+[2026-07-19 17:24:06.588] [rknn] [info] [LongAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:24:06.589] [rknn] [info] [LongAlarm] 关闭 slave=1
+[2026-07-19 17:24:07.020] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:24:10.634] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:24:11.799] [rknn] [info] [Recorder] TS saved 279 packets -> /home/admin/Videos/cam1/20260719/AI_error/172406583.ts
+[2026-07-19 17:24:12.016] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:24:12.016] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:24:12.017] [rknn] [info] [Recorder] cam=1 code=YT000000003 trigger event 1784453052017
+[2026-07-19 17:24:12.017] [rknn] [info] [ShortAlarm] ref_count=1 slave=1
+[2026-07-19 17:24:12.018] [rknn] [info] [Recorder cam1] before packets=151
+[2026-07-19 17:24:12.018] [rknn] [info] [Recorder] trigger event time=1784453052018
+[2026-07-19 17:24:12.021] [rknn] [info] [ShortAlarm] 开启成功 slave=1
+[2026-07-19 17:24:15.022] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:24:15.022] [rknn] [info] [ShortAlarm] 关闭 slave=1
+[2026-07-19 17:24:17.209] [rknn] [info] [Recorder] TS saved 277 packets -> /home/admin/Videos/cam1/20260719/event/172412017.ts
+[2026-07-19 17:24:20.634] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:24:22.016] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 17:24:22.017] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:24:22.017] [rknn] [info] [Recorder] cam=0 code=YT000000004 trigger event 1784453062017
+[2026-07-19 17:24:22.017] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:24:22.017] [rknn] [info] [Recorder] trigger event time=1784453062017
+[2026-07-19 17:24:22.017] [rknn] [info] [ShortAlarm] ref_count=1 slave=32
+[2026-07-19 17:24:22.017] [rknn] [info] [ShortAlarm] 开启成功 slave=32
+[2026-07-19 17:24:25.017] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=32
+[2026-07-19 17:24:25.018] [rknn] [info] [ShortAlarm] 关闭 slave=32
+[2026-07-19 17:24:27.018] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:24:30.634] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:24:32.020] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 17:24:32.020] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:24:32.021] [rknn] [info] [Recorder] cam=1 code=YT000000004 trigger event 1784453072021
+[2026-07-19 17:24:32.022] [rknn] [info] [Recorder cam1] before packets=126
+[2026-07-19 17:24:32.023] [rknn] [info] [Recorder] trigger event time=1784453072023
+[2026-07-19 17:24:32.024] [rknn] [info] [ShortAlarm] ref_count=1 slave=1
+[2026-07-19 17:24:32.024] [rknn] [info] [ShortAlarm] 开启成功 slave=1
+[2026-07-19 17:24:35.025] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:24:35.025] [rknn] [info] [ShortAlarm] 关闭 slave=1
+[2026-07-19 17:24:37.232] [rknn] [info] [Recorder] TS saved 251 packets -> /home/admin/Videos/cam1/20260719/event/172432021.ts
+[2026-07-19 17:24:40.630] [rknn] [info] [TaskManager] setTask: code=YT000000005, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:24:42.010] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000005 roi=1
+[2026-07-19 17:24:42.010] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:24:42.010] [rknn] [info] [Recorder] cam=0 code=YT000000005 trigger event 1784453082010
+[2026-07-19 17:24:42.010] [rknn] [info] [ShortAlarm] ref_count=1 slave=32
+[2026-07-19 17:24:42.010] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:24:42.011] [rknn] [info] [Recorder] trigger event time=1784453082011
+[2026-07-19 17:24:42.011] [rknn] [info] [ShortAlarm] 开启成功 slave=32
+[2026-07-19 17:24:45.011] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=32
+[2026-07-19 17:24:45.011] [rknn] [info] [ShortAlarm] 关闭 slave=32
+[2026-07-19 17:24:47.011] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:24:50.646] [rknn] [info] [TaskManager] setTask: code=YT000000005, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:24:52.011] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000005 roi=1
+[2026-07-19 17:24:52.011] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:24:52.011] [rknn] [info] [Recorder] cam=1 code=YT000000005 trigger event 1784453092011
+[2026-07-19 17:24:52.011] [rknn] [info] [ShortAlarm] ref_count=1 slave=1
+[2026-07-19 17:24:52.011] [rknn] [info] [ShortAlarm] 开启成功 slave=1
+[2026-07-19 17:24:52.012] [rknn] [info] [Recorder cam1] before packets=150
+[2026-07-19 17:24:52.013] [rknn] [info] [Recorder] trigger event time=1784453092013
+[2026-07-19 17:24:55.011] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=1
+[2026-07-19 17:24:55.012] [rknn] [info] [ShortAlarm] 关闭 slave=1
+[2026-07-19 17:24:57.217] [rknn] [info] [Recorder] TS saved 300 packets -> /home/admin/Videos/cam1/20260719/event/172452011.ts
+[2026-07-19 17:25:00.630] [rknn] [info] [TaskManager] setTask: code=YT000000006, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:25:02.007] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000006 roi=1
+[2026-07-19 17:25:02.007] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:25:02.007] [rknn] [info] [Recorder] cam=0 code=YT000000006 trigger event 1784453102007
+[2026-07-19 17:25:02.007] [rknn] [info] [ShortAlarm] ref_count=1 slave=32
+[2026-07-19 17:25:02.007] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:25:02.007] [rknn] [info] [Recorder] trigger event time=1784453102007
+[2026-07-19 17:25:02.008] [rknn] [info] [ShortAlarm] 开启成功 slave=32
+[2026-07-19 17:25:05.008] [rknn] [info] [ShortAlarm] ref_count after dec=0 slave=32
+[2026-07-19 17:25:05.008] [rknn] [info] [ShortAlarm] 关闭 slave=32
+[2026-07-19 17:25:07.009] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:30:09.878] [rknn] [info] logger init success
+[2026-07-19 17:30:09.878] [rknn] [info] program start
+[2026-07-19 17:30:09.880] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:30:09.882] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:30:09.962] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:30:10.002] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:30:10.003] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:30:10.003] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:30:10.004] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:30:10.004] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:30:10.004] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:30:10.004] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:30:10.004] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:30:10.029] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:30:10.058] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:30:10.058] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:30:10.058] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:30:10.059] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:30:10.059] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:30:12.010] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:30:12.010] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:30:12.010] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784453412010
+[2026-07-19 17:30:12.010] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:30:12.010] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=32
+[2026-07-19 17:30:12.010] [rknn] [info] [ShortAlarm] 开灯 slave=32
+[2026-07-19 17:30:12.010] [rknn] [info] [Recorder] trigger event time=1784453412010
+[2026-07-19 17:30:15.011] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=32
+[2026-07-19 17:30:15.011] [rknn] [info] [ShortAlarm] 关灯 slave=32
+[2026-07-19 17:30:17.011] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:30:20.018] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:30:22.025] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:30:22.025] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:30:22.025] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784453422025
+[2026-07-19 17:30:22.026] [rknn] [info] [Recorder cam1] before packets=143
+[2026-07-19 17:30:22.027] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=1
+[2026-07-19 17:30:22.027] [rknn] [info] [ShortAlarm] 开灯 slave=1
+[2026-07-19 17:30:22.027] [rknn] [info] [Recorder] trigger event time=1784453422027
+[2026-07-19 17:30:25.027] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=1
+[2026-07-19 17:30:25.027] [rknn] [info] [ShortAlarm] 关灯 slave=1
+[2026-07-19 17:30:27.234] [rknn] [info] [Recorder] TS saved 285 packets -> /home/admin/Videos/cam1/20260719/event/173022025.ts
+[2026-07-19 17:30:30.018] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:30:31.674] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=1
+[2026-07-19 17:30:31.674] [rknn] [info] [LongAlarm] trigger slave=1
+[2026-07-19 17:30:31.674] [rknn] [info] [LongAlarm] 启动, has_short=false, slave=1
+[2026-07-19 17:30:31.675] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784453431675
+[2026-07-19 17:30:31.675] [rknn] [info] [LongAlarm] 开灯 slave=1
+[2026-07-19 17:30:31.675] [rknn] [info] [LongAlarm] 等待人工复位 slave=1
+[2026-07-19 17:30:31.675] [rknn] [info] [LongAlarm] 结束, has_short=false, slave=1
+[2026-07-19 17:30:31.675] [rknn] [info] [LongAlarm] 关灯 slave=1
+[2026-07-19 17:30:31.675] [rknn] [info] [AI Error Recorder cam1] before packets=134
+[2026-07-19 17:30:32.017] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:30:32.017] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:30:32.018] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784453432018
+[2026-07-19 17:30:32.018] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=32
+[2026-07-19 17:30:32.018] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:30:32.018] [rknn] [info] [ShortAlarm] 开灯 slave=32
+[2026-07-19 17:30:32.018] [rknn] [info] [Recorder] trigger event time=1784453432018
+[2026-07-19 17:30:35.018] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=32
+[2026-07-19 17:30:35.018] [rknn] [info] [ShortAlarm] 关灯 slave=32
+[2026-07-19 17:30:36.906] [rknn] [info] [Recorder] TS saved 268 packets -> /home/admin/Videos/cam1/20260719/AI_error/173031675.ts
+[2026-07-19 17:30:37.022] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:30:40.018] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:30:42.019] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:30:42.019] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:30:42.019] [rknn] [info] [Recorder] cam=1 code=YT000000002 trigger event 1784453442019
+[2026-07-19 17:30:42.019] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=1
+[2026-07-19 17:30:42.019] [rknn] [info] [ShortAlarm] 开灯 slave=1
+[2026-07-19 17:30:42.020] [rknn] [info] [Recorder cam1] before packets=142
+[2026-07-19 17:30:42.021] [rknn] [info] [Recorder] trigger event time=1784453442021
+[2026-07-19 17:30:45.019] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=1
+[2026-07-19 17:30:45.020] [rknn] [info] [ShortAlarm] 关灯 slave=1
+[2026-07-19 17:30:47.194] [rknn] [info] [Recorder] TS saved 284 packets -> /home/admin/Videos/cam1/20260719/event/173042019.ts
+[2026-07-19 17:30:50.018] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:30:52.009] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:30:52.009] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:30:52.009] [rknn] [info] [Recorder] cam=0 code=YT000000003 trigger event 1784453452009
+[2026-07-19 17:30:52.009] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=32
+[2026-07-19 17:30:52.009] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:30:52.009] [rknn] [info] [Recorder] trigger event time=1784453452009
+[2026-07-19 17:30:52.009] [rknn] [info] [ShortAlarm] 开灯 slave=32
+[2026-07-19 17:30:55.009] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=32
+[2026-07-19 17:30:55.009] [rknn] [info] [ShortAlarm] 关灯 slave=32
+[2026-07-19 17:30:57.009] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:31:00.022] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:31:02.011] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:31:02.011] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:31:02.011] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=1
+[2026-07-19 17:31:02.011] [rknn] [info] [Recorder] cam=1 code=YT000000003 trigger event 1784453462011
+[2026-07-19 17:31:02.011] [rknn] [info] [ShortAlarm] 开灯 slave=1
+[2026-07-19 17:31:02.012] [rknn] [info] [Recorder cam1] before packets=142
+[2026-07-19 17:31:02.013] [rknn] [info] [Recorder] trigger event time=1784453462013
+[2026-07-19 17:31:05.011] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=1
+[2026-07-19 17:31:05.012] [rknn] [info] [ShortAlarm] 关灯 slave=1
+[2026-07-19 17:31:07.182] [rknn] [info] [Recorder] TS saved 284 packets -> /home/admin/Videos/cam1/20260719/event/173102011.ts
+[2026-07-19 17:31:10.018] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:31:12.004] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 17:31:12.004] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:31:12.005] [rknn] [info] [Recorder] cam=0 code=YT000000004 trigger event 1784453472005
+[2026-07-19 17:31:12.005] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:31:12.005] [rknn] [info] [Recorder] trigger event time=1784453472005
+[2026-07-19 17:31:12.005] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=32
+[2026-07-19 17:31:12.006] [rknn] [info] [ShortAlarm] 开灯 slave=32
+[2026-07-19 17:31:12.254] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-07-19 17:31:12.254] [rknn] [info] [LongAlarm] trigger slave=1
+[2026-07-19 17:31:12.255] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784453472255
+[2026-07-19 17:31:12.255] [rknn] [info] [LongAlarm] 启动, has_short=false, slave=1
+[2026-07-19 17:31:12.256] [rknn] [info] [LongAlarm] 开灯 slave=1
+[2026-07-19 17:31:12.256] [rknn] [info] [LongAlarm] 等待人工复位 slave=1
+[2026-07-19 17:31:12.256] [rknn] [info] [LongAlarm] 结束, has_short=false, slave=1
+[2026-07-19 17:31:12.256] [rknn] [info] [LongAlarm] 关灯 slave=1
+[2026-07-19 17:31:12.256] [rknn] [info] [AI Error Recorder cam1] before packets=148
+[2026-07-19 17:31:12.617] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=2
+[2026-07-19 17:31:12.617] [rknn] [info] [LongAlarm] trigger slave=2
+[2026-07-19 17:31:12.617] [rknn] [info] [LongAlarm] 启动, has_short=false, slave=2
+[2026-07-19 17:31:12.617] [rknn] [info] [LongAlarm] 开灯 slave=2
+[2026-07-19 17:31:12.617] [rknn] [info] [LongAlarm] 等待人工复位 slave=2
+[2026-07-19 17:31:12.617] [rknn] [info] [LongAlarm] 结束, has_short=false, slave=2
+[2026-07-19 17:31:12.618] [rknn] [info] [LongAlarm] 关灯 slave=2
+[2026-07-19 17:31:12.617] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784453472617
+[2026-07-19 17:31:12.619] [rknn] [info] [AI Error Recorder cam1] before packets=132
+[2026-07-19 17:31:15.006] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=32
+[2026-07-19 17:31:15.006] [rknn] [info] [ShortAlarm] 关灯 slave=32
+[2026-07-19 17:31:17.005] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:31:17.482] [rknn] [info] [Recorder] TS saved 297 packets -> /home/admin/Videos/cam1/20260719/AI_error/173112255.ts
+[2026-07-19 17:31:17.805] [rknn] [info] [Recorder] TS saved 264 packets -> /home/admin/Videos/cam1/20260719/AI_error/173112617.ts
+[2026-07-19 17:31:20.018] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:31:22.013] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 17:31:22.013] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:31:22.013] [rknn] [info] [Recorder] cam=1 code=YT000000004 trigger event 1784453482013
+[2026-07-19 17:31:22.014] [rknn] [info] [ShortAlarm] short_count=1, has_long=false, slave=1
+[2026-07-19 17:31:22.014] [rknn] [info] [ShortAlarm] 开灯 slave=1
+[2026-07-19 17:31:22.014] [rknn] [info] [Recorder cam1] before packets=142
+[2026-07-19 17:31:22.015] [rknn] [info] [Recorder] trigger event time=1784453482015
+[2026-07-19 17:31:25.014] [rknn] [info] [ShortAlarm] short_count after dec=0, has_long=false, slave=1
+[2026-07-19 17:31:25.014] [rknn] [info] [ShortAlarm] 关灯 slave=1
+[2026-07-19 17:31:27.346] [rknn] [info] [Recorder] TS saved 284 packets -> /home/admin/Videos/cam1/20260719/event/173122013.ts
+[2026-07-19 17:37:58.516] [rknn] [info] logger init success
+[2026-07-19 17:37:58.517] [rknn] [info] program start
+[2026-07-19 17:37:58.519] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:37:58.522] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:37:58.611] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:37:58.650] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:37:58.651] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:37:58.651] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:37:58.652] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:37:58.652] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:37:58.652] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:37:58.652] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:37:58.652] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:37:58.667] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:37:58.716] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:37:58.716] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:37:58.716] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:37:58.716] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:37:58.717] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:38:00.021] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:38:00.021] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:38:00.022] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784453880022
+[2026-07-19 17:38:00.022] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:38:00.022] [rknn] [info] [Recorder] trigger event time=1784453880022
+[2026-07-19 17:38:00.022] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:38:03.022] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:38:05.022] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:38:08.670] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:38:10.023] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:38:10.024] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:38:10.024] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784453890024
+[2026-07-19 17:38:10.024] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 17:38:10.024] [rknn] [info] [Recorder cam1] before packets=150
+[2026-07-19 17:38:10.026] [rknn] [info] [Recorder] trigger event time=1784453890026
+[2026-07-19 17:38:13.025] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:38:15.247] [rknn] [info] [Recorder] TS saved 300 packets -> /home/admin/Videos/cam1/20260719/event/173810024.ts
+[2026-07-19 17:38:18.666] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:38:18.788] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=1
+[2026-07-19 17:38:18.788] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784453898788
+[2026-07-19 17:38:18.789] [rknn] [info] [AI Error Recorder cam1] before packets=144
+[2026-07-19 17:38:18.792] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 17:38:20.017] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:38:20.017] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:38:20.017] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784453900017
+[2026-07-19 17:38:20.017] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:38:20.017] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:38:20.017] [rknn] [info] [Recorder] trigger event time=1784453900017
+[2026-07-19 17:38:23.017] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:38:23.984] [rknn] [info] [Recorder] TS saved 289 packets -> /home/admin/Videos/cam1/20260719/AI_error/173818788.ts
+[2026-07-19 17:38:25.017] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:38:28.666] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:38:30.012] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:38:30.012] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:38:30.012] [rknn] [info] [Recorder] cam=1 code=YT000000002 trigger event 1784453910012
+[2026-07-19 17:38:30.013] [rknn] [info] [Recorder cam1] before packets=150
+[2026-07-19 17:38:30.014] [rknn] [info] [Recorder] trigger event time=1784453910014
+[2026-07-19 17:38:30.015] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 17:38:33.015] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:38:35.198] [rknn] [info] [Recorder] TS saved 300 packets -> /home/admin/Videos/cam1/20260719/event/173830012.ts
+[2026-07-19 17:38:38.666] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:38:40.019] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:38:40.019] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:38:40.019] [rknn] [info] [Recorder] cam=0 code=YT000000003 trigger event 1784453920019
+[2026-07-19 17:38:40.020] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:38:40.020] [rknn] [info] [Recorder] trigger event time=1784453920020
+[2026-07-19 17:38:40.020] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:38:43.020] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:38:45.020] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:38:48.670] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:38:50.012] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:38:50.012] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:38:50.012] [rknn] [info] [Recorder] cam=1 code=YT000000003 trigger event 1784453930012
+[2026-07-19 17:38:50.012] [rknn] [info] [Recorder cam1] before packets=150
+[2026-07-19 17:38:50.013] [rknn] [info] [Recorder] trigger event time=1784453930013
+[2026-07-19 17:38:50.014] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 17:38:53.014] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:45:40.030] [rknn] [info] logger init success
+[2026-07-19 17:45:40.031] [rknn] [info] program start
+[2026-07-19 17:45:40.033] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:45:40.034] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:45:40.094] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:45:40.130] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:45:40.131] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:45:40.131] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:45:40.132] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:45:40.132] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:45:40.132] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:45:40.132] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:45:40.132] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:45:40.142] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:45:40.202] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:45:40.203] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:45:40.203] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:45:40.203] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:45:40.203] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:45:42.008] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:45:42.008] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784454342008
+[2026-07-19 17:45:42.009] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:45:42.009] [rknn] [info] [Recorder] trigger event time=1784454342009
+[2026-07-19 17:45:45.009] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:45:45.067] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-07-19 17:45:45.067] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784454345067
+[2026-07-19 17:45:45.067] [rknn] [warning] [RingBuffer] no keyframe before 1784454340067
+[2026-07-19 17:45:45.067] [rknn] [info] [AI Error Recorder cam1] before packets=114
+[2026-07-19 17:45:45.069] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 17:45:45.113] [rknn] [info] 长报警结束 slave=1
+[2026-07-19 17:45:47.009] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:45:50.146] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:45:50.251] [rknn] [info] [Recorder] TS saved 253 packets -> /home/admin/Videos/cam1/20260719/AI_error/174545067.ts
+[2026-07-19 17:45:52.017] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:45:52.017] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784454352017
+[2026-07-19 17:45:52.019] [rknn] [info] [Recorder cam1] before packets=138
+[2026-07-19 17:45:52.019] [rknn] [info] [Recorder] trigger event time=1784454352019
+[2026-07-19 17:45:55.018] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:45:57.205] [rknn] [info] [Recorder] TS saved 276 packets -> /home/admin/Videos/cam1/20260719/event/174552017.ts
+[2026-07-19 17:46:00.146] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:46:02.010] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:46:02.011] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784454362011
+[2026-07-19 17:46:02.011] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:46:02.011] [rknn] [info] [Recorder] trigger event time=1784454362011
+[2026-07-19 17:46:05.012] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:46:07.014] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:46:10.174] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:46:12.014] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:46:12.014] [rknn] [info] [Recorder] cam=1 code=YT000000002 trigger event 1784454372014
+[2026-07-19 17:46:12.015] [rknn] [info] [Recorder cam1] before packets=138
+[2026-07-19 17:46:12.016] [rknn] [info] [Recorder] trigger event time=1784454372016
+[2026-07-19 17:46:15.016] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:46:17.227] [rknn] [info] [Recorder] TS saved 276 packets -> /home/admin/Videos/cam1/20260719/event/174612014.ts
+[2026-07-19 17:48:54.602] [rknn] [info] logger init success
+[2026-07-19 17:48:54.603] [rknn] [info] program start
+[2026-07-19 17:48:54.604] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:48:54.608] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:48:54.691] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:48:54.728] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:48:54.729] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:48:54.729] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:48:54.730] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:48:54.730] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:48:54.730] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:48:54.730] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:48:54.730] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:48:54.742] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:48:54.784] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:48:54.785] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:48:54.785] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:48:54.785] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:48:54.785] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:48:56.024] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:48:56.025] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784454536025
+[2026-07-19 17:48:56.025] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:48:56.025] [rknn] [info] [Recorder] trigger event time=1784454536025
+[2026-07-19 17:48:59.027] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:49:01.028] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:49:04.746] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:49:04.968] [rknn] [info] [INFO] ENTER  cam=1 roi=1 id=2
+[2026-07-19 17:49:04.968] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784454544968
+[2026-07-19 17:49:04.969] [rknn] [info] [Recorder cam1] before packets=148
+[2026-07-19 17:49:10.192] [rknn] [info] [Recorder] TS saved 296 packets -> /home/admin/Videos/cam1/20260719/event/174904968.ts
+[2026-07-19 17:49:14.742] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:49:16.027] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:49:16.027] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784454556027
+[2026-07-19 17:49:16.027] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:49:16.027] [rknn] [info] [Recorder] trigger event time=1784454556027
+[2026-07-19 17:49:19.029] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:49:21.028] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:49:24.746] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:49:26.022] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:49:26.022] [rknn] [info] [Recorder] cam=1 code=YT000000002 trigger event 1784454566022
+[2026-07-19 17:49:26.024] [rknn] [info] [Recorder cam1] before packets=149
+[2026-07-19 17:49:26.024] [rknn] [info] [Recorder] trigger event time=1784454566024
+[2026-07-19 17:49:29.023] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:49:31.217] [rknn] [info] [Recorder] TS saved 298 packets -> /home/admin/Videos/cam1/20260719/event/174926022.ts
+[2026-07-19 17:49:34.746] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:49:36.016] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:49:36.016] [rknn] [info] [Recorder] cam=0 code=YT000000003 trigger event 1784454576016
+[2026-07-19 17:49:36.016] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:49:36.017] [rknn] [info] [Recorder] trigger event time=1784454576017
+[2026-07-19 17:49:39.017] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:49:41.017] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:49:44.746] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:49:46.015] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 17:49:46.015] [rknn] [info] [Recorder] cam=1 code=YT000000003 trigger event 1784454586015
+[2026-07-19 17:49:46.016] [rknn] [info] [Recorder cam1] before packets=149
+[2026-07-19 17:49:46.016] [rknn] [info] [Recorder] trigger event time=1784454586016
+[2026-07-19 17:49:49.016] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:49:51.192] [rknn] [info] [Recorder] TS saved 298 packets -> /home/admin/Videos/cam1/20260719/event/174946015.ts
+[2026-07-19 17:49:51.843] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=6
+[2026-07-19 17:49:51.843] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784454591843
+[2026-07-19 17:49:51.844] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 17:49:51.844] [rknn] [info] 长报警结束 slave=1
+[2026-07-19 17:49:51.845] [rknn] [info] [AI Error Recorder cam1] before packets=144
+[2026-07-19 17:49:52.367] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=6
+[2026-07-19 17:49:52.367] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784454592367
+[2026-07-19 17:49:52.368] [rknn] [info] 长报警启动 slave=2
+[2026-07-19 17:49:52.368] [rknn] [info] 长报警结束 slave=2
+[2026-07-19 17:49:52.368] [rknn] [info] [AI Error Recorder cam1] before packets=132
+[2026-07-19 17:49:54.746] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:49:56.008] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 17:49:56.008] [rknn] [info] [Recorder] cam=0 code=YT000000004 trigger event 1784454596008
+[2026-07-19 17:49:56.008] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:49:56.009] [rknn] [info] [Recorder] trigger event time=1784454596009
+[2026-07-19 17:49:57.081] [rknn] [info] [Recorder] TS saved 288 packets -> /home/admin/Videos/cam1/20260719/AI_error/174951843.ts
+[2026-07-19 17:49:57.573] [rknn] [info] [Recorder] TS saved 265 packets -> /home/admin/Videos/cam1/20260719/AI_error/174952367.ts
+[2026-07-19 17:49:57.778] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=7
+[2026-07-19 17:49:57.778] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784454597778
+[2026-07-19 17:49:57.779] [rknn] [info] [AI Error Recorder cam1] before packets=144
+[2026-07-19 17:49:57.779] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 17:49:57.779] [rknn] [info] 长报警结束 slave=1
+[2026-07-19 17:49:57.868] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=7
+[2026-07-19 17:49:57.868] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784454597868
+[2026-07-19 17:49:57.868] [rknn] [info] 长报警启动 slave=2
+[2026-07-19 17:49:57.868] [rknn] [info] 长报警结束 slave=2
+[2026-07-19 17:49:57.869] [rknn] [info] [AI Error Recorder cam1] before packets=146
+[2026-07-19 17:49:59.009] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:50:01.010] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:50:03.024] [rknn] [info] [Recorder] TS saved 287 packets -> /home/admin/Videos/cam1/20260719/AI_error/174957778.ts
+[2026-07-19 17:50:03.065] [rknn] [info] [Recorder] TS saved 291 packets -> /home/admin/Videos/cam1/20260719/AI_error/174957868.ts
+[2026-07-19 17:50:04.746] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:50:06.004] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 17:50:06.004] [rknn] [info] [Recorder] cam=1 code=YT000000004 trigger event 1784454606004
+[2026-07-19 17:50:06.005] [rknn] [info] [Recorder cam1] before packets=148
+[2026-07-19 17:50:06.006] [rknn] [info] [Recorder] trigger event time=1784454606006
+[2026-07-19 17:50:09.010] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:50:11.212] [rknn] [info] [Recorder] TS saved 296 packets -> /home/admin/Videos/cam1/20260719/event/175006004.ts
+[2026-07-19 17:50:14.746] [rknn] [info] [TaskManager] setTask: code=YT000000005, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:55:29.475] [rknn] [info] logger init success
+[2026-07-19 17:55:29.475] [rknn] [info] program start
+[2026-07-19 17:55:29.477] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:55:29.481] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:55:29.567] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:55:29.598] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:55:29.599] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:55:29.599] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:55:29.600] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:55:29.600] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:55:29.600] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:55:29.600] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:55:29.600] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:55:29.611] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:55:29.667] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:55:29.668] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:55:29.668] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:55:29.668] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:55:29.668] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:55:31.010] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:55:31.010] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:55:31.010] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784454931010
+[2026-07-19 17:55:31.010] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:55:31.010] [rknn] [info] [Recorder] trigger event time=1784454931010
+[2026-07-19 17:55:31.011] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:55:34.012] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:55:34.811] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=1
+[2026-07-19 17:55:34.811] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784454934811
+[2026-07-19 17:55:34.811] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 17:55:34.811] [rknn] [warning] [RingBuffer] no keyframe before 1784454929811
+[2026-07-19 17:55:34.812] [rknn] [info] [AI Error Recorder cam1] before packets=123
+[2026-07-19 17:55:34.855] [rknn] [info] 长报警结束 slave=1
+[2026-07-19 17:55:36.010] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:55:39.614] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:55:40.009] [rknn] [info] [Recorder] TS saved 270 packets -> /home/admin/Videos/cam1/20260719/AI_error/175534811.ts
+[2026-07-19 17:55:41.025] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:55:41.025] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:55:41.025] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784454941025
+[2026-07-19 17:55:41.026] [rknn] [info] [Recorder cam1] before packets=127
+[2026-07-19 17:55:41.026] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 17:55:41.026] [rknn] [info] [Recorder] trigger event time=1784454941026
+[2026-07-19 17:55:44.026] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:55:46.222] [rknn] [info] [Recorder] TS saved 254 packets -> /home/admin/Videos/cam1/20260719/event/175541025.ts
+[2026-07-19 17:55:49.618] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:55:51.015] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 17:55:51.016] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:55:51.016] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784454951016
+[2026-07-19 17:55:51.016] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:55:51.016] [rknn] [info] [Recorder] trigger event time=1784454951016
+[2026-07-19 17:55:51.018] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:58:02.012] [rknn] [info] logger init success
+[2026-07-19 17:58:02.012] [rknn] [info] program start
+[2026-07-19 17:58:02.014] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:58:02.015] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:58:02.070] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:58:02.110] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:58:02.111] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:58:02.111] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:58:02.112] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:58:02.112] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:58:02.112] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:58:02.112] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:58:02.112] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:58:02.126] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:58:02.168] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:58:02.169] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:58:02.169] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:58:02.169] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:58:02.169] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:58:04.018] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:58:04.018] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:58:04.018] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784455084018
+[2026-07-19 17:58:04.018] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:58:04.019] [rknn] [info] [Recorder] trigger event time=1784455084019
+[2026-07-19 17:58:04.020] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:58:07.020] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 17:58:08.841] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-07-19 17:58:08.841] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784455088841
+[2026-07-19 17:58:08.841] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 17:58:08.842] [rknn] [info] [AI Error Recorder cam1] before packets=134
+[2026-07-19 17:58:08.885] [rknn] [info] 长报警结束 slave=1
+[2026-07-19 17:58:09.019] [rknn] [warning] [Recorder] no packets
+[2026-07-19 17:58:12.126] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 17:58:14.008] [rknn] [info] [Recorder] TS saved 269 packets -> /home/admin/Videos/cam1/20260719/AI_error/175808841.ts
+[2026-07-19 17:58:14.022] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:58:14.022] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 17:58:14.022] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784455094022
+[2026-07-19 17:58:14.024] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 17:58:14.024] [rknn] [info] [Recorder cam1] before packets=139
+[2026-07-19 17:58:14.024] [rknn] [info] [Recorder] trigger event time=1784455094024
+[2026-07-19 17:58:17.024] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 17:58:19.237] [rknn] [info] [Recorder] TS saved 278 packets -> /home/admin/Videos/cam1/20260719/event/175814022.ts
+[2026-07-19 17:58:22.126] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:59:55.951] [rknn] [info] logger init success
+[2026-07-19 17:59:55.952] [rknn] [info] program start
+[2026-07-19 17:59:55.953] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 17:59:55.954] [rknn] [info] === 程序启动 ===
+[2026-07-19 17:59:56.004] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 17:59:56.045] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 17:59:56.045] [rknn] [info] TCP服务已后台启动
+[2026-07-19 17:59:56.045] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 17:59:56.046] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 17:59:56.046] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 17:59:56.046] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 17:59:56.046] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 17:59:56.046] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 17:59:56.060] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 17:59:56.112] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:59:56.113] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:59:56.113] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:59:56.113] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:59:56.113] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 17:59:58.006] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 17:59:58.007] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 17:59:58.007] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784455198007
+[2026-07-19 17:59:58.007] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 17:59:58.007] [rknn] [info] [Recorder] trigger event time=1784455198007
+[2026-07-19 17:59:58.008] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 17:59:58.597] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-07-19 17:59:58.598] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784455198598
+[2026-07-19 17:59:58.598] [rknn] [warning] [RingBuffer] no keyframe before 1784455193598
+[2026-07-19 17:59:58.598] [rknn] [info] [AI Error Recorder cam1] before packets=57
+[2026-07-19 17:59:58.601] [rknn] [info] 长报警启动 slave=1
+[2026-07-19 18:00:01.008] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 18:00:03.007] [rknn] [warning] [Recorder] no packets
+[2026-07-19 18:00:03.746] [rknn] [info] [Recorder] TS saved 187 packets -> /home/admin/Videos/cam1/20260719/AI_error/175958598.ts
+[2026-07-19 18:00:06.062] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 18:00:08.026] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 18:00:08.026] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 18:00:08.026] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784455208026
+[2026-07-19 18:00:08.026] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 18:00:08.027] [rknn] [info] [Recorder cam1] before packets=141
+[2026-07-19 18:00:08.028] [rknn] [info] [Recorder] trigger event time=1784455208028
+[2026-07-19 18:00:11.026] [rknn] [info] 存在长报警，短报警不关闭灯 slave=1
+[2026-07-19 18:00:13.228] [rknn] [info] [Recorder] TS saved 282 packets -> /home/admin/Videos/cam1/20260719/event/180008026.ts
+[2026-07-19 18:00:16.062] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1
+[2026-07-19 18:00:18.016] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 18:00:18.016] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 18:00:18.016] [rknn] [info] [Recorder] cam=0 code=YT000000002 trigger event 1784455218016
+[2026-07-19 18:00:18.016] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 18:00:18.017] [rknn] [info] [Recorder] trigger event time=1784455218017
+[2026-07-19 18:00:18.018] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 18:00:21.018] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 18:00:23.019] [rknn] [warning] [Recorder] no packets
+[2026-07-19 18:00:26.086] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=1, roi_id=1
+[2026-07-19 18:00:28.012] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000002 roi=1
+[2026-07-19 18:00:28.012] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 18:00:28.012] [rknn] [info] [Recorder] cam=1 code=YT000000002 trigger event 1784455228012
+[2026-07-19 18:00:28.012] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 18:00:28.013] [rknn] [info] [Recorder cam1] before packets=141
+[2026-07-19 18:00:28.013] [rknn] [info] [Recorder] trigger event time=1784455228013
+[2026-07-19 18:00:31.012] [rknn] [info] 存在长报警，短报警不关闭灯 slave=1
+[2026-07-19 18:00:33.207] [rknn] [info] [Recorder] TS saved 281 packets -> /home/admin/Videos/cam1/20260719/event/180028012.ts
+[2026-07-19 18:00:36.058] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=0, roi_id=1
+[2026-07-19 18:00:38.013] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 18:00:38.013] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 18:00:38.013] [rknn] [info] [Recorder] cam=0 code=YT000000003 trigger event 1784455238013
+[2026-07-19 18:00:38.013] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 18:00:38.013] [rknn] [info] [Recorder] trigger event time=1784455238013
+[2026-07-19 18:00:38.022] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 18:00:41.023] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 18:00:43.022] [rknn] [warning] [Recorder] no packets
+[2026-07-19 18:00:46.058] [rknn] [info] [TaskManager] setTask: code=YT000000003, grid=1, cam_id=1, roi_id=1
+[2026-07-19 18:00:48.023] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000003 roi=1
+[2026-07-19 18:00:48.023] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 18:00:48.023] [rknn] [info] [Recorder] cam=1 code=YT000000003 trigger event 1784455248023
+[2026-07-19 18:00:48.024] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 18:00:48.024] [rknn] [info] [Recorder cam1] before packets=141
+[2026-07-19 18:00:48.025] [rknn] [info] [Recorder] trigger event time=1784455248025
+[2026-07-19 18:00:48.690] [rknn] [info] 长报警结束 slave=1
+[2026-07-19 18:00:51.024] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 18:00:53.215] [rknn] [info] [Recorder] TS saved 282 packets -> /home/admin/Videos/cam1/20260719/event/180048023.ts
+[2026-07-19 18:00:56.062] [rknn] [info] [TaskManager] setTask: code=YT000000004, grid=1, cam_id=0, roi_id=1
+[2026-07-19 18:00:58.008] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000004 roi=1
+[2026-07-19 18:00:58.009] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 18:00:58.009] [rknn] [info] [Recorder] cam=0 code=YT000000004 trigger event 1784455258009
+[2026-07-19 18:00:58.010] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 18:00:58.010] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 18:00:58.010] [rknn] [info] [Recorder] trigger event time=1784455258010
+[2026-07-19 18:01:48.113] [rknn] [info] logger init success
+[2026-07-19 18:01:48.113] [rknn] [info] program start
+[2026-07-19 18:01:48.114] [rknn] [info] [ROI LOAD] 5
+[2026-07-19 18:01:48.116] [rknn] [info] === 程序启动 ===
+[2026-07-19 18:01:48.170] [rknn] [info] MySQL连接成功: 192.168.60.134:3306 / ai_dec
+[2026-07-19 18:01:48.206] [rknn] [info] [TaskManager] mysql attached
+[2026-07-19 18:01:48.207] [rknn] [info] TCP服务已后台启动
+[2026-07-19 18:01:48.207] [rknn] [info] [TCP] connected 127.0.0.1:9000
+[2026-07-19 18:01:48.208] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-19 18:01:48.208] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-19 18:01:48.208] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-19 18:01:48.208] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-07-19 18:01:48.208] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-07-19 18:01:48.221] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=0, roi_id=1
+[2026-07-19 18:01:48.276] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 18:01:48.277] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.11:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 18:01:48.277] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.10:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 18:01:48.277] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 18:01:48.277] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse config-interval=-1 ! appsink name=h265cache emit-signals=true sync=false max-buffers=500 
+[2026-07-19 18:01:50.007] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 18:01:50.007] [rknn] [info] [ShortAlarm] trigger slave=32
+[2026-07-19 18:01:50.007] [rknn] [info] [Recorder] cam=0 code=YT000000001 trigger event 1784455310007
+[2026-07-19 18:01:50.007] [rknn] [info] [Recorder cam0] before packets=0
+[2026-07-19 18:01:50.008] [rknn] [info] [Recorder] trigger event time=1784455310008
+[2026-07-19 18:01:50.011] [rknn] [info] 短报警启动 slave=32
+[2026-07-19 18:01:53.011] [rknn] [info] 短报警关闭灯 slave=32
+[2026-07-19 18:01:55.017] [rknn] [warning] [Recorder] no packets
+[2026-07-19 18:01:58.222] [rknn] [info] [TaskManager] setTask: code=YT000000001, grid=1, cam_id=1, roi_id=1
+[2026-07-19 18:02:00.007] [rknn] [warning] [ALARM] TASK TIMEOUT code=YT000000001 roi=1
+[2026-07-19 18:02:00.007] [rknn] [info] [ShortAlarm] trigger slave=1
+[2026-07-19 18:02:00.007] [rknn] [info] [Recorder] cam=1 code=YT000000001 trigger event 1784455320007
+[2026-07-19 18:02:00.007] [rknn] [info] 短报警启动 slave=1
+[2026-07-19 18:02:00.008] [rknn] [info] [Recorder cam1] before packets=137
+[2026-07-19 18:02:00.009] [rknn] [info] [Recorder] trigger event time=1784455320009
+[2026-07-19 18:02:03.008] [rknn] [info] 短报警关闭灯 slave=1
+[2026-07-19 18:02:05.245] [rknn] [info] [Recorder] TS saved 274 packets -> /home/admin/Videos/cam1/20260719/event/180200007.ts
+[2026-07-19 18:02:08.222] [rknn] [info] [TaskManager] setTask: code=YT000000002, grid=1, cam_id=0, roi_id=1

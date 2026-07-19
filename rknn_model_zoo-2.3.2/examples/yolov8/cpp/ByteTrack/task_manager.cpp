@@ -105,46 +105,6 @@ void TaskManager::setTask(const std::string &code, const std::string &grid, int 
     cam_tasks[cam_id].push_back(t);
 }
 
-void TaskManager::triggerShortAlarm(int slave_id) {
-
-    spdlog::info("[ShortAlarm] trigger slave={}", slave_id);
-
-    if (!alarm_light_) {
-        spdlog::error("[ShortAlarm] alarm_light nullptr");
-        return;
-    }
-    {
-        std::lock_guard<std::mutex> lock(alarm_mutex_);
-
-        if (active_alarm_.count(slave_id)) {
-            return;
-        }
-        active_alarm_.insert(slave_id);
-    }
-
-    std::thread([this, slave_id]() {
-        // 开灯放后台
-        if (!alarm_light_->on(slave_id)) {
-            spdlog::error("短报警启动失败 slave={}", slave_id);
-            std::lock_guard<std::mutex> lock(alarm_mutex_);
-            active_alarm_.erase(slave_id);
-            return;
-        }
-
-        spdlog::info("短报警启动 slave={}", slave_id);
-        // 3秒
-        sleep(3);
-        // 关灯
-        alarm_light_->off(slave_id);
-        {
-            std::lock_guard<std::mutex> lock(alarm_mutex_);
-
-            active_alarm_.erase(slave_id);
-        }
-        std::cout << "短报警结束 灯:" << slave_id << std::endl;
-    }).detach();
-}
-
 void TaskManager::triggerLongAlarm(int slave_id) {
     if (!alarm_light_)
         return;
@@ -152,45 +112,158 @@ void TaskManager::triggerLongAlarm(int slave_id) {
     {
         std::lock_guard<std::mutex> lock(alarm_mutex_);
 
-        if (active_alarm_.count(slave_id)) {
-            return;
-        }
-
-        active_alarm_.insert(slave_id);
+        long_alarm_active_.insert(slave_id);
     }
 
     std::thread([this, slave_id]() {
-        bool alarm_ok = alarm_light_->on(slave_id);
+        alarm_light_->on(slave_id);
 
-        if (!alarm_ok) {
-            spdlog::error("报警灯启动失败 slave={}", slave_id);
-
-            std::lock_guard<std::mutex> lock(alarm_mutex_);
-
-            active_alarm_.erase(slave_id);
-
-            return;
-        }
-
-        spdlog::info("报警灯启动 slave={}", slave_id);
-
-        // 等待人工复位
+        spdlog::info("长报警启动 slave={}", slave_id);
 
         if (alarm_light_->waitAlarmClear(slave_id)) {
-
             if (mysql_client) {
                 mysql_client->clearAIError(std::to_string(slave_id));
-
-                spdlog::info("AI报警已处理 grid={} state=0", slave_id);
             }
         }
 
         {
             std::lock_guard<std::mutex> lock(alarm_mutex_);
-            active_alarm_.erase(slave_id);
+
+            long_alarm_active_.erase(slave_id);
+        }
+
+        spdlog::info("长报警结束 slave={}", slave_id);
+    }).detach();
+}
+
+void TaskManager::triggerShortAlarm(int slave_id) {
+    spdlog::info("[ShortAlarm] trigger slave={}", slave_id);
+
+    if (!alarm_light_) {
+        spdlog::error("[ShortAlarm] alarm_light nullptr");
+        return;
+    }
+
+    std::thread([this, slave_id]() {
+        // 开灯
+        if (!alarm_light_->on(slave_id)) {
+            spdlog::error("短报警启动失败 slave={}", slave_id);
+
+            return;
+        }
+
+        spdlog::info("短报警启动 slave={}", slave_id);
+
+        // 持续3秒
+        sleep(3);
+
+        bool can_off = false;
+
+        {
+            std::lock_guard<std::mutex> lock(alarm_mutex_);
+
+            // 如果没有长报警，占用灯的权利归短报警，可以关闭
+            if (long_alarm_active_.count(slave_id) == 0) {
+                can_off = true;
+            }
+        }
+
+        if (can_off) {
+            alarm_light_->off(slave_id);
+
+            spdlog::info("短报警关闭灯 slave={}", slave_id);
+        } else {
+            spdlog::info("存在长报警，短报警不关闭灯 slave={}", slave_id);
         }
     }).detach();
 }
+
+// void TaskManager::triggerShortAlarm(int slave_id) {
+
+//     spdlog::info("[ShortAlarm] trigger slave={}", slave_id);
+
+//     if (!alarm_light_) {
+//         spdlog::error("[ShortAlarm] alarm_light nullptr");
+//         return;
+//     }
+//     {
+//         std::lock_guard<std::mutex> lock(alarm_mutex_);
+
+//         if (active_alarm_.count(slave_id)) {
+//             return;
+//         }
+//         active_alarm_.insert(slave_id);
+//     }
+
+//     std::thread([this, slave_id]() {
+//         // 开灯放后台
+//         if (!alarm_light_->on(slave_id)) {
+//             spdlog::error("短报警启动失败 slave={}", slave_id);
+//             std::lock_guard<std::mutex> lock(alarm_mutex_);
+//             active_alarm_.erase(slave_id);
+//             return;
+//         }
+
+//         spdlog::info("短报警启动 slave={}", slave_id);
+//         // 3秒
+//         sleep(3);
+//         // 关灯
+//         alarm_light_->off(slave_id);
+//         {
+//             std::lock_guard<std::mutex> lock(alarm_mutex_);
+
+//             active_alarm_.erase(slave_id);
+//         }
+//         std::cout << "短报警结束 灯:" << slave_id << std::endl;
+//     }).detach();
+// }
+
+// void TaskManager::triggerLongAlarm(int slave_id) {
+//     if (!alarm_light_)
+//         return;
+
+//     {
+//         std::lock_guard<std::mutex> lock(alarm_mutex_);
+
+//         if (active_alarm_.count(slave_id)) {
+//             return;
+//         }
+
+//         active_alarm_.insert(slave_id);
+//     }
+
+//     std::thread([this, slave_id]() {
+//         bool alarm_ok = alarm_light_->on(slave_id);
+
+//         if (!alarm_ok) {
+//             spdlog::error("报警灯启动失败 slave={}", slave_id);
+
+//             std::lock_guard<std::mutex> lock(alarm_mutex_);
+
+//             active_alarm_.erase(slave_id);
+
+//             return;
+//         }
+
+//         spdlog::info("报警灯启动 slave={}", slave_id);
+
+//         // 等待人工复位
+
+//         if (alarm_light_->waitAlarmClear(slave_id)) {
+
+//             if (mysql_client) {
+//                 mysql_client->clearAIError(std::to_string(slave_id));
+
+//                 spdlog::info("AI报警已处理 grid={} state=0", slave_id);
+//             }
+//         }
+
+//         {
+//             std::lock_guard<std::mutex> lock(alarm_mutex_);
+//             active_alarm_.erase(slave_id);
+//         }
+//     }).detach();
+// }
 
 void TaskManager::triggerRecord(int cam_id, const std::string &code, VideoType type) {
     auto it = recorders.find(cam_id);
