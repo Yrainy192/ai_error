@@ -380,26 +380,6 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
     // NO TASK
     // =========================
     if (!has_task) {
-        // ==========================
-        // 记录AI事件时间
-        // ==========================
-        AIEvent event;
-        event.cam_id = cam_id;
-        event.roi_id = roi_id;
-        event.track_id = id;
-        // NO_TASK发生时间
-        event.event_pts = pts;
-        // 前5秒
-        if (pts > 5 * GST_SECOND) {
-            event.start_pts = pts - 5 * GST_SECOND;
-        } else {
-            event.start_pts = 0;
-        }
-        // 后10秒
-        event.end_pts = pts + 10 * GST_SECOND;
-        // 加入事件队列
-        pending_events.push_back(event);
-
         spdlog::warn("[ALARM] NO TASK cam={} roi={} id={}", cam_id, roi_id, id);
         std::string wav;
         if (voice_mgr) {
@@ -420,7 +400,7 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
             audio_mgr->post(cmd);
         }
 
-        triggerAIError(cam_id, roi_id, std::to_string(id), pts);
+        triggerAIError(cam_id, roi_id, std::to_string(id));
 
         state.decision_time[id] = time(nullptr);
         return;

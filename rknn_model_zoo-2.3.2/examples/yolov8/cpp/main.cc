@@ -191,8 +191,8 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             ai.objects.push_back(d);
         }
         ai_caches[cam_id]->push(ai);
-        // spdlog::info("AI cache cam={} frame={} pts={} objects={}", cam_id, ai.frame_id, ai.pts,
-        //              ai.objects.size());
+        spdlog::info("AI cache cam={} frame={} pts={} objects={}", cam_id, ai.frame_id, ai.pts,
+                     ai.objects.size());
         std::unordered_map<int, std::vector<int>> roi_map;
 
         for (auto &r : res) {
