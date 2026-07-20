@@ -266,6 +266,33 @@ ByteTrack/AIFrameCache.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.s
 .PHONY : ByteTrack/AIFrameCache.cpp.s
 
+ByteTrack/AIJsonRecorder.o: ByteTrack/AIJsonRecorder.cpp.o
+.PHONY : ByteTrack/AIJsonRecorder.o
+
+# target to build an object file
+ByteTrack/AIJsonRecorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o
+.PHONY : ByteTrack/AIJsonRecorder.cpp.o
+
+ByteTrack/AIJsonRecorder.i: ByteTrack/AIJsonRecorder.cpp.i
+.PHONY : ByteTrack/AIJsonRecorder.i
+
+# target to preprocess a source file
+ByteTrack/AIJsonRecorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.i
+.PHONY : ByteTrack/AIJsonRecorder.cpp.i
+
+ByteTrack/AIJsonRecorder.s: ByteTrack/AIJsonRecorder.cpp.s
+.PHONY : ByteTrack/AIJsonRecorder.s
+
+# target to generate assembly for a file
+ByteTrack/AIJsonRecorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.s
+.PHONY : ByteTrack/AIJsonRecorder.cpp.s
+
 ByteTrack/AlarmLight.o: ByteTrack/AlarmLight.cpp.o
 .PHONY : ByteTrack/AlarmLight.o
 
@@ -427,33 +454,6 @@ ByteTrack/H265RingBuffer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.s
 .PHONY : ByteTrack/H265RingBuffer.cpp.s
-
-ByteTrack/JsonRecorder.o: ByteTrack/JsonRecorder.cpp.o
-.PHONY : ByteTrack/JsonRecorder.o
-
-# target to build an object file
-ByteTrack/JsonRecorder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/JsonRecorder.cpp.o
-.PHONY : ByteTrack/JsonRecorder.cpp.o
-
-ByteTrack/JsonRecorder.i: ByteTrack/JsonRecorder.cpp.i
-.PHONY : ByteTrack/JsonRecorder.i
-
-# target to preprocess a source file
-ByteTrack/JsonRecorder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/JsonRecorder.cpp.i
-.PHONY : ByteTrack/JsonRecorder.cpp.i
-
-ByteTrack/JsonRecorder.s: ByteTrack/JsonRecorder.cpp.s
-.PHONY : ByteTrack/JsonRecorder.s
-
-# target to generate assembly for a file
-ByteTrack/JsonRecorder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/JsonRecorder.cpp.s
-.PHONY : ByteTrack/JsonRecorder.cpp.s
 
 ByteTrack/KalmanFilter.o: ByteTrack/KalmanFilter.cpp.o
 .PHONY : ByteTrack/KalmanFilter.o
@@ -779,6 +779,33 @@ ByteTrack/TrackerUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.s
 .PHONY : ByteTrack/TrackerUtils.cpp.s
 
+ByteTrack/YoloCache.o: ByteTrack/YoloCache.cpp.o
+.PHONY : ByteTrack/YoloCache.o
+
+# target to build an object file
+ByteTrack/YoloCache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o
+.PHONY : ByteTrack/YoloCache.cpp.o
+
+ByteTrack/YoloCache.i: ByteTrack/YoloCache.cpp.i
+.PHONY : ByteTrack/YoloCache.i
+
+# target to preprocess a source file
+ByteTrack/YoloCache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.i
+.PHONY : ByteTrack/YoloCache.cpp.i
+
+ByteTrack/YoloCache.s: ByteTrack/YoloCache.cpp.s
+.PHONY : ByteTrack/YoloCache.s
+
+# target to generate assembly for a file
+ByteTrack/YoloCache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.s
+.PHONY : ByteTrack/YoloCache.cpp.s
+
 ByteTrack/lapjv.o: ByteTrack/lapjv.cpp.o
 .PHONY : ByteTrack/lapjv.o
 
@@ -1091,6 +1118,9 @@ help:
 	@echo "... ByteTrack/AIFrameCache.o"
 	@echo "... ByteTrack/AIFrameCache.i"
 	@echo "... ByteTrack/AIFrameCache.s"
+	@echo "... ByteTrack/AIJsonRecorder.o"
+	@echo "... ByteTrack/AIJsonRecorder.i"
+	@echo "... ByteTrack/AIJsonRecorder.s"
 	@echo "... ByteTrack/AlarmLight.o"
 	@echo "... ByteTrack/AlarmLight.i"
 	@echo "... ByteTrack/AlarmLight.s"
@@ -1109,9 +1139,6 @@ help:
 	@echo "... ByteTrack/H265RingBuffer.o"
 	@echo "... ByteTrack/H265RingBuffer.i"
 	@echo "... ByteTrack/H265RingBuffer.s"
-	@echo "... ByteTrack/JsonRecorder.o"
-	@echo "... ByteTrack/JsonRecorder.i"
-	@echo "... ByteTrack/JsonRecorder.s"
 	@echo "... ByteTrack/KalmanFilter.o"
 	@echo "... ByteTrack/KalmanFilter.i"
 	@echo "... ByteTrack/KalmanFilter.s"
@@ -1148,6 +1175,9 @@ help:
 	@echo "... ByteTrack/TrackerUtils.o"
 	@echo "... ByteTrack/TrackerUtils.i"
 	@echo "... ByteTrack/TrackerUtils.s"
+	@echo "... ByteTrack/YoloCache.o"
+	@echo "... ByteTrack/YoloCache.i"
+	@echo "... ByteTrack/YoloCache.s"
 	@echo "... ByteTrack/lapjv.o"
 	@echo "... ByteTrack/lapjv.i"
 	@echo "... ByteTrack/lapjv.s"

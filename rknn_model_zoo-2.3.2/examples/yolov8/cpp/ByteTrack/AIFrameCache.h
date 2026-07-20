@@ -1,28 +1,55 @@
 #pragma once
 
-#include "AIFrame.h"
-
+#include <cstddef>
+#include <cstdint>
 #include <deque>
 #include <mutex>
 #include <vector>
+struct DetectionInfo {
+
+    int track_id = -1;
+
+    float confidence = 0.0f;
+
+    int x = 0;
+    int y = 0;
+
+    int w = 0;
+    int h = 0;
+};
+
+struct AIFrame {
+
+    uint64_t frame_id = 0;
+
+    // GStreamer PTS(ns)
+    uint64_t pts = 0;
+
+    // Unix ms
+    uint64_t real_time_ms = 0;
+
+    std::vector<DetectionInfo> objects;
+};
 
 class AIFrameCache {
 
   public:
-    // 添加一帧AI结果
-    void push(const AIFrame &frame);
+    explicit AIFrameCache(size_t max_size = 600);
 
-    // 根据PTS取时间范围
-    std::vector<AIFrame> getRange(uint64_t start_pts, uint64_t end_pts);
+    // 添加一帧结果
+    void push(const AIFrame &result);
 
-    // 清空
+    // 按真实时间查询
+    std::vector<AIFrame> getRange_ai(uint64_t start_ms, uint64_t end_ms);
+
     void clear();
 
+    size_t size();
+
   private:
-    std::deque<AIFrame> cache;
+    std::deque<AIFrame> buffer;
 
-    std::mutex mutex;
+    mutable std::mutex mutex;
 
-    // 缓存多少帧
-    size_t max_frames = 1000;
+    size_t max_size;
 };

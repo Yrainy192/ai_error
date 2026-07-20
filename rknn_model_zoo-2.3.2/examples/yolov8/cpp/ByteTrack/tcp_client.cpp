@@ -73,7 +73,8 @@ bool TCPClient::connect() {
     getsockopt(sock_fd, SOL_SOCKET, SO_ERROR, &err, &len);
 
     if (err != 0) {
-        std::cerr << "[TCP] connect error: " << strerror(err) << std::endl;
+        // std::cerr << "[TCP] connect error: " << strerror(err) << std::endl;
+        spdlog::error("[TCP] connect error: {}", strerror(err));
         ::close(sock_fd);
         sock_fd = -1;
         return false;

@@ -217,7 +217,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: \
  /usr/include/c++/11/bits/this_thread_sleep.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/task_manager.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIFrameCache.h \
- /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIFrame.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AlarmLight.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AudioManager.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/condition_variable \
@@ -225,6 +224,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: \
  /usr/include/c++/11/bits/stl_queue.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIJsonRecorder.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice_manager.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \

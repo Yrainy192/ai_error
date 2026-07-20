@@ -72,27 +72,19 @@ std::vector<H265Packet> H265RingBuffer::getRange(uint64_t start_ms, uint64_t end
     std::lock_guard<std::mutex> lock(mutex);
 
     std::vector<H265Packet> result;
-
     if (buffer.empty()) {
-
         return result;
     }
-
     size_t start = findStartIndex(start_ms);
-
     for (size_t i = start; i < buffer.size(); i++) {
         auto &pkt = buffer[i];
-
         if (pkt.real_time_ms > end_ms)
             break;
-
         result.push_back(pkt);
     }
 
     auto result_start = result.empty() ? 0 : result.front().real_time_ms;
-
     auto result_end = result.empty() ? 0 : result.back().real_time_ms;
-
     // spdlog::info("getRange {}-{} result {} packets time {}-{} duration={}ms", start_ms, end_ms,
     //              result.size(), result_start, result_end, result_end - result_start);
     return result;

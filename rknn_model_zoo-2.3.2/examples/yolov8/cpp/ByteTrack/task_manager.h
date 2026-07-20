@@ -153,7 +153,7 @@ class TaskManager {
   private:
     void triggerRecord(int cam_id, const std::string &code, VideoType type);
 
-    void triggerAIError(int cam_id, int roi_id, const std::string &id);
+    void triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts);
 
     // AI短报警3秒自动关闭
     void triggerShortAlarm(int slave_id);

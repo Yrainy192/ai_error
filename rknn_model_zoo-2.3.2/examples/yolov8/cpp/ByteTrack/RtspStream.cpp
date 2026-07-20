@@ -7,9 +7,15 @@
 
 #include <spdlog/spdlog.h>
 
-RtspStream::RtspStream(const std::string &url, const std::string &id)
-    : rtsp_url(url), camera_id(id) {
-    h265_recorder = std::make_unique<H265Recorder>(camera_id, &h265_cache);
+// RtspStream::RtspStream(const std::string &url, const std::string &id)
+//     : rtsp_url(url), camera_id(id) {
+//     h265_recorder = std::make_unique<H265Recorder>(camera_id, &h265_cache, &ai_frame_cache);
+// }
+
+RtspStream::RtspStream(const std::string &url, const std::string &cameraId, AIFrameCache *cache)
+    : rtsp_url(url), camera_id(cameraId), ai_cache(cache) {
+
+    h265_recorder = std::make_unique<H265Recorder>(camera_id, &h265_cache, ai_cache);
 }
 
 RtspStream::~RtspStream() { stop(); }
@@ -162,6 +168,7 @@ void RtspStream::buildPipeline() {
 
         "t. ! queue ! "
         "h265parse config-interval=-1 ! "
+        "video/x-h265,stream-format=byte-stream,alignment=au ! "
         "appsink "
         "name=h265cache "
         "emit-signals=true "
@@ -190,40 +197,31 @@ GstFlowReturn RtspStream::on_h265_sample_static(GstElement *sink, gpointer user_
 }
 
 GstFlowReturn RtspStream::on_h265_sample(GstElement *sink) {
-
     GstSample *sample = nullptr;
-
     g_signal_emit_by_name(sink, "pull-sample", &sample);
-
     if (!sample)
         return GST_FLOW_ERROR;
-
     GstBuffer *buffer = gst_sample_get_buffer(sample);
-
     GstMapInfo map;
-
     if (gst_buffer_map(buffer, &map, GST_MAP_READ)) {
-
         H265Packet pkt;
-
-        pkt.pts = GST_BUFFER_PTS(buffer);
-
+        pkt.frame_id = h265_counter.fetch_add(1);
+        // pkt.pts = GST_BUFFER_PTS(buffer);
+        if (GST_BUFFER_PTS_IS_VALID(buffer)) {
+            pkt.pts = GST_BUFFER_PTS(buffer);
+        } else {
+            pkt.pts = 0;
+        }
         pkt.real_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
                                std::chrono::system_clock::now().time_since_epoch())
                                .count();
-
         pkt.keyframe = !GST_BUFFER_FLAG_IS_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
-
         pkt.data.assign(map.data, map.data + map.size);
-
         h265_cache.push(pkt);
-
         // spdlog::debug("H265 cache push cam={} size={} key={}", camera_id, map.size,
         // pkt.keyframe);
-
         gst_buffer_unmap(buffer, &map);
     }
-
     gst_sample_unref(sample);
     return GST_FLOW_OK;
 }
@@ -258,7 +256,12 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
 
     f.frame_id = frame_counter.fetch_add(1);
 
-    f.pts = GST_BUFFER_PTS(buffer);
+    // f.pts = GST_BUFFER_PTS(buffer);
+    if (GST_BUFFER_PTS_IS_VALID(buffer)) {
+        f.pts = GST_BUFFER_PTS(buffer);
+    } else {
+        f.pts = 0;
+    }
 
     f.real_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
                          std::chrono::system_clock::now().time_since_epoch())

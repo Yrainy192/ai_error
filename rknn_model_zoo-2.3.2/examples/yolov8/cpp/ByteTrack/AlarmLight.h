@@ -57,7 +57,7 @@ class AlarmLight {
 
     */
     bool writeRegister(uint8_t slave_id, uint16_t addr, uint16_t value);
-
+    bool waitConnect(int fd, int timeout_ms);
     /*
         Modbus完整事务
 

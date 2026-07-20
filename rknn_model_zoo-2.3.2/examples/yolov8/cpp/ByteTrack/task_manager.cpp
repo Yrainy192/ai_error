@@ -285,12 +285,12 @@ void TaskManager::triggerRecord(int cam_id, const std::string &code, VideoType t
                           std::chrono::system_clock::now().time_since_epoch())
                           .count();
 
-    spdlog::info("[Recorder] cam={} code={} trigger event {}", cam_id, code, now_ms);
+    spdlog::info("[Recorder] cam={} code={} trigger event {}  pts{}", cam_id, code, now_ms);
 
     it->second->saveEvent(now_ms, code, type);
 }
 
-void TaskManager::triggerAIError(int cam_id, int roi_id, const std::string &id) {
+void TaskManager::triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts) {
     auto it = recorders.find(cam_id);
 
     if (it == recorders.end()) {
@@ -308,7 +308,8 @@ void TaskManager::triggerAIError(int cam_id, int roi_id, const std::string &id) 
                           std::chrono::system_clock::now().time_since_epoch())
                           .count();
 
-    spdlog::info("[AI Error] cam={} roi={} grid={} trigger event {}", cam_id, roi_id, grid, now_ms);
+    spdlog::info("[AI Error] cam={} roi={} grid={} trigger event {} pts {}", cam_id, roi_id, grid,
+                 now_ms, pts);
 
     it->second->saveAIError(now_ms, grid, id);
 }
@@ -400,7 +401,7 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
             audio_mgr->post(cmd);
         }
 
-        triggerAIError(cam_id, roi_id, std::to_string(id));
+        triggerAIError(cam_id, roi_id, std::to_string(id), pts);
 
         state.decision_time[id] = time(nullptr);
         return;
@@ -421,11 +422,11 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
                 //           << " roi=" << roi_id
                 //           << " id=" << id << std::endl;
                 spdlog::info("[INFO] ENTER  cam={} roi={} id={}", cam_id, roi_id, id);
-                if (cam_id == 0) {
-                    triggerRecord(cam_id, t.code, VideoType::UP);
-                } else {
-                    triggerRecord(cam_id, t.code, VideoType::DOWN);
-                }
+                // if (cam_id == 0) {
+                //     triggerRecord(cam_id, t.code, VideoType::UP);
+                // } else {
+                //     triggerRecord(cam_id, t.code, VideoType::DOWN);
+                // }
                 break;
             }
         }

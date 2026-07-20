@@ -111,7 +111,7 @@ using namespace cv;
 // }
 
 //===============================================已经实现视频存储功能==========================================================//
-std::vector<std::unique_ptr<AIFrameCache>> ai_caches;
+// std::vector<std::unique_ptr<AIFrameCache>> ai_caches;
 TaskManager task_manager;
 // RtspStream rtsp;
 ROIManager roi_manager;
@@ -190,9 +190,18 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             d.h = r.h;
             ai.objects.push_back(d);
         }
-        ai_caches[cam_id]->push(ai);
-        spdlog::info("AI cache cam={} frame={} pts={} objects={}", cam_id, ai.frame_id, ai.pts,
-                     ai.objects.size());
+
+        std::string cameraId = "cam" + std::to_string(cam_id);
+
+        auto cache = manager->getAICache(cameraId);
+
+        if (cache) {
+            cache->push(ai);
+            // spdlog::info("AI cache push addr={} frame={}", (void *)cache, ai.frame_id);
+        }
+        // spdlog::info("AI push frame={} pts={} time={} objects={}", ai.frame_id, ai.pts,
+        //              ai.real_time_ms, ai.objects.size());
+
         std::unordered_map<int, std::vector<int>> roi_map;
 
         for (auto &r : res) {
@@ -341,10 +350,10 @@ int main() {
     }
     last_ai_frame_id.resize(5, UINT64_MAX);
     // 5. AI JSON缓存
-    ai_caches.resize(5);
-    for (int i = 0; i < 5; i++) {
-        ai_caches[i] = std::make_unique<AIFrameCache>();
-    }
+    // ai_caches.resize(5);
+    // for (int i = 0; i < 5; i++) {
+    //     ai_caches[i] = std::make_unique<AIFrameCache>();
+    // }
     // 5. 模型池（6 core）
     std::string model_path =
         "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"

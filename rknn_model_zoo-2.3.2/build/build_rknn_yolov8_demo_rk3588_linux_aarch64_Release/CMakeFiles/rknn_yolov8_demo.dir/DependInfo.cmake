@@ -9,13 +9,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIFrameCache.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.o.d"
+  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIJsonRecorder.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AlarmLight.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AudioManager.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/DisplayManager.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o.d"
-  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/JsonRecorder.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/JsonRecorder.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o.d"
@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkLock.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/TrackerUtils.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o.d"
+  "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/YoloCache.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/logger.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o.d"
   "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.cpp" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o" "gcc" "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o.d"

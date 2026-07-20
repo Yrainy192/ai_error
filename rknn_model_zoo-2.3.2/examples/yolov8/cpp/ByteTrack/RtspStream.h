@@ -7,15 +7,15 @@
 
 #include <gst/gst.h>
 
+#include "AIFrameCache.h"
 #include "Frame.h"
 #include "H265Recorder.h"
 #include "H265RingBuffer.h"
 #include "mysql_client.h"
-
 class RtspStream {
 
   public:
-    RtspStream(const std::string &url, const std::string &camera_id);
+    RtspStream(const std::string &url, const std::string &cameraId, AIFrameCache *cache);
 
     ~RtspStream();
 
@@ -36,6 +36,8 @@ class RtspStream {
     H265RingBuffer *getH265Cache() { return &h265_cache; }
 
     H265Recorder *getRecorder() { return h265_recorder.get(); }
+
+    AIFrameCache *getAIFrameCache() { return &ai_frame_cache; }
 
   private:
     void run();
@@ -72,6 +74,9 @@ class RtspStream {
     std::unique_ptr<H265Recorder> h265_recorder;
 
     std::atomic<uint64_t> frame_counter{0};
-
+    std::atomic<uint64_t> h265_counter{0};
     std::mutex frame_mutex;
+
+    AIFrameCache *ai_cache = nullptr;
+    AIFrameCache ai_frame_cache{600};
 };

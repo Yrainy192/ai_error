@@ -16,6 +16,7 @@ struct H265Packet {
 
     uint64_t dts = 0;
 
+    uint64_t frame_id; //新增
     // 单调时间(ms)
     // 用于事件定位
     uint64_t real_time_ms = 0;
@@ -37,7 +38,7 @@ class H265RingBuffer {
     // 保存多少毫秒
     // 例如:
     // 15000 = 保存15秒
-    explicit H265RingBuffer(uint64_t keep_time_ms = 15000);
+    explicit H265RingBuffer(uint64_t keep_time_ms = 20000);
     // 插入一个H265包
     void push(const H265Packet &packet);
     // 获取时间范围

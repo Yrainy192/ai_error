@@ -5,7 +5,10 @@
 #include <unistd.h>
 
 #include <arpa/inet.h>
+#include <errno.h>
+#include <sys/select.h>
 #include <sys/socket.h>
+#include <unistd.h>
 
 AlarmLight::AlarmLight(const std::string &ip, int port) : ip_(ip), port_(port), sock_fd_(-1) {}
 
@@ -20,26 +23,84 @@ void AlarmLight::closeSocket() {
         sock_fd_ = -1;
     }
 }
+bool AlarmLight::waitConnect(int fd, int timeout_ms) {
+    fd_set writefds;
+    FD_ZERO(&writefds);
+    FD_SET(fd, &writefds);
 
+    timeval tv{};
+    tv.tv_sec = timeout_ms / 1000;
+    tv.tv_usec = (timeout_ms % 1000) * 1000;
+
+    int ret = select(fd + 1, nullptr, &writefds, nullptr, &tv);
+
+    if (ret <= 0) {
+        // 超时或者select失败
+        return false;
+    }
+
+    int error = 0;
+    socklen_t len = sizeof(error);
+
+    if (getsockopt(fd, SOL_SOCKET, SO_ERROR, &error, &len) < 0) {
+        return false;
+    }
+
+    if (error != 0) {
+        errno = error;
+        return false;
+    }
+
+    return true;
+}
+// bool AlarmLight::connect() {
+
+//     if (sock_fd_ >= 0)
+//         return true;
+
+//     sock_fd_ = socket(AF_INET, SOCK_STREAM, 0);
+
+//     if (sock_fd_ < 0)
+//         return false;
+
+//     sockaddr_in addr{};
+
+//     addr.sin_family = AF_INET;
+
+//     addr.sin_port = htons(port_);
+
+//     inet_pton(AF_INET, ip_.c_str(), &addr.sin_addr);
+
+//     if (::connect(sock_fd_, (sockaddr *)&addr, sizeof(addr)) < 0) {
+//         closeSocket();
+//         return false;
+//     }
+//     return true;
+// }
 bool AlarmLight::connect() {
-
     if (sock_fd_ >= 0)
         return true;
 
-    sock_fd_ = socket(AF_INET, SOCK_STREAM, 0);
+    sock_fd_ = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
 
     if (sock_fd_ < 0)
         return false;
 
     sockaddr_in addr{};
-
     addr.sin_family = AF_INET;
-
     addr.sin_port = htons(port_);
 
-    inet_pton(AF_INET, ip_.c_str(), &addr.sin_addr);
-
-    if (::connect(sock_fd_, (sockaddr *)&addr, sizeof(addr)) < 0) {
+    if (inet_pton(AF_INET, ip_.c_str(), &addr.sin_addr) <= 0) {
+        closeSocket();
+        return false;
+    }
+    int ret = ::connect(sock_fd_, (sockaddr *)&addr, sizeof(addr));
+    if (ret < 0 && errno != EINPROGRESS) {
+        closeSocket();
+        return false;
+    }
+    // poll/select 等待3秒
+    if (!waitConnect(sock_fd_, 3000)) {
         closeSocket();
         return false;
     }
