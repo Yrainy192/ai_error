@@ -1,88 +1,3 @@
-// #include "AIJsonRecorder.h"
-
-// #include <filesystem>
-// #include <fstream>
-
-// #include <nlohmann/json.hpp>
-
-// using json = nlohmann::json;
-
-// bool AIJsonRecorder::saveAIJson(const std::vector<AIFrame> &frames, const std::string &filename)
-// {
-
-//     if (frames.empty()) {
-//         return false;
-//     }
-
-//     try {
-
-//         // 创建目录
-//         std::filesystem::path path(filename);
-
-//         auto parent = path.parent_path();
-
-//         if (!parent.empty()) {
-//             std::filesystem::create_directories(parent);
-//         }
-
-//         json root;
-
-//         root["frame_count"] = frames.size();
-
-//         root["frames"] = json::array();
-
-//         for (const auto &frame : frames) {
-
-//             json jf;
-
-//             jf["frame_id"] = frame.frame_id;
-
-//             jf["pts"] = frame.pts;
-
-//             jf["real_time_ms"] = frame.real_time_ms;
-
-//             jf["objects"] = json::array();
-
-//             for (const auto &obj : frame.objects) {
-
-//                 json jo;
-
-//                 jo["track_id"] = obj.track_id;
-
-//                 jo["confidence"] = obj.confidence;
-
-//                 jo["x"] = obj.x;
-
-//                 jo["y"] = obj.y;
-
-//                 jo["w"] = obj.w;
-
-//                 jo["h"] = obj.h;
-
-//                 jf["objects"].push_back(jo);
-//             }
-
-//             root["frames"].push_back(jf);
-//         }
-
-//         std::ofstream ofs(filename);
-
-//         if (!ofs.is_open()) {
-//             return false;
-//         }
-
-//         ofs << root.dump(4);
-
-//         ofs.close();
-
-//     } catch (const std::exception &e) {
-
-//         return false;
-//     }
-
-//     return true;
-// }
-
 #include "AIJsonRecorder.h"
 
 #include <fstream>
@@ -167,6 +82,13 @@ void AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
 
         if (best && min_diff < 200) {
 
+            if (i < 20) {
+
+                spdlog::info(
+                    "[AI MATCH] video_index={} video_time={} ai_time={} diff={} objects={}", i,
+                    video.real_time_ms, best->real_time_ms, min_diff, best->objects.size());
+            }
+
             frame["ai_time_ms"] = best->real_time_ms;
 
             frame["ai_pts"] = best->pts;
@@ -204,6 +126,20 @@ void AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
 
         frames.push_back(frame);
     }
+
+    // ================================
+    // AI匹配统计
+    // ================================
+
+    size_t match_count = 0;
+
+    for (auto &f : frames) {
+        if (f["ai_time_ms"] != 0)
+            match_count++;
+    }
+
+    spdlog::info("[AI MATCH SUMMARY] video_frames={} matched={} ratio={}%", video_frames.size(),
+                 match_count, video_frames.empty() ? 0 : match_count * 100 / video_frames.size());
 
     root["frames"] = frames;
 

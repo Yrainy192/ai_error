@@ -167,13 +167,14 @@ void RtspStream::buildPipeline() {
         /******** 事件缓存 ********/
 
         "t. ! queue ! "
-        "h265parse config-interval=-1 ! "
+        "h265parse disable-passthrough=true config-interval=-1 ! "
         "video/x-h265,stream-format=byte-stream,alignment=au ! "
         "appsink "
         "name=h265cache "
         "emit-signals=true "
         "sync=false "
-        "max-buffers=500 ";
+        "drop=false "
+        "max-buffers=600 ";
 
     spdlog::info("Pipeline:\n{}", pipeline_str);
     GError *error = nullptr;
@@ -198,31 +199,106 @@ GstFlowReturn RtspStream::on_h265_sample_static(GstElement *sink, gpointer user_
 
 GstFlowReturn RtspStream::on_h265_sample(GstElement *sink) {
     GstSample *sample = nullptr;
+
     g_signal_emit_by_name(sink, "pull-sample", &sample);
-    if (!sample)
+
+    if (!sample) {
         return GST_FLOW_ERROR;
+    }
+
     GstBuffer *buffer = gst_sample_get_buffer(sample);
+
+    if (!buffer) {
+        gst_sample_unref(sample);
+        return GST_FLOW_ERROR;
+    }
+
     GstMapInfo map;
+
     if (gst_buffer_map(buffer, &map, GST_MAP_READ)) {
+
         H265Packet pkt;
+
+        /*
+         * =========================
+         * frame id
+         * =========================
+         */
+
         pkt.frame_id = h265_counter.fetch_add(1);
-        // pkt.pts = GST_BUFFER_PTS(buffer);
+
+        /*
+         * =========================
+         * PTS
+
+         * RTSP H265有PTS
+         * =========================
+         */
+
         if (GST_BUFFER_PTS_IS_VALID(buffer)) {
             pkt.pts = GST_BUFFER_PTS(buffer);
         } else {
             pkt.pts = 0;
+
+            spdlog::warn("[H265] invalid PTS frame={}", pkt.frame_id);
         }
+
+        /*
+         * =========================
+         * DTS
+         *
+         * 摄像头没有提供DTS
+         *
+         * 当前流无B帧
+         *
+         * DTS=PTS
+         * =========================
+         */
+
+        pkt.dts = pkt.pts;
+
+        /*
+         * =========================
+         * real time
+         * =========================
+         */
+
         pkt.real_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
                                std::chrono::system_clock::now().time_since_epoch())
                                .count();
+
+        /*
+         * =========================
+         * keyframe
+         * =========================
+         *
+         * IDR判断
+         *
+         */
+
         pkt.keyframe = !GST_BUFFER_FLAG_IS_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
+
+        /*
+         * =========================
+         * H265 AU数据
+         * =========================
+         */
+
         pkt.data.assign(map.data, map.data + map.size);
+
+        /*
+         * =========================
+         * push ring buffer
+         * =========================
+         */
+
         h265_cache.push(pkt);
-        // spdlog::debug("H265 cache push cam={} size={} key={}", camera_id, map.size,
-        // pkt.keyframe);
+
         gst_buffer_unmap(buffer, &map);
     }
+
     gst_sample_unref(sample);
+
     return GST_FLOW_OK;
 }
 

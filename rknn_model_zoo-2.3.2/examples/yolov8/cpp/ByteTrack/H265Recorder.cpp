@@ -11,7 +11,7 @@
 #include <iomanip>
 #include <spdlog/spdlog.h>
 #include <sstream>
-
+#include <unordered_set>
 std::string H265Recorder::getTimeString(uint64_t time_ms) {
     time_t sec = time_ms / 1000;
 
@@ -142,7 +142,16 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
 void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
                                const std::string &id) {
     if (!cache) {
+
         spdlog::error("[Recorder] cache null");
+
+        return;
+    }
+
+    if (!ai_cache) {
+
+        spdlog::error("[Recorder] ai_cache null");
+
         return;
     }
 
@@ -151,72 +160,166 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
+    /*
+     * ===============================
+     * 获取事件前5秒
+     * ===============================
+     */
+
     auto before = cache->getRange(start_time, event_time_ms);
-    spdlog::info("AI cache query addr={}", (void *)ai_cache);
-    spdlog::info("AI query range start={} end={} cache_size={}", start_time, event_time_ms,
-                 ai_cache->size());
+
     auto before_ai = ai_cache->getRange_ai(start_time, event_time_ms);
-    spdlog::info("AI cache size={}", ai_cache->size());
-    spdlog::info("[AI Error Recorder {}] before packets={}", camera_id, before.size());
+
+    spdlog::info("[AI] before video={} ai={}", before.size(), before_ai.size());
 
     std::thread([this, before, before_ai, event_time_ms, dir, grid, id]() {
-        // 等待后5秒数据
+        /*
+         * 等待事件后5秒
+         */
+
         std::this_thread::sleep_for(std::chrono::seconds(5));
+
+        /*
+         * ===============================
+         * 获取后5秒
+         * ===============================
+         */
 
         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
 
         auto after_ai = ai_cache->getRange_ai(event_time_ms, event_time_ms + 5000);
+
         std::vector<H265Packet> all;
+
         all.reserve(before.size() + after.size());
+
         all.insert(all.end(), before.begin(), before.end());
+
         all.insert(all.end(), after.begin(), after.end());
 
         std::vector<AIFrame> all_ai;
+
         all_ai.reserve(before_ai.size() + after_ai.size());
+
         all_ai.insert(all_ai.end(), before_ai.begin(), before_ai.end());
+
         all_ai.insert(all_ai.end(), after_ai.begin(), after_ai.end());
 
         if (all.empty()) {
 
-            spdlog::warn("[AI Error Recorder] no packets");
+            spdlog::warn("[AI] no video packets");
 
             return;
         }
-        // PTS排序
+
+        /*
+         * ===============================
+         * 1. DTS排序
+         * ===============================
+         */
+
         std::sort(all.begin(), all.end(),
-                  [](const H265Packet &a, const H265Packet &b) { return a.pts < b.pts; });
-        // 找I帧
+                  [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
+
+        spdlog::info("[AI] video after sort={}", all.size());
+
+        /*
+         * ===============================
+         * 2. 去重复packet
+         * ===============================
+         */
+
+        size_t duplicate_count = 0;
+
+        auto end_it =
+            std::unique(all.begin(), all.end(), [&](const H265Packet &a, const H265Packet &b) {
+                bool same = (a.pts == b.pts) && (a.dts == b.dts);
+
+                if (same) {
+                    duplicate_count++;
+
+                    spdlog::warn("[AI] remove duplicate pts={} real={}", a.pts, a.real_time_ms);
+                }
+
+                return same;
+            });
+
+        all.erase(end_it, all.end());
+
+        spdlog::info("[AI] duplicate removed={} remain={}", duplicate_count, all.size());
+
+        /*
+         * ===============================
+         * 3. 找事件前最近IDR
+         * ===============================
+         */
+
+        uint64_t target_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
+
         size_t start_index = 0;
-        bool found_keyframe = false;
-        for (size_t i = 0; i < all.size(); i++) {
-            if (all[i].keyframe) {
+
+        bool found = false;
+
+        for (int i = (int)all.size() - 1; i >= 0; i--) {
+
+            if (all[i].real_time_ms <= target_time && all[i].keyframe) {
+
                 start_index = i;
-                found_keyframe = true;
+
+                found = true;
+
                 break;
             }
         }
 
-        if (!found_keyframe) {
-            spdlog::error("[AI Error Recorder] no keyframe found");
+        if (!found) {
+
+            for (size_t i = 0; i < all.size(); i++) {
+
+                if (all[i].keyframe) {
+                    start_index = i;
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (!found) {
+
+            spdlog::error("[AI] no IDR");
+
             return;
         }
 
+        spdlog::info("[AI] select IDR index={} real={}", start_index,
+                     all[start_index].real_time_ms);
+
         if (start_index > 0) {
+
             all.erase(all.begin(), all.begin() + start_index);
         }
 
-        if (all.empty()) {
+        if (all.empty())
             return;
-        }
-        // ================================
-        // TS真正开始位置
-        // ================================
-        uint64_t video_start_time = all.front().real_time_ms;
-        spdlog::info("[Recorder] video start time={}", video_start_time);
 
-        // ================================
-        // AI按照TS开始时间裁剪
-        // ================================
+        /*
+         * ===============================
+         * 4. 视频真实开始时间
+         * ===============================
+         */
+
+        uint64_t video_start_time = all.front().real_time_ms;
+
+        uint64_t video_end_time = all.back().real_time_ms;
+
+        spdlog::info("[AI] video start={} end={} duration={} packets={}", video_start_time,
+                     video_end_time, video_end_time - video_start_time, all.size());
+
+        /*
+         * ===============================
+         * 5. AI同步裁剪
+         * ===============================
+         */
 
         std::sort(all_ai.begin(), all_ai.end(), [](const AIFrame &a, const AIFrame &b) {
             return a.real_time_ms < b.real_time_ms;
@@ -227,249 +330,46 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
             [](const AIFrame &frame, uint64_t t) { return frame.real_time_ms < t; });
 
         if (ai_begin != all_ai.begin()) {
+
             all_ai.erase(all_ai.begin(), ai_begin);
         }
 
+        spdlog::info("[AI JSON] frames={} first={} last={}", all_ai.size(),
+                     all_ai.empty() ? 0 : all_ai.front().real_time_ms,
+                     all_ai.empty() ? 0 : all_ai.back().real_time_ms);
+
+        /*
+         * ===============================
+         * 6. 保存文件
+         * ===============================
+         */
         std::filesystem::create_directories(dir);
+        std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+        savePackets(all, filename);
+        /*
+         * 保存JSON
+         */
+        if (ai_json_recorder && !all.empty()) {
 
-        int key_count = 0;
+            std::string json_filename = dir + "/" + getTimeString(event_time_ms) + ".json";
 
-        for (auto &p : all) {
-            if (p.keyframe)
-                key_count++;
+            ai_json_recorder->saveAIJson(all,    // 视频帧
+                                         all_ai, // AI结果
+                                         json_filename);
+
+            spdlog::info("[AI JSON] saved={} video={} ai={}", json_filename, all.size(),
+                         all_ai.size());
         }
 
-        spdlog::info("[Recorder] packets={} keyframes={}", all.size(), key_count);
-
-        std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
-        // 保存视频
-        savePackets(all, filename);
-
-        spdlog::info("[Recorder] AI sync start_time={} json_frames={}", video_start_time,
-                     all_ai.size());
-        std::string json_filename = dir + "/" + getTimeString(event_time_ms) + ".json";
-
-        ai_json_recorder->saveAIJson(all, all_ai, json_filename);
-        // ai_json_recorder->saveAIJson(all_ai, json_filename);
-
-        // 保存数据库
         if (mysql_client) {
+
             std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
-            std::time_t now = std::time(nullptr);
-
-            char timeBuffer[32];
-
-            std::strftime(timeBuffer, sizeof(timeBuffer), "%Y-%m-%d %H:%M:%S",
-                          std::localtime(&now));
-
-            mysql_client->upAIError(grid, timeBuffer, video_url, id);
-
-        } else {
-            spdlog::warn("[AI Error Recorder] mysql_client null");
+            mysql_client->upAIError(grid, "", video_url, id);
         }
     }).detach();
 }
 
-// void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
-//                                const std::string &filename) {
-//     // spdlog::info("[{}] savePackets packets={} duration={}ms", camera_id, packets.size(),
-//     //              packets.empty() ? 0 : packets.back().real_time_ms -
-//     //              packets.front().real_time_ms);
-
-//     if (packets.empty()) {
-//         spdlog::warn("[Recorder] empty packets");
-//         return;
-//     }
-
-//     /*
-//      * 1. 排序
-//      * 防止ring buffer取出的数据PTS乱序
-//      */
-//     std::vector<H265Packet> sorted = packets;
-
-//     std::sort(sorted.begin(), sorted.end(),
-//               [](const H265Packet &a, const H265Packet &b) { return a.pts < b.pts; });
-
-//     /*
-//      * 2. 找开始位置
-//      *
-//      * 找最近IDR
-//      * 前面保留参数集
-//      *
-//      * VPS/SPS/PPS一般在IDR前
-//      */
-//     size_t start = 0;
-
-//     for (size_t i = 0; i < sorted.size(); i++) {
-//         if (sorted[i].keyframe) {
-//             start = i;
-//             break;
-//         }
-//     }
-
-//     /*
-//      * 如果前面有参数帧
-//      * 往前找
-//      */
-//     while (start > 0) {
-//         /*
-//          * VPS/SPS/PPS不是keyframe
-//          * 这里简单向前扩展
-//          *
-//          * 你的缓存如果保存完整NAL，
-//          * 这里可以判断NAL type
-//          */
-//         start--;
-
-//         if (sorted[start].keyframe)
-//             break;
-//     }
-
-//     std::vector<H265Packet> valid;
-
-//     for (size_t i = start; i < sorted.size(); i++) {
-//         valid.push_back(sorted[i]);
-//     }
-
-//     if (valid.empty()) {
-//         spdlog::error("[Recorder] no valid packets");
-
-//         return;
-//     }
-
-//     /*
-//      * 3. 修正时间戳
-//      *
-//      * TS最好从0开始
-//      */
-//     uint64_t base_pts = valid.front().pts;
-
-//     uint64_t base_dts = valid.front().dts;
-
-//     for (auto &pkt : valid) {
-//         pkt.pts -= base_pts;
-
-//         pkt.dts -= base_dts;
-//     }
-
-//     /*
-//      * 4. 创建目录
-//      */
-//     std::filesystem::path path(filename);
-
-//     std::filesystem::create_directories(path.parent_path());
-
-//     GstElement *pipeline = gst_pipeline_new("h265-ts");
-
-//     GstElement *appsrc = gst_element_factory_make("appsrc", nullptr);
-
-//     GstElement *parser = gst_element_factory_make("h265parse", nullptr);
-
-//     GstElement *muxer = gst_element_factory_make("mpegtsmux", nullptr);
-
-//     GstElement *sink = gst_element_factory_make("filesink", nullptr);
-
-//     if (!pipeline || !appsrc || !parser || !muxer || !sink) {
-//         spdlog::error("[Recorder] gst create failed");
-
-//         return;
-//     }
-
-//     g_object_set(sink, "location", filename.c_str(), nullptr);
-
-//     gst_bin_add_many(GST_BIN(pipeline), appsrc, parser, muxer, sink, nullptr);
-
-//     if (!gst_element_link_many(appsrc, parser, muxer, sink, nullptr)) {
-//         spdlog::error("[Recorder] gst link failed");
-
-//         gst_object_unref(pipeline);
-//         return;
-//     }
-
-//     /*
-//      * H265 Annex-B
-//      */
-//     GstCaps *caps = gst_caps_from_string("video/x-h265,"
-//                                          "stream-format=byte-stream,"
-//                                          "alignment=au");
-
-//     gst_app_src_set_caps(GST_APP_SRC(appsrc), caps);
-
-//     gst_caps_unref(caps);
-
-//     g_object_set(appsrc, "format", GST_FORMAT_TIME, nullptr);
-
-//     gst_element_set_state(pipeline, GST_STATE_PLAYING);
-
-//     /*
-//      * 5. 推送数据
-//      */
-//     for (auto &pkt : valid) {
-
-//         GstBuffer *buffer = gst_buffer_new_allocate(nullptr, pkt.data.size(), nullptr);
-
-//         gst_buffer_fill(buffer, 0, pkt.data.data(), pkt.data.size());
-
-//         GST_BUFFER_PTS(buffer) = pkt.pts;
-
-//         GST_BUFFER_DTS(buffer) = pkt.dts;
-
-//         if (pkt.keyframe) {
-//             GST_BUFFER_FLAG_UNSET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
-//         } else {
-//             GST_BUFFER_FLAG_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
-//         }
-
-//         GstFlowReturn ret = gst_app_src_push_buffer(GST_APP_SRC(appsrc), buffer);
-
-//         if (ret != GST_FLOW_OK) {
-//             spdlog::error("[Recorder] push failed");
-
-//             break;
-//         }
-//     }
-
-//     /*
-//      * 结束输入
-//      */
-//     gst_app_src_end_of_stream(GST_APP_SRC(appsrc));
-
-//     /*
-//      * 等待mux完成
-//      */
-//     GstBus *bus = gst_element_get_bus(pipeline);
-
-//     GstMessage *msg = gst_bus_timed_pop_filtered(
-//         bus, GST_CLOCK_TIME_NONE, (GstMessageType)(GST_MESSAGE_ERROR | GST_MESSAGE_EOS));
-
-//     if (msg) {
-
-//         if (GST_MESSAGE_TYPE(msg) == GST_MESSAGE_ERROR) {
-//             GError *err = nullptr;
-
-//             gchar *debug = nullptr;
-
-//             gst_message_parse_error(msg, &err, &debug);
-
-//             spdlog::error("[Recorder] {}", err->message);
-
-//             g_error_free(err);
-
-//             g_free(debug);
-//         }
-
-//         gst_message_unref(msg);
-//     }
-
-//     gst_object_unref(bus);
-
-//     gst_element_set_state(pipeline, GST_STATE_NULL);
-
-//     gst_object_unref(pipeline);
-
-//     spdlog::info("[Recorder] TS saved {} packets -> {}", valid.size(), filename);
-// }
 void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
                                const std::string &filename) {
     if (packets.empty()) {
@@ -477,93 +377,109 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
         return;
     }
 
-    /*
-     * 1. 按DTS排序
-     *
-     * H265解码必须按照DTS顺序输入
-     * 不能按照PTS
-     */
-    std::vector<H265Packet> sorted = packets;
-
-    std::sort(sorted.begin(), sorted.end(),
-              [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
+    spdlog::info("[Recorder] input packets={}", packets.size());
 
     /*
-     * 2. 找第一个IDR
-     *
-     * 从关键帧开始
+     * 1. 拷贝
      */
-    size_t start = 0;
 
-    bool found_key = false;
+    std::vector<H265Packet> valid = packets;
 
-    for (size_t i = 0; i < sorted.size(); i++) {
+    /*
+     * 2. 按真实时间排序
+     *
+     * 不使用PTS/DTS
+     * ring buffer顺序可能乱
+     */
 
-        if (sorted[i].keyframe) {
+    std::sort(valid.begin(), valid.end(), [](const H265Packet &a, const H265Packet &b) {
+        return a.real_time_ms < b.real_time_ms;
+    });
 
-            start = i;
-            found_key = true;
+    /*
+     * 调试排序结果
+     */
+
+    for (size_t i = 0; i < std::min<size_t>(valid.size(), 10); i++) {
+        spdlog::info("[SORT] idx={} pts={} dts={} real={} key={}", i, valid[i].pts, valid[i].dts,
+                     valid[i].real_time_ms, valid[i].keyframe);
+    }
+
+    /*
+     * 3. 找第一个IDR
+     *
+     * 必须从I帧开始
+     */
+
+    size_t start_index = 0;
+
+    bool found_idr = false;
+
+    for (size_t i = 0; i < valid.size(); i++) {
+        if (valid[i].keyframe) {
+            start_index = i;
+            found_idr = true;
             break;
         }
     }
 
-    if (!found_key) {
-
-        spdlog::error("[Recorder] no IDR frame");
+    if (!found_idr) {
+        spdlog::error("[Recorder] no IDR found");
 
         return;
     }
 
-    /*
-     * 3. 保留IDR之前的参数集
-     *
-     * 如果cache里面保存的是：
-     *
-     * VPS
-     * SPS
-     * PPS
-     * IDR
-     *
-     * 这里不要删除
-     *
-     */
-
-    std::vector<H265Packet> valid;
-
-    /*
-     * 从IDR开始
-     *
-     * 注意：
-     * 不再向前乱扩展
-     *
-     */
-    for (size_t i = start; i < sorted.size(); i++) {
-        valid.push_back(sorted[i]);
+    if (start_index > 0) {
+        valid.erase(valid.begin(), valid.begin() + start_index);
     }
 
     if (valid.empty()) {
-        spdlog::error("[Recorder] valid empty");
+        spdlog::error("[Recorder] empty after IDR");
+
         return;
     }
 
+    spdlog::info("[Recorder] IDR start real={} packets={}", valid.front().real_time_ms,
+                 valid.size());
+
     /*
-     * 4. 不修改PTS/DTS
+     * 4. 重新生成PTS/DTS
      *
-     * 非常重要
+     * 25fps
      *
-     * H265内部POC依赖原始时间关系
+     * 40ms/frame
      *
+     * GStreamer时间单位:
+     * ns
      */
+
+    const uint64_t frame_duration = 40000000;
+
+    for (size_t i = 0; i < valid.size(); i++) {
+        valid[i].pts = i * frame_duration;
+
+        valid[i].dts = i * frame_duration;
+    }
+
+    /*
+     * 时间戳检查
+     */
+
+    for (size_t i = 0; i < std::min<size_t>(valid.size(), 10); i++) {
+        spdlog::info("[RESET] idx={} pts={} dts={} key={}", i, valid[i].pts, valid[i].dts,
+                     valid[i].keyframe);
+    }
 
     /*
      * 5. 创建目录
      */
+
     std::filesystem::path path(filename);
 
     std::filesystem::create_directories(path.parent_path());
 
     /*
-     * GStreamer pipeline
+     * 6. 创建GStreamer写TS pipeline
      */
 
     GstElement *pipeline = gst_pipeline_new("h265-ts");
@@ -578,20 +494,16 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
 
     if (!pipeline || !appsrc || !parser || !muxer || !sink) {
         spdlog::error("[Recorder] gst create failed");
+
         return;
     }
-
-    /*
-     * 让h265parse周期插入VPS/SPS/PPS
-     */
-    g_object_set(parser, "config-interval", 1, nullptr);
 
     g_object_set(sink, "location", filename.c_str(), nullptr);
 
     gst_bin_add_many(GST_BIN(pipeline), appsrc, parser, muxer, sink, nullptr);
 
     if (!gst_element_link_many(appsrc, parser, muxer, sink, nullptr)) {
-        spdlog::error("[Recorder] gst link failed");
+        spdlog::error("[Recorder] link failed");
 
         gst_object_unref(pipeline);
 
@@ -600,10 +512,8 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
 
     /*
      * H265 Annex-B
-     *
-     * 一个buffer必须是AU
-     *
      */
+
     GstCaps *caps = gst_caps_from_string("video/x-h265,"
                                          "stream-format=byte-stream,"
                                          "alignment=au");
@@ -612,44 +522,21 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
 
     gst_caps_unref(caps);
 
-    /*
-     * 时间格式
-     */
     g_object_set(appsrc, "format", GST_FORMAT_TIME, nullptr);
 
     gst_element_set_state(pipeline, GST_STATE_PLAYING);
 
     /*
-     * 6. 推送H265
+     * 7. push buffer
      */
 
-    uint64_t last_dts = 0;
+    for (size_t i = 0; i < valid.size(); i++) {
 
-    int count = 0;
-
-    for (auto &pkt : valid) {
-
-        /*
-         * 检查DTS递增
-         */
-        if (count > 0 && pkt.dts < last_dts) {
-            spdlog::warn("[Recorder] DTS disorder {} -> {}", last_dts, pkt.dts);
-        }
-
-        last_dts = pkt.dts;
+        auto &pkt = valid[i];
 
         GstBuffer *buffer = gst_buffer_new_allocate(nullptr, pkt.data.size(), nullptr);
 
         gst_buffer_fill(buffer, 0, pkt.data.data(), pkt.data.size());
-
-        /*
-         * 如果你的pts/dts单位是ms
-         * 这里需要打开
-         *
-         * GST_BUFFER_PTS(buffer)=pkt.pts*GST_MSECOND;
-         * GST_BUFFER_DTS(buffer)=pkt.dts*GST_MSECOND;
-         *
-         */
 
         GST_BUFFER_PTS(buffer) = pkt.pts;
 
@@ -661,6 +548,9 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
             GST_BUFFER_FLAG_SET(buffer, GST_BUFFER_FLAG_DELTA_UNIT);
         }
 
+        // spdlog::info("[PUSH] idx={} pts={} dts={} key={} size={}", i, pkt.pts, pkt.dts,
+        //              pkt.keyframe, pkt.data.size());
+
         GstFlowReturn ret = gst_app_src_push_buffer(GST_APP_SRC(appsrc), buffer);
 
         if (ret != GST_FLOW_OK) {
@@ -668,13 +558,12 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
 
             break;
         }
-
-        count++;
     }
 
     /*
      * EOS
      */
+
     gst_app_src_end_of_stream(GST_APP_SRC(appsrc));
 
     GstBus *bus = gst_element_get_bus(pipeline);

@@ -87,4 +87,7 @@ class H265Recorder {
     std::string getTimeString(uint64_t time_ms);
 
     std::string getDateDir(uint64_t time_ms);
+
+    uint64_t h265_dts_counter = 0;
+    bool h265_dts_initialized = false;
 };

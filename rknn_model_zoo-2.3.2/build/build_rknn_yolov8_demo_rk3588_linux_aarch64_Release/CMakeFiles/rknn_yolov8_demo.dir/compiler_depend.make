@@ -2623,7 +2623,9 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o: /home/admin/Rtsp_6
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
   /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/local/include/spdlog/details/synchronous_factory.h \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.cpp \
   /usr/include/stdc-predef.h \
