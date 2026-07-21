@@ -30,6 +30,16 @@ std::string H265Recorder::getTimeString(uint64_t time_ms) {
     return ss.str();
 }
 
+std::string H265Recorder::msToDatetimeString(uint64_t time_ms) {
+    time_t sec = time_ms / 1000;
+    struct tm tm_time;
+    localtime_r(&sec, &tm_time);
+
+    std::stringstream ss;
+    ss << std::put_time(&tm_time, "%Y-%m-%d %H:%M:%S");
+    return ss.str();
+}
+
 // H265Recorder::H265Recorder(const std::string &id, H265RingBuffer *c) { camera_id = id; }
 
 void H265Recorder::setMysqlClient(MysqlClient *db) { mysql_client = db; }
@@ -345,7 +355,11 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
          */
         std::filesystem::create_directories(dir);
         std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
-        savePackets(all, filename);
+        {
+            std::lock_guard<std::mutex> lock(save_mutex);
+
+            savePackets(all, filename);
+        }
         /*
          * 保存JSON
          */
@@ -365,7 +379,9 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
             std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
-            mysql_client->upAIError(grid, "", video_url, id);
+            std::string time_str = msToDatetimeString(event_time_ms);
+
+            mysql_client->upAIError(grid, time_str, video_url, id);
         }
     }).detach();
 }

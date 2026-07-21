@@ -321,20 +321,18 @@ int main() {
     manager.addStream("rtsp://192.168.70.12:554/"
                       "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
                       "cam0");
-    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101", "cam1");
+    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101", "cam1");
+    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101", "cam2");
+    // manager.addStream("rtsp://192.168.70.10:554/"
+    //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
+    //                   "cam1");
 
-    manager.addStream("rtsp://192.168.70.11:554/"
-                      "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-                      "cam2");
+    // manager.addStream("rtsp://192.168.70.11:554/"
+    //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
+    //                   "cam2");
 
-    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101", "cam3");
-
-    manager.addStream("rtsp://192.168.70.10:554/"
-                      "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-                      "cam4");
-
-    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101",
-    // "cam5");
+    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101",
+    // "cam3");
 
     for (int i = 0; i < 5; i++) {
         auto stream = manager.get(i);
@@ -372,7 +370,7 @@ int main() {
     // // 7. UI窗口
     cv::namedWindow("cam0");
     cv::namedWindow("cam1");
-    // cv::namedWindow("cam2");
+    cv::namedWindow("cam2");
     // cv::namedWindow("cam3");
     // cv::namedWindow("cam4");
     // cv::namedWindow("cam5");
@@ -389,11 +387,11 @@ int main() {
             if (!g_display[1].img.empty())
                 cv::imshow("cam1", g_display[1].img);
         }
-        // {
-        //     std::lock_guard<std::mutex> lock(g_display[2].mtx);
-        //     if (!g_display[2].img.empty())
-        //         cv::imshow("cam2", g_display[2].img);
-        // }
+        {
+            std::lock_guard<std::mutex> lock(g_display[2].mtx);
+            if (!g_display[2].img.empty())
+                cv::imshow("cam2", g_display[2].img);
+        }
         // {
         //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
         //     if (!g_display[3].img.empty())

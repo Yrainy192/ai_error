@@ -1,14 +1,5 @@
 #include "RtspManager.h"
 
-// void RtspManager::addStream(const std::string &url, const std::string &cameraId) {
-
-//     auto stream = std::make_shared<RtspStream>(url, cameraId);
-
-//     stream->start();
-
-//     streams.push_back(stream);
-// }
-
 void RtspManager::addStream(const std::string &url, const std::string &cameraId) {
 
     // 创建唯一AI缓存

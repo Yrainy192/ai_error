@@ -88,6 +88,10 @@ class H265Recorder {
 
     std::string getDateDir(uint64_t time_ms);
 
+    std::string msToDatetimeString(uint64_t time_ms);
+
+    std::mutex save_mutex;
+
     uint64_t h265_dts_counter = 0;
     bool h265_dts_initialized = false;
 };
