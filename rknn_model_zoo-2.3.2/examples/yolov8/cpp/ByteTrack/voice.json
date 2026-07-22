@@ -1,7 +1,11 @@
 {
-    "0_1": "speaker/ves_timeouw.wav",
-    "1_1": "speaker/ves_one_come.wav",
-    "1_2": "speaker/ves_two_come.wav",
-    "1_3": "speaker/ves_three_come.wav",
+    "0_1": "speaker/test.wav",
+    "1_1": "speaker/1.wav",
+    "1_2": "speaker/2.wav",
+    "1_3": "speaker/3.wav",
+    "1_4": "speaker/4.wav",
+    "2_1": "speaker/5.wav",
+    "2_2": "speaker/6.wav",
+    "2_3": "speaker/7.wav",
     "default": "speaker/test.wav"
 }

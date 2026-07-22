@@ -82,12 +82,12 @@ void AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
 
         if (best && min_diff < 200) {
 
-            if (i < 20) {
+            // if (i < 20) {
 
-                spdlog::info(
-                    "[AI MATCH] video_index={} video_time={} ai_time={} diff={} objects={}", i,
-                    video.real_time_ms, best->real_time_ms, min_diff, best->objects.size());
-            }
+            //     spdlog::info(
+            //         "[AI MATCH] video_index={} video_time={} ai_time={} diff={} objects={}", i,
+            //         video.real_time_ms, best->real_time_ms, min_diff, best->objects.size());
+            // }
 
             frame["ai_time_ms"] = best->real_time_ms;
 

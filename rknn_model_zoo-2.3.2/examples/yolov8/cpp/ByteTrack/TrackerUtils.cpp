@@ -1,7 +1,8 @@
 #include "TrackerUtils.h"
 
 #include <cstdio>
-
+#include <spdlog/fmt/ostr.h>
+#include <spdlog/spdlog.h>
 extern ROIManager roi_manager;
 
 std::vector<byte_track::Object>
@@ -40,7 +41,6 @@ convertToByteTrackObjects(const object_detect_result_list &results) {
             tw = w * (1 + 2 * pad);
             th = h * (1 + 2 * pad);
         }
-
         objects.emplace_back(byte_track::Rect<float>(tx, ty, tw, th), r.cls_id, r.prop);
     }
 

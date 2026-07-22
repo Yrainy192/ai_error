@@ -63,8 +63,7 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         spdlog::error("[Recorder] cache null");
         return;
     }
-    std::string dir =
-        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
+    std::string dir = "/mnt/share/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
@@ -165,8 +164,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
         return;
     }
 
-    std::string dir =
-        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
+    std::string dir = "/mnt/share/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
@@ -231,7 +229,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
         std::sort(all.begin(), all.end(),
                   [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
 
-        spdlog::info("[AI] video after sort={}", all.size());
+        // spdlog::info("[AI] video after sort={}", all.size());
 
         /*
          * ===============================
@@ -248,7 +246,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
                 if (same) {
                     duplicate_count++;
 
-                    spdlog::warn("[AI] remove duplicate pts={} real={}", a.pts, a.real_time_ms);
+                    // spdlog::warn("[AI] remove duplicate pts={} real={}", a.pts, a.real_time_ms);
                 }
 
                 return same;
@@ -256,7 +254,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
         all.erase(end_it, all.end());
 
-        spdlog::info("[AI] duplicate removed={} remain={}", duplicate_count, all.size());
+        // spdlog::info("[AI] duplicate removed={} remain={}", duplicate_count, all.size());
 
         /*
          * ===============================
@@ -301,8 +299,8 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
             return;
         }
 
-        spdlog::info("[AI] select IDR index={} real={}", start_index,
-                     all[start_index].real_time_ms);
+        // spdlog::info("[AI] select IDR index={} real={}", start_index,
+        //              all[start_index].real_time_ms);
 
         if (start_index > 0) {
 
@@ -322,8 +320,8 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
         uint64_t video_end_time = all.back().real_time_ms;
 
-        spdlog::info("[AI] video start={} end={} duration={} packets={}", video_start_time,
-                     video_end_time, video_end_time - video_start_time, all.size());
+        // spdlog::info("[AI] video start={} end={} duration={} packets={}", video_start_time,
+        //              video_end_time, video_end_time - video_start_time, all.size());
 
         /*
          * ===============================
@@ -344,9 +342,9 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
             all_ai.erase(all_ai.begin(), ai_begin);
         }
 
-        spdlog::info("[AI JSON] frames={} first={} last={}", all_ai.size(),
-                     all_ai.empty() ? 0 : all_ai.front().real_time_ms,
-                     all_ai.empty() ? 0 : all_ai.back().real_time_ms);
+        // spdlog::info("[AI JSON] frames={} first={} last={}", all_ai.size(),
+        //              all_ai.empty() ? 0 : all_ai.front().real_time_ms,
+        //              all_ai.empty() ? 0 : all_ai.back().real_time_ms);
 
         /*
          * ===============================
@@ -393,7 +391,7 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
         return;
     }
 
-    spdlog::info("[Recorder] input packets={}", packets.size());
+    // spdlog::info("[Recorder] input packets={}", packets.size());
 
     /*
      * 1. 拷贝
@@ -416,10 +414,10 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
      * 调试排序结果
      */
 
-    for (size_t i = 0; i < std::min<size_t>(valid.size(), 10); i++) {
-        spdlog::info("[SORT] idx={} pts={} dts={} real={} key={}", i, valid[i].pts, valid[i].dts,
-                     valid[i].real_time_ms, valid[i].keyframe);
-    }
+    // for (size_t i = 0; i < std::min<size_t>(valid.size(), 10); i++) {
+    //     spdlog::info("[SORT] idx={} pts={} dts={} real={} key={}", i, valid[i].pts, valid[i].dts,
+    //                  valid[i].real_time_ms, valid[i].keyframe);
+    // }
 
     /*
      * 3. 找第一个IDR
@@ -455,8 +453,8 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
         return;
     }
 
-    spdlog::info("[Recorder] IDR start real={} packets={}", valid.front().real_time_ms,
-                 valid.size());
+    // spdlog::info("[Recorder] IDR start real={} packets={}", valid.front().real_time_ms,
+    //              valid.size());
 
     /*
      * 4. 重新生成PTS/DTS
@@ -481,10 +479,10 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
      * 时间戳检查
      */
 
-    for (size_t i = 0; i < std::min<size_t>(valid.size(), 10); i++) {
-        spdlog::info("[RESET] idx={} pts={} dts={} key={}", i, valid[i].pts, valid[i].dts,
-                     valid[i].keyframe);
-    }
+    // for (size_t i = 0; i < std::min<size_t>(valid.size(), 10); i++) {
+    //     spdlog::info("[RESET] idx={} pts={} dts={} key={}", i, valid[i].pts, valid[i].dts,
+    //                  valid[i].keyframe);
+    // }
 
     /*
      * 5. 创建目录

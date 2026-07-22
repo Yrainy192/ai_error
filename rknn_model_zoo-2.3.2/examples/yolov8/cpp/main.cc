@@ -111,9 +111,7 @@ using namespace cv;
 // }
 
 //===============================================已经实现视频存储功能==========================================================//
-// std::vector<std::unique_ptr<AIFrameCache>> ai_caches;
 TaskManager task_manager;
-// RtspStream rtsp;
 ROIManager roi_manager;
 std::ofstream g_log_file;
 std::mutex g_log_mutex;
@@ -242,10 +240,10 @@ void start_service() {
     try {
         static MysqlClient mysql_client(host, user, password, database, port);
         task_manager.setMysqlClient(&mysql_client);
-        // static TCPClient tcp_client("192.168.70.33", 2059, &task_manager, &mysql_client);
+        static TCPClient tcp_client("192.168.70.33", 2059, &task_manager, &mysql_client);
 
-        static TCPClient tcp_client("127.0.0.1", 9000, &task_manager, &mysql_client);
-        //  启动 TCP线程（后台运行）
+        // static TCPClient tcp_client("127.0.0.1", 9000, &task_manager, &mysql_client);
+        //   启动 TCP线程（后台运行）
         std::thread([]() {
             tcp_client.start();
             // ⚠️保持线程存活（但不阻塞main）
@@ -347,11 +345,7 @@ int main() {
         rga_workers[i] = std::make_unique<RgaWorker>();
     }
     last_ai_frame_id.resize(5, UINT64_MAX);
-    // 5. AI JSON缓存
-    // ai_caches.resize(5);
-    // for (int i = 0; i < 5; i++) {
-    //     ai_caches[i] = std::make_unique<AIFrameCache>();
-    // }
+
     // 5. 模型池（6 core）
     std::string model_path =
         "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"
