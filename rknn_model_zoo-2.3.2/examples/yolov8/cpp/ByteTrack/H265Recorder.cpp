@@ -139,7 +139,7 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         savePackets(all, filename);
 
         if (mysql_client) {
-            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
+            std::string video_url = filename.substr(filename.find("/share/") + 7);
 
             mysql_client->updateVideo(code, video_url, type);
         } else {
@@ -375,7 +375,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
         if (mysql_client) {
 
-            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
+            std::string video_url = filename.substr(filename.find("/share/") + 7);
 
             std::string time_str = msToDatetimeString(event_time_ms);
 

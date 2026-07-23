@@ -231,7 +231,7 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
 void start_service() {
     // std::cout << "=== 程序启动 ===" << std::endl;
     spdlog::info("=== 程序启动 ===");
-    std::string host = "192.168.60.134";
+    std::string host = "192.168.60.125";
     std::string user = "admin";
     std::string password = "123456";
     std::string database = "ai_dec";
@@ -266,7 +266,7 @@ int main() {
 
     AlarmLight alarm("192.168.70.8", 23);
     if (!alarm.connect()) {
-        spdlog::info("alarm light connect failed");
+        spdlog::error("alarm light connect failed");
     };
 
     task_manager.setAlarmLight(&alarm);
