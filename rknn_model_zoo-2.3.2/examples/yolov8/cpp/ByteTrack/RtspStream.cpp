@@ -359,7 +359,7 @@ std::string RtspStream::makeRecordDir() {
     localtime_r(&tt, &tm_time);
     char date[16];
     strftime(date, sizeof(date), "%Y%m%d", &tm_time);
-    std::string dir = "/mnt/share/" + camera_id + "/" + date;
+    std::string dir = "/home/admin/Videos/" + camera_id + "/" + date;
     fs::create_directories(dir);
     return dir;
 }

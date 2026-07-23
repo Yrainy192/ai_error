@@ -322,7 +322,7 @@ bool AlarmLight::waitAlarmClear(uint8_t slave_id) {
         uint16_t status = 0;
 
         if (!readStatus(slave_id, status)) {
-            std::cout << "读取报警灯状态失败 slave=" << (int)slave_id << std::endl;
+            // std::cout << "读取报警灯状态失败 slave=" << (int)slave_id << std::endl;
 
             // 不要认为报警结束
             usleep(500000);

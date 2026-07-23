@@ -138,8 +138,9 @@ void AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
             match_count++;
     }
 
-    spdlog::info("[AI MATCH SUMMARY] video_frames={} matched={} ratio={}%", video_frames.size(),
-                 match_count, video_frames.empty() ? 0 : match_count * 100 / video_frames.size());
+    // spdlog::info("[AI MATCH SUMMARY] video_frames={} matched={} ratio={}%", video_frames.size(),
+    //              match_count, video_frames.empty() ? 0 : match_count * 100 /
+    //              video_frames.size());
 
     root["frames"] = frames;
 

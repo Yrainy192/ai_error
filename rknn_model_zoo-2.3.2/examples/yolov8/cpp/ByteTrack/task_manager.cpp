@@ -380,7 +380,8 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
     // =========================
     // NO TASK
     // =========================
-    if (!has_task) {
+
+    if (!has_task && cam_id != 0) {
         spdlog::warn("[ALARM] NO TASK cam={} roi={} id={}", cam_id, roi_id, id);
         std::string wav;
         if (voice_mgr) {
@@ -389,7 +390,7 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
             wav =
                 "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/speaker/test.wav";
         }
-        std::string cmd = "play -id 1 -s " + wav + " -d 1 -v 50 -fast";
+        std::string cmd = "play -id 1 -s " + wav + " -d 2 -v 100 -fast";
 
         int grid_id = getGridId(cam_id, roi_id);
         //控制对应蜂鸣器报警
@@ -434,18 +435,19 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
         return;
     }
 
-    // =========================
-    // WRONG PACKAGE
-    // =========================
-    if (state.state == ROIState::OCCUPIED) {
-        if (id != state.stable_id) {
-            spdlog::warn("[ALARM] WRONG PACKAGE  cam={} roi={} id={}", cam_id, roi_id, id);
-            // std::string key = "cam" + std::to_string(cam_id) + "_roi_" + std::to_string(roi_id);
-            // speaker->updateAlarm(key, "play -id 1 -s test.wav -v 50", 10);
-            // speaker->post("play -id 1 -s test.wav -d 1 -v 50 -fast");
-            state.decision_time[id] = time(nullptr);
-        }
-    }
+    // // =========================
+    // // WRONG PACKAGE
+    // // =========================
+    // if (state.state == ROIState::OCCUPIED) {
+    //     if (id != state.stable_id) {
+    //         spdlog::warn("[ALARM] WRONG PACKAGE  cam={} roi={} id={}", cam_id, roi_id, id);
+    //         // std::string key = "cam" + std::to_string(cam_id) + "_roi_" +
+    //         std::to_string(roi_id);
+    //         // speaker->updateAlarm(key, "play -id 1 -s test.wav -v 50", 10);
+    //         // speaker->post("play -id 1 -s test.wav -d 1 -v 50 -fast");
+    //         state.decision_time[id] = time(nullptr);
+    //     }
+    // }
 }
 
 // =========================

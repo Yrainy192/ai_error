@@ -76,41 +76,7 @@ using namespace cv;
 #include "voice_manager.h"
 #include <spdlog/spdlog.h>
 #include <sys/stat.h>
-// std::vector<cv::VideoWriter> g_writers(3);
-// std::mutex g_writer_mtx;
 
-// void init_video_writers(int width, int height, double fps) {
-//     std::lock_guard<std::mutex> lock(g_writer_mtx);
-
-//     for (int i = 0; i < 3; i++) {
-//         std::string name =
-//             "/home/admin/Rtsp/rknn_model_zoo-2.3.2/video/test_" + std::to_string(i) + ".avi";
-//         bool ok = g_writers[i].open(name, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'), fps,
-//                                     cv::Size(width, height));
-
-//         std::cout << "[VideoWriter] cam " << i << " open result: " << ok << " file: " << name
-//                   << std::endl;
-//     }
-// }
-
-// void save_camera_frame_to_video(const image_buffer_t &img, int cam_id) {
-//     // 原始图像（假设RGB）
-//     cv::Mat raw(img.height, img.width, CV_8UC3, img.virt_addr);
-
-//     // 转 BGR（VideoWriter需要）
-//     cv::Mat frame;
-//     cv::cvtColor(raw, frame, cv::COLOR_RGB2BGR);
-
-//     std::lock_guard<std::mutex> lock(g_writer_mtx);
-
-//     if (cam_id >= 0 && cam_id < g_writers.size()) {
-//         if (g_writers[cam_id].isOpened()) {
-//             g_writers[cam_id].write(frame);
-//         }
-//     }
-// }
-
-//===============================================已经实现视频存储功能==========================================================//
 TaskManager task_manager;
 ROIManager roi_manager;
 std::ofstream g_log_file;
@@ -223,7 +189,7 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             }
         }
 
-        task_manager->updateLogic(1);
+        task_manager->updateLogic(3);
         update_display(img, results, cam_id, roi_manager.get(cam_id));
     }
 }
@@ -347,9 +313,13 @@ int main() {
     last_ai_frame_id.resize(5, UINT64_MAX);
 
     // 5. 模型池（6 core）
-    std::string model_path =
-        "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"
-        "rknn_yolov8_demo/model/yolov8best.rknn";
+    // std::string model_path =
+    //     "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/install/rk3588_linux_aarch64/"
+    //     "rknn_yolov8_demo/model/yolov8best.rknn";
+
+    std::string model_path = "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/"
+                             "yolov8_new.rknn";
+
     ModelPool modelPool;
     modelPool.init(model_path, 5);
 

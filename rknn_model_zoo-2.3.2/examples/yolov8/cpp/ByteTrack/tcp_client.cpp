@@ -179,6 +179,9 @@ void TCPClient::handleMessage(const Json::Value &msg) {
     if (action == "ping")
         return;
 
+    Json::FastWriter writer;
+    spdlog::info("[TCP RECEIVE] msg={}", writer.write(msg));
+
     std::string code = msg.get("code", "").asString();
     std::string grid = msg.get("grid", "").asString();
     std::string car = msg.get("car", "").asString();

@@ -63,13 +63,14 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         spdlog::error("[Recorder] cache null");
         return;
     }
-    std::string dir = "/mnt/share/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
+    std::string dir =
+        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
     auto before = cache->getRange(start_time, event_time_ms);
 
-    spdlog::info("[Recorder {}] before packets={}", camera_id, before.size());
+    // spdlog::info("[Recorder {}] before packets={}", camera_id, before.size());
 
     std::thread([this, before, event_time_ms, dir, code, type]() {
         std::this_thread::sleep_for(std::chrono::seconds(5));
@@ -135,11 +136,11 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
                 key_count++;
         }
 
-        spdlog::info("[Recorder] packets={} keyframes={}", all.size(), key_count);
+        // spdlog::info("[Recorder] packets={} keyframes={}", all.size(), key_count);
         savePackets(all, filename);
 
         if (mysql_client) {
-            std::string video_url = filename.substr(filename.find("/share/") + 7);
+            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
             mysql_client->updateVideo(code, video_url, type);
         } else {
@@ -164,7 +165,8 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
         return;
     }
 
-    std::string dir = "/mnt/share/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
+    std::string dir =
+        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
@@ -178,7 +180,7 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
     auto before_ai = ai_cache->getRange_ai(start_time, event_time_ms);
 
-    spdlog::info("[AI] before video={} ai={}", before.size(), before_ai.size());
+    // spdlog::info("[AI] before video={} ai={}", before.size(), before_ai.size());
 
     std::thread([this, before, before_ai, event_time_ms, dir, grid, id]() {
         /*
@@ -369,13 +371,13 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
                                          all_ai, // AI结果
                                          json_filename);
 
-            spdlog::info("[AI JSON] saved={} video={} ai={}", json_filename, all.size(),
-                         all_ai.size());
+            // spdlog::info("[AI JSON] saved={} video={} ai={}", json_filename, all.size(),
+            //              all_ai.size());
         }
 
         if (mysql_client) {
 
-            std::string video_url = filename.substr(filename.find("/share/") + 7);
+            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
             std::string time_str = msToDatetimeString(event_time_ms);
 
@@ -595,7 +597,7 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
 
             gst_message_parse_error(msg, &err, &debug);
 
-            spdlog::error("[Recorder] {}", err->message);
+            // spdlog::error("[Recorder] {}", err->message);
 
             g_error_free(err);
 
@@ -611,5 +613,5 @@ void H265Recorder::savePackets(const std::vector<H265Packet> &packets,
 
     gst_object_unref(pipeline);
 
-    spdlog::info("[Recorder] TS saved packets={} file={}", valid.size(), filename);
+    // spdlog::info("[Recorder] TS saved packets={} file={}", valid.size(), filename);
 }

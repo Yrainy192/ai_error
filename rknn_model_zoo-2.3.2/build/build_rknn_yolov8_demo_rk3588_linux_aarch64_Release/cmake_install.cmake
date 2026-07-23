@@ -94,6 +94,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES
     "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolobest.rknn"
     "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8_new.rknn"
     "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8best.rknn"
     )
 endif()
