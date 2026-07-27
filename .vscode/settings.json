@@ -1,11 +1,12 @@
 {
+    "C_Cpp.intelliSenseEngine": "disabled",
     "cmake.sourceDirectory": "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp",
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
     "clangd.path": "/usr/bin/clangd",
     "clangd.arguments": [
         "--background-index",
-        "--compile-commands-dir=build"
+        "--compile-commands-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build"
     ],
     "clang-format.executable": "/usr/bin/clang-format",
     "editor.formatOnSave": true,
