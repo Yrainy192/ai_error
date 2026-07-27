@@ -1,4 +1,4 @@
-# Install script for directory: /home/admin/Rtsp/rknn_model_zoo-2.3.2/utils
+# Install script for directory: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -779,6 +779,33 @@ ByteTrack/TrackerUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.s
 .PHONY : ByteTrack/TrackerUtils.cpp.s
 
+ByteTrack/UploadManager.o: ByteTrack/UploadManager.cpp.o
+.PHONY : ByteTrack/UploadManager.o
+
+# target to build an object file
+ByteTrack/UploadManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o
+.PHONY : ByteTrack/UploadManager.cpp.o
+
+ByteTrack/UploadManager.i: ByteTrack/UploadManager.cpp.i
+.PHONY : ByteTrack/UploadManager.i
+
+# target to preprocess a source file
+ByteTrack/UploadManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.i
+.PHONY : ByteTrack/UploadManager.cpp.i
+
+ByteTrack/UploadManager.s: ByteTrack/UploadManager.cpp.s
+.PHONY : ByteTrack/UploadManager.s
+
+# target to generate assembly for a file
+ByteTrack/UploadManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.s
+.PHONY : ByteTrack/UploadManager.cpp.s
+
 ByteTrack/YoloCache.o: ByteTrack/YoloCache.cpp.o
 .PHONY : ByteTrack/YoloCache.o
 
@@ -1175,6 +1202,9 @@ help:
 	@echo "... ByteTrack/TrackerUtils.o"
 	@echo "... ByteTrack/TrackerUtils.i"
 	@echo "... ByteTrack/TrackerUtils.s"
+	@echo "... ByteTrack/UploadManager.o"
+	@echo "... ByteTrack/UploadManager.i"
+	@echo "... ByteTrack/UploadManager.s"
 	@echo "... ByteTrack/YoloCache.o"
 	@echo "... ByteTrack/YoloCache.i"
 	@echo "... ByteTrack/YoloCache.s"

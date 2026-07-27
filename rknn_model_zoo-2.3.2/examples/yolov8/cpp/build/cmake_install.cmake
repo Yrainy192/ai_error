@@ -1,4 +1,4 @@
-# Install script for directory: /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp
+# Install script for directory: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy"
          RPATH "$ORIGIN/../lib")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/rknn_yolov8_demo_zero_copy")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/rknn_yolov8_demo_zero_copy")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo_zero_copy")
     file(RPATH_CHANGE
@@ -69,7 +69,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo"
          RPATH "$ORIGIN/../lib")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/rknn_yolov8_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE EXECUTABLE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/rknn_yolov8_demo")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./rknn_yolov8_demo")
     file(RPATH_CHANGE
@@ -83,21 +83,26 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/bus.jpg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/bus.jpg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/coco_80_labels_list.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/coco_80_labels_list.txt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8.rknn")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/model" TYPE FILE FILES
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolobest.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8_new.rknn"
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/../model/yolov8best.rknn"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/3rdparty.out/cmake_install.cmake")
-  include("/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/utils.out/cmake_install.cmake")
+  include("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/3rdparty.out/cmake_install.cmake")
+  include("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/utils.out/cmake_install.cmake")
 
 endif()
 
@@ -109,5 +114,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -58,23 +58,122 @@ std::string H265Recorder::getDateDir(uint64_t time_ms) {
     return ss.str();
 }
 
+// void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, VideoType type) {
+//     if (!cache) {
+//         spdlog::error("[Recorder] cache null");
+//         return;
+//     }
+//     std::string dir =
+//         "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
+
+//     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
+
+//     auto before = cache->getRange(start_time, event_time_ms);
+
+//     // spdlog::info("[Recorder {}] before packets={}", camera_id, before.size());
+
+//     std::thread([this, before, event_time_ms, dir, code, type]() {
+//         std::this_thread::sleep_for(std::chrono::seconds(5));
+
+//         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
+
+//         std::vector<H265Packet> all;
+
+//         all.reserve(before.size() + after.size());
+
+//         all.insert(all.end(), before.begin(), before.end());
+
+//         all.insert(all.end(), after.begin(), after.end());
+
+//         if (all.empty()) {
+//             spdlog::warn("[Recorder] no packets");
+
+//             return;
+//         }
+
+//         /*
+//          * PTS排序
+//          */
+//         std::sort(all.begin(), all.end(),
+//                   [](const H265Packet &a, const H265Packet &b) { return a.pts < b.pts; });
+
+//         /*
+//          * 找I帧
+//          */
+//         size_t start_index = 0;
+
+//         bool found_keyframe = false;
+
+//         for (size_t i = 0; i < all.size(); i++) {
+//             if (all[i].keyframe) {
+//                 start_index = i;
+//                 found_keyframe = true;
+//                 break;
+//             }
+//         }
+
+//         if (!found_keyframe) {
+//             spdlog::error("[Recorder] no keyframe found");
+//             return;
+//         }
+
+//         if (start_index > 0) {
+//             all.erase(all.begin(), all.begin() + start_index);
+//         }
+
+//         if (all.empty()) {
+//             return;
+//         }
+//         std::filesystem::create_directories(dir);
+//         std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+//         /*
+//          * 保存成功后更新数据库
+//          */
+//         int key_count = 0;
+
+//         for (auto &p : all) {
+//             if (p.keyframe)
+//                 key_count++;
+//         }
+
+//         // spdlog::info("[Recorder] packets={} keyframes={}", all.size(), key_count);
+//         savePackets(all, filename);
+
+//         if (mysql_client) {
+//             std::string video_url = filename.substr(filename.find("/Videos/") + 8);
+
+//             mysql_client->updateVideo(code, video_url, type);
+//         } else {
+//             spdlog::warn("[Recorder] mysql_client null");
+//         }
+//     }).detach();
+// }
+
 void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, VideoType type) {
     if (!cache) {
         spdlog::error("[Recorder] cache null");
         return;
     }
+
     std::string dir =
         "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
 
     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
+    /*
+     * 获取事件前5秒
+     */
     auto before = cache->getRange(start_time, event_time_ms);
 
-    // spdlog::info("[Recorder {}] before packets={}", camera_id, before.size());
-
     std::thread([this, before, event_time_ms, dir, code, type]() {
+        /*
+         * 等待事件后5秒
+         */
         std::this_thread::sleep_for(std::chrono::seconds(5));
 
+        /*
+         * 获取事件后5秒
+         */
         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
 
         std::vector<H265Packet> all;
@@ -86,64 +185,124 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         all.insert(all.end(), after.begin(), after.end());
 
         if (all.empty()) {
-            spdlog::warn("[Recorder] no packets");
 
+            spdlog::warn("[Recorder] no video packets");
             return;
         }
 
         /*
-         * PTS排序
+         * 1. DTS排序
          */
         std::sort(all.begin(), all.end(),
-                  [](const H265Packet &a, const H265Packet &b) { return a.pts < b.pts; });
+                  [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
 
         /*
-         * 找I帧
+         * 2. 去重复packet
          */
+        size_t duplicate_count = 0;
+
+        auto end_it =
+            std::unique(all.begin(), all.end(), [&](const H265Packet &a, const H265Packet &b) {
+                bool same = (a.pts == b.pts) && (a.dts == b.dts);
+
+                if (same)
+                    duplicate_count++;
+
+                return same;
+            });
+
+        all.erase(end_it, all.end());
+
+        /*
+         * 3. 找事件前最近IDR
+         */
+
+        uint64_t target_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
+
         size_t start_index = 0;
 
-        bool found_keyframe = false;
+        bool found = false;
 
-        for (size_t i = 0; i < all.size(); i++) {
-            if (all[i].keyframe) {
+        for (int i = (int)all.size() - 1; i >= 0; i--) {
+
+            if (all[i].real_time_ms <= target_time && all[i].keyframe) {
+
                 start_index = i;
-                found_keyframe = true;
+                found = true;
                 break;
             }
         }
 
-        if (!found_keyframe) {
-            spdlog::error("[Recorder] no keyframe found");
+        /*
+         * 如果前面没有IDR
+         * 找第一个IDR
+         */
+        if (!found) {
+
+            for (size_t i = 0; i < all.size(); i++) {
+
+                if (all[i].keyframe) {
+
+                    start_index = i;
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if (!found) {
+
+            spdlog::error("[Recorder] no IDR");
             return;
         }
 
+        /*
+         * 删除IDR之前的数据
+         */
         if (start_index > 0) {
+
             all.erase(all.begin(), all.begin() + start_index);
         }
 
-        if (all.empty()) {
+        if (all.empty())
             return;
-        }
-        std::filesystem::create_directories(dir);
-        std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+
         /*
-         * 保存成功后更新数据库
+         * 视频实际时间
          */
-        int key_count = 0;
+        uint64_t video_start_time = all.front().real_time_ms;
 
-        for (auto &p : all) {
-            if (p.keyframe)
-                key_count++;
+        uint64_t video_end_time = all.back().real_time_ms;
+
+        spdlog::info("[Recorder {}] start={} end={} duration={} packets={}", camera_id,
+                     video_start_time, video_end_time, video_end_time - video_start_time,
+                     all.size());
+
+        /*
+         * 保存
+         */
+
+        std::filesystem::create_directories(dir);
+
+        std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+
+        {
+            std::lock_guard<std::mutex> lock(save_mutex);
+
+            savePackets(all, filename);
         }
 
-        // spdlog::info("[Recorder] packets={} keyframes={}", all.size(), key_count);
-        savePackets(all, filename);
-
+        /*
+         * 更新数据库
+         */
         if (mysql_client) {
+
             std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
             mysql_client->updateVideo(code, video_url, type);
+
         } else {
+
             spdlog::warn("[Recorder] mysql_client null");
         }
     }).detach();

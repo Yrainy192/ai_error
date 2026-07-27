@@ -1,0 +1,43 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 58,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/librga/Linux/aarch64/librga.so"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "3rdparty.out",
+		"source" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty"
+	}
+}

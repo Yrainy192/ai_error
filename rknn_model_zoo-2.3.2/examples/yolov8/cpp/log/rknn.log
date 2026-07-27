@@ -4193,3 +4193,810 @@ rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/1
 [2026-07-23 15:09:27.525] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784790567525 pts 30906629845
 [2026-07-23 15:09:27.545] [rknn] [info] 长报警启动 slave=1
 [2026-07-23 15:09:32.766] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/150927525.json video_frames=270 json_frames=270
+[2026-07-23 15:54:00.719] [rknn] [info] logger init success
+[2026-07-23 15:54:00.719] [rknn] [info] program start
+[2026-07-23 15:54:03.722] [rknn] [error] alarm light connect failed
+[2026-07-23 15:54:03.723] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 15:54:03.727] [rknn] [info] === 程序启动 ===
+[2026-07-23 15:54:04.209] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 15:54:04.256] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 15:54:04.257] [rknn] [info] TCP服务已后台启动
+[2026-07-23 15:54:04.257] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 15:54:04.257] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 15:54:04.258] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 15:54:04.258] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 15:54:04.364] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 15:54:04.364] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 15:54:04.364] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:05:55.916] [rknn] [info] logger init success
+[2026-07-23 16:05:55.917] [rknn] [info] program start
+[2026-07-23 16:05:58.920] [rknn] [error] alarm light connect failed
+[2026-07-23 16:05:58.921] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 16:05:58.926] [rknn] [info] === 程序启动 ===
+[2026-07-23 16:05:59.012] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 16:05:59.062] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 16:05:59.062] [rknn] [info] TCP服务已后台启动
+[2026-07-23 16:05:59.062] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 16:05:59.062] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 16:05:59.062] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 16:05:59.063] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 16:05:59.131] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:05:59.131] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:05:59.131] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:07:06.729] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=3
+[2026-07-23 16:07:06.730] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:07:06.730] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794026730 pts 67460502273
+[2026-07-23 16:07:12.104] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160706730.json video_frames=259 json_frames=259
+[2026-07-23 16:07:37.286] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=3
+[2026-07-23 16:07:37.286] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794057286 pts 98022706229
+[2026-07-23 16:07:37.297] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:07:37.728] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=5
+[2026-07-23 16:07:37.728] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794057728 pts 98342680846
+[2026-07-23 16:07:37.731] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:07:42.642] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160737286.json video_frames=273 json_frames=273
+[2026-07-23 16:07:42.944] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160737728.json video_frames=259 json_frames=259
+[2026-07-23 16:08:09.673] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=3
+[2026-07-23 16:08:09.674] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:08:09.674] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794089674 pts 130385574390
+[2026-07-23 16:08:15.020] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160809674.json video_frames=257 json_frames=257
+[2026-07-23 16:08:29.828] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=8
+[2026-07-23 16:08:29.828] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794109828 pts 150548136562
+[2026-07-23 16:08:29.843] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:08:34.983] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160829828.json video_frames=261 json_frames=261
+[2026-07-23 16:08:40.212] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=9
+[2026-07-23 16:08:40.213] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794120213 pts 160829364943
+[2026-07-23 16:08:40.215] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:08:42.668] [rknn] [warning] [ALARM] NO TASK cam=2 roi=1 id=5
+[2026-07-23 16:08:42.669] [rknn] [info] [AI Error] cam=2 roi=1 grid=9 trigger event 1784794122669 pts 163408995139
+[2026-07-23 16:08:42.669] [rknn] [info] 长报警启动 slave=9
+[2026-07-23 16:08:42.935] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=1
+[2026-07-23 16:08:42.936] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:08:42.936] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794122936 pts 163669853641
+[2026-07-23 16:08:45.671] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160840213.json video_frames=271 json_frames=271
+[2026-07-23 16:08:47.826] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/160842669.json video_frames=253 json_frames=253
+[2026-07-23 16:08:48.399] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160842936.json video_frames=264 json_frames=264
+[2026-07-23 16:08:54.192] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=12
+[2026-07-23 16:08:54.192] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794134192 pts 174910929604
+[2026-07-23 16:08:54.200] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:08:59.111] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=16
+[2026-07-23 16:08:59.112] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794139112 pts 179792012633
+[2026-07-23 16:08:59.126] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:08:59.450] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160854192.json video_frames=270 json_frames=270
+[2026-07-23 16:09:04.587] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160859112.json video_frames=268 json_frames=268
+[2026-07-23 16:09:12.684] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=21
+[2026-07-23 16:09:12.685] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794152685 pts 193312314444
+[2026-07-23 16:09:12.686] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:09:16.186] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=22
+[2026-07-23 16:09:16.186] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794156186 pts 196912492061
+[2026-07-23 16:09:16.199] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:09:17.829] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160912685.json video_frames=258 json_frames=258
+[2026-07-23 16:09:21.505] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160916186.json video_frames=270 json_frames=270
+[2026-07-23 16:09:47.038] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=22
+[2026-07-23 16:09:47.039] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794187039 pts 227756005922
+[2026-07-23 16:09:47.045] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:09:52.378] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/160947039.json video_frames=266 json_frames=266
+[2026-07-23 16:10:14.171] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=24
+[2026-07-23 16:10:14.171] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794214171 pts 254918921641
+[2026-07-23 16:10:14.200] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:10:16.135] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=25
+[2026-07-23 16:10:16.135] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794216135 pts 256839013883
+[2026-07-23 16:10:16.138] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:10:19.181] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-07-23 16:10:19.188] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784794219188 pts 259920001903
+[2026-07-23 16:10:19.203] [rknn] [info] 长报警启动 slave=1
+[2026-07-23 16:10:19.444] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161014171.json video_frames=269 json_frames=269
+[2026-07-23 16:10:21.389] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161016135.json video_frames=269 json_frames=269
+[2026-07-23 16:10:24.566] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161019188.json video_frames=270 json_frames=270
+[2026-07-23 16:10:32.357] [rknn] [warning] [ALARM] NO TASK cam=2 roi=1 id=12
+[2026-07-23 16:10:32.358] [rknn] [info] [AI Error] cam=2 roi=1 grid=9 trigger event 1784794232358 pts 273088617576
+[2026-07-23 16:10:32.371] [rknn] [info] 长报警启动 slave=9
+[2026-07-23 16:10:34.137] [rknn] [warning] [ALARM] NO TASK cam=2 roi=1 id=13
+[2026-07-23 16:10:34.137] [rknn] [info] [AI Error] cam=2 roi=1 grid=9 trigger event 1784794234137 pts 274847973629
+[2026-07-23 16:10:34.140] [rknn] [info] 长报警启动 slave=9
+[2026-07-23 16:10:37.664] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/161032358.json video_frames=271 json_frames=271
+[2026-07-23 16:10:39.437] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/161034137.json video_frames=266 json_frames=266
+[2026-07-23 16:10:42.174] [rknn] [warning] [ALARM] NO TASK cam=2 roi=2 id=16
+[2026-07-23 16:10:42.174] [rknn] [info] 长报警启动 slave=10
+[2026-07-23 16:10:42.174] [rknn] [info] [AI Error] cam=2 roi=2 grid=10 trigger event 1784794242174 pts 282808297284
+[2026-07-23 16:10:45.675] [rknn] [warning] [ALARM] NO TASK cam=2 roi=3 id=17
+[2026-07-23 16:10:45.675] [rknn] [info] [AI Error] cam=2 roi=3 grid=11 trigger event 1784794245675 pts 286406166715
+[2026-07-23 16:10:45.676] [rknn] [info] 长报警启动 slave=11
+[2026-07-23 16:10:47.366] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/161042174.json video_frames=266 json_frames=266
+[2026-07-23 16:10:50.898] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/161045675.json video_frames=253 json_frames=253
+[2026-07-23 16:11:08.165] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=31
+[2026-07-23 16:11:08.166] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794268166 pts 308884580902
+[2026-07-23 16:11:08.167] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:11:11.605] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=32
+[2026-07-23 16:11:11.605] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794271605 pts 312325877840
+[2026-07-23 16:11:11.613] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:11:13.755] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161108166.json video_frames=269 json_frames=269
+[2026-07-23 16:11:16.943] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161111605.json video_frames=255 json_frames=255
+[2026-07-23 16:11:29.351] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=33
+[2026-07-23 16:11:29.351] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794289351 pts 330086672044
+[2026-07-23 16:11:29.352] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:11:34.740] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161129351.json video_frames=274 json_frames=274
+[2026-07-23 16:11:52.318] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=36
+[2026-07-23 16:11:52.318] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794312318 pts 353049757285
+[2026-07-23 16:11:52.318] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:11:57.592] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161152318.json video_frames=273 json_frames=273
+[2026-07-23 16:12:06.654] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=38
+[2026-07-23 16:12:06.654] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784794326654 pts 367371435432
+[2026-07-23 16:12:06.656] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 16:12:08.234] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=39
+[2026-07-23 16:12:08.235] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794328235 pts 368971652548
+[2026-07-23 16:12:08.235] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:12:11.996] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161206654.json video_frames=256 json_frames=256
+[2026-07-23 16:12:13.663] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161208235.json video_frames=270 json_frames=270
+[2026-07-23 16:12:25.628] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=41
+[2026-07-23 16:12:25.629] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794345629 pts 386372911513
+[2026-07-23 16:12:25.629] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:12:31.047] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161225629.json video_frames=256 json_frames=256
+[2026-07-23 16:12:32.616] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=42
+[2026-07-23 16:12:32.616] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794352616 pts 393294137657
+[2026-07-23 16:12:32.616] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:12:37.857] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161232616.json video_frames=255 json_frames=255
+[2026-07-23 16:12:43.648] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=43
+[2026-07-23 16:12:43.649] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794363649 pts 404375078800
+[2026-07-23 16:12:43.663] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:12:49.027] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161243649.json video_frames=256 json_frames=256
+[2026-07-23 16:13:03.142] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-07-23 16:13:03.142] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784794383142 pts 423896882814
+[2026-07-23 16:13:03.145] [rknn] [info] 长报警启动 slave=1
+[2026-07-23 16:13:08.194] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=46
+[2026-07-23 16:13:08.194] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794388194 pts 428937159956
+[2026-07-23 16:13:08.207] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:13:08.378] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161303142.json video_frames=268 json_frames=268
+[2026-07-23 16:13:09.988] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=50
+[2026-07-23 16:13:09.988] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794389988 pts 430697314545
+[2026-07-23 16:13:10.020] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:13:13.396] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161308194.json video_frames=270 json_frames=270
+[2026-07-23 16:13:15.379] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161309988.json video_frames=264 json_frames=264
+[2026-07-23 16:13:21.055] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=51
+[2026-07-23 16:13:21.055] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794401055 pts 441778272335
+[2026-07-23 16:13:21.055] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:13:26.386] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161321055.json video_frames=266 json_frames=266
+[2026-07-23 16:13:32.705] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=52
+[2026-07-23 16:13:32.705] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:13:32.705] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794412705 pts 453420524842
+[2026-07-23 16:13:37.986] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161332705.json video_frames=257 json_frames=257
+[2026-07-23 16:13:50.166] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=53
+[2026-07-23 16:13:50.166] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:13:50.166] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794430166 pts 470902521220
+[2026-07-23 16:13:55.364] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161350166.json video_frames=269 json_frames=269
+[2026-07-23 16:14:21.007] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=53
+[2026-07-23 16:14:21.008] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794461008 pts 501745450888
+[2026-07-23 16:14:21.027] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:14:26.425] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161421008.json video_frames=264 json_frames=264
+[2026-07-23 16:14:52.067] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=53
+[2026-07-23 16:14:52.068] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784794492068 pts 532788160934
+[2026-07-23 16:14:52.079] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:14:57.351] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/161452068.json video_frames=266 json_frames=266
+[2026-07-23 16:41:07.034] [rknn] [info] logger init success
+[2026-07-23 16:41:07.034] [rknn] [info] program start
+[2026-07-23 16:41:10.035] [rknn] [error] alarm light connect failed
+[2026-07-23 16:41:10.036] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 16:41:10.041] [rknn] [info] === 程序启动 ===
+[2026-07-23 16:41:10.232] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 16:41:10.339] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 16:41:10.340] [rknn] [info] TCP服务已后台启动
+[2026-07-23 16:41:10.341] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 16:41:10.341] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 16:41:10.341] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 16:41:10.341] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 16:41:10.459] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:41:10.459] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:41:10.459] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:41:10.834] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 16:41:10.835] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784796070835 pts 150163254
+[2026-07-23 16:41:10.835] [rknn] [warning] [RingBuffer] no keyframe before 1784796065835
+[2026-07-23 16:41:10.835] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:41:16.015] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/164110835.json video_frames=128 json_frames=128
+[2026-07-23 16:41:37.041] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=3
+[2026-07-23 16:41:37.041] [rknn] [info] 长报警启动 slave=1
+[2026-07-23 16:41:37.041] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784796097041 pts 26420821188
+[2026-07-23 16:41:41.029] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 16:41:41.029] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784796101029 pts 30420681454
+[2026-07-23 16:41:41.031] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:41:42.334] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/164137041.json video_frames=258 json_frames=258
+[2026-07-23 16:41:46.412] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/164141029.json video_frames=258 json_frames=258
+[2026-07-23 16:42:12.025] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 16:42:12.025] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784796132025 pts 61384104909
+[2026-07-23 16:42:12.026] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:42:17.260] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/164212025.json video_frames=258 json_frames=258
+[2026-07-23 16:52:37.956] [rknn] [info] logger init success
+[2026-07-23 16:52:37.956] [rknn] [info] program start
+[2026-07-23 16:52:40.959] [rknn] [error] alarm light connect failed
+[2026-07-23 16:52:40.960] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 16:52:40.964] [rknn] [info] === 程序启动 ===
+[2026-07-23 16:52:41.292] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 16:52:41.470] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 16:52:41.471] [rknn] [info] TCP服务已后台启动
+[2026-07-23 16:52:41.471] [rknn] [info] [Upload] thread started
+[2026-07-23 16:52:41.471] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 16:52:41.472] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 16:52:41.472] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 16:52:41.472] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 16:52:41.595] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:52:41.595] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:52:41.595] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 16:52:41.799] [rknn] [info] [Upload] success /home/admin/Videos/cam2/20260723/AI_error/ready/161032358.ts
+[2026-07-23 16:52:42.019] [rknn] [info] [Upload] success /home/admin/Videos/cam2/20260723/AI_error/ready/161045675.ts
+[2026-07-23 16:52:42.211] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 16:52:42.212] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784796762212 pts 166943925
+[2026-07-23 16:52:42.212] [rknn] [warning] [RingBuffer] no keyframe before 1784796757212
+[2026-07-23 16:52:42.215] [rknn] [info] [Upload] success /home/admin/Videos/cam2/20260723/AI_error/ready/161034137.ts
+[2026-07-23 16:52:42.216] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 16:52:42.411] [rknn] [info] [Upload] success /home/admin/Videos/cam2/20260723/AI_error/ready/160842669.ts
+[2026-07-23 16:52:42.591] [rknn] [info] [Upload] success /home/admin/Videos/cam2/20260723/AI_error/ready/161042174.ts
+[2026-07-23 16:52:42.892] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160737286.ts
+[2026-07-23 16:52:43.034] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160859112.ts
+[2026-07-23 16:52:43.232] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160842936.ts
+[2026-07-23 16:52:43.438] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161108166.ts
+[2026-07-23 16:52:43.638] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161016135.ts
+[2026-07-23 16:52:43.812] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161232616.ts
+[2026-07-23 16:52:44.042] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161452068.ts
+[2026-07-23 16:52:44.187] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/164141029.ts
+[2026-07-23 16:52:44.374] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/164212025.ts
+[2026-07-23 16:52:44.571] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160912685.ts
+[2026-07-23 16:52:44.783] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161308194.ts
+[2026-07-23 16:52:44.965] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161019188.ts
+[2026-07-23 16:52:45.091] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:52:45.092] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:52:45.265] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160916186.ts
+[2026-07-23 16:52:45.468] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161421008.ts
+[2026-07-23 16:52:45.662] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161303142.ts
+[2026-07-23 16:52:45.841] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161225629.ts
+[2026-07-23 16:52:46.006] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161321055.ts
+[2026-07-23 16:52:46.194] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161206654.ts
+[2026-07-23 16:52:46.346] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160809674.ts
+[2026-07-23 16:52:46.553] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161129351.ts
+[2026-07-23 16:52:46.718] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161111605.ts
+[2026-07-23 16:52:46.886] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161208235.ts
+[2026-07-23 16:52:47.019] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160706730.ts
+[2026-07-23 16:52:47.178] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/164137041.ts
+[2026-07-23 16:52:47.347] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/165242212.json video_frames=135 json_frames=135
+[2026-07-23 16:52:47.374] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161350166.ts
+[2026-07-23 16:52:47.548] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161014171.ts
+[2026-07-23 16:52:47.703] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161332705.ts
+[2026-07-23 16:52:47.885] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160854192.ts
+[2026-07-23 16:52:48.148] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:52:48.148] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:52:48.366] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160829828.ts
+[2026-07-23 16:52:48.555] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161309988.ts
+[2026-07-23 16:52:48.765] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161243649.ts
+[2026-07-23 16:52:48.969] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/161152318.ts
+[2026-07-23 16:52:49.156] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/160840213.ts
+[2026-07-23 16:52:49.291] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/164110835.ts
+[2026-07-23 16:52:54.404] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:52:54.404] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:52:54.556] [rknn] [info] [Upload] success /home/admin/Videos/cam1/20260723/AI_error/ready/165242212.ts
+[2026-07-23 16:52:54.740] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:52:54.741] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:52:59.856] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:52:59.857] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:00.032] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:00.032] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:05.152] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:05.152] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:05.324] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:05.324] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:10.436] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:10.436] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:10.608] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:10.608] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:15.732] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:15.732] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:15.904] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:15.904] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:21.016] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:21.016] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:21.196] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:21.196] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:26.308] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:26.308] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:26.476] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:26.476] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:31.588] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:31.589] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:31.745] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:31.746] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:36.860] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:36.861] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:37.040] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:37.040] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:42.153] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:42.153] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:42.324] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:42.324] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:47.436] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:47.437] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:47.612] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:47.612] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:52.740] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:52.741] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:52.920] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:52.920] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:53:58.036] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:53:58.037] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:53:58.196] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:53:58.196] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:03.316] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:03.316] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:03.496] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:54:03.496] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:08.624] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:08.624] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:08.804] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:54:08.804] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:13.925] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:13.925] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:14.104] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:54:14.104] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:19.220] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:19.220] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:19.392] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.json] [/mnt/share/cam1/20260723/AI_error/ready/160737728.json]
+[2026-07-23 16:54:19.392] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:24.512] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:24.512] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:24.640] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:24.642] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:29.760] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:29.760] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:29.881] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:29.881] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:35.028] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:35.028] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:35.215] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:35.215] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:40.337] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:40.337] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:40.448] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:40.449] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:45.564] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:45.564] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:45.676] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:45.677] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:50.796] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:50.796] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:50.920] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:50.921] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:54:56.033] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:54:56.033] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:54:56.148] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:54:56.148] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:01.264] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:01.265] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:01.417] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:01.417] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:06.523] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:06.523] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:06.632] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:06.632] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:11.744] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:11.744] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:11.852] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:11.852] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:16.968] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:16.968] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:17.080] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:17.081] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:22.192] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:22.192] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:22.300] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:22.300] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:27.416] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:27.416] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:27.524] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:27.524] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:32.638] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:32.639] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:32.745] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:32.745] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:37.869] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:37.869] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:37.988] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:37.988] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:43.100] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:43.100] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:43.216] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:43.216] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:48.329] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:48.329] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:48.436] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:48.436] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:53.552] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:53.553] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:53.664] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:53.664] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:55:58.769] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:55:58.769] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:55:58.872] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:55:58.873] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:03.989] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:03.990] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:04.100] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:04.101] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:09.212] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:09.212] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:09.320] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:09.321] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:14.432] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:14.432] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:14.540] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:14.540] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:19.656] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:19.656] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:19.768] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:19.768] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:24.892] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:24.893] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:25.005] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:25.005] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:30.116] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:30.116] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:30.229] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:30.229] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:35.340] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:35.341] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:35.448] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:35.448] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:40.581] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:40.581] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:40.701] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:40.701] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:45.822] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:45.823] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:45.936] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:45.936] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:51.049] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:51.049] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:51.156] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:51.157] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:56:56.265] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:56:56.265] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:56:56.368] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:56:56.369] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:57:01.481] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:57:01.481] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:57:01.593] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:57:01.593] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 16:57:06.724] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts] [/mnt/share/cam1/20260723/AI_error/ready/160947039.ts]
+[2026-07-23 16:57:06.725] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160947039.ts
+[2026-07-23 16:57:06.844] [rknn] [error] [Upload] copy exception filesystem error: cannot copy file: Input/output error [/home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts] [/mnt/share/cam1/20260723/AI_error/ready/160737728.ts]
+[2026-07-23 16:57:06.844] [rknn] [warning] [Upload] copy failed /home/admin/Videos/cam1/20260723/AI_error/ready/160737728.ts
+[2026-07-23 17:03:43.582] [rknn] [info] logger init success
+[2026-07-23 17:03:43.583] [rknn] [info] program start
+[2026-07-23 17:03:46.584] [rknn] [error] alarm light connect failed
+[2026-07-23 17:03:46.585] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 17:03:46.589] [rknn] [info] === 程序启动 ===
+[2026-07-23 17:03:46.757] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 17:03:46.903] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 17:03:46.904] [rknn] [info] TCP服务已后台启动
+[2026-07-23 17:03:46.904] [rknn] [info] [Upload] thread started
+[2026-07-23 17:03:46.905] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 17:03:46.905] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 17:03:46.905] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 17:03:46.905] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 17:03:46.980] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:03:46.980] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:03:46.980] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:03:47.423] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:03:47.425] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797427425 pts 149678995
+[2026-07-23 17:03:47.426] [rknn] [warning] [RingBuffer] no keyframe before 1784797422425
+[2026-07-23 17:03:47.428] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:03:52.637] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170347425.json video_frames=127 json_frames=127
+[2026-07-23 17:04:02.041] [rknn] [warning] [H265] invalid PTS frame=367
+[2026-07-23 17:04:02.069] [rknn] [warning] [H265] invalid PTS frame=368
+[2026-07-23 17:04:02.069] [rknn] [warning] [H265] invalid PTS frame=369
+[2026-07-23 17:04:02.070] [rknn] [warning] [H265] invalid PTS frame=370
+[2026-07-23 17:04:02.183] [rknn] [warning] [H265] invalid PTS frame=371
+[2026-07-23 17:04:17.683] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:04:17.702] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:04:17.702] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:04:17.714] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:04:17.714] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:04:17.747] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:04:25.461] [rknn] [info] logger init success
+[2026-07-23 17:04:25.461] [rknn] [info] program start
+[2026-07-23 17:04:28.464] [rknn] [error] alarm light connect failed
+[2026-07-23 17:04:28.465] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 17:04:28.468] [rknn] [info] === 程序启动 ===
+[2026-07-23 17:04:28.631] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 17:04:28.742] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 17:04:28.743] [rknn] [info] TCP服务已后台启动
+[2026-07-23 17:04:28.743] [rknn] [info] [Upload] thread started
+[2026-07-23 17:04:28.744] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 17:04:28.744] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 17:04:28.744] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 17:04:28.744] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 17:04:28.840] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:04:28.841] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:04:28.841] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:04:29.215] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:04:29.216] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797469216 pts 183450935
+[2026-07-23 17:04:29.216] [rknn] [warning] [RingBuffer] no keyframe before 1784797464216
+[2026-07-23 17:04:29.217] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:04:35.574] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170429216.json video_frames=128 json_frames=128
+[2026-07-23 17:04:41.919] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:04:41.951] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:04:41.951] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:04:41.983] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:04:41.983] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:04:42.040] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:04:42.040] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:04:42.040] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:04:42.040] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:04:42.040] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:05:07.886] [rknn] [info] logger init success
+[2026-07-23 17:05:07.887] [rknn] [info] program start
+[2026-07-23 17:05:10.887] [rknn] [error] alarm light connect failed
+[2026-07-23 17:05:10.888] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 17:05:10.892] [rknn] [info] === 程序启动 ===
+[2026-07-23 17:05:11.215] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 17:05:11.291] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 17:05:11.292] [rknn] [info] TCP服务已后台启动
+[2026-07-23 17:05:11.292] [rknn] [info] [Upload] thread started
+[2026-07-23 17:05:11.293] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 17:05:11.293] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 17:05:11.293] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 17:05:11.293] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 17:05:11.412] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:05:11.412] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:05:11.412] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:05:11.819] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:05:11.819] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797511819 pts 165498956
+[2026-07-23 17:05:11.819] [rknn] [warning] [RingBuffer] no keyframe before 1784797506819
+[2026-07-23 17:05:11.822] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:05:16.937] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170511819.json video_frames=130 json_frames=130
+[2026-07-23 17:05:22.761] [rknn] [warning] [ALARM] NO TASK cam=2 roi=1 id=1
+[2026-07-23 17:05:22.761] [rknn] [info] 长报警启动 slave=9
+[2026-07-23 17:05:22.762] [rknn] [info] [AI Error] cam=2 roi=1 grid=9 trigger event 1784797522762 pts 11233129512
+[2026-07-23 17:05:25.805] [rknn] [warning] [ALARM] NO TASK cam=2 roi=2 id=2
+[2026-07-23 17:05:25.805] [rknn] [info] [AI Error] cam=2 roi=2 grid=10 trigger event 1784797525805 pts 14234857463
+[2026-07-23 17:05:25.807] [rknn] [info] 长报警启动 slave=10
+[2026-07-23 17:05:26.224] [rknn] [warning] [ALARM] NO TASK cam=2 roi=2 id=4
+[2026-07-23 17:05:26.225] [rknn] [info] [AI Error] cam=2 roi=2 grid=10 trigger event 1784797526225 pts 14675033786
+[2026-07-23 17:05:26.227] [rknn] [info] 长报警启动 slave=10
+[2026-07-23 17:05:27.938] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/170522762.json video_frames=253 json_frames=253
+[2026-07-23 17:05:29.776] [rknn] [warning] [ALARM] NO TASK cam=2 roi=3 id=5
+[2026-07-23 17:05:29.776] [rknn] [info] [AI Error] cam=2 roi=3 grid=11 trigger event 1784797529776 pts 18196504468
+[2026-07-23 17:05:29.777] [rknn] [info] 长报警启动 slave=11
+[2026-07-23 17:05:31.091] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/170525805.json video_frames=255 json_frames=255
+[2026-07-23 17:05:31.464] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/170526225.json video_frames=265 json_frames=265
+[2026-07-23 17:05:35.202] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/170529776.json video_frames=254 json_frames=254
+[2026-07-23 17:05:40.742] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:05:40.770] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:05:40.770] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:05:40.800] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:05:40.800] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:05:40.854] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:09:02.315] [rknn] [info] logger init success
+[2026-07-23 17:09:02.315] [rknn] [info] program start
+[2026-07-23 17:09:05.318] [rknn] [error] alarm light connect failed
+[2026-07-23 17:09:05.319] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 17:09:05.323] [rknn] [info] === 程序启动 ===
+[2026-07-23 17:09:05.577] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 17:09:05.710] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 17:09:05.710] [rknn] [info] TCP服务已后台启动
+[2026-07-23 17:09:05.710] [rknn] [info] [Upload] thread started
+[2026-07-23 17:09:05.711] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 17:09:05.712] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 17:09:05.712] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 17:09:05.712] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 17:09:05.809] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:09:05.810] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:09:05.810] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:09:06.312] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:09:06.312] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797746312 pts 182293922
+[2026-07-23 17:09:06.313] [rknn] [warning] [RingBuffer] no keyframe before 1784797741312
+[2026-07-23 17:09:06.335] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:09:11.450] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170906312.json video_frames=130 json_frames=130
+[2026-07-23 17:09:37.011] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:09:37.012] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797777012 pts 31018469616
+[2026-07-23 17:09:37.035] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:09:41.190] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=3
+[2026-07-23 17:09:41.190] [rknn] [info] 长报警启动 slave=1
+[2026-07-23 17:09:41.190] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1784797781190 pts 35179401130
+[2026-07-23 17:09:42.126] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170937012.json video_frames=273 json_frames=273
+[2026-07-23 17:09:46.085] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=4
+[2026-07-23 17:09:46.086] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784797786086 pts 40099221890
+[2026-07-23 17:09:46.086] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 17:09:46.480] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170941190.json video_frames=252 json_frames=252
+[2026-07-23 17:09:47.720] [rknn] [warning] [ALARM] NO TASK cam=1 roi=3 id=5
+[2026-07-23 17:09:47.720] [rknn] [info] [AI Error] cam=1 roi=3 grid=3 trigger event 1784797787720 pts 41699292428
+[2026-07-23 17:09:47.731] [rknn] [info] 长报警启动 slave=3
+[2026-07-23 17:09:49.241] [rknn] [warning] [ALARM] NO TASK cam=2 roi=1 id=2
+[2026-07-23 17:09:49.242] [rknn] [info] [AI Error] cam=2 roi=1 grid=9 trigger event 1784797789242 pts 43239521753
+[2026-07-23 17:09:49.243] [rknn] [info] 长报警启动 slave=9
+[2026-07-23 17:09:51.368] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170946086.json video_frames=275 json_frames=275
+[2026-07-23 17:09:52.837] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/170947720.json video_frames=266 json_frames=266
+[2026-07-23 17:09:54.428] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/170949242.json video_frames=250 json_frames=250
+[2026-07-23 17:09:59.460] [rknn] [warning] [ALARM] NO TASK cam=2 roi=2 id=4
+[2026-07-23 17:09:59.461] [rknn] [info] [AI Error] cam=2 roi=2 grid=10 trigger event 1784797799461 pts 53472753184
+[2026-07-23 17:09:59.465] [rknn] [info] 长报警启动 slave=10
+[2026-07-23 17:10:04.719] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/170959461.json video_frames=256 json_frames=256
+[2026-07-23 17:10:04.848] [rknn] [warning] [ALARM] NO TASK cam=2 roi=3 id=5
+[2026-07-23 17:10:04.848] [rknn] [info] [AI Error] cam=2 roi=3 grid=11 trigger event 1784797804848 pts 58878479698
+[2026-07-23 17:10:04.851] [rknn] [info] 长报警启动 slave=11
+[2026-07-23 17:10:08.025] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:10:08.025] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797808025 pts 62022023048
+[2026-07-23 17:10:08.028] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:10:09.938] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260723/AI_error/writing/171004848.json video_frames=265 json_frames=265
+[2026-07-23 17:10:13.240] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:10:13.272] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:10:13.272] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:10:13.289] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/171008025.json video_frames=273 json_frames=273
+[2026-07-23 17:10:13.319] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:10:13.319] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:10:13.337] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:10:13.337] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:10:13.337] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:10:13.337] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:10:13.337] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:10:17.444] [rknn] [info] logger init success
+[2026-07-23 17:10:17.444] [rknn] [info] program start
+[2026-07-23 17:10:20.448] [rknn] [error] alarm light connect failed
+[2026-07-23 17:10:20.448] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 17:10:20.453] [rknn] [info] === 程序启动 ===
+[2026-07-23 17:10:20.624] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 17:10:20.813] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 17:10:20.813] [rknn] [info] TCP服务已后台启动
+[2026-07-23 17:10:20.813] [rknn] [info] [Upload] thread started
+[2026-07-23 17:10:20.814] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 17:10:20.815] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 17:10:20.815] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 17:10:20.815] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 17:10:20.916] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:10:20.916] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:10:20.916] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:10:21.264] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:10:21.265] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784797821265 pts 144707092
+[2026-07-23 17:10:21.265] [rknn] [warning] [RingBuffer] no keyframe before 1784797816265
+[2026-07-23 17:10:21.267] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:10:26.421] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/171021265.json video_frames=129 json_frames=129
+[2026-07-23 17:10:31.209] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:10:31.299] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:10:31.299] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:10:31.314] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:10:31.314] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:10:31.351] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:18:21.954] [rknn] [info] logger init success
+[2026-07-23 17:18:21.954] [rknn] [info] program start
+[2026-07-23 17:18:24.957] [rknn] [error] alarm light connect failed
+[2026-07-23 17:18:24.958] [rknn] [info] [ROI LOAD] 5
+[2026-07-23 17:18:24.961] [rknn] [info] === 程序启动 ===
+[2026-07-23 17:18:25.172] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-07-23 17:18:25.263] [rknn] [info] [TaskManager] mysql attached
+[2026-07-23 17:18:25.263] [rknn] [info] TCP服务已后台启动
+[2026-07-23 17:18:25.264] [rknn] [info] [Upload] thread started
+[2026-07-23 17:18:25.264] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-07-23 17:18:25.265] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-23 17:18:25.265] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-23 17:18:25.265] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-23 17:18:25.325] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:18:25.325] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:18:25.325] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-23 17:18:25.563] [rknn] [info] [Recorder] create /home/admin/Videos/cam1/20260723/20260723_171825_0.ts
+[2026-07-23 17:18:25.655] [rknn] [info] [Recorder] create /home/admin/Videos/cam0/20260723/20260723_171825_0.ts
+[2026-07-23 17:18:25.682] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:18:25.691] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798305691 pts 152666970
+[2026-07-23 17:18:25.691] [rknn] [warning] [RingBuffer] no keyframe before 1784798300691
+[2026-07-23 17:18:25.694] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:18:25.707] [rknn] [info] [Recorder] create /home/admin/Videos/cam2/20260723/20260723_171825_0.ts
+[2026-07-23 17:18:30.866] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/171825691.json video_frames=129 json_frames=129
+[2026-07-23 17:18:35.268] [rknn] [info] [Upload] stable /home/admin/Videos/cam2/20260723/165241.ts size=4019440
+[2026-07-23 17:18:56.022] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:18:56.023] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798336023 pts 30500420743
+[2026-07-23 17:18:56.027] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:19:01.272] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/171856023.json video_frames=261 json_frames=261
+[2026-07-23 17:19:25.658] [rknn] [info] [Recorder] create /home/admin/Videos/cam1/20260723/20260723_171925_1.ts
+[2026-07-23 17:19:26.635] [rknn] [info] [Recorder] create /home/admin/Videos/cam0/20260723/20260723_171926_1.ts
+[2026-07-23 17:19:26.727] [rknn] [info] [Recorder] create /home/admin/Videos/cam2/20260723/20260723_171926_1.ts
+[2026-07-23 17:19:27.014] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:19:27.015] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:19:27.015] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798367015 pts 61544633316
+[2026-07-23 17:19:32.293] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/171927015.json video_frames=260 json_frames=260
+[2026-07-23 17:19:58.023] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:19:58.023] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798398023 pts 92468155228
+[2026-07-23 17:19:58.024] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:20:03.343] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/171958023.json video_frames=260 json_frames=260
+[2026-07-23 17:20:24.654] [rknn] [info] [Recorder] create /home/admin/Videos/cam1/20260723/20260723_172024_2.ts
+[2026-07-23 17:20:25.822] [rknn] [info] [Recorder] create /home/admin/Videos/cam2/20260723/20260723_172025_2.ts
+[2026-07-23 17:20:26.653] [rknn] [info] [Recorder] create /home/admin/Videos/cam0/20260723/20260723_172026_2.ts
+[2026-07-23 17:20:29.015] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:20:29.015] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798429015 pts 123550875771
+[2026-07-23 17:20:29.019] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:20:34.231] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172029015.json video_frames=260 json_frames=260
+[2026-07-23 17:21:00.015] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:21:00.015] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798460015 pts 154554248991
+[2026-07-23 17:21:00.018] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:21:05.333] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172100015.json video_frames=260 json_frames=260
+[2026-07-23 17:21:23.664] [rknn] [info] [Recorder] create /home/admin/Videos/cam1/20260723/20260723_172123_3.ts
+[2026-07-23 17:21:25.636] [rknn] [info] [Recorder] create /home/admin/Videos/cam0/20260723/20260723_172125_3.ts
+[2026-07-23 17:21:25.839] [rknn] [info] [Recorder] create /home/admin/Videos/cam2/20260723/20260723_172125_3.ts
+[2026-07-23 17:21:31.008] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:21:31.008] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798491008 pts 185517951838
+[2026-07-23 17:21:31.010] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:21:36.233] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172131008.json video_frames=260 json_frames=260
+[2026-07-23 17:22:02.038] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:22:02.039] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:22:02.039] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798522039 pts 216561018140
+[2026-07-23 17:22:07.292] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172202039.json video_frames=261 json_frames=261
+[2026-07-23 17:22:22.675] [rknn] [info] [Recorder] create /home/admin/Videos/cam1/20260723/20260723_172222_4.ts
+[2026-07-23 17:22:25.683] [rknn] [info] [Recorder] create /home/admin/Videos/cam0/20260723/20260723_172225_4.ts
+[2026-07-23 17:22:25.810] [rknn] [info] [Recorder] create /home/admin/Videos/cam2/20260723/20260723_172225_4.ts
+[2026-07-23 17:22:33.022] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:22:33.023] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798553023 pts 247483572341
+[2026-07-23 17:22:33.026] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:22:38.260] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172233023.json video_frames=260 json_frames=260
+[2026-07-23 17:23:04.031] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:23:04.032] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798584032 pts 278567530652
+[2026-07-23 17:23:04.033] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:23:09.288] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172304032.json video_frames=260 json_frames=260
+[2026-07-23 17:23:21.674] [rknn] [info] [Recorder] create /home/admin/Videos/cam1/20260723/20260723_172321_5.ts
+[2026-07-23 17:23:24.696] [rknn] [info] [Recorder] create /home/admin/Videos/cam0/20260723/20260723_172324_5.ts
+[2026-07-23 17:23:25.810] [rknn] [info] [Recorder] create /home/admin/Videos/cam2/20260723/20260723_172325_5.ts
+[2026-07-23 17:23:35.029] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=1
+[2026-07-23 17:23:35.030] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1784798615030 pts 309570283504
+[2026-07-23 17:23:35.031] [rknn] [info] 长报警启动 slave=2
+[2026-07-23 17:23:40.323] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260723/AI_error/writing/172335030.json video_frames=260 json_frames=260
+[2026-07-23 17:23:40.370] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:23:40.404] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:23:40.404] [rknn] [info] [RTSP] stop request cam1
+[2026-07-23 17:23:40.444] [rknn] [info] [RTSP] stopped cam1
+[2026-07-23 17:23:40.444] [rknn] [info] [RTSP] stop request cam2
+[2026-07-23 17:23:40.470] [rknn] [info] [RTSP] stopped cam2
+[2026-07-23 17:23:40.470] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:23:40.470] [rknn] [info] [RTSP] stopped cam0
+[2026-07-23 17:23:40.470] [rknn] [info] [RTSP] stop request cam0
+[2026-07-23 17:23:40.470] [rknn] [info] [RTSP] stopped cam0

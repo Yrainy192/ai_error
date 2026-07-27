@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp
+CMAKE_SOURCE_DIR = /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build
+CMAKE_BINARY_DIR = /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -239,6 +239,114 @@ audioutils/fast:
 	$(MAKE) $(MAKESILENT) -f utils.out/CMakeFiles/audioutils.dir/build.make utils.out/CMakeFiles/audioutils.dir/build
 .PHONY : audioutils/fast
 
+ByteTrack/AIFrameCache.o: ByteTrack/AIFrameCache.cpp.o
+.PHONY : ByteTrack/AIFrameCache.o
+
+# target to build an object file
+ByteTrack/AIFrameCache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o
+.PHONY : ByteTrack/AIFrameCache.cpp.o
+
+ByteTrack/AIFrameCache.i: ByteTrack/AIFrameCache.cpp.i
+.PHONY : ByteTrack/AIFrameCache.i
+
+# target to preprocess a source file
+ByteTrack/AIFrameCache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.i
+.PHONY : ByteTrack/AIFrameCache.cpp.i
+
+ByteTrack/AIFrameCache.s: ByteTrack/AIFrameCache.cpp.s
+.PHONY : ByteTrack/AIFrameCache.s
+
+# target to generate assembly for a file
+ByteTrack/AIFrameCache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIFrameCache.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.s
+.PHONY : ByteTrack/AIFrameCache.cpp.s
+
+ByteTrack/AIJsonRecorder.o: ByteTrack/AIJsonRecorder.cpp.o
+.PHONY : ByteTrack/AIJsonRecorder.o
+
+# target to build an object file
+ByteTrack/AIJsonRecorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o
+.PHONY : ByteTrack/AIJsonRecorder.cpp.o
+
+ByteTrack/AIJsonRecorder.i: ByteTrack/AIJsonRecorder.cpp.i
+.PHONY : ByteTrack/AIJsonRecorder.i
+
+# target to preprocess a source file
+ByteTrack/AIJsonRecorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.i
+.PHONY : ByteTrack/AIJsonRecorder.cpp.i
+
+ByteTrack/AIJsonRecorder.s: ByteTrack/AIJsonRecorder.cpp.s
+.PHONY : ByteTrack/AIJsonRecorder.s
+
+# target to generate assembly for a file
+ByteTrack/AIJsonRecorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.s
+.PHONY : ByteTrack/AIJsonRecorder.cpp.s
+
+ByteTrack/AlarmLight.o: ByteTrack/AlarmLight.cpp.o
+.PHONY : ByteTrack/AlarmLight.o
+
+# target to build an object file
+ByteTrack/AlarmLight.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o
+.PHONY : ByteTrack/AlarmLight.cpp.o
+
+ByteTrack/AlarmLight.i: ByteTrack/AlarmLight.cpp.i
+.PHONY : ByteTrack/AlarmLight.i
+
+# target to preprocess a source file
+ByteTrack/AlarmLight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.i
+.PHONY : ByteTrack/AlarmLight.cpp.i
+
+ByteTrack/AlarmLight.s: ByteTrack/AlarmLight.cpp.s
+.PHONY : ByteTrack/AlarmLight.s
+
+# target to generate assembly for a file
+ByteTrack/AlarmLight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.s
+.PHONY : ByteTrack/AlarmLight.cpp.s
+
+ByteTrack/AudioManager.o: ByteTrack/AudioManager.cpp.o
+.PHONY : ByteTrack/AudioManager.o
+
+# target to build an object file
+ByteTrack/AudioManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o
+.PHONY : ByteTrack/AudioManager.cpp.o
+
+ByteTrack/AudioManager.i: ByteTrack/AudioManager.cpp.i
+.PHONY : ByteTrack/AudioManager.i
+
+# target to preprocess a source file
+ByteTrack/AudioManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.i
+.PHONY : ByteTrack/AudioManager.cpp.i
+
+ByteTrack/AudioManager.s: ByteTrack/AudioManager.cpp.s
+.PHONY : ByteTrack/AudioManager.s
+
+# target to generate assembly for a file
+ByteTrack/AudioManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.s
+.PHONY : ByteTrack/AudioManager.cpp.s
+
 ByteTrack/BYTETracker.o: ByteTrack/BYTETracker.cpp.o
 .PHONY : ByteTrack/BYTETracker.o
 
@@ -266,6 +374,87 @@ ByteTrack/BYTETracker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.s
 .PHONY : ByteTrack/BYTETracker.cpp.s
 
+ByteTrack/DisplayManager.o: ByteTrack/DisplayManager.cpp.o
+.PHONY : ByteTrack/DisplayManager.o
+
+# target to build an object file
+ByteTrack/DisplayManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o
+.PHONY : ByteTrack/DisplayManager.cpp.o
+
+ByteTrack/DisplayManager.i: ByteTrack/DisplayManager.cpp.i
+.PHONY : ByteTrack/DisplayManager.i
+
+# target to preprocess a source file
+ByteTrack/DisplayManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.i
+.PHONY : ByteTrack/DisplayManager.cpp.i
+
+ByteTrack/DisplayManager.s: ByteTrack/DisplayManager.cpp.s
+.PHONY : ByteTrack/DisplayManager.s
+
+# target to generate assembly for a file
+ByteTrack/DisplayManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.s
+.PHONY : ByteTrack/DisplayManager.cpp.s
+
+ByteTrack/H265Recorder.o: ByteTrack/H265Recorder.cpp.o
+.PHONY : ByteTrack/H265Recorder.o
+
+# target to build an object file
+ByteTrack/H265Recorder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o
+.PHONY : ByteTrack/H265Recorder.cpp.o
+
+ByteTrack/H265Recorder.i: ByteTrack/H265Recorder.cpp.i
+.PHONY : ByteTrack/H265Recorder.i
+
+# target to preprocess a source file
+ByteTrack/H265Recorder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.i
+.PHONY : ByteTrack/H265Recorder.cpp.i
+
+ByteTrack/H265Recorder.s: ByteTrack/H265Recorder.cpp.s
+.PHONY : ByteTrack/H265Recorder.s
+
+# target to generate assembly for a file
+ByteTrack/H265Recorder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.s
+.PHONY : ByteTrack/H265Recorder.cpp.s
+
+ByteTrack/H265RingBuffer.o: ByteTrack/H265RingBuffer.cpp.o
+.PHONY : ByteTrack/H265RingBuffer.o
+
+# target to build an object file
+ByteTrack/H265RingBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o
+.PHONY : ByteTrack/H265RingBuffer.cpp.o
+
+ByteTrack/H265RingBuffer.i: ByteTrack/H265RingBuffer.cpp.i
+.PHONY : ByteTrack/H265RingBuffer.i
+
+# target to preprocess a source file
+ByteTrack/H265RingBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.i
+.PHONY : ByteTrack/H265RingBuffer.cpp.i
+
+ByteTrack/H265RingBuffer.s: ByteTrack/H265RingBuffer.cpp.s
+.PHONY : ByteTrack/H265RingBuffer.s
+
+# target to generate assembly for a file
+ByteTrack/H265RingBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.s
+.PHONY : ByteTrack/H265RingBuffer.cpp.s
+
 ByteTrack/KalmanFilter.o: ByteTrack/KalmanFilter.cpp.o
 .PHONY : ByteTrack/KalmanFilter.o
 
@@ -292,6 +481,33 @@ ByteTrack/KalmanFilter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.s
 .PHONY : ByteTrack/KalmanFilter.cpp.s
+
+ByteTrack/ModelPool.o: ByteTrack/ModelPool.cpp.o
+.PHONY : ByteTrack/ModelPool.o
+
+# target to build an object file
+ByteTrack/ModelPool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.o
+.PHONY : ByteTrack/ModelPool.cpp.o
+
+ByteTrack/ModelPool.i: ByteTrack/ModelPool.cpp.i
+.PHONY : ByteTrack/ModelPool.i
+
+# target to preprocess a source file
+ByteTrack/ModelPool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.i
+.PHONY : ByteTrack/ModelPool.cpp.i
+
+ByteTrack/ModelPool.s: ByteTrack/ModelPool.cpp.s
+.PHONY : ByteTrack/ModelPool.s
+
+# target to generate assembly for a file
+ByteTrack/ModelPool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.s
+.PHONY : ByteTrack/ModelPool.cpp.s
 
 ByteTrack/Object.o: ByteTrack/Object.cpp.o
 .PHONY : ByteTrack/Object.o
@@ -347,6 +563,114 @@ ByteTrack/Rect.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.s
 .PHONY : ByteTrack/Rect.cpp.s
 
+ByteTrack/RgaWorker.o: ByteTrack/RgaWorker.cpp.o
+.PHONY : ByteTrack/RgaWorker.o
+
+# target to build an object file
+ByteTrack/RgaWorker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o
+.PHONY : ByteTrack/RgaWorker.cpp.o
+
+ByteTrack/RgaWorker.i: ByteTrack/RgaWorker.cpp.i
+.PHONY : ByteTrack/RgaWorker.i
+
+# target to preprocess a source file
+ByteTrack/RgaWorker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.i
+.PHONY : ByteTrack/RgaWorker.cpp.i
+
+ByteTrack/RgaWorker.s: ByteTrack/RgaWorker.cpp.s
+.PHONY : ByteTrack/RgaWorker.s
+
+# target to generate assembly for a file
+ByteTrack/RgaWorker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.s
+.PHONY : ByteTrack/RgaWorker.cpp.s
+
+ByteTrack/RtspManager.o: ByteTrack/RtspManager.cpp.o
+.PHONY : ByteTrack/RtspManager.o
+
+# target to build an object file
+ByteTrack/RtspManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.o
+.PHONY : ByteTrack/RtspManager.cpp.o
+
+ByteTrack/RtspManager.i: ByteTrack/RtspManager.cpp.i
+.PHONY : ByteTrack/RtspManager.i
+
+# target to preprocess a source file
+ByteTrack/RtspManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.i
+.PHONY : ByteTrack/RtspManager.cpp.i
+
+ByteTrack/RtspManager.s: ByteTrack/RtspManager.cpp.s
+.PHONY : ByteTrack/RtspManager.s
+
+# target to generate assembly for a file
+ByteTrack/RtspManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.s
+.PHONY : ByteTrack/RtspManager.cpp.s
+
+ByteTrack/RtspStream.o: ByteTrack/RtspStream.cpp.o
+.PHONY : ByteTrack/RtspStream.o
+
+# target to build an object file
+ByteTrack/RtspStream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o
+.PHONY : ByteTrack/RtspStream.cpp.o
+
+ByteTrack/RtspStream.i: ByteTrack/RtspStream.cpp.i
+.PHONY : ByteTrack/RtspStream.i
+
+# target to preprocess a source file
+ByteTrack/RtspStream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.i
+.PHONY : ByteTrack/RtspStream.cpp.i
+
+ByteTrack/RtspStream.s: ByteTrack/RtspStream.cpp.s
+.PHONY : ByteTrack/RtspStream.s
+
+# target to generate assembly for a file
+ByteTrack/RtspStream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.s
+.PHONY : ByteTrack/RtspStream.cpp.s
+
+ByteTrack/RtspUtils.o: ByteTrack/RtspUtils.cpp.o
+.PHONY : ByteTrack/RtspUtils.o
+
+# target to build an object file
+ByteTrack/RtspUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o
+.PHONY : ByteTrack/RtspUtils.cpp.o
+
+ByteTrack/RtspUtils.i: ByteTrack/RtspUtils.cpp.i
+.PHONY : ByteTrack/RtspUtils.i
+
+# target to preprocess a source file
+ByteTrack/RtspUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.i
+.PHONY : ByteTrack/RtspUtils.cpp.i
+
+ByteTrack/RtspUtils.s: ByteTrack/RtspUtils.cpp.s
+.PHONY : ByteTrack/RtspUtils.s
+
+# target to generate assembly for a file
+ByteTrack/RtspUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.s
+.PHONY : ByteTrack/RtspUtils.cpp.s
+
 ByteTrack/STrack.o: ByteTrack/STrack.cpp.o
 .PHONY : ByteTrack/STrack.o
 
@@ -374,6 +698,141 @@ ByteTrack/STrack.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.s
 .PHONY : ByteTrack/STrack.cpp.s
 
+ByteTrack/SdkLock.o: ByteTrack/SdkLock.cpp.o
+.PHONY : ByteTrack/SdkLock.o
+
+# target to build an object file
+ByteTrack/SdkLock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.o
+.PHONY : ByteTrack/SdkLock.cpp.o
+
+ByteTrack/SdkLock.i: ByteTrack/SdkLock.cpp.i
+.PHONY : ByteTrack/SdkLock.i
+
+# target to preprocess a source file
+ByteTrack/SdkLock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.i
+.PHONY : ByteTrack/SdkLock.cpp.i
+
+ByteTrack/SdkLock.s: ByteTrack/SdkLock.cpp.s
+.PHONY : ByteTrack/SdkLock.s
+
+# target to generate assembly for a file
+ByteTrack/SdkLock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.s
+.PHONY : ByteTrack/SdkLock.cpp.s
+
+ByteTrack/SdkManager.o: ByteTrack/SdkManager.cpp.o
+.PHONY : ByteTrack/SdkManager.o
+
+# target to build an object file
+ByteTrack/SdkManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.o
+.PHONY : ByteTrack/SdkManager.cpp.o
+
+ByteTrack/SdkManager.i: ByteTrack/SdkManager.cpp.i
+.PHONY : ByteTrack/SdkManager.i
+
+# target to preprocess a source file
+ByteTrack/SdkManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.i
+.PHONY : ByteTrack/SdkManager.cpp.i
+
+ByteTrack/SdkManager.s: ByteTrack/SdkManager.cpp.s
+.PHONY : ByteTrack/SdkManager.s
+
+# target to generate assembly for a file
+ByteTrack/SdkManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.s
+.PHONY : ByteTrack/SdkManager.cpp.s
+
+ByteTrack/TrackerUtils.o: ByteTrack/TrackerUtils.cpp.o
+.PHONY : ByteTrack/TrackerUtils.o
+
+# target to build an object file
+ByteTrack/TrackerUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o
+.PHONY : ByteTrack/TrackerUtils.cpp.o
+
+ByteTrack/TrackerUtils.i: ByteTrack/TrackerUtils.cpp.i
+.PHONY : ByteTrack/TrackerUtils.i
+
+# target to preprocess a source file
+ByteTrack/TrackerUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.i
+.PHONY : ByteTrack/TrackerUtils.cpp.i
+
+ByteTrack/TrackerUtils.s: ByteTrack/TrackerUtils.cpp.s
+.PHONY : ByteTrack/TrackerUtils.s
+
+# target to generate assembly for a file
+ByteTrack/TrackerUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.s
+.PHONY : ByteTrack/TrackerUtils.cpp.s
+
+ByteTrack/UploadManager.o: ByteTrack/UploadManager.cpp.o
+.PHONY : ByteTrack/UploadManager.o
+
+# target to build an object file
+ByteTrack/UploadManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o
+.PHONY : ByteTrack/UploadManager.cpp.o
+
+ByteTrack/UploadManager.i: ByteTrack/UploadManager.cpp.i
+.PHONY : ByteTrack/UploadManager.i
+
+# target to preprocess a source file
+ByteTrack/UploadManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.i
+.PHONY : ByteTrack/UploadManager.cpp.i
+
+ByteTrack/UploadManager.s: ByteTrack/UploadManager.cpp.s
+.PHONY : ByteTrack/UploadManager.s
+
+# target to generate assembly for a file
+ByteTrack/UploadManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.s
+.PHONY : ByteTrack/UploadManager.cpp.s
+
+ByteTrack/YoloCache.o: ByteTrack/YoloCache.cpp.o
+.PHONY : ByteTrack/YoloCache.o
+
+# target to build an object file
+ByteTrack/YoloCache.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o
+.PHONY : ByteTrack/YoloCache.cpp.o
+
+ByteTrack/YoloCache.i: ByteTrack/YoloCache.cpp.i
+.PHONY : ByteTrack/YoloCache.i
+
+# target to preprocess a source file
+ByteTrack/YoloCache.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.i
+.PHONY : ByteTrack/YoloCache.cpp.i
+
+ByteTrack/YoloCache.s: ByteTrack/YoloCache.cpp.s
+.PHONY : ByteTrack/YoloCache.s
+
+# target to generate assembly for a file
+ByteTrack/YoloCache.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.s
+.PHONY : ByteTrack/YoloCache.cpp.s
+
 ByteTrack/lapjv.o: ByteTrack/lapjv.cpp.o
 .PHONY : ByteTrack/lapjv.o
 
@@ -400,6 +859,168 @@ ByteTrack/lapjv.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/lapjv.cpp.s
 .PHONY : ByteTrack/lapjv.cpp.s
+
+ByteTrack/logger.o: ByteTrack/logger.cpp.o
+.PHONY : ByteTrack/logger.o
+
+# target to build an object file
+ByteTrack/logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o
+.PHONY : ByteTrack/logger.cpp.o
+
+ByteTrack/logger.i: ByteTrack/logger.cpp.i
+.PHONY : ByteTrack/logger.i
+
+# target to preprocess a source file
+ByteTrack/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.i
+.PHONY : ByteTrack/logger.cpp.i
+
+ByteTrack/logger.s: ByteTrack/logger.cpp.s
+.PHONY : ByteTrack/logger.s
+
+# target to generate assembly for a file
+ByteTrack/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.s
+.PHONY : ByteTrack/logger.cpp.s
+
+ByteTrack/mysql_client.o: ByteTrack/mysql_client.cpp.o
+.PHONY : ByteTrack/mysql_client.o
+
+# target to build an object file
+ByteTrack/mysql_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o
+.PHONY : ByteTrack/mysql_client.cpp.o
+
+ByteTrack/mysql_client.i: ByteTrack/mysql_client.cpp.i
+.PHONY : ByteTrack/mysql_client.i
+
+# target to preprocess a source file
+ByteTrack/mysql_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.i
+.PHONY : ByteTrack/mysql_client.cpp.i
+
+ByteTrack/mysql_client.s: ByteTrack/mysql_client.cpp.s
+.PHONY : ByteTrack/mysql_client.s
+
+# target to generate assembly for a file
+ByteTrack/mysql_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.s
+.PHONY : ByteTrack/mysql_client.cpp.s
+
+ByteTrack/roi_manager.o: ByteTrack/roi_manager.cpp.o
+.PHONY : ByteTrack/roi_manager.o
+
+# target to build an object file
+ByteTrack/roi_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o
+.PHONY : ByteTrack/roi_manager.cpp.o
+
+ByteTrack/roi_manager.i: ByteTrack/roi_manager.cpp.i
+.PHONY : ByteTrack/roi_manager.i
+
+# target to preprocess a source file
+ByteTrack/roi_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.i
+.PHONY : ByteTrack/roi_manager.cpp.i
+
+ByteTrack/roi_manager.s: ByteTrack/roi_manager.cpp.s
+.PHONY : ByteTrack/roi_manager.s
+
+# target to generate assembly for a file
+ByteTrack/roi_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.s
+.PHONY : ByteTrack/roi_manager.cpp.s
+
+ByteTrack/task_manager.o: ByteTrack/task_manager.cpp.o
+.PHONY : ByteTrack/task_manager.o
+
+# target to build an object file
+ByteTrack/task_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o
+.PHONY : ByteTrack/task_manager.cpp.o
+
+ByteTrack/task_manager.i: ByteTrack/task_manager.cpp.i
+.PHONY : ByteTrack/task_manager.i
+
+# target to preprocess a source file
+ByteTrack/task_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.i
+.PHONY : ByteTrack/task_manager.cpp.i
+
+ByteTrack/task_manager.s: ByteTrack/task_manager.cpp.s
+.PHONY : ByteTrack/task_manager.s
+
+# target to generate assembly for a file
+ByteTrack/task_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.s
+.PHONY : ByteTrack/task_manager.cpp.s
+
+ByteTrack/tcp_client.o: ByteTrack/tcp_client.cpp.o
+.PHONY : ByteTrack/tcp_client.o
+
+# target to build an object file
+ByteTrack/tcp_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o
+.PHONY : ByteTrack/tcp_client.cpp.o
+
+ByteTrack/tcp_client.i: ByteTrack/tcp_client.cpp.i
+.PHONY : ByteTrack/tcp_client.i
+
+# target to preprocess a source file
+ByteTrack/tcp_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.i
+.PHONY : ByteTrack/tcp_client.cpp.i
+
+ByteTrack/tcp_client.s: ByteTrack/tcp_client.cpp.s
+.PHONY : ByteTrack/tcp_client.s
+
+# target to generate assembly for a file
+ByteTrack/tcp_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.s
+.PHONY : ByteTrack/tcp_client.cpp.s
+
+ByteTrack/voice_manager.o: ByteTrack/voice_manager.cpp.o
+.PHONY : ByteTrack/voice_manager.o
+
+# target to build an object file
+ByteTrack/voice_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.o
+.PHONY : ByteTrack/voice_manager.cpp.o
+
+ByteTrack/voice_manager.i: ByteTrack/voice_manager.cpp.i
+.PHONY : ByteTrack/voice_manager.i
+
+# target to preprocess a source file
+ByteTrack/voice_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.i
+.PHONY : ByteTrack/voice_manager.cpp.i
+
+ByteTrack/voice_manager.s: ByteTrack/voice_manager.cpp.s
+.PHONY : ByteTrack/voice_manager.s
+
+# target to generate assembly for a file
+ByteTrack/voice_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.s
+.PHONY : ByteTrack/voice_manager.cpp.s
 
 main.o: main.cc.o
 .PHONY : main.o
@@ -521,24 +1142,93 @@ help:
 	@echo "... imageutils"
 	@echo "... rknn_yolov8_demo"
 	@echo "... rknn_yolov8_demo_zero_copy"
+	@echo "... ByteTrack/AIFrameCache.o"
+	@echo "... ByteTrack/AIFrameCache.i"
+	@echo "... ByteTrack/AIFrameCache.s"
+	@echo "... ByteTrack/AIJsonRecorder.o"
+	@echo "... ByteTrack/AIJsonRecorder.i"
+	@echo "... ByteTrack/AIJsonRecorder.s"
+	@echo "... ByteTrack/AlarmLight.o"
+	@echo "... ByteTrack/AlarmLight.i"
+	@echo "... ByteTrack/AlarmLight.s"
+	@echo "... ByteTrack/AudioManager.o"
+	@echo "... ByteTrack/AudioManager.i"
+	@echo "... ByteTrack/AudioManager.s"
 	@echo "... ByteTrack/BYTETracker.o"
 	@echo "... ByteTrack/BYTETracker.i"
 	@echo "... ByteTrack/BYTETracker.s"
+	@echo "... ByteTrack/DisplayManager.o"
+	@echo "... ByteTrack/DisplayManager.i"
+	@echo "... ByteTrack/DisplayManager.s"
+	@echo "... ByteTrack/H265Recorder.o"
+	@echo "... ByteTrack/H265Recorder.i"
+	@echo "... ByteTrack/H265Recorder.s"
+	@echo "... ByteTrack/H265RingBuffer.o"
+	@echo "... ByteTrack/H265RingBuffer.i"
+	@echo "... ByteTrack/H265RingBuffer.s"
 	@echo "... ByteTrack/KalmanFilter.o"
 	@echo "... ByteTrack/KalmanFilter.i"
 	@echo "... ByteTrack/KalmanFilter.s"
+	@echo "... ByteTrack/ModelPool.o"
+	@echo "... ByteTrack/ModelPool.i"
+	@echo "... ByteTrack/ModelPool.s"
 	@echo "... ByteTrack/Object.o"
 	@echo "... ByteTrack/Object.i"
 	@echo "... ByteTrack/Object.s"
 	@echo "... ByteTrack/Rect.o"
 	@echo "... ByteTrack/Rect.i"
 	@echo "... ByteTrack/Rect.s"
+	@echo "... ByteTrack/RgaWorker.o"
+	@echo "... ByteTrack/RgaWorker.i"
+	@echo "... ByteTrack/RgaWorker.s"
+	@echo "... ByteTrack/RtspManager.o"
+	@echo "... ByteTrack/RtspManager.i"
+	@echo "... ByteTrack/RtspManager.s"
+	@echo "... ByteTrack/RtspStream.o"
+	@echo "... ByteTrack/RtspStream.i"
+	@echo "... ByteTrack/RtspStream.s"
+	@echo "... ByteTrack/RtspUtils.o"
+	@echo "... ByteTrack/RtspUtils.i"
+	@echo "... ByteTrack/RtspUtils.s"
 	@echo "... ByteTrack/STrack.o"
 	@echo "... ByteTrack/STrack.i"
 	@echo "... ByteTrack/STrack.s"
+	@echo "... ByteTrack/SdkLock.o"
+	@echo "... ByteTrack/SdkLock.i"
+	@echo "... ByteTrack/SdkLock.s"
+	@echo "... ByteTrack/SdkManager.o"
+	@echo "... ByteTrack/SdkManager.i"
+	@echo "... ByteTrack/SdkManager.s"
+	@echo "... ByteTrack/TrackerUtils.o"
+	@echo "... ByteTrack/TrackerUtils.i"
+	@echo "... ByteTrack/TrackerUtils.s"
+	@echo "... ByteTrack/UploadManager.o"
+	@echo "... ByteTrack/UploadManager.i"
+	@echo "... ByteTrack/UploadManager.s"
+	@echo "... ByteTrack/YoloCache.o"
+	@echo "... ByteTrack/YoloCache.i"
+	@echo "... ByteTrack/YoloCache.s"
 	@echo "... ByteTrack/lapjv.o"
 	@echo "... ByteTrack/lapjv.i"
 	@echo "... ByteTrack/lapjv.s"
+	@echo "... ByteTrack/logger.o"
+	@echo "... ByteTrack/logger.i"
+	@echo "... ByteTrack/logger.s"
+	@echo "... ByteTrack/mysql_client.o"
+	@echo "... ByteTrack/mysql_client.i"
+	@echo "... ByteTrack/mysql_client.s"
+	@echo "... ByteTrack/roi_manager.o"
+	@echo "... ByteTrack/roi_manager.i"
+	@echo "... ByteTrack/roi_manager.s"
+	@echo "... ByteTrack/task_manager.o"
+	@echo "... ByteTrack/task_manager.i"
+	@echo "... ByteTrack/task_manager.s"
+	@echo "... ByteTrack/tcp_client.o"
+	@echo "... ByteTrack/tcp_client.i"
+	@echo "... ByteTrack/tcp_client.s"
+	@echo "... ByteTrack/voice_manager.o"
+	@echo "... ByteTrack/voice_manager.i"
+	@echo "... ByteTrack/voice_manager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

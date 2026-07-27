@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp/rknn_model_zoo-2.3.2/3rdparty/libsndfile/include
+C_INCLUDES = -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/libsndfile/include
 
 C_FLAGS = 
 

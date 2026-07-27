@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp
+CMAKE_SOURCE_DIR = /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build
+CMAKE_BINARY_DIR = /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/3rdparty.out//CMakeFiles/progress.marks
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles 0
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/3rdparty.out//CMakeFiles/progress.marks
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/clean
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,17 +148,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/preinstall
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/preinstall
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdparty.out/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -184,6 +184,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/admin/Rtsp/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

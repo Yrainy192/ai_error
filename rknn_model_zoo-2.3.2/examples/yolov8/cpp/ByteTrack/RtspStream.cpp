@@ -20,6 +20,21 @@ RtspStream::RtspStream(const std::string &url, const std::string &cameraId, AIFr
 
 RtspStream::~RtspStream() { stop(); }
 
+void RtspStream::stop() {
+    spdlog::info("[RTSP] stop request {}", camera_id);
+
+    running = false;
+
+    /*
+     * 等待run线程自己释放GStreamer
+     */
+    if (worker.joinable()) {
+        worker.join();
+    }
+
+    spdlog::info("[RTSP] stopped {}", camera_id);
+}
+
 bool RtspStream::start() {
 
     running = true;
@@ -29,30 +44,30 @@ bool RtspStream::start() {
     return true;
 }
 
-void RtspStream::stop() {
-    running = false;
+// void RtspStream::stop() {
+//     running = false;
 
-    if (worker.joinable())
-        worker.join();
+//     if (worker.joinable())
+//         worker.join();
 
-    if (h265_sink) {
-        gst_object_unref(h265_sink);
-        h265_sink = nullptr;
-    }
+//     if (h265_sink) {
+//         gst_object_unref(h265_sink);
+//         h265_sink = nullptr;
+//     }
 
-    // GStreamer splitmuxsink recorder
-    if (gst_recorder) {
-        gst_object_unref(gst_recorder);
-        gst_recorder = nullptr;
-    }
+//     // GStreamer splitmuxsink recorder
+//     if (gst_recorder) {
+//         gst_object_unref(gst_recorder);
+//         gst_recorder = nullptr;
+//     }
 
-    if (pipeline) {
-        gst_element_set_state(pipeline, GST_STATE_NULL);
+//     if (pipeline) {
+//         gst_element_set_state(pipeline, GST_STATE_NULL);
 
-        gst_object_unref(pipeline);
-        pipeline = nullptr;
-    }
-}
+//         gst_object_unref(pipeline);
+//         pipeline = nullptr;
+//     }
+// }
 // =========================
 // 获取最新 NV12 帧
 // =========================
@@ -111,7 +126,10 @@ void RtspStream::run() {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
-    gst_object_unref(sink);
+    if (sink) {
+        gst_object_unref(sink);
+        sink = nullptr;
+    }
 
     if (gst_recorder) {
         gst_object_unref(gst_recorder);
@@ -198,6 +216,11 @@ GstFlowReturn RtspStream::on_h265_sample_static(GstElement *sink, gpointer user_
 }
 
 GstFlowReturn RtspStream::on_h265_sample(GstElement *sink) {
+
+    if (!running) {
+        return GST_FLOW_FLUSHING;
+    }
+
     GstSample *sample = nullptr;
 
     g_signal_emit_by_name(sink, "pull-sample", &sample);
@@ -306,6 +329,11 @@ GstFlowReturn RtspStream::on_h265_sample(GstElement *sink) {
 // ⭐核心：只取 NV12，不处理
 // =========================
 GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
+
+    if (!running) {
+        return GST_FLOW_FLUSHING;
+    }
+
     GstSample *sample = nullptr;
     g_signal_emit_by_name(sink, "pull-sample", &sample);
 
@@ -376,3 +404,33 @@ gchar *RtspStream::format_location_cb(GstElement *, guint, gpointer user_data) {
     std::string filename = dir + "/" + time_name;
     return g_strdup(filename.c_str());
 }
+// gchar *RtspStream::format_location_cb(GstElement *, guint fragment_id, gpointer user_data) {
+//     RtspStream *self = static_cast<RtspStream *>(user_data);
+
+//     auto now = std::chrono::system_clock::now();
+
+//     auto tt = std::chrono::system_clock::to_time_t(now);
+
+//     tm tm_time;
+
+//     localtime_r(&tt, &tm_time);
+
+//     char filename[64];
+
+//     /*
+//      * 文件名:
+//      *
+//      * 20260723_163012_001.ts
+//      *
+//      */
+//     strftime(filename, sizeof(filename), "%Y%m%d_%H%M%S", &tm_time);
+
+//     std::string dir = self->makeRecordDir();
+
+//     std::string filepath =
+//         dir + "/" + std::string(filename) + "_" + std::to_string(fragment_id) + ".ts";
+
+//     spdlog::info("[Recorder] create {}", filepath);
+
+//     return g_strdup(filepath.c_str());
+// }

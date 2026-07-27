@@ -39,6 +39,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o.d"
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o"
+  "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o"

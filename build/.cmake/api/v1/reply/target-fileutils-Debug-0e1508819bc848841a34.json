@@ -1,0 +1,91 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "utils.out/libfileutils.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 2,
+					"path" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "fileutils::@d3ad88163ad4775a7946",
+	"name" : "fileutils",
+	"nameOnDisk" : "libfileutils.a",
+	"paths" : 
+	{
+		"build" : "utils.out",
+		"source" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

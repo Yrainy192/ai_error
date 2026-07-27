@@ -1,7 +1,6 @@
 #pragma once
 
 #include <atomic>
-#include <mutex>
 #include <string>
 #include <thread>
 #include <vector>
@@ -9,8 +8,7 @@
 class UploadManager {
 
   public:
-    UploadManager(const std::string &ready_dir, const std::string &uploaded_dir,
-                  const std::string &server);
+    UploadManager(const std::string &source_root, const std::string &target_root);
 
     ~UploadManager();
 
@@ -23,16 +21,14 @@ class UploadManager {
 
     std::vector<std::string> scanFiles();
 
-    bool uploadFile(const std::string &file);
+    bool copyFile(const std::string &file);
 
-    bool moveUploaded(const std::string &file);
+    bool isFileStable(const std::string &file);
 
   private:
-    std::string ready_dir_;
+    std::string source_root_;
 
-    std::string uploaded_dir_;
-
-    std::string server_;
+    std::string target_root_;
 
     std::thread thread_;
 

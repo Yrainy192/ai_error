@@ -69,6 +69,7 @@ using namespace cv;
 #include "RtspUtils.h"
 #include "SdkManager.h"
 #include "TrackerUtils.h"
+#include "UploadManager.h"
 #include "logger.h"
 #include "mysql_client.h"
 #include "roi_manager.h"
@@ -76,6 +77,13 @@ using namespace cv;
 #include "voice_manager.h"
 #include <spdlog/spdlog.h>
 #include <sys/stat.h>
+
+#include <atomic>
+#include <signal.h>
+
+std::atomic<bool> running(true);
+
+void signalHandler(int signum) { running = false; }
 
 TaskManager task_manager;
 ROIManager roi_manager;
@@ -226,6 +234,8 @@ void start_service() {
 }
 
 int main() {
+    signal(SIGINT, signalHandler);
+    signal(SIGTERM, signalHandler);
 
     InitLogger();
     spdlog::info("program start");
@@ -271,6 +281,9 @@ int main() {
     // // ⭐先初始化录像
     // init_video_writers(width, height, fps);
     start_service();
+
+    // UploadManager uploader("/home/admin/Videos", "/mnt/share");
+    // uploader.start();
 
     // 2. Tracker 初始化（每路一个）
     tracker_map[0] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
@@ -339,7 +352,7 @@ int main() {
     // cv::namedWindow("cam4");
     // cv::namedWindow("cam5");
     //   8. 显示线程（主线程）
-    while (true) {
+    while (running) {
         {
             std::lock_guard<std::mutex> lock(g_display[0].mtx);
             if (!g_display[0].img.empty())
@@ -374,16 +387,21 @@ int main() {
         if (cv::waitKey(1) == 27)
             break;
     }
-    // =========================
-    // 9. 线程回收
-    // =========================
+
+    running = false;
+
+    //先停止RTSP
+    manager.stopAll();
+
+    //等待推理线程退出
     t0.join();
     t1.join();
     t2.join();
     t3.join();
     t4.join();
-    // t5.join();
-    manager.stopAll();
+
+    // //最后停止上传
+    // uploader.stop();
 
     return 0;
 }
