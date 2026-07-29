@@ -6,5 +6,5 @@ CXX_DEFINES = -DSPDLOG_COMPILED_LIB -DZERO_COPY
 
 CXX_INCLUDES = -I/usr/include/eigen3 -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/orc-0.4 -I/usr/include/rockchip -I/usr/include/rga -I/usr/include/jsoncpp -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/stb_image -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/librga/include -I/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/include -isystem /usr/include/opencv4
 
-CXX_FLAGS = -g
+CXX_FLAGS = -g -std=c++17
 

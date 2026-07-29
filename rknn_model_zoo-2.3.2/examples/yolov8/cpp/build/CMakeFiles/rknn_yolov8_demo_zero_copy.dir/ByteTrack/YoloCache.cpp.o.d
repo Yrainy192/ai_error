@@ -93,6 +93,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
+ /usr/include/aarch64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/string \
  /usr/include/c++/11/bits/char_traits.h \
  /usr/include/c++/11/bits/localefwd.h \
@@ -135,7 +136,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: \
  /usr/include/aarch64-linux-gnu/sys/select.h \
  /usr/include/aarch64-linux-gnu/bits/select.h \
  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/aarch64-linux-gnu/bits/select2.h /usr/include/alloca.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
@@ -143,6 +147,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/aarch64-linux-gnu/bits/stdio.h \
+ /usr/include/aarch64-linux-gnu/bits/stdio2.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /usr/include/c++/11/bits/std_mutex.h \

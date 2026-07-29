@@ -22,16 +22,13 @@ RtspStream::~RtspStream() { stop(); }
 
 void RtspStream::stop() {
     spdlog::info("[RTSP] stop request {}", camera_id);
-
     running = false;
-
     /*
      * 等待run线程自己释放GStreamer
      */
     if (worker.joinable()) {
         worker.join();
     }
-
     spdlog::info("[RTSP] stopped {}", camera_id);
 }
 
@@ -404,33 +401,3 @@ gchar *RtspStream::format_location_cb(GstElement *, guint, gpointer user_data) {
     std::string filename = dir + "/" + time_name;
     return g_strdup(filename.c_str());
 }
-// gchar *RtspStream::format_location_cb(GstElement *, guint fragment_id, gpointer user_data) {
-//     RtspStream *self = static_cast<RtspStream *>(user_data);
-
-//     auto now = std::chrono::system_clock::now();
-
-//     auto tt = std::chrono::system_clock::to_time_t(now);
-
-//     tm tm_time;
-
-//     localtime_r(&tt, &tm_time);
-
-//     char filename[64];
-
-//     /*
-//      * 文件名:
-//      *
-//      * 20260723_163012_001.ts
-//      *
-//      */
-//     strftime(filename, sizeof(filename), "%Y%m%d_%H%M%S", &tm_time);
-
-//     std::string dir = self->makeRecordDir();
-
-//     std::string filepath =
-//         dir + "/" + std::string(filename) + "_" + std::to_string(fragment_id) + ".ts";
-
-//     spdlog::info("[Recorder] create {}", filepath);
-
-//     return g_strdup(filepath.c_str());
-// }

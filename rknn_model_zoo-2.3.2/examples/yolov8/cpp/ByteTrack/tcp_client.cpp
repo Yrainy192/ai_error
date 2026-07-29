@@ -119,6 +119,7 @@ void TCPClient::start() {
 // ================= stop =================
 void TCPClient::stop() {
     running = false;
+
     close();
 }
 
@@ -148,6 +149,10 @@ void TCPClient::receiveLoop() {
 
     while (running) {
         ssize_t n = recv(sock_fd, buffer, sizeof(buffer), 0);
+        if (n <= 0) {
+            spdlog::info("[TCP] receive closed");
+            break;
+        }
         cache.append(buffer, n);
 
         size_t pos;
@@ -190,6 +195,13 @@ void TCPClient::handleMessage(const Json::Value &msg) {
 
     if (code.empty() || grid.empty())
         return;
+    // 格口限制：只处理1~40号格口
+    int grid_num = std::stoi(grid);
+
+    if (grid_num > 40 || grid_num <= 0) {
+        spdlog::debug("[TCP IGNORE] invalid grid={}", grid_num);
+        return;
+    }
 
     std::map<std::string, std::string> msg_map;
     msg_map["action"] = action;
@@ -205,7 +217,6 @@ void TCPClient::handleMessage(const Json::Value &msg) {
     // =========================
     if (action == "down_car") {
         int grid_id = std::stoi(grid);
-
         GridMapItem item;
         if (!task_manager->mapGrid(grid_id, item)) {
             // std::cerr << "[TCP ERROR] unknown grid=" << grid_id << std::endl;
@@ -227,6 +238,7 @@ void TCPClient::handleMessage(const Json::Value &msg) {
 
         msg_map["time"] = time;
     }
+
     mysql_client->saveRecord(msg_map);
     // =========================
     // 任务逻辑（up/down都执行）

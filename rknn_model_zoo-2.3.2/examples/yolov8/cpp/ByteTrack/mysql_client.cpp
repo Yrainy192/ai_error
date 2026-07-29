@@ -32,7 +32,7 @@ MysqlClient::MysqlClient(const std::string &host, const std::string &user,
     }
 
     spdlog::info("MySQL连接成功: {}:{} / {}", host, port, database);
-    initTables();
+    // initTables();
     if (!initTables()) {
         spdlog::error("数据库表初始化失败");
         throw std::runtime_error("init tables failed");
@@ -103,7 +103,6 @@ std::time_t MysqlClient::parseTime(const std::string &timeStr) {
 
 bool MysqlClient::executeQuery(const std::string &sql) {
 
-    std::lock_guard<std::mutex> lock(mysql_mutex);
     if (mysql_query(conn, sql.c_str())) {
         std::cerr << "❌ SQL执行失败: " << mysql_error(conn) << std::endl;
         std::cerr << "SQL: " << sql << std::endl;
@@ -113,6 +112,7 @@ bool MysqlClient::executeQuery(const std::string &sql) {
 }
 
 bool MysqlClient::saveRecord(const std::map<std::string, std::string> &msg) {
+    std::lock_guard<std::mutex> lock(mysql_mutex);
     auto it = msg.find("action");
     if (it == msg.end()) {
         std::cerr << "❌ 缺少action字段" << std::endl;
@@ -183,6 +183,7 @@ bool MysqlClient::saveRecord(const std::map<std::string, std::string> &msg) {
 }
 
 bool MysqlClient::updateVideo(const std::string &code, const std::string &video, VideoType type) {
+    std::lock_guard<std::mutex> lock(mysql_mutex);
 
     std::string field;
 
@@ -223,6 +224,7 @@ bool MysqlClient::updateVideo(const std::string &code, const std::string &video,
 
 bool MysqlClient::upAIError(const std::string &grid, const std::string &time,
                             const std::string &video, const std::string &package_id) {
+    std::lock_guard<std::mutex> lock(mysql_mutex);
 
     char escapedGrid[128] = {0};
     char escapedTime[128] = {0};
@@ -246,6 +248,7 @@ bool MysqlClient::upAIError(const std::string &grid, const std::string &time,
 }
 
 bool MysqlClient::clearAIError(const std::string &grid) {
+    std::lock_guard<std::mutex> lock(mysql_mutex);
 
     char escapedGrid[128];
 

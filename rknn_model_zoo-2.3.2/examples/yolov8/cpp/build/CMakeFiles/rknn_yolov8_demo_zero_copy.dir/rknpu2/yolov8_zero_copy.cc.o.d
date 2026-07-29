@@ -24,6 +24,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
  /usr/include/aarch64-linux-gnu/bits/floatn.h \
  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+ /usr/include/aarch64-linux-gnu/bits/stdio.h \
+ /usr/include/aarch64-linux-gnu/bits/stdio2.h \
  /usr/include/c++/11/stdlib.h /usr/include/c++/11/cstdlib \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -49,16 +51,23 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/aarch64-linux-gnu/bits/select2.h \
  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
- /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/alloca.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/aarch64-linux-gnu/bits/stdlib.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/string.h \
- /usr/include/strings.h /usr/include/c++/11/math.h \
- /usr/include/c++/11/cmath /usr/include/c++/11/bits/cpp_type_traits.h \
+ /usr/include/strings.h \
+ /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
+ /usr/include/c++/11/math.h /usr/include/c++/11/cmath \
+ /usr/include/c++/11/bits/cpp_type_traits.h \
  /usr/include/c++/11/ext/type_traits.h /usr/include/math.h \
  /usr/include/aarch64-linux-gnu/bits/math-vector.h \
  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -96,7 +105,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /usr/local/include/rknn_api.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/aarch64-linux-gnu/bits/wchar.h \
  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \

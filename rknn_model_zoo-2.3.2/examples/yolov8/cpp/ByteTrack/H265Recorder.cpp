@@ -63,18 +63,26 @@ std::string H265Recorder::getDateDir(uint64_t time_ms) {
 //         spdlog::error("[Recorder] cache null");
 //         return;
 //     }
+
 //     std::string dir =
 //         "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
 
 //     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
 
+//     /*
+//      * 获取事件前5秒
+//      */
 //     auto before = cache->getRange(start_time, event_time_ms);
 
-//     // spdlog::info("[Recorder {}] before packets={}", camera_id, before.size());
-
 //     std::thread([this, before, event_time_ms, dir, code, type]() {
+//         /*
+//          * 等待事件后5秒
+//          */
 //         std::this_thread::sleep_for(std::chrono::seconds(5));
 
+//         /*
+//          * 获取事件后5秒
+//          */
 //         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
 
 //         std::vector<H265Packet> all;
@@ -86,93 +94,156 @@ std::string H265Recorder::getDateDir(uint64_t time_ms) {
 //         all.insert(all.end(), after.begin(), after.end());
 
 //         if (all.empty()) {
-//             spdlog::warn("[Recorder] no packets");
 
+//             spdlog::warn("[Recorder] no video packets");
 //             return;
 //         }
 
 //         /*
-//          * PTS排序
+//          * 1. DTS排序
 //          */
 //         std::sort(all.begin(), all.end(),
-//                   [](const H265Packet &a, const H265Packet &b) { return a.pts < b.pts; });
+//                   [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
 
 //         /*
-//          * 找I帧
+//          * 2. 去重复packet
 //          */
+//         size_t duplicate_count = 0;
+
+//         auto end_it =
+//             std::unique(all.begin(), all.end(), [&](const H265Packet &a, const H265Packet &b) {
+//                 bool same = (a.pts == b.pts) && (a.dts == b.dts);
+
+//                 if (same)
+//                     duplicate_count++;
+
+//                 return same;
+//             });
+
+//         all.erase(end_it, all.end());
+
+//         /*
+//          * 3. 找事件前最近IDR
+//          */
+
+//         uint64_t target_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
+
 //         size_t start_index = 0;
 
-//         bool found_keyframe = false;
+//         bool found = false;
 
-//         for (size_t i = 0; i < all.size(); i++) {
-//             if (all[i].keyframe) {
+//         for (int i = (int)all.size() - 1; i >= 0; i--) {
+
+//             if (all[i].real_time_ms <= target_time && all[i].keyframe) {
+
 //                 start_index = i;
-//                 found_keyframe = true;
+//                 found = true;
 //                 break;
 //             }
 //         }
 
-//         if (!found_keyframe) {
-//             spdlog::error("[Recorder] no keyframe found");
+//         /*
+//          * 如果前面没有IDR
+//          * 找第一个IDR
+//          */
+//         if (!found) {
+
+//             for (size_t i = 0; i < all.size(); i++) {
+
+//                 if (all[i].keyframe) {
+
+//                     start_index = i;
+//                     found = true;
+//                     break;
+//                 }
+//             }
+//         }
+
+//         if (!found) {
+
+//             spdlog::error("[Recorder] no IDR");
 //             return;
 //         }
 
+//         /*
+//          * 删除IDR之前的数据
+//          */
 //         if (start_index > 0) {
+
 //             all.erase(all.begin(), all.begin() + start_index);
 //         }
 
-//         if (all.empty()) {
+//         if (all.empty())
 //             return;
-//         }
-//         std::filesystem::create_directories(dir);
-//         std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+
 //         /*
-//          * 保存成功后更新数据库
+//          * 视频实际时间
 //          */
-//         int key_count = 0;
+//         uint64_t video_start_time = all.front().real_time_ms;
 
-//         for (auto &p : all) {
-//             if (p.keyframe)
-//                 key_count++;
+//         uint64_t video_end_time = all.back().real_time_ms;
+
+//         spdlog::info("[Recorder {}] start={} end={} duration={} packets={}", camera_id,
+//                      video_start_time, video_end_time, video_end_time - video_start_time,
+//                      all.size());
+
+//         /*
+//          * 保存
+//          */
+
+//         std::filesystem::create_directories(dir);
+
+//         std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+
+//         {
+//             std::lock_guard<std::mutex> lock(save_mutex);
+
+//             savePackets(all, filename);
 //         }
 
-//         // spdlog::info("[Recorder] packets={} keyframes={}", all.size(), key_count);
-//         savePackets(all, filename);
-
+//         /*
+//          * 更新数据库
+//          */
 //         if (mysql_client) {
+
 //             std::string video_url = filename.substr(filename.find("/Videos/") + 8);
 
 //             mysql_client->updateVideo(code, video_url, type);
+
 //         } else {
+
 //             spdlog::warn("[Recorder] mysql_client null");
 //         }
 //     }).detach();
 // }
-
 void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, VideoType type) {
     if (!cache) {
+
         spdlog::error("[Recorder] cache null");
         return;
     }
 
-    std::string dir =
+    std::string temp_dir =
+        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/temp";
+
+    std::string ready_dir =
         "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/event";
 
-    uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
+    uint64_t start_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
 
     /*
-     * 获取事件前5秒
+     * 获取前5秒
      */
     auto before = cache->getRange(start_time, event_time_ms);
 
-    std::thread([this, before, event_time_ms, dir, code, type]() {
+    std::thread([this, before, event_time_ms, temp_dir, ready_dir, code, type]() {
         /*
-         * 等待事件后5秒
+         * 等待后5秒
          */
         std::this_thread::sleep_for(std::chrono::seconds(5));
 
         /*
-         * 获取事件后5秒
+         * 获取后5秒
          */
         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
 
@@ -186,38 +257,32 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
 
         if (all.empty()) {
 
-            spdlog::warn("[Recorder] no video packets");
+            spdlog::warn("[EVENT] no packets");
             return;
         }
 
         /*
-         * 1. DTS排序
+         * DTS排序
          */
+
         std::sort(all.begin(), all.end(),
                   [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
 
         /*
-         * 2. 去重复packet
+         * 去重复
          */
-        size_t duplicate_count = 0;
 
-        auto end_it =
-            std::unique(all.begin(), all.end(), [&](const H265Packet &a, const H265Packet &b) {
-                bool same = (a.pts == b.pts) && (a.dts == b.dts);
-
-                if (same)
-                    duplicate_count++;
-
-                return same;
-            });
-
-        all.erase(end_it, all.end());
+        all.erase(std::unique(all.begin(), all.end(),
+                              [](const H265Packet &a, const H265Packet &b) {
+                                  return a.pts == b.pts && a.dts == b.dts;
+                              }),
+                  all.end());
 
         /*
-         * 3. 找事件前最近IDR
+         * 找最近IDR
          */
 
-        uint64_t target_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
+        uint64_t target = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
 
         size_t start_index = 0;
 
@@ -225,7 +290,7 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
 
         for (int i = (int)all.size() - 1; i >= 0; i--) {
 
-            if (all[i].real_time_ms <= target_time && all[i].keyframe) {
+            if (all[i].real_time_ms <= target && all[i].keyframe) {
 
                 start_index = i;
                 found = true;
@@ -234,9 +299,10 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         }
 
         /*
-         * 如果前面没有IDR
-         * 找第一个IDR
+         * 找不到前面的IDR
+         * 找第一个
          */
+
         if (!found) {
 
             for (size_t i = 0; i < all.size(); i++) {
@@ -252,13 +318,14 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
 
         if (!found) {
 
-            spdlog::error("[Recorder] no IDR");
+            spdlog::error("[EVENT] no IDR");
             return;
         }
 
         /*
-         * 删除IDR之前的数据
+         * 删除IDR之前
          */
+
         if (start_index > 0) {
 
             all.erase(all.begin(), all.begin() + start_index);
@@ -267,92 +334,345 @@ void H265Recorder::saveEvent(uint64_t event_time_ms, const std::string &code, Vi
         if (all.empty())
             return;
 
-        /*
-         * 视频实际时间
-         */
-        uint64_t video_start_time = all.front().real_time_ms;
+        uint64_t video_start = all.front().real_time_ms;
 
-        uint64_t video_end_time = all.back().real_time_ms;
+        uint64_t video_end = all.back().real_time_ms;
 
-        spdlog::info("[Recorder {}] start={} end={} duration={} packets={}", camera_id,
-                     video_start_time, video_end_time, video_end_time - video_start_time,
-                     all.size());
+        spdlog::info("[EVENT {}] start={} end={} duration={} packets={}", camera_id, video_start,
+                     video_end, video_end - video_start, all.size());
 
         /*
-         * 保存
+         * 创建目录
          */
 
-        std::filesystem::create_directories(dir);
+        std::filesystem::create_directories(temp_dir);
 
-        std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+        std::filesystem::create_directories(ready_dir);
+
+        std::string name = getTimeString(event_time_ms);
+
+        std::string temp_ts = temp_dir + "/" + name + ".ts";
+
+        /*
+         * 保存临时TS
+         */
 
         {
+
             std::lock_guard<std::mutex> lock(save_mutex);
 
-            savePackets(all, filename);
+            savePackets(all, temp_ts);
         }
 
         /*
-         * 更新数据库
+         * 强制刷新
          */
+
+        sync();
+
+        /*
+         * rename到ready
+         */
+
+        std::string final_ts = ready_dir + "/" + name + ".ts";
+
+        try {
+
+            std::filesystem::rename(temp_ts, final_ts);
+
+        } catch (std::exception &e) {
+
+            spdlog::error("[EVENT rename] {}", e.what());
+
+            return;
+        }
+
+        spdlog::info("[EVENT READY] {}", final_ts);
+
+        /*
+         * 最后写数据库
+         */
+
         if (mysql_client) {
 
-            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
+            std::string video_url = final_ts.substr(final_ts.find("/Videos/") + 8);
 
             mysql_client->updateVideo(code, video_url, type);
 
         } else {
 
-            spdlog::warn("[Recorder] mysql_client null");
+            spdlog::warn("[EVENT] mysql null");
         }
     }).detach();
 }
+// void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
+//                                const std::string &id) {
+//     if (!cache) {
 
+//         spdlog::error("[Recorder] cache null");
+
+//         return;
+//     }
+
+//     if (!ai_cache) {
+
+//         spdlog::error("[Recorder] ai_cache null");
+
+//         return;
+//     }
+
+//     std::string dir =
+//         "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
+
+//     uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
+
+//     /*
+//      * ===============================
+//      * 获取事件前5秒
+//      * ===============================
+//      */
+
+//     auto before = cache->getRange(start_time, event_time_ms);
+
+//     auto before_ai = ai_cache->getRange_ai(start_time, event_time_ms);
+
+//     // spdlog::info("[AI] before video={} ai={}", before.size(), before_ai.size());
+
+//     std::thread([this, before, before_ai, event_time_ms, dir, grid, id]() {
+//         /*
+//          * 等待事件后5秒
+//          */
+
+//         std::this_thread::sleep_for(std::chrono::seconds(5));
+
+//         /*
+//          * ===============================
+//          * 获取后5秒
+//          * ===============================
+//          */
+
+//         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
+
+//         auto after_ai = ai_cache->getRange_ai(event_time_ms, event_time_ms + 5000);
+
+//         std::vector<H265Packet> all;
+
+//         all.reserve(before.size() + after.size());
+
+//         all.insert(all.end(), before.begin(), before.end());
+
+//         all.insert(all.end(), after.begin(), after.end());
+
+//         std::vector<AIFrame> all_ai;
+
+//         all_ai.reserve(before_ai.size() + after_ai.size());
+
+//         all_ai.insert(all_ai.end(), before_ai.begin(), before_ai.end());
+
+//         all_ai.insert(all_ai.end(), after_ai.begin(), after_ai.end());
+
+//         if (all.empty()) {
+
+//             spdlog::warn("[AI] no video packets");
+
+//             return;
+//         }
+
+//         /*
+//          * ===============================
+//          * 1. DTS排序
+//          * ===============================
+//          */
+
+//         std::sort(all.begin(), all.end(),
+//                   [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
+
+//         // spdlog::info("[AI] video after sort={}", all.size());
+
+//         /*
+//          * ===============================
+//          * 2. 去重复packet
+//          * ===============================
+//          */
+
+//         size_t duplicate_count = 0;
+
+//         auto end_it =
+//             std::unique(all.begin(), all.end(), [&](const H265Packet &a, const H265Packet &b) {
+//                 bool same = (a.pts == b.pts) && (a.dts == b.dts);
+
+//                 if (same) {
+//                     duplicate_count++;
+
+//                     // spdlog::warn("[AI] remove duplicate pts={} real={}", a.pts,
+//                     a.real_time_ms);
+//                 }
+
+//                 return same;
+//             });
+
+//         all.erase(end_it, all.end());
+
+//         // spdlog::info("[AI] duplicate removed={} remain={}", duplicate_count, all.size());
+
+//         /*
+//          * ===============================
+//          * 3. 找事件前最近IDR
+//          * ===============================
+//          */
+
+//         uint64_t target_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
+
+//         size_t start_index = 0;
+
+//         bool found = false;
+
+//         for (int i = (int)all.size() - 1; i >= 0; i--) {
+
+//             if (all[i].real_time_ms <= target_time && all[i].keyframe) {
+
+//                 start_index = i;
+
+//                 found = true;
+
+//                 break;
+//             }
+//         }
+
+//         if (!found) {
+
+//             for (size_t i = 0; i < all.size(); i++) {
+
+//                 if (all[i].keyframe) {
+//                     start_index = i;
+//                     found = true;
+//                     break;
+//                 }
+//             }
+//         }
+
+//         if (!found) {
+
+//             spdlog::error("[AI] no IDR");
+
+//             return;
+//         }
+
+//         // spdlog::info("[AI] select IDR index={} real={}", start_index,
+//         //              all[start_index].real_time_ms);
+
+//         if (start_index > 0) {
+
+//             all.erase(all.begin(), all.begin() + start_index);
+//         }
+
+//         if (all.empty())
+//             return;
+
+//         /*
+//          * ===============================
+//          * 4. 视频真实开始时间
+//          * ===============================
+//          */
+
+//         uint64_t video_start_time = all.front().real_time_ms;
+
+//         uint64_t video_end_time = all.back().real_time_ms;
+
+//         // spdlog::info("[AI] video start={} end={} duration={} packets={}", video_start_time,
+//         //              video_end_time, video_end_time - video_start_time, all.size());
+
+//         /*
+//          * ===============================
+//          * 5. AI同步裁剪
+//          * ===============================
+//          */
+
+//         std::sort(all_ai.begin(), all_ai.end(), [](const AIFrame &a, const AIFrame &b) {
+//             return a.real_time_ms < b.real_time_ms;
+//         });
+
+//         auto ai_begin = std::lower_bound(
+//             all_ai.begin(), all_ai.end(), video_start_time,
+//             [](const AIFrame &frame, uint64_t t) { return frame.real_time_ms < t; });
+
+//         if (ai_begin != all_ai.begin()) {
+
+//             all_ai.erase(all_ai.begin(), ai_begin);
+//         }
+
+//         // spdlog::info("[AI JSON] frames={} first={} last={}", all_ai.size(),
+//         //              all_ai.empty() ? 0 : all_ai.front().real_time_ms,
+//         //              all_ai.empty() ? 0 : all_ai.back().real_time_ms);
+
+//         /*
+//          * ===============================
+//          * 6. 保存文件
+//          * ===============================
+//          */
+//         std::filesystem::create_directories(dir);
+//         std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+
+//         {
+//             std::lock_guard<std::mutex> lock(save_mutex);
+
+//             savePackets(all, filename);
+//         }
+//         /*
+//          * 保存JSON
+//          */
+//         if (ai_json_recorder && !all.empty()) {
+
+//             std::string json_filename = dir + "/" + getTimeString(event_time_ms) + ".json";
+
+//             ai_json_recorder->saveAIJson(all,    // 视频帧
+//                                          all_ai, // AI结果
+//                                          json_filename);
+
+//             // spdlog::info("[AI JSON] saved={} video={} ai={}", json_filename, all.size(),
+//             //              all_ai.size());
+//         }
+
+//         if (mysql_client) {
+
+//             std::string video_url = filename.substr(filename.find("/Videos/") + 8);
+
+//             std::string time_str = msToDatetimeString(event_time_ms);
+
+//             mysql_client->upAIError(grid, time_str, video_url, id);
+//         }
+//     }).detach();
+// }
 void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
                                const std::string &id) {
     if (!cache) {
-
         spdlog::error("[Recorder] cache null");
-
         return;
     }
 
     if (!ai_cache) {
-
         spdlog::error("[Recorder] ai_cache null");
-
         return;
     }
 
-    std::string dir =
+    std::string temp_dir =
+        "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/temp";
+
+    std::string ready_dir =
         "/home/admin/Videos/" + camera_id + "/" + getDateDir(event_time_ms) + "/AI_error";
 
-    uint64_t start_time = (event_time_ms > 5000) ? event_time_ms - 5000 : 0;
-
-    /*
-     * ===============================
-     * 获取事件前5秒
-     * ===============================
-     */
+    uint64_t start_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
 
     auto before = cache->getRange(start_time, event_time_ms);
 
     auto before_ai = ai_cache->getRange_ai(start_time, event_time_ms);
 
-    // spdlog::info("[AI] before video={} ai={}", before.size(), before_ai.size());
-
-    std::thread([this, before, before_ai, event_time_ms, dir, grid, id]() {
+    std::thread([this, before, before_ai, event_time_ms, temp_dir, ready_dir, grid, id]() {
         /*
-         * 等待事件后5秒
+         * 等待后5秒
          */
 
         std::this_thread::sleep_for(std::chrono::seconds(5));
-
-        /*
-         * ===============================
-         * 获取后5秒
-         * ===============================
-         */
 
         auto after = cache->getRange(event_time_ms, event_time_ms + 5000);
 
@@ -360,187 +680,147 @@ void H265Recorder::saveAIError(uint64_t event_time_ms, const std::string &grid,
 
         std::vector<H265Packet> all;
 
-        all.reserve(before.size() + after.size());
-
         all.insert(all.end(), before.begin(), before.end());
 
         all.insert(all.end(), after.begin(), after.end());
 
-        std::vector<AIFrame> all_ai;
+        if (all.empty()) {
+            spdlog::warn("[AI] no packets");
+            return;
+        }
 
-        all_ai.reserve(before_ai.size() + after_ai.size());
+        std::vector<AIFrame> all_ai;
 
         all_ai.insert(all_ai.end(), before_ai.begin(), before_ai.end());
 
         all_ai.insert(all_ai.end(), after_ai.begin(), after_ai.end());
 
-        if (all.empty()) {
-
-            spdlog::warn("[AI] no video packets");
-
-            return;
-        }
-
         /*
-         * ===============================
-         * 1. DTS排序
-         * ===============================
+         * DTS排序
          */
 
         std::sort(all.begin(), all.end(),
                   [](const H265Packet &a, const H265Packet &b) { return a.dts < b.dts; });
 
-        // spdlog::info("[AI] video after sort={}", all.size());
-
         /*
-         * ===============================
-         * 2. 去重复packet
-         * ===============================
+         * 去重
          */
 
-        size_t duplicate_count = 0;
-
-        auto end_it =
-            std::unique(all.begin(), all.end(), [&](const H265Packet &a, const H265Packet &b) {
-                bool same = (a.pts == b.pts) && (a.dts == b.dts);
-
-                if (same) {
-                    duplicate_count++;
-
-                    // spdlog::warn("[AI] remove duplicate pts={} real={}", a.pts, a.real_time_ms);
-                }
-
-                return same;
-            });
-
-        all.erase(end_it, all.end());
-
-        // spdlog::info("[AI] duplicate removed={} remain={}", duplicate_count, all.size());
+        all.erase(std::unique(all.begin(), all.end(),
+                              [](const H265Packet &a, const H265Packet &b) {
+                                  return a.pts == b.pts && a.dts == b.dts;
+                              }),
+                  all.end());
 
         /*
-         * ===============================
-         * 3. 找事件前最近IDR
-         * ===============================
+         * 找IDR
          */
 
-        uint64_t target_time = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
+        uint64_t target = event_time_ms > 5000 ? event_time_ms - 5000 : 0;
 
         size_t start_index = 0;
 
         bool found = false;
 
-        for (int i = (int)all.size() - 1; i >= 0; i--) {
+        for (int i = all.size() - 1; i >= 0; i--) {
 
-            if (all[i].real_time_ms <= target_time && all[i].keyframe) {
-
+            if (all[i].real_time_ms <= target && all[i].keyframe) {
                 start_index = i;
-
                 found = true;
-
                 break;
             }
         }
 
         if (!found) {
-
-            for (size_t i = 0; i < all.size(); i++) {
-
-                if (all[i].keyframe) {
-                    start_index = i;
-                    found = true;
-                    break;
-                }
-            }
-        }
-
-        if (!found) {
-
             spdlog::error("[AI] no IDR");
-
             return;
         }
 
-        // spdlog::info("[AI] select IDR index={} real={}", start_index,
-        //              all[start_index].real_time_ms);
-
         if (start_index > 0) {
-
             all.erase(all.begin(), all.begin() + start_index);
         }
 
         if (all.empty())
             return;
 
-        /*
-         * ===============================
-         * 4. 视频真实开始时间
-         * ===============================
-         */
-
-        uint64_t video_start_time = all.front().real_time_ms;
-
-        uint64_t video_end_time = all.back().real_time_ms;
-
-        // spdlog::info("[AI] video start={} end={} duration={} packets={}", video_start_time,
-        //              video_end_time, video_end_time - video_start_time, all.size());
+        uint64_t video_start = all.front().real_time_ms;
 
         /*
-         * ===============================
-         * 5. AI同步裁剪
-         * ===============================
+         * AI同步
          */
 
         std::sort(all_ai.begin(), all_ai.end(), [](const AIFrame &a, const AIFrame &b) {
             return a.real_time_ms < b.real_time_ms;
         });
 
-        auto ai_begin = std::lower_bound(
-            all_ai.begin(), all_ai.end(), video_start_time,
-            [](const AIFrame &frame, uint64_t t) { return frame.real_time_ms < t; });
+        auto it = std::lower_bound(all_ai.begin(), all_ai.end(), video_start,
+                                   [](const AIFrame &a, uint64_t t) { return a.real_time_ms < t; });
 
-        if (ai_begin != all_ai.begin()) {
-
-            all_ai.erase(all_ai.begin(), ai_begin);
+        if (it != all_ai.begin()) {
+            all_ai.erase(all_ai.begin(), it);
         }
 
-        // spdlog::info("[AI JSON] frames={} first={} last={}", all_ai.size(),
-        //              all_ai.empty() ? 0 : all_ai.front().real_time_ms,
-        //              all_ai.empty() ? 0 : all_ai.back().real_time_ms);
+        /*
+         * 创建目录
+         */
+
+        std::filesystem::create_directories(temp_dir);
+
+        std::filesystem::create_directories(ready_dir);
+
+        std::string name = getTimeString(event_time_ms);
+
+        std::string temp_ts = temp_dir + "/" + name + ".ts";
+
+        std::string temp_json = temp_dir + "/" + name + ".json";
 
         /*
-         * ===============================
-         * 6. 保存文件
-         * ===============================
+         * 写临时TS
          */
-        std::filesystem::create_directories(dir);
-        std::string filename = dir + "/" + getTimeString(event_time_ms) + ".ts";
+
         {
             std::lock_guard<std::mutex> lock(save_mutex);
 
-            savePackets(all, filename);
+            savePackets(all, temp_ts);
         }
+
         /*
-         * 保存JSON
+         * 写JSON
          */
-        if (ai_json_recorder && !all.empty()) {
 
-            std::string json_filename = dir + "/" + getTimeString(event_time_ms) + ".json";
-
-            ai_json_recorder->saveAIJson(all,    // 视频帧
-                                         all_ai, // AI结果
-                                         json_filename);
-
-            // spdlog::info("[AI JSON] saved={} video={} ai={}", json_filename, all.size(),
-            //              all_ai.size());
+        if (ai_json_recorder) {
+            ai_json_recorder->saveAIJson(all, all_ai, temp_json);
         }
+
+        /*
+         * 强制刷新磁盘
+         */
+
+        sync();
+
+        /*
+         * rename到正式目录
+         */
+
+        std::string final_ts = ready_dir + "/" + name + ".ts";
+
+        std::string final_json = ready_dir + "/" + name + ".json";
+
+        std::filesystem::rename(temp_ts, final_ts);
+
+        std::filesystem::rename(temp_json, final_json);
+
+        spdlog::info("[AI READY] {}", final_ts);
+
+        /*
+         * mysql最后写
+         */
 
         if (mysql_client) {
 
-            std::string video_url = filename.substr(filename.find("/Videos/") + 8);
+            std::string video_url = final_ts.substr(final_ts.find("/Videos/") + 8);
 
-            std::string time_str = msToDatetimeString(event_time_ms);
-
-            mysql_client->upAIError(grid, time_str, video_url, id);
+            mysql_client->upAIError(grid, msToDatetimeString(event_time_ms), video_url, id);
         }
     }).detach();
 }

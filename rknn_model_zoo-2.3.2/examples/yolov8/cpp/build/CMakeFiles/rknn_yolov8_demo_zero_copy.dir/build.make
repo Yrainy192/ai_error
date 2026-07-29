@@ -629,10 +629,13 @@ rknn_yolov8_demo_zero_copy: utils.out/libimageutils.a
 rknn_yolov8_demo_zero_copy: utils.out/libfileutils.a
 rknn_yolov8_demo_zero_copy: utils.out/libimagedrawing.a
 rknn_yolov8_demo_zero_copy: /usr/lib/librknnrt.so
+rknn_yolov8_demo_zero_copy: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so
 rknn_yolov8_demo_zero_copy: /usr/lib/libsdk.so
 rknn_yolov8_demo_zero_copy: /usr/lib/librknnrt.so
+rknn_yolov8_demo_zero_copy: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so
 rknn_yolov8_demo_zero_copy: /usr/lib/libsdk.so
 rknn_yolov8_demo_zero_copy: /usr/lib/librknnrt.so
+rknn_yolov8_demo_zero_copy: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so
 rknn_yolov8_demo_zero_copy: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.5.4d
 rknn_yolov8_demo_zero_copy: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.5.4d
 rknn_yolov8_demo_zero_copy: /usr/lib/aarch64-linux-gnu/libopencv_plot.so.4.5.4d

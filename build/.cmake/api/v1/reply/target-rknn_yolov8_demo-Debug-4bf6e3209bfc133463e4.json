@@ -29,73 +29,73 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 46,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 236,
+				"line" : 241,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 112,
+				"line" : 117,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 120,
+				"line" : 125,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 145,
+				"line" : 150,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 265,
+				"line" : 270,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 44,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 94,
+				"line" : 99,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 111,
+				"line" : 116,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 166,
+				"line" : 171,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 251,
+				"line" : 256,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 254,
+				"line" : 259,
 				"parent" : 0
 			}
 		]
@@ -107,6 +107,9 @@
 			[
 				{
 					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=c++17"
 				}
 			],
 			"defines" : 
