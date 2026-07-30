@@ -194,7 +194,7 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
         }
 
         task_manager->updateLogic(3);
-        // update_display(img, results, cam_id, roi_manager.get(cam_id));
+        //update_display(img, results, cam_id, roi_manager.get(cam_id));
     }
 }
 
@@ -384,12 +384,12 @@ int main() {
     }
     last_ai_frame_id.resize(5, UINT64_MAX);
 
-    // 5. 模型池（6 core）
-    // std::string model_path = "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/"
-    //                          "yolov8_new.rknn";
+//    // 5. 模型池（6 core）
+//     std::string model_path = "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/"
+//                              "yolov8_new.rknn";
 
-    // ModelPool modelPool;
-    // modelPool.init(model_path, 5);
+//     ModelPool modelPool;
+//     modelPool.init(model_path, 5);
 
     std::string model_path = cfg["model"]["path"].asString();
 
@@ -407,14 +407,14 @@ int main() {
     std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
     // std::thread t5(infer_worker, 5, 5, &manager, &modelPool, &task_manager);
 
-    // // // 7. UI窗口
-    // cv::namedWindow("cam0");
-    // cv::namedWindow("cam1");
-    // cv::namedWindow("cam2");
-    // // cv::namedWindow("cam3");
-    // // cv::namedWindow("cam4");
-    // // cv::namedWindow("cam5");
-    // // // 8. 显示线程（主线程）
+    // // 7. UI窗口
+    cv::namedWindow("cam0");
+    cv::namedWindow("cam1");
+    cv::namedWindow("cam2");
+    // cv::namedWindow("cam3");
+    // cv::namedWindow("cam4");
+    // cv::namedWindow("cam5");
+    // // 8. 显示线程（主线程）
     // while (running) {
     //     {
     //         std::lock_guard<std::mutex> lock(g_display[0].mtx);

@@ -6,6 +6,7 @@
 #include <filesystem>
 
 #include <spdlog/spdlog.h>
+#include <gst/video/video.h>
 
 // RtspStream::RtspStream(const std::string &url, const std::string &id)
 //     : rtsp_url(url), camera_id(id) {
@@ -352,6 +353,31 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
     f.data = frame_data;
     f.width = 1920;
     f.height = 1080;
+    f.width_stride = f.width;
+    f.height_stride = f.height;
+    // ⭐读取MPP真实stride
+    GstVideoMeta *meta =
+    gst_buffer_get_video_meta(buffer);
+
+    if(meta)
+    {
+    f.width_stride = meta->stride[0];
+    f.height_stride = meta->height;
+    // spdlog::info(
+    //     "[NV12] width={} height={} stride={} meta_height={} size={}",
+    //     f.width,
+    //     f.height,
+    //     f.width_stride,
+    //     f.height_stride,
+    //     map.size
+    // );
+    }
+    else
+    {
+    spdlog::warn(
+        "[NV12] no GstVideoMeta"
+    );
+    }
     // f.timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
     // 新增
 
