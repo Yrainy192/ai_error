@@ -63,12 +63,15 @@ using namespace cv;
 #include "voice_manager.h"
 #include <spdlog/spdlog.h>
 #include <sys/stat.h>
-
+#include "ConfigManager.h"
 #include <atomic>
 #include <signal.h>
 
 std::atomic<bool> running(true);
 std::unique_ptr<TCPClient> tcp_client;
+// 全局配置
+ConfigManager config;
+Json::Value cfg;
 
 void signalHandler(int signum) {
     spdlog::info("receive signal {}", signum);
@@ -198,17 +201,41 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
 void start_service() {
     // std::cout << "=== 程序启动 ===" << std::endl;
     spdlog::info("=== 程序启动 ===");
-    std::string host = "192.168.60.131";
-    std::string user = "admin";
-    std::string password = "123456";
-    std::string database = "ai_dec";
-    int port = 3306;
+    // std::string host = "192.168.60.131";
+    // std::string user = "admin";
+    // std::string password = "123456";
+    // std::string database = "ai_dec";
+    // int port = 3306;
+    auto mysql = cfg["mysql"];
 
+    std::string host =
+    mysql["host"].asString();
+
+    std::string user =
+    mysql["user"].asString();
+
+    std::string password =
+    mysql["password"].asString();
+
+    std::string database =
+    mysql["database"].asString();
+
+    int port =
+    mysql["port"].asInt();
     try {
         static MysqlClient mysql_client(host, user, password, database, port);
         task_manager.setMysqlClient(&mysql_client);
-        tcp_client =
-            std::make_unique<TCPClient>("192.168.70.33", 2059, &task_manager, &mysql_client);
+
+        auto tcp = cfg["tcp"];
+        tcp_client =    
+        std::make_unique<TCPClient>(
+        tcp["server_ip"].asString(),
+        tcp["server_port"].asInt(),
+        &task_manager,
+        &mysql_client
+                );
+        // tcp_client =
+        //     std::make_unique<TCPClient>("192.168.70.33", 2059, &task_manager, &mysql_client);
         // tcp_client = std::make_unique<TCPClient>("127.0.0.1", 9000, &task_manager,
         // &mysql_client); static TCPClient tcp_client("127.0.0.1", 9000, &task_manager,
         // &mysql_client);
@@ -229,16 +256,53 @@ void start_service() {
 }
 
 int main() {
+
+    InitLogger();
+
+    if(!config.load(
+    "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/config.json"))
+    {
+    spdlog::error("config load failed");
+    return -1;
+    }
+    cfg = config.get();
     signal(SIGINT, signalHandler);
     signal(SIGTERM, signalHandler);
 
-    InitLogger();
+
     spdlog::info("program start");
 
-    AlarmLight alarm("192.168.70.8", 23);
+    auto alarm_cfg = cfg["alarm_light"];
+
+
+    std::string alarm_ip =
+    alarm_cfg["ip"].asString();
+
+
+    int alarm_port =
+    alarm_cfg["port"].asInt();
+
+
+    AlarmLight alarm(
+    alarm_ip,
+    alarm_port
+    );  
+
+
     if (!alarm.connect()) {
-        spdlog::error("alarm light connect failed");
-    };
+
+    spdlog::error(
+        "alarm light connect failed {}:{}",
+        alarm_ip,
+        alarm_port
+    );
+
+    }
+
+    // AlarmLight alarm("192.168.70.8", 23);
+    // if (!alarm.connect()) {
+    //     spdlog::error("alarm light connect failed");
+    // };
 
     task_manager.setAlarmLight(&alarm);
 
@@ -280,12 +344,21 @@ int main() {
     // tracker_map[5] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     //  3. RTSP 管理（不改）
     RtspManager manager;
-
-    manager.addStream("rtsp://192.168.70.12:554/"
-                      "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-                      "cam0");
-    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101", "cam1");
-    manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101", "cam2");
+    auto cameras = cfg["camera"];
+    for(auto cam:cameras)
+    {
+    int id =
+        cam["id"].asInt();
+    manager.addStream(
+        cam["url"].asString(),
+        cam["name"].asString()
+    );
+    }   
+    // manager.addStream("rtsp://192.168.70.12:554/"
+    //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
+    //                   "cam0");
+    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101", "cam1");
+    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101", "cam2");
     // manager.addStream("rtsp://192.168.70.10:554/"
     //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
     //                   "cam1");
@@ -312,12 +385,20 @@ int main() {
     last_ai_frame_id.resize(5, UINT64_MAX);
 
     // 5. 模型池（6 core）
-    std::string model_path = "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/"
-                             "yolov8_new.rknn";
+    // std::string model_path = "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/"
+    //                          "yolov8_new.rknn";
+
+    // ModelPool modelPool;
+    // modelPool.init(model_path, 5);
+
+    std::string model_path = cfg["model"]["path"].asString();
+
+    int model_count = cfg["model"]["count"].asInt();
 
     ModelPool modelPool;
-    modelPool.init(model_path, 5);
-
+    modelPool.init(
+    model_path,
+    model_count );
     // 6. 启动推理线程（每路一个）
     std::thread t0(infer_worker, 0, 0, &manager, &modelPool, &task_manager);
     std::thread t1(infer_worker, 1, 1, &manager, &modelPool, &task_manager);

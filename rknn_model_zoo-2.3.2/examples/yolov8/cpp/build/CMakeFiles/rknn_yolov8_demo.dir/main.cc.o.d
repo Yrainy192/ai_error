@@ -31,7 +31,7 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/rockchip/rk_venc_cfg.h /usr/include/rockchip/rk_venc_ref.h \
  /usr/include/rockchip/mpp_task.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+ /usr/include/rknn_api.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
@@ -100,7 +100,6 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
- /usr/include/aarch64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/cxxabi_init_exception.h \
  /usr/include/c++/11/typeinfo /usr/include/c++/11/bits/nested_exception.h \
@@ -145,10 +144,7 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/aarch64-linux-gnu/sys/select.h \
  /usr/include/aarch64-linux-gnu/bits/select.h \
  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/aarch64-linux-gnu/bits/select2.h /usr/include/alloca.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib.h \
+ /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
@@ -156,10 +152,9 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
- /usr/include/aarch64-linux-gnu/bits/stdio.h \
- /usr/include/aarch64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
- /usr/include/errno.h /usr/include/aarch64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/aarch64-linux-gnu/asm/errno.h \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/aarch64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/aarch64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
@@ -221,11 +216,8 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/c++/11/bits/erase_if.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /usr/include/opencv4/opencv2/core/cvstd.hpp /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
- /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
- /usr/include/c++/11/cmath /usr/include/math.h \
- /usr/include/aarch64-linux-gnu/bits/math-vector.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/cmath \
+ /usr/include/math.h /usr/include/aarch64-linux-gnu/bits/math-vector.h \
  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
@@ -429,7 +421,6 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/confname.h \
  /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
  /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
- /usr/include/aarch64-linux-gnu/bits/unistd.h \
  /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
  /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -904,25 +895,21 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/nlohmann/ordered_map.hpp \
  /usr/include/nlohmann/detail/macro_unscope.hpp \
  /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
- /usr/local/include/spdlog/tweakme.h \
- /usr/local/include/spdlog/details/null_mutex.h \
- /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/fmt/bundled/format.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/details/registry.h \
- /usr/local/include/spdlog/logger.h \
- /usr/local/include/spdlog/details/log_msg.h \
- /usr/local/include/spdlog/details/backtracer.h \
- /usr/local/include/spdlog/details/log_msg_buffer.h \
- /usr/local/include/spdlog/details/circular_q.h \
- /usr/local/include/spdlog/version.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/include/spdlog/spdlog.h /usr/include/spdlog/common.h \
+ /usr/include/spdlog/tweakme.h /usr/include/spdlog/details/null_mutex.h \
+ /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
+ /usr/include/fmt/format.h /usr/include/fmt/core.h \
+ /usr/include/spdlog/details/registry.h /usr/include/spdlog/logger.h \
+ /usr/include/spdlog/details/log_msg.h \
+ /usr/include/spdlog/details/backtracer.h \
+ /usr/include/spdlog/details/log_msg_buffer.h \
+ /usr/include/spdlog/details/circular_q.h /usr/include/spdlog/version.h \
+ /usr/include/spdlog/details/synchronous_factory.h \
  /usr/include/aarch64-linux-gnu/sys/stat.h \
  /usr/include/aarch64-linux-gnu/bits/stat.h \
  /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
  /usr/include/aarch64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
  /usr/include/aarch64-linux-gnu/bits/statx-generic.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h
+ /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ConfigManager.h

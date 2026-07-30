@@ -1,4 +1,0 @@
-person
-package
-black_package
-ems_package

@@ -37,7 +37,6 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/aarch64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/exception \
  /usr/include/c++/11/bits/exception.h \
  /usr/include/c++/11/bits/exception_ptr.h \
@@ -126,10 +125,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: \
  /usr/include/aarch64-linux-gnu/sys/select.h \
  /usr/include/aarch64-linux-gnu/bits/select.h \
  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/aarch64-linux-gnu/bits/select2.h /usr/include/alloca.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib.h \
+ /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
@@ -137,8 +133,6 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
- /usr/include/aarch64-linux-gnu/bits/stdio.h \
- /usr/include/aarch64-linux-gnu/bits/stdio2.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/limits \
@@ -178,10 +172,9 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: \
  /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /usr/local/include/spdlog/sinks/rotating_file_sink.h \
- /usr/local/include/spdlog/sinks/base_sink.h \
- /usr/local/include/spdlog/common.h /usr/local/include/spdlog/tweakme.h \
- /usr/local/include/spdlog/details/null_mutex.h \
+ /usr/include/spdlog/sinks/rotating_file_sink.h \
+ /usr/include/spdlog/sinks/base_sink.h /usr/include/spdlog/common.h \
+ /usr/include/spdlog/tweakme.h /usr/include/spdlog/details/null_mutex.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_uninitialized.h \
@@ -205,14 +198,12 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h /usr/include/c++/11/cstring \
+ /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
+ /usr/include/c++/11/cstddef /usr/include/c++/11/cstring \
  /usr/include/string.h /usr/include/strings.h \
- /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
- /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
  /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /usr/local/include/spdlog/fmt/bundled/format.h /usr/include/c++/11/cmath \
- /usr/include/math.h /usr/include/aarch64-linux-gnu/bits/math-vector.h \
+ /usr/include/fmt/format.h /usr/include/c++/11/cmath /usr/include/math.h \
+ /usr/include/aarch64-linux-gnu/bits/math-vector.h \
  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
@@ -232,19 +223,15 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/details/log_msg.h \
- /usr/local/include/spdlog/sinks/sink.h \
- /usr/local/include/spdlog/formatter.h \
- /usr/local/include/spdlog/details/file_helper.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
- /usr/local/include/spdlog/details/registry.h /usr/include/c++/11/mutex \
+ /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/fmt/core.h \
+ /usr/include/spdlog/details/log_msg.h /usr/include/spdlog/sinks/sink.h \
+ /usr/include/spdlog/formatter.h \
+ /usr/include/spdlog/details/file_helper.h \
+ /usr/include/spdlog/details/synchronous_factory.h \
+ /usr/include/spdlog/details/registry.h /usr/include/c++/11/mutex \
  /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h \
- /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/logger.h \
- /usr/local/include/spdlog/details/backtracer.h \
- /usr/local/include/spdlog/details/log_msg_buffer.h \
- /usr/local/include/spdlog/details/circular_q.h \
- /usr/include/c++/11/cassert /usr/include/assert.h \
- /usr/local/include/spdlog/version.h
+ /usr/include/c++/11/bits/unique_lock.h /usr/include/spdlog/spdlog.h \
+ /usr/include/spdlog/logger.h /usr/include/spdlog/details/backtracer.h \
+ /usr/include/spdlog/details/log_msg_buffer.h \
+ /usr/include/spdlog/details/circular_q.h /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/include/spdlog/version.h

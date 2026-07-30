@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o.d"
+  "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ConfigManager.cpp.o"
+  "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ConfigManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o"

@@ -116,7 +116,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -167,11 +166,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -180,8 +176,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -190,10 +184,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
@@ -226,13 +220,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
   /usr/include/c++/11/bits/streambuf_iterator.h \
@@ -241,7 +233,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/c++/11/bits/locale_classes.h \
   /usr/include/c++/11/bits/locale_classes.tcc \
   /usr/include/c++/11/bits/streambuf.tcc \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -266,17 +258,17 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIFrameCache.cpp.o: ../ByteT
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o: ../ByteTrack/AIJsonRecorder.cpp \
   /usr/include/stdc-predef.h \
@@ -394,7 +386,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -445,11 +436,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -458,8 +446,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -618,8 +604,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o: ../Byt
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/nlohmann/detail/input/input_adapters.hpp \
   /usr/include/nlohmann/detail/input/json_sax.hpp \
   /usr/include/nlohmann/detail/input/lexer.hpp \
@@ -638,23 +622,23 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o: ../Byt
   /usr/include/nlohmann/ordered_map.hpp \
   /usr/include/nlohmann/detail/macro_unscope.hpp \
   /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTrack/AlarmLight.cpp \
   /usr/include/stdc-predef.h \
@@ -760,7 +744,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -817,11 +800,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -830,8 +810,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -844,8 +822,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTra
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -873,7 +849,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/arpa/inet.h \
@@ -894,7 +869,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/aarch64-linux-gnu/bits/socket2.h \
   /usr/include/aarch64-linux-gnu/bits/in.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o: ../ByteTrack/AudioManager.cpp \
@@ -977,7 +951,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception.h \
@@ -1056,11 +1029,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -1069,8 +1039,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/unique_lock.h \
@@ -1189,7 +1157,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -1197,9 +1164,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/functexcept.h \
@@ -1255,7 +1220,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -1317,8 +1281,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -1383,8 +1345,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o: ../ByteTr
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
@@ -1606,6 +1566,247 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o: ../ByteTr
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h
 
+CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ConfigManager.cpp.o: ../ByteTrack/ConfigManager.cpp \
+  /usr/include/stdc-predef.h \
+  ../ByteTrack/ConfigManager.h \
+  /usr/include/jsoncpp/json/json.h \
+  /usr/include/jsoncpp/json/config.h \
+  /usr/include/c++/11/cstddef \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wordsize.h \
+  /usr/include/aarch64-linux-gnu/bits/timesize.h \
+  /usr/include/aarch64-linux-gnu/sys/cdefs.h \
+  /usr/include/aarch64-linux-gnu/bits/long-double.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/cpu_defines.h \
+  /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h \
+  /usr/include/c++/11/cstdint \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/aarch64-linux-gnu/bits/types.h \
+  /usr/include/aarch64-linux-gnu/bits/typesizes.h \
+  /usr/include/aarch64-linux-gnu/bits/time64.h \
+  /usr/include/aarch64-linux-gnu/bits/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
+  /usr/include/c++/11/bits/stringfwd.h \
+  /usr/include/c++/11/bits/memoryfwd.h \
+  /usr/include/c++/11/bits/postypes.h \
+  /usr/include/c++/11/cwchar \
+  /usr/include/wchar.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn.h \
+  /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
+  /usr/lib/gcc/aarch64-linux-gnu/11/include/stdarg.h \
+  /usr/include/aarch64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/c++/11/exception \
+  /usr/include/c++/11/bits/exception.h \
+  /usr/include/c++/11/bits/exception_ptr.h \
+  /usr/include/c++/11/bits/exception_defines.h \
+  /usr/include/c++/11/bits/cxxabi_init_exception.h \
+  /usr/include/c++/11/typeinfo \
+  /usr/include/c++/11/bits/hash_bytes.h \
+  /usr/include/c++/11/new \
+  /usr/include/c++/11/bits/move.h \
+  /usr/include/c++/11/type_traits \
+  /usr/include/c++/11/bits/nested_exception.h \
+  /usr/include/c++/11/bits/char_traits.h \
+  /usr/include/c++/11/bits/stl_algobase.h \
+  /usr/include/c++/11/bits/functexcept.h \
+  /usr/include/c++/11/bits/cpp_type_traits.h \
+  /usr/include/c++/11/ext/type_traits.h \
+  /usr/include/c++/11/ext/numeric_traits.h \
+  /usr/include/c++/11/bits/stl_pair.h \
+  /usr/include/c++/11/bits/stl_iterator_base_types.h \
+  /usr/include/c++/11/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/11/bits/concept_check.h \
+  /usr/include/c++/11/debug/assertions.h \
+  /usr/include/c++/11/bits/stl_iterator.h \
+  /usr/include/c++/11/bits/ptr_traits.h \
+  /usr/include/c++/11/debug/debug.h \
+  /usr/include/c++/11/bits/predefined_ops.h \
+  /usr/include/c++/11/bits/localefwd.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/c++locale.h \
+  /usr/include/c++/11/clocale \
+  /usr/include/locale.h \
+  /usr/include/aarch64-linux-gnu/bits/locale.h \
+  /usr/include/c++/11/cctype \
+  /usr/include/ctype.h \
+  /usr/include/aarch64-linux-gnu/bits/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/endianness.h \
+  /usr/include/c++/11/bits/ios_base.h \
+  /usr/include/c++/11/ext/atomicity.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/gthr.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/gthr-default.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/aarch64-linux-gnu/bits/types/time_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/aarch64-linux-gnu/bits/sched.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/aarch64-linux-gnu/bits/cpu-set.h \
+  /usr/include/time.h \
+  /usr/include/aarch64-linux-gnu/bits/time.h \
+  /usr/include/aarch64-linux-gnu/bits/timex.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/aarch64-linux-gnu/bits/setjmp.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/atomic_word.h \
+  /usr/include/aarch64-linux-gnu/sys/single_threaded.h \
+  /usr/include/c++/11/bits/locale_classes.h \
+  /usr/include/c++/11/string \
+  /usr/include/c++/11/bits/allocator.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/c++allocator.h \
+  /usr/include/c++/11/ext/new_allocator.h \
+  /usr/include/c++/11/bits/ostream_insert.h \
+  /usr/include/c++/11/bits/cxxabi_forced.h \
+  /usr/include/c++/11/bits/stl_function.h \
+  /usr/include/c++/11/backward/binders.h \
+  /usr/include/c++/11/bits/range_access.h \
+  /usr/include/c++/11/initializer_list \
+  /usr/include/c++/11/bits/basic_string.h \
+  /usr/include/c++/11/ext/alloc_traits.h \
+  /usr/include/c++/11/bits/alloc_traits.h \
+  /usr/include/c++/11/bits/stl_construct.h \
+  /usr/include/c++/11/string_view \
+  /usr/include/c++/11/bits/functional_hash.h \
+  /usr/include/c++/11/bits/string_view.tcc \
+  /usr/include/c++/11/ext/string_conversions.h \
+  /usr/include/c++/11/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/aarch64-linux-gnu/bits/waitflags.h \
+  /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
+  /usr/include/aarch64-linux-gnu/sys/types.h \
+  /usr/include/endian.h \
+  /usr/include/aarch64-linux-gnu/bits/byteswap.h \
+  /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/aarch64-linux-gnu/sys/select.h \
+  /usr/include/aarch64-linux-gnu/bits/select.h \
+  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/alloca.h \
+  /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/c++/11/bits/std_abs.h \
+  /usr/include/c++/11/cstdio \
+  /usr/include/stdio.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
+  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/c++/11/cerrno \
+  /usr/include/errno.h \
+  /usr/include/aarch64-linux-gnu/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/aarch64-linux-gnu/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
+  /usr/include/c++/11/bits/charconv.h \
+  /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/bits/locale_classes.tcc \
+  /usr/include/c++/11/system_error \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/include/c++/11/stdexcept \
+  /usr/include/c++/11/streambuf \
+  /usr/include/c++/11/bits/streambuf.tcc \
+  /usr/include/c++/11/bits/basic_ios.h \
+  /usr/include/c++/11/bits/locale_facets.h \
+  /usr/include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/include/c++/11/bits/streambuf_iterator.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/include/c++/11/bits/locale_facets.tcc \
+  /usr/include/c++/11/bits/basic_ios.tcc \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/bits/ostream.tcc \
+  /usr/include/c++/11/bits/istream.tcc \
+  /usr/include/c++/11/memory \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_tempbuf.h \
+  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/11/bits/align.h \
+  /usr/include/c++/11/bit \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/shared_ptr.h \
+  /usr/include/c++/11/bits/shared_ptr_base.h \
+  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/ext/concurrence.h \
+  /usr/include/c++/11/bits/shared_ptr_atomic.h \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/pstl/glue_memory_defs.h \
+  /usr/include/c++/11/pstl/execution_defs.h \
+  /usr/include/c++/11/sstream \
+  /usr/include/c++/11/bits/sstream.tcc \
+  /usr/include/jsoncpp/json/allocator.h \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/jsoncpp/json/version.h \
+  /usr/include/jsoncpp/json/json_features.h \
+  /usr/include/jsoncpp/json/forwards.h \
+  /usr/include/jsoncpp/json/reader.h \
+  /usr/include/jsoncpp/json/value.h \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
+  /usr/include/c++/11/bits/erase_if.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/stack \
+  /usr/include/c++/11/bits/stl_stack.h \
+  /usr/include/jsoncpp/json/writer.h \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc
+
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o: ../ByteTrack/DisplayManager.cpp \
   /usr/include/stdc-predef.h \
   ../ByteTrack/DisplayManager.h \
@@ -1710,7 +1911,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -1767,11 +1967,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -1780,8 +1977,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -1836,8 +2031,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o: ../Byt
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -2028,7 +2221,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/DisplayManager.cpp.o: ../Byt
   /usr/include/opencv4/opencv2/video/background_segm.hpp \
   ../ByteTrack/roi_manager.h \
   ../yolov8.h \
-  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+  /usr/include/rknn_api.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
   ../postprocess.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
@@ -2149,7 +2342,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -2200,11 +2392,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -2213,8 +2402,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -2331,8 +2518,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/glib-2.0/glib/gversionmacros.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/glib-2.0/glib/garray.h \
   /usr/include/glib-2.0/glib/gasyncqueue.h \
   /usr/include/glib-2.0/glib/gthread.h \
@@ -2385,7 +2570,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -2567,10 +2751,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/gstreamer-1.0/gst/base/base-prelude.h \
   /usr/include/gstreamer-1.0/gst/app/app-prelude.h \
   /usr/include/gstreamer-1.0/gst/app/app-enumtypes.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/std_function.h \
@@ -2583,12 +2767,12 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
   /usr/include/c++/11/cstring \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -2613,17 +2797,17 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: ../ByteT
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h \
   /usr/include/c++/11/unordered_set \
   /usr/include/c++/11/bits/unordered_set.h
 
@@ -2741,7 +2925,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -2792,11 +2975,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -2805,8 +2985,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -2834,10 +3012,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/pstl/execution_defs.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
@@ -2853,13 +3031,12 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/c++/11/bits/shared_ptr_atomic.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
   /usr/include/c++/11/bits/streambuf_iterator.h \
@@ -2868,7 +3045,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/c++/11/bits/locale_classes.h \
   /usr/include/c++/11/bits/locale_classes.tcc \
   /usr/include/c++/11/bits/streambuf.tcc \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -2893,17 +3070,17 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265RingBuffer.cpp.o: ../Byt
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteTrack/KalmanFilter.cpp \
   /usr/include/stdc-predef.h \
@@ -2967,7 +3144,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -2975,9 +3151,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/functexcept.h \
@@ -3033,7 +3207,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -3095,8 +3268,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -3161,8 +3332,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteT
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
@@ -3388,8 +3557,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/functexcept.h \
@@ -3457,7 +3624,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -3534,11 +3700,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -3547,8 +3710,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -3564,7 +3725,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ModelPool.cpp.o: ../ByteTrac
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
   ../yolov8.h \
-  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+  /usr/include/rknn_api.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
   ../postprocess.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
@@ -3633,7 +3794,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Object.cpp.o: ../ByteTrack/O
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -3641,9 +3801,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Object.cpp.o: ../ByteTrack/O
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/functexcept.h \
@@ -3699,7 +3857,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Object.cpp.o: ../ByteTrack/O
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -3761,8 +3918,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Object.cpp.o: ../ByteTrack/O
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -3827,8 +3982,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Object.cpp.o: ../ByteTrack/O
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
@@ -4093,7 +4246,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.o: ../ByteTrack/Rec
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -4101,9 +4253,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.o: ../ByteTrack/Rec
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/functexcept.h \
@@ -4159,7 +4309,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.o: ../ByteTrack/Rec
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -4221,8 +4370,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.o: ../ByteTrack/Rec
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -4287,8 +4434,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/Rect.cpp.o: ../ByteTrack/Rec
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
@@ -4577,7 +4722,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -4661,11 +4805,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
@@ -4683,8 +4824,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o: ../ByteTrac
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
@@ -4724,8 +4863,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RgaWorker.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -4817,7 +4954,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -4894,11 +5030,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -4907,8 +5040,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -4963,8 +5094,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.o: ../ByteTr
   /usr/include/glib-2.0/glib/gversionmacros.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/glib-2.0/glib/garray.h \
   /usr/include/glib-2.0/glib/gasyncqueue.h \
   /usr/include/glib-2.0/glib/gthread.h \
@@ -5018,7 +5147,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspManager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -5333,7 +5461,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -5390,11 +5517,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -5403,8 +5527,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -5433,8 +5555,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/glib-2.0/glib/gversionmacros.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/glib-2.0/glib/garray.h \
   /usr/include/glib-2.0/glib/gasyncqueue.h \
   /usr/include/glib-2.0/glib/gthread.h \
@@ -5488,7 +5608,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -5753,10 +5872,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/c++/11/codecvt \
   /usr/include/c++/11/bits/fs_dir.h \
   /usr/include/c++/11/bits/fs_ops.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/functional \
   /usr/include/c++/11/bits/std_function.h \
   /usr/include/c++/11/unordered_map \
@@ -5768,11 +5887,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -5797,17 +5916,17 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspStream.cpp.o: ../ByteTra
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrack/RtspUtils.cpp \
   /usr/include/stdc-predef.h \
@@ -5897,7 +6016,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -5978,11 +6096,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -5991,8 +6106,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -6043,8 +6156,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrac
   /usr/include/glib-2.0/glib/gversionmacros.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/glib-2.0/glib/garray.h \
   /usr/include/glib-2.0/glib/gasyncqueue.h \
   /usr/include/glib-2.0/glib/gthread.h \
@@ -6098,7 +6209,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -6368,7 +6478,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.o: ../ByteTrack/S
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -6376,9 +6485,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.o: ../ByteTrack/S
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/bits/stl_algobase.h \
   /usr/include/c++/11/bits/functexcept.h \
@@ -6434,7 +6541,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.o: ../ByteTrack/S
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -6496,8 +6602,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.o: ../ByteTrack/S
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -6562,8 +6666,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/STrack.cpp.o: ../ByteTrack/S
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
@@ -6871,7 +6973,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.o: ../ByteTrack/
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -6928,11 +7029,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.o: ../ByteTrack/
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -6941,8 +7039,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkLock.cpp.o: ../ByteTrack/
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -7028,7 +7124,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception.h \
@@ -7107,11 +7202,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -7120,8 +7212,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/SdkManager.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/unique_lock.h \
@@ -7281,7 +7371,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -7289,9 +7378,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/limits \
   /usr/include/c++/11/tr1/gamma.tcc \
@@ -7329,7 +7416,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -7381,8 +7467,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -7442,8 +7526,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteT
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
@@ -7674,32 +7756,32 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteT
   /usr/include/c++/11/bits/unique_lock.h \
   /usr/include/c++/11/iostream \
   ../yolov8.h \
-  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+  /usr/include/rknn_api.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
   ../postprocess.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
-  /usr/local/include/spdlog/fmt/ostr.h \
-  /usr/local/include/spdlog/fmt/bundled/ostream.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/ostr.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/fmt/ostream.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/core.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../ByteTrack/UploadManager.cpp \
   /usr/include/stdc-predef.h \
@@ -7763,7 +7845,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../Byte
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/cstdint \
   /usr/include/c++/11/bits/allocator.h \
   /usr/include/aarch64-linux-gnu/c++/11/bits/c++allocator.h \
@@ -7837,11 +7918,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../Byte
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -7850,8 +7928,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../Byte
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -7934,10 +8010,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../Byte
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/fs_dir.h \
   /usr/include/c++/11/bits/fs_ops.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -7960,16 +8036,15 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../Byte
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -7994,20 +8069,20 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/UploadManager.cpp.o: ../Byte
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: ../ByteTrack/YoloCache.cpp \
   /usr/include/stdc-predef.h \
@@ -8123,7 +8198,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -8174,11 +8248,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -8187,8 +8258,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/YoloCache.cpp.o: ../ByteTrac
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -8221,8 +8290,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/lapjv.cpp.o: ../ByteTrack/la
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception.h \
@@ -8265,7 +8332,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/lapjv.cpp.o: ../ByteTrack/la
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/cstdint \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
@@ -8343,11 +8409,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/lapjv.cpp.o: ../ByteTrack/la
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -8356,8 +8419,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/lapjv.cpp.o: ../ByteTrack/la
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -8415,7 +8476,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o: ../ByteTrack/l
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception.h \
@@ -8520,11 +8580,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o: ../ByteTrack/l
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -8533,8 +8590,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o: ../ByteTrack/l
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/chrono \
@@ -8591,11 +8646,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o: ../ByteTrack/l
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/fs_dir.h \
   /usr/include/c++/11/bits/fs_ops.h \
-  /usr/local/include/spdlog/sinks/rotating_file_sink.h \
-  /usr/local/include/spdlog/sinks/base_sink.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/sinks/rotating_file_sink.h \
+  /usr/include/spdlog/sinks/base_sink.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
@@ -8626,16 +8681,15 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o: ../ByteTrack/l
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -8660,24 +8714,24 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/logger.cpp.o: ../ByteTrack/l
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/sinks/sink.h \
-  /usr/local/include/spdlog/formatter.h \
-  /usr/local/include/spdlog/details/file_helper.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h \
-  /usr/local/include/spdlog/details/registry.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/sinks/sink.h \
+  /usr/include/spdlog/formatter.h \
+  /usr/include/spdlog/details/file_helper.h \
+  /usr/include/spdlog/details/synchronous_factory.h \
+  /usr/include/spdlog/details/registry.h \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h
+  /usr/include/spdlog/version.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteTrack/mysql_client.cpp \
   /usr/include/stdc-predef.h \
@@ -8799,7 +8853,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -8848,11 +8901,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -8861,8 +8911,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -8920,10 +8968,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteT
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/iostream \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
   /usr/include/c++/11/bits/atomic_base.h \
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
@@ -8952,16 +9000,15 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteT
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/c++/11/cstddef \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
+  /usr/include/fmt/format.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -8986,17 +9033,17 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/mysql_client.cpp.o: ../ByteT
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
   /usr/include/c++/11/cassert \
   /usr/include/assert.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o: ../ByteTrack/roi_manager.cpp \
   /usr/include/stdc-predef.h \
@@ -9082,7 +9129,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/cstdint \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
@@ -9149,11 +9195,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -9162,8 +9205,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o: ../ByteTr
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -9334,8 +9375,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o: ../ByteTr
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/nlohmann/detail/input/input_adapters.hpp \
   /usr/include/nlohmann/detail/input/json_sax.hpp \
   /usr/include/nlohmann/detail/input/lexer.hpp \
@@ -9354,23 +9393,23 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/roi_manager.cpp.o: ../ByteTr
   /usr/include/nlohmann/ordered_map.hpp \
   /usr/include/nlohmann/detail/macro_unscope.hpp \
   /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
   /usr/include/c++/11/atomic \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: ../ByteTrack/task_manager.cpp \
   /usr/include/stdc-predef.h \
@@ -9488,7 +9527,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -9539,11 +9577,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -9552,8 +9587,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: ../ByteT
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -9740,8 +9773,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: ../ByteT
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/nlohmann/detail/input/input_adapters.hpp \
   /usr/include/nlohmann/detail/input/json_sax.hpp \
   /usr/include/nlohmann/detail/input/lexer.hpp \
@@ -9767,22 +9798,22 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/task_manager.cpp.o: ../ByteT
   /usr/include/c++/11/bits/unordered_set.h \
   ../ByteTrack/SdkManager.h \
   /usr/include/c++/11/iostream \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTrack/tcp_client.cpp \
   /usr/include/stdc-predef.h \
@@ -9831,7 +9862,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_ptr.h \
@@ -9929,11 +9959,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -9942,8 +9969,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -10004,8 +10029,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTra
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/jsoncpp/json/version.h \
   /usr/include/jsoncpp/json/json_features.h \
   /usr/include/jsoncpp/json/forwards.h \
@@ -10208,7 +10231,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTra
   /usr/include/aarch64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/aarch64-linux-gnu/bits/socket2.h \
   /usr/include/aarch64-linux-gnu/bits/in.h \
   /usr/include/fcntl.h \
   /usr/include/aarch64-linux-gnu/bits/fcntl.h \
@@ -10216,31 +10238,29 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/tcp_client.cpp.o: ../ByteTra
   /usr/include/linux/falloc.h \
   /usr/include/aarch64-linux-gnu/bits/stat.h \
   /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl2.h \
   /usr/include/c++/11/iostream \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h \
   /usr/include/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
   /usr/include/aarch64-linux-gnu/bits/environments.h \
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h
 
@@ -10296,7 +10316,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.o: ../Byte
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/cstdint \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
@@ -10377,11 +10396,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.o: ../Byte
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -10390,8 +10406,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.o: ../Byte
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -10576,8 +10590,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/voice_manager.cpp.o: ../Byte
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/nlohmann/detail/input/input_adapters.hpp \
   /usr/include/nlohmann/detail/input/json_sax.hpp \
   /usr/include/nlohmann/detail/input/lexer.hpp \
@@ -10638,7 +10650,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/rockchip/rk_venc_ref.h \
   /usr/include/rockchip/mpp_task.h \
   ../yolov8.h \
-  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+  /usr/include/rknn_api.h \
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
   ../postprocess.h \
   /usr/include/c++/11/vector \
@@ -10720,7 +10732,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
-  /usr/include/aarch64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
@@ -10776,11 +10787,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -10789,8 +10797,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
@@ -10871,8 +10877,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/aarch64-linux-gnu/bits/math-vector.h \
@@ -11104,7 +11108,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd.h \
   /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -11618,22 +11621,22 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/nlohmann/ordered_map.hpp \
   /usr/include/nlohmann/detail/macro_unscope.hpp \
   /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
-  /usr/local/include/spdlog/spdlog.h \
-  /usr/local/include/spdlog/common.h \
-  /usr/local/include/spdlog/tweakme.h \
-  /usr/local/include/spdlog/details/null_mutex.h \
-  /usr/local/include/spdlog/fmt/fmt.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/fmt/bundled/format.h \
-  /usr/local/include/spdlog/fmt/bundled/core.h \
-  /usr/local/include/spdlog/details/registry.h \
-  /usr/local/include/spdlog/logger.h \
-  /usr/local/include/spdlog/details/log_msg.h \
-  /usr/local/include/spdlog/details/backtracer.h \
-  /usr/local/include/spdlog/details/log_msg_buffer.h \
-  /usr/local/include/spdlog/details/circular_q.h \
-  /usr/local/include/spdlog/version.h \
-  /usr/local/include/spdlog/details/synchronous_factory.h \
+  /usr/include/spdlog/spdlog.h \
+  /usr/include/spdlog/common.h \
+  /usr/include/spdlog/tweakme.h \
+  /usr/include/spdlog/details/null_mutex.h \
+  /usr/include/spdlog/fmt/fmt.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/core.h \
+  /usr/include/spdlog/details/registry.h \
+  /usr/include/spdlog/logger.h \
+  /usr/include/spdlog/details/log_msg.h \
+  /usr/include/spdlog/details/backtracer.h \
+  /usr/include/spdlog/details/log_msg_buffer.h \
+  /usr/include/spdlog/details/circular_q.h \
+  /usr/include/spdlog/version.h \
+  /usr/include/spdlog/details/synchronous_factory.h \
   /usr/include/aarch64-linux-gnu/sys/stat.h \
   /usr/include/aarch64-linux-gnu/bits/stat.h \
   /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
@@ -11641,12 +11644,13 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/linux/stat.h \
   /usr/include/aarch64-linux-gnu/bits/statx-generic.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h
+  /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h \
+  ../ByteTrack/ConfigManager.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/postprocess.cc.o: ../postprocess.cc \
   /usr/include/stdc-predef.h \
   ../yolov8.h \
-  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+  /usr/include/rknn_api.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
@@ -11744,7 +11748,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/postprocess.cc.o: ../postprocess.cc \
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -11752,9 +11755,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/postprocess.cc.o: ../postprocess.cc \
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/limits \
   /usr/include/c++/11/tr1/gamma.tcc \
@@ -11779,14 +11780,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/postprocess.cc.o: ../postprocess.cc \
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/stdlib.h \
   /usr/include/c++/11/cstdlib \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/aarch64-linux-gnu/sys/time.h \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_tree.h \
@@ -11825,8 +11822,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
   /usr/include/aarch64-linux-gnu/bits/floatn.h \
   /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/stdlib.h \
   /usr/include/c++/11/cstdlib \
   /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
@@ -11855,7 +11850,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -11863,14 +11857,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/math.h \
   /usr/include/c++/11/cmath \
   /usr/include/c++/11/bits/cpp_type_traits.h \
@@ -11915,7 +11905,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
   ../yolov8.h \
-  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+  /usr/include/rknn_api.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/aarch64-linux-gnu/bits/wchar.h \
@@ -11945,6 +11935,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
   /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.h
 
 
+/usr/include/aarch64-linux-gnu/bits/types/struct_statx.h:
+
 /usr/include/aarch64-linux-gnu/bits/statx-generic.h:
 
 /usr/include/gstreamer-1.0/gst/app/gstappsink.h:
@@ -11963,8 +11955,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 ../ByteTrack/voice_manager.cpp:
 
-/usr/include/aarch64-linux-gnu/bits/fcntl2.h:
-
 /usr/include/aarch64-linux-gnu/bits/struct_stat.h:
 
 /usr/include/aarch64-linux-gnu/bits/stat.h:
@@ -11973,13 +11963,17 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/fcntl.h:
 
-/usr/include/c++/11/stack:
+/usr/include/spdlog/details/file_helper.h:
 
-/usr/include/jsoncpp/json/json_features.h:
+/usr/include/spdlog/sinks/sink.h:
 
-/usr/include/jsoncpp/json/version.h:
+/usr/include/spdlog/sinks/base_sink.h:
+
+/usr/include/spdlog/sinks/rotating_file_sink.h:
 
 ../ByteTrack/logger.h:
+
+/usr/include/spdlog/formatter.h:
 
 ../ByteTrack/YoloCache.cpp:
 
@@ -11996,6 +11990,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 ../ByteTrack/RtspStream.h:
 
 ../ByteTrack/RtspManager.h:
+
+../ByteTrack/RtspManager.cpp:
 
 /usr/include/rga/im2d_expand.h:
 
@@ -12014,8 +12010,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 ../ByteTrack/Object.cpp:
 
 ../ByteTrack/ModelPool.h:
-
-/usr/local/include/spdlog/sinks/rotating_file_sink.h:
 
 ../ByteTrack/ModelPool.cpp:
 
@@ -12103,10 +12097,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/glib-2.0/gobject/gbindinggroup.h:
 
-/usr/include/c++/11/bits/stl_stack.h:
-
-/usr/include/glib-2.0/gobject/gmarshal.h:
-
 ../ByteTrack/YoloCache.h:
 
 /usr/include/glib-2.0/gobject/gsignal.h:
@@ -12118,8 +12108,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/glib-2.0/glib-object.h:
 
 /usr/include/glib-2.0/glib/glib-autocleanups.h:
-
-/usr/local/include/spdlog/fmt/bundled/ostream.h:
 
 /usr/include/glib-2.0/glib/deprecated/grel.h:
 
@@ -12139,6 +12127,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/glib-2.0/glib/gsequence.h:
 
+/usr/include/glib-2.0/glib/gprimes.h:
+
 /usr/include/glib-2.0/glib/goption.h:
 
 /usr/include/glib-2.0/glib/gvariant.h:
@@ -12149,13 +12139,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/glib-2.0/glib/gstring.h:
 
-/usr/include/glib-2.0/glib/gslist.h:
-
 /usr/include/glib-2.0/glib/gmain.h:
-
-/usr/include/jsoncpp/json/json.h:
-
-/usr/include/glib-2.0/glib/giochannel.h:
 
 /usr/include/glib-2.0/glib/ghook.h:
 
@@ -12190,8 +12174,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/aarch64-linux-gnu/bits/signal_ext.h:
 
 /usr/include/aarch64-linux-gnu/bits/ss_flags.h:
-
-/usr/local/include/spdlog/details/file_helper.h:
 
 /usr/include/aarch64-linux-gnu/bits/procfs-extra.h:
 
@@ -12248,8 +12230,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/gstreamer-1.0/gst/gstbufferlist.h:
 
 /usr/lib/aarch64-linux-gnu/glib-2.0/include/glibconfig.h:
-
-/usr/include/glib-2.0/glib/gtypes.h:
 
 /usr/include/glib-2.0/glib/galloca.h:
 
@@ -12373,8 +12353,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/opencv4/opencv2/flann/matrix.h:
 
-/usr/include/opencv4/opencv2/flann/general.h:
-
 /usr/include/opencv4/opencv2/flann.hpp:
 
 /usr/include/aarch64-linux-gnu/sys/stat.h:
@@ -12395,6 +12373,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/opencv4/opencv2/dnn/dnn.hpp:
 
+/usr/include/rockchip/mpp_err.h:
+
+/usr/include/opencv4/opencv2/flann/config.h:
+
 /usr/include/gstreamer-1.0/gst/gstquery.h:
 
 /usr/include/opencv4/opencv2/flann/defines.h:
@@ -12407,6 +12389,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/opencv4/opencv2/core/operations.hpp:
 
+/usr/include/opencv4/opencv2/flann/dist.h:
+
+/usr/include/opencv4/opencv2/core/persistence.hpp:
+
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
 
 /usr/include/gstreamer-1.0/gst/gstclock.h:
@@ -12418,6 +12404,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/c++/11/cfloat:
 
 /usr/include/opencv4/opencv2/core/types.hpp:
+
+/usr/include/spdlog/fmt/ostr.h:
 
 /usr/include/opencv4/opencv2/core/saturate.hpp:
 
@@ -12446,6 +12434,28 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 ../ByteTrack/logger.cpp:
 
 ../ByteTrack/DisplayManager.cpp:
+
+/usr/include/glib-2.0/gobject/gmarshal.h:
+
+/usr/include/c++/11/bits/stl_stack.h:
+
+/usr/include/c++/11/stack:
+
+/usr/include/jsoncpp/json/json_features.h:
+
+/usr/include/jsoncpp/json/version.h:
+
+/usr/include/glib-2.0/glib/giochannel.h:
+
+/usr/include/jsoncpp/json/json.h:
+
+../ByteTrack/ConfigManager.h:
+
+/usr/include/opencv4/opencv2/flann/general.h:
+
+../ByteTrack/ConfigManager.cpp:
+
+/usr/include/fmt/ostream.h:
 
 /usr/include/glib-2.0/glib/deprecated/gthread.h:
 
@@ -12551,25 +12561,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
 
-/usr/include/eigen3/Eigen/src/Core/CoreIterators.h:
+/usr/include/c++/11/tr1/poly_hermite.tcc:
 
-/usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
+/usr/include/c++/11/tr1/legendre_function.tcc:
 
-/usr/include/mysql/field_types.h:
-
-/usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
-
-/usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
-
-/usr/include/aarch64-linux-gnu/bits/sigstack.h:
-
-/usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
-
-/usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
-
-/usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
+/usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
 
 /usr/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
 
@@ -12586,10 +12582,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
 
 /usr/include/c++/11/cstring:
-
-/usr/include/glib-2.0/gobject/genums.h:
-
-/usr/include/c++/11/cmath:
 
 /usr/include/c++/11/tr1/gamma.tcc:
 
@@ -12623,8 +12615,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/bits/node_handle.h:
 
-/usr/include/c++/11/iostream:
-
 /usr/include/aarch64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/c++/11/bits/enable_special_members.h:
@@ -12645,21 +12635,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
-/usr/local/include/spdlog/fmt/bundled/core.h:
+/usr/include/glib-2.0/glib/gtypes.h:
 
-/usr/include/mysql/mysql.h:
-
-/usr/include/aarch64-linux-gnu/c++/11/bits/atomic_word.h:
-
-/usr/include/glib-2.0/glib/gversion.h:
-
-/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h:
-
-/usr/include/c++/11/cwctype:
+/usr/include/spdlog/tweakme.h:
 
 /usr/include/c++/11/ext/concurrence.h:
-
-/usr/local/include/spdlog/sinks/base_sink.h:
 
 /usr/include/gstreamer-1.0/gst/gststreams.h:
 
@@ -12685,6 +12665,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/memory:
 
+/usr/include/spdlog/details/null_mutex.h:
+
 /usr/include/nlohmann/detail/string_escape.hpp:
 
 /usr/include/c++/11/bits/fs_fwd.h:
@@ -12699,10 +12681,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/vector:
 
-/usr/include/aarch64-linux-gnu/bits/types/struct_statx.h:
-
-/usr/local/include/spdlog/tweakme.h:
-
 /usr/include/nlohmann/json_fwd.hpp:
 
 /usr/include/gstreamer-1.0/gst/gsttask.h:
@@ -12710,6 +12688,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 ../ByteTrack/roi_manager.h:
 
 /usr/include/c++/11/bits/unique_lock.h:
+
+/usr/include/glib-2.0/glib/gslist.h:
+
+/usr/include/spdlog/version.h:
 
 /usr/include/glib-2.0/glib/gdatetime.h:
 
@@ -12722,6 +12704,12 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/eigen3/Eigen/src/Core/StableNorm.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/gstreamer-1.0/gst/gstformat.h:
+
+../ByteTrack/AlarmLight.h:
+
+/usr/include/c++/11/tr1/bessel_function.tcc:
 
 /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/file_utils.h:
 
@@ -12739,15 +12727,29 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h:
 
-/usr/include/rockchip/mpp_err.h:
+/usr/include/glib-2.0/glib/gmarkup.h:
 
-/usr/include/opencv4/opencv2/flann/config.h:
+/usr/include/c++/11/bits/stl_tempbuf.h:
 
-/usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h:
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/fmt/format.h:
+
+/usr/include/glib-2.0/glib/gbookmarkfile.h:
+
+/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
+
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
 /usr/include/gstreamer-1.0/gst/gstmemory.h:
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
+
+/usr/include/gstreamer-1.0/gst/gstpluginfeature.h:
+
+/usr/include/eigen3/Eigen/src/Core/NestByValue.h:
+
+/usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
@@ -12758,8 +12760,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/glib-2.0/glib/gdataset.h:
 
 /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
-
-/usr/local/include/spdlog/common.h:
 
 /usr/include/c++/11/bits/erase_if.h:
 
@@ -12785,9 +12785,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/sys/types.h:
 
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
-
-/usr/local/include/spdlog/details/synchronous_factory.h:
+/usr/include/c++/11/tr1/riemann_zeta.tcc:
 
 /usr/include/aarch64-linux-gnu/bits/types/FILE.h:
 
@@ -12795,15 +12793,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/glib-2.0/glib/gprimes.h:
-
-/usr/local/include/spdlog/version.h:
-
-/usr/include/jsoncpp/json/reader.h:
-
 /usr/include/glib-2.0/glib/gtimezone.h:
 
 /usr/include/opencv4/opencv2/opencv.hpp:
+
+/usr/include/jsoncpp/json/reader.h:
 
 /usr/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
 
@@ -12824,6 +12818,14 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/aarch64-linux-gnu/sys/single_threaded.h:
 
 ../ByteTrack/AIJsonRecorder.h:
+
+/usr/include/mysql/mysql.h:
+
+/usr/include/aarch64-linux-gnu/c++/11/bits/atomic_word.h:
+
+/usr/include/glib-2.0/glib/gversion.h:
+
+/usr/include/c++/11/cwctype:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
@@ -12850,10 +12852,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/nlohmann/detail/macro_scope.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
-
-../ByteTrack/TrackerUtils.cpp:
-
-/usr/include/c++/11/bits/stringfwd.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
 
@@ -12915,22 +12913,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/gnu/stubs.h:
 
-/usr/include/c++/11/cstddef:
-
-/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/opencv4/opencv2/flann/dist.h:
-
-/usr/include/opencv4/opencv2/core/persistence.hpp:
-
-/usr/local/include/spdlog/fmt/bundled/format.h:
-
-/usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
-
-/usr/include/c++/11/bits/exception.h:
-
 /usr/include/gstreamer-1.0/gst/gstmessage.h:
 
 /usr/include/c++/11/bits/locale_facets.h:
@@ -12961,8 +12943,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
-/usr/include/c++/11/bits/fs_dir.h:
-
 /usr/include/opencv4/opencv2/flann/kdtree_index.h:
 
 /usr/include/c++/11/ext/string_conversions.h:
@@ -12984,10 +12964,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/asm-generic/int-ll64.h:
 
 /usr/include/c++/11/atomic:
-
-../ByteTrack/RtspManager.cpp:
-
-/usr/local/include/spdlog/logger.h:
 
 ../ByteTrack/tcp_client.cpp:
 
@@ -13043,6 +13019,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/deque:
 
+/usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h:
+
 /usr/include/c++/11/bits/streambuf.tcc:
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
@@ -13089,6 +13067,14 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/ios:
 
+/usr/include/spdlog/common.h:
+
+/usr/include/c++/11/bits/stl_tree.h:
+
+/usr/include/opencv4/opencv2/core/neon_utils.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/11/bits/messages_members.h:
+
 /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h:
 
 /usr/include/c++/11/bits/predefined_ops.h:
@@ -13110,6 +13096,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
 /usr/include/c++/11/forward_list:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
 
 /usr/include/c++/11/ext/type_traits.h:
 
@@ -13157,11 +13145,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
-
-/usr/include/aarch64-linux-gnu/bits/socket2.h:
-
 /usr/include/c++/11/bits/stl_deque.h:
+
+/usr/include/c++/11/iostream:
+
+/usr/include/spdlog/details/backtracer.h:
 
 /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:
 
@@ -13169,13 +13157,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/bits/postypes.h:
 
-/usr/local/include/spdlog/formatter.h:
+/usr/include/c++/11/cstddef:
 
 /usr/include/c++/11/exception:
 
 /usr/include/eigen3/Eigen/src/Geometry/Translation.h:
-
-/usr/local/include/spdlog/details/null_mutex.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h:
 
@@ -13188,8 +13174,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/c++/11/ratio:
 
 /usr/include/nlohmann/detail/input/lexer.hpp:
-
-/usr/local/include/spdlog/fmt/ostr.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -13205,13 +13189,15 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/system_error:
 
-/usr/local/include/spdlog/fmt/fmt.h:
-
 /usr/include/aarch64-linux-gnu/c++/11/bits/error_constants.h:
 
 /usr/include/pthread.h:
 
+/usr/include/spdlog/spdlog.h:
+
 ../ByteTrack/AIFrameCache.cpp:
+
+/usr/include/c++/11/tr1/exp_integral.tcc:
 
 /usr/include/c++/11/cstdint:
 
@@ -13247,13 +13233,13 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/time64.h:
 
+/usr/include/spdlog/fmt/fmt.h:
+
 /usr/include/c++/11/streambuf:
 
 /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/aarch64-linux-gnu/bits/select2.h:
 
 /usr/include/c++/11/bits/functexcept.h:
 
@@ -13307,13 +13293,15 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/aarch64-linux-gnu/bits/wchar2.h:
-
-/usr/include/eigen3/Eigen/src/Core/util/MKL_support.h:
-
 /usr/include/aarch64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
+
+/usr/include/glib-2.0/gobject/genums.h:
+
+/usr/include/c++/11/cmath:
+
+/usr/include/spdlog/details/registry.h:
 
 ../ByteTrack/AudioManager.h:
 
@@ -13327,10 +13315,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_inline.h:
 
-/usr/include/aarch64-linux-gnu/bits/string_fortified.h:
-
-/usr/local/include/spdlog/details/log_msg_buffer.h:
-
 /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h:
 
 /usr/include/aarch64-linux-gnu/bits/locale.h:
@@ -13340,8 +13324,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/c++/11/limits:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/time_members.h:
-
-/usr/lib/gcc/aarch64-linux-gnu/11/include/stdint.h:
 
 /usr/include/time.h:
 
@@ -13393,8 +13375,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/include/aarch64-linux-gnu/bits/stdio2.h:
-
 /usr/include/c++/11/bits/unordered_set.h:
 
 /usr/include/c++/11/bits/stl_vector.h:
@@ -13407,15 +13387,9 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/bits/errno.h:
 
-/usr/local/include/spdlog/details/circular_q.h:
-
 /usr/include/rga/im2d_task.h:
 
 /usr/include/nlohmann/detail/iterators/internal_iterator.hpp:
-
-/usr/include/opencv4/opencv2/imgcodecs.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h:
 
@@ -13431,16 +13405,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/nlohmann/detail/iterators/primitive_iterator.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/stdio.h:
-
-/usr/include/aarch64-linux-gnu/asm/sve_context.h:
-
-/usr/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h:
-
 /usr/include/aarch64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/c++locale.h:
@@ -13453,17 +13417,19 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/Core/Swap.h:
 
+/usr/include/c++/11/tr1/ell_integral.tcc:
+
 /usr/include/asm-generic/errno.h:
 
 /usr/include/linux/errno.h:
 
 /usr/include/c++/11/functional:
 
-/usr/include/jsoncpp/json/allocator.h:
-
 ../ByteTrack/STrack.cpp:
 
 ../ByteTrack/Frame.h:
+
+/usr/include/jsoncpp/json/allocator.h:
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/ctype_base.h:
 
@@ -13472,6 +13438,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/aarch64-linux-gnu/asm/socket.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/error_t.h:
+
+../ByteTrack/TrackerUtils.cpp:
+
+/usr/include/c++/11/bits/stringfwd.h:
 
 /usr/include/c++/11/backward/binders.h:
 
@@ -13485,13 +13455,19 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/bits/charconv.h:
 
-/usr/include/jsoncpp/json/writer.h:
-
 /usr/include/glib-2.0/glib/gmessages.h:
+
+/usr/include/jsoncpp/json/writer.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/c++/11/bits/fs_ops.h:
+
+/usr/include/opencv4/opencv2/imgcodecs.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
+
+/usr/include/fmt/core.h:
 
 ../main.cc:
 
@@ -13501,8 +13477,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 ../ByteTrack/BYTETracker.cpp:
 
-/usr/local/include/spdlog/spdlog.h:
-
 /usr/include/opencv4/opencv2/core/utility.hpp:
 
 /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
@@ -13510,6 +13484,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/aarch64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/11/cassert:
+
+/usr/include/c++/11/bits/exception.h:
+
+/usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
 
 /usr/include/gstreamer-1.0/gst/gsttracer.h:
 
@@ -13531,8 +13509,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/mysql/my_command.h:
 
-/usr/local/include/spdlog/details/log_msg.h:
-
 /usr/include/c++/11/iomanip:
 
 /usr/include/c++/11/bits/gslice.h:
@@ -13541,29 +13517,25 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/bits/ostream_insert.h:
 
-/usr/include/c++/11/tr1/ell_integral.tcc:
+/usr/include/spdlog/logger.h:
 
-/usr/include/c++/11/tr1/exp_integral.tcc:
+/usr/include/c++/11/algorithm:
 
-/usr/include/c++/11/tr1/legendre_function.tcc:
+/usr/include/spdlog/details/log_msg.h:
 
-/usr/local/include/spdlog/details/backtracer.h:
+/usr/include/c++/11/bits/fs_dir.h:
 
-/usr/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
+/usr/include/spdlog/details/log_msg_buffer.h:
 
-/usr/include/gstreamer-1.0/gst/gstpluginfeature.h:
+/usr/include/nlohmann/ordered_map.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/NestByValue.h:
+/usr/include/spdlog/details/circular_q.h:
 
-/usr/include/c++/11/tr1/modified_bessel_func.tcc:
+/usr/include/aarch64-linux-gnu/bits/unistd_ext.h:
 
-/usr/include/c++/11/tr1/poly_hermite.tcc:
+/usr/include/gstreamer-1.0/gst/gst.h:
 
-/usr/include/c++/11/tr1/riemann_zeta.tcc:
-
-/usr/include/aarch64-linux-gnu/bits/siginfo-consts.h:
-
-../ByteTrack/AlarmLight.cpp:
+/usr/include/eigen3/Eigen/src/Core/Fuzzy.h:
 
 /usr/include/c++/11/codecvt:
 
@@ -13577,11 +13549,13 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/Core/DenseBase.h:
 
+/usr/include/spdlog/details/synchronous_factory.h:
+
+/usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h:
+
+/usr/include/eigen3/Eigen/src/Core/EigenBase.h:
+
 /usr/include/c++/11/istream:
-
-/usr/include/nlohmann/detail/input/binary_reader.hpp:
-
-/usr/include/c++/11/bits/locale_facets.tcc:
 
 /usr/include/c++/11/bits/this_thread_sleep.h:
 
@@ -13601,8 +13575,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/c++/11/bits/basic_file.h:
 
-/usr/include/nlohmann/ordered_map.hpp:
-
 /usr/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h:
 
 /usr/include/asm-generic/posix_types.h:
@@ -13613,9 +13585,9 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/nlohmann/json.hpp:
 
-/usr/include/c++/11/algorithm:
-
 /usr/include/c++/11/numeric:
+
+/usr/include/eigen3/Eigen/src/Core/CoreIterators.h:
 
 /usr/include/aarch64-linux-gnu/sys/ucontext.h:
 
@@ -13624,12 +13596,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/c++/11/bits/forward_list.h:
 
 /usr/include/c++/11/map:
-
-/usr/include/c++/11/bits/stl_tree.h:
-
-/usr/include/opencv4/opencv2/core/neon_utils.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/11/bits/messages_members.h:
 
 /usr/include/gstreamer-1.0/gst/base/base-prelude.h:
 
@@ -13687,6 +13653,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/nlohmann/detail/input/position_t.hpp:
 
+/usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
+
 /usr/include/nlohmann/detail/meta/cpp_future.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
@@ -13727,13 +13695,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/c++/11/filesystem:
 
-/usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
-
-/usr/include/nlohmann/detail/json_pointer.hpp:
-
 /usr/include/c++/11/bits/fs_path.h:
-
-/usr/local/include/spdlog/details/registry.h:
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
@@ -13753,9 +13715,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/nlohmann/byte_container_with_subtype.hpp:
 
-/usr/local/include/spdlog/sinks/sink.h:
-
 /usr/include/nlohmann/detail/hash.hpp:
+
+/usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/nlohmann/detail/input/binary_reader.hpp:
 
 /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp:
 
@@ -13768,8 +13732,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/nlohmann/detail/meta/is_sax.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/NoAlias.h:
-
-/usr/include/aarch64-linux-gnu/bits/stdlib.h:
 
 /usr/include/nlohmann/detail/input/parser.hpp:
 
@@ -13790,8 +13752,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/eigen3/Eigen/src/Core/util/Meta.h:
 
 /usr/include/c++/11/bits/allocator.h:
-
-/usr/include/aarch64-linux-gnu/bits/strings_fortified.h:
 
 /usr/include/nlohmann/detail/output/serializer.hpp:
 
@@ -13815,11 +13775,9 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
 
-/usr/include/gstreamer-1.0/gst/gstformat.h:
+/usr/include/aarch64-linux-gnu/bits/siginfo-consts.h:
 
-/usr/include/c++/11/tr1/bessel_function.tcc:
-
-../ByteTrack/AlarmLight.h:
+../ByteTrack/AlarmLight.cpp:
 
 ../ByteTrack/task_manager.cpp:
 
@@ -13828,16 +13786,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/aarch64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/aarch64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/aarch64-linux-gnu/bits/unistd.h:
-
-/usr/include/eigen3/Eigen/src/Core/ArrayBase.h:
-
-/usr/include/aarch64-linux-gnu/bits/unistd_ext.h:
-
-/usr/include/gstreamer-1.0/gst/gst.h:
-
-/usr/include/eigen3/Eigen/src/Core/Fuzzy.h:
 
 /usr/include/c++/11/bits/stl_numeric.h:
 
@@ -13851,15 +13799,15 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/aarch64-linux-gnu/sys/socket.h:
 
+/usr/include/rknn_api.h:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
+
 ../ByteTrack/H265Recorder.cpp:
 
 /usr/include/linux/posix_types.h:
-
-/usr/include/glib-2.0/glib/gmarkup.h:
-
-/usr/include/c++/11/bits/stl_tempbuf.h:
-
-/usr/include/asm-generic/sockios.h:
 
 /usr/include/eigen3/Eigen/SVD:
 
@@ -13874,10 +13822,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
 
 ../ByteTrack/AudioManager.cpp:
-
-/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h:
-
-/usr/include/c++/11/bits/stl_queue.h:
 
 ../ByteTrack/task_manager.h:
 
@@ -13896,6 +13840,10 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
+
+/usr/include/aarch64-linux-gnu/bits/sigstack.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
 
 /usr/include/eigen3/Eigen/src/Core/util/Macros.h:
 
@@ -13916,6 +13864,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/lib/gcc/aarch64-linux-gnu/11/include/arm_bf16.h:
 
 /usr/include/c++/11/complex:
+
+/usr/include/eigen3/Eigen/src/Core/util/MKL_support.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h:
 
@@ -13963,23 +13913,29 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/Core/NumTraits.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h:
-
-/usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
-
-/usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
-
 /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/linux/limits.h:
 
 /usr/include/eigen3/Eigen/src/Core/MathFunctions.h:
 
+/usr/include/aarch64-linux-gnu/asm/sve_context.h:
+
+/usr/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h:
+
 /usr/include/aarch64-linux-gnu/bits/iscanonical.h:
 
 ../ByteTrack/AIJsonRecorder.cpp:
 
 /usr/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h:
+
+/usr/include/c++/11/bits/stl_queue.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h:
 
 /usr/include/nlohmann/detail/input/input_adapters.hpp:
 
@@ -14019,6 +13975,12 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
 
+/usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h:
+
+/usr/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
+
+/usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
+
 /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
 
 /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:
@@ -14043,11 +14005,9 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
 
-/usr/lib/gcc/aarch64-linux-gnu/11/include/stdbool.h:
-
-/usr/include/eigen3/Eigen/src/Core/EigenBase.h:
-
 /usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
+
+/usr/include/eigen3/Eigen/src/Core/ArrayBase.h:
 
 /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
 
@@ -14079,10 +14039,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 
 /usr/include/eigen3/Eigen/src/Core/Reshaped.h:
 
-/usr/include/glib-2.0/glib/gbookmarkfile.h:
-
-/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
-
 /usr/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
 
 /usr/include/eigen3/Eigen/src/Core/Redux.h:
@@ -14112,3 +14068,19 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/rknpu2/yolov8_zero_copy.cc.o: ../rknpu
 /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
 
 /usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h:
+
+/usr/include/nlohmann/detail/json_pointer.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
+
+/usr/include/mysql/field_types.h:
+
+/usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:

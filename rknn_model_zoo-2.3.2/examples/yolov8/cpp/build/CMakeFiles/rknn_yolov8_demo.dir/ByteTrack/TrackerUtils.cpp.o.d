@@ -88,17 +88,13 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
- /usr/include/aarch64-linux-gnu/bits/select2.h \
  /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
  /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
- /usr/include/alloca.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib.h \
+ /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/limits \
  /usr/include/c++/11/tr1/gamma.tcc \
  /usr/include/c++/11/tr1/special_function_util.h \
@@ -129,7 +125,6 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
- /usr/include/aarch64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/exception /usr/include/c++/11/bits/exception_ptr.h \
  /usr/include/c++/11/bits/cxxabi_init_exception.h \
  /usr/include/c++/11/typeinfo /usr/include/c++/11/bits/nested_exception.h \
@@ -169,10 +164,9 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
- /usr/include/aarch64-linux-gnu/bits/stdio.h \
- /usr/include/aarch64-linux-gnu/bits/stdio2.h /usr/include/c++/11/cerrno \
- /usr/include/errno.h /usr/include/aarch64-linux-gnu/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/aarch64-linux-gnu/asm/errno.h \
+ /usr/include/c++/11/cerrno /usr/include/errno.h \
+ /usr/include/aarch64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/aarch64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
@@ -213,10 +207,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/cstring \
- /usr/include/string.h /usr/include/strings.h \
- /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
- /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
- /usr/include/c++/11/climits \
+ /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/climits \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
@@ -435,27 +426,20 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/iostream \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
- /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/include/rknn_api.h \
+ /usr/include/rknn_api.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/postprocess.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h \
- /usr/local/include/spdlog/fmt/ostr.h \
- /usr/local/include/spdlog/fmt/bundled/ostream.h \
- /usr/local/include/spdlog/fmt/bundled/format.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
- /usr/local/include/spdlog/tweakme.h \
- /usr/local/include/spdlog/details/null_mutex.h \
- /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/fmt/bundled/format.h \
- /usr/local/include/spdlog/details/registry.h \
- /usr/local/include/spdlog/logger.h \
- /usr/local/include/spdlog/details/log_msg.h \
- /usr/local/include/spdlog/details/backtracer.h \
- /usr/local/include/spdlog/details/log_msg_buffer.h \
- /usr/local/include/spdlog/details/circular_q.h \
- /usr/local/include/spdlog/version.h \
- /usr/local/include/spdlog/details/synchronous_factory.h
+ /usr/include/spdlog/fmt/ostr.h /usr/include/spdlog/tweakme.h \
+ /usr/include/fmt/ostream.h /usr/include/fmt/format.h \
+ /usr/include/fmt/core.h /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h /usr/include/spdlog/spdlog.h \
+ /usr/include/spdlog/common.h /usr/include/spdlog/details/null_mutex.h \
+ /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
+ /usr/include/fmt/format.h /usr/include/spdlog/details/registry.h \
+ /usr/include/spdlog/logger.h /usr/include/spdlog/details/log_msg.h \
+ /usr/include/spdlog/details/backtracer.h \
+ /usr/include/spdlog/details/log_msg_buffer.h \
+ /usr/include/spdlog/details/circular_q.h /usr/include/spdlog/version.h \
+ /usr/include/spdlog/details/synchronous_factory.h

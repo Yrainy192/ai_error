@@ -27,8 +27,6 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
   /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
   /usr/include/aarch64-linux-gnu/bits/floatn.h \
   /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio.h \
-  /usr/include/aarch64-linux-gnu/bits/stdio2.h \
   /usr/include/stdlib.h \
   /usr/include/aarch64-linux-gnu/bits/waitflags.h \
   /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
@@ -49,7 +47,6 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/aarch64-linux-gnu/bits/select2.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -57,9 +54,7 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/aarch64-linux-gnu/bits/stdlib.h \
   /usr/include/dirent.h \
   /usr/include/aarch64-linux-gnu/bits/dirent.h \
   /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
@@ -102,8 +97,6 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -118,15 +111,13 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/common.h:
 
+/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/stb_image/stb_image_write.h:
+
 /usr/include/limits.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/11/include/syslimits.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/11/include/limits.h:
-
-/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/stb_image/stb_image_write.h:
-
-/usr/include/aarch64-linux-gnu/bits/strings_fortified.h:
 
 /usr/include/strings.h:
 
@@ -180,13 +171,11 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
-/usr/include/linux/limits.h:
+/usr/include/errno.h:
 
-/usr/include/dirent.h:
+/usr/include/aarch64-linux-gnu/bits/wchar.h:
 
-/usr/include/aarch64-linux-gnu/bits/stdio2.h:
-
-/usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h:
+/usr/include/aarch64-linux-gnu/bits/waitflags.h:
 
 /usr/include/string.h:
 
@@ -208,19 +197,15 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/aarch64-linux-gnu/bits/stdio.h:
+/usr/include/aarch64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
+/usr/include/stdlib.h:
+
+/usr/include/aarch64-linux-gnu/bits/select.h:
 
 /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.c:
 
 /usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/aarch64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/aarch64-linux-gnu/bits/select.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
 
@@ -242,8 +227,6 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /usr/include/aarch64-linux-gnu/bits/timesize.h:
 
-/usr/include/aarch64-linux-gnu/bits/stdlib.h:
-
 /usr/include/aarch64-linux-gnu/bits/time64.h:
 
 /usr/include/stdio.h:
@@ -251,12 +234,6 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/librga/include/rga.h:
 
 /usr/lib/gcc/aarch64-linux-gnu/11/include/stddef.h:
-
-/usr/include/aarch64-linux-gnu/bits/errno.h:
-
-/usr/include/aarch64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/stdint.h:
 
@@ -274,25 +251,23 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h:
 
+/usr/include/math.h:
+
+/usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
+
 /usr/include/aarch64-linux-gnu/bits/wordsize.h:
 
 /usr/include/aarch64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/aarch64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/errno.h:
-
-/usr/include/aarch64-linux-gnu/bits/wchar.h:
-
-/usr/include/aarch64-linux-gnu/bits/waitflags.h:
-
-/usr/include/aarch64-linux-gnu/bits/string_fortified.h:
-
 /usr/include/aarch64-linux-gnu/sys/types.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
 
 /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils/image_utils.h:
 
@@ -310,6 +285,8 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /usr/include/aarch64-linux-gnu/bits/endianness.h:
 
+/usr/include/dirent.h:
+
 /usr/include/aarch64-linux-gnu/bits/byteswap.h:
 
 /usr/include/aarch64-linux-gnu/sys/cdefs.h:
@@ -324,20 +301,22 @@ utils.out/CMakeFiles/imageutils.dir/image_utils.c.o: /home/admin/Rtsp_6model/rkn
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h:
 
-/usr/include/aarch64-linux-gnu/bits/select2.h:
-
 /usr/include/aarch64-linux-gnu/bits/dirent.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/usr/include/math.h:
-
-/usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
-
-/usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h:
+/usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/aarch64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/aarch64-linux-gnu/bits/errno.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/aarch64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/linux/limits.h:

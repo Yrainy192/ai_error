@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -138,6 +138,9 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 //Path to a program.
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
+//No help, variable specified on the command line.
+CMAKE_PREFIX_PATH:UNINITIALIZED=/usr
+
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
 
@@ -219,19 +222,19 @@ PKG_CONFIG_ARGN:STRING=
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //No help, variable specified on the command line.
-TARGET_SOC:UNINITIALIZED=rk3588
+fmt_DIR:UNINITIALIZED=/usr/lib/aarch64-linux-gnu/cmake/fmt
 
 //Path to a library.
-pkgcfg_lib_FFMPEG_avcodec:FILEPATH=/usr/local/lib/libavcodec.so
+pkgcfg_lib_FFMPEG_avcodec:FILEPATH=/usr/lib/aarch64-linux-gnu/libavcodec.so
 
 //Path to a library.
-pkgcfg_lib_FFMPEG_avformat:FILEPATH=/usr/local/lib/libavformat.so
+pkgcfg_lib_FFMPEG_avformat:FILEPATH=/usr/lib/aarch64-linux-gnu/libavformat.so
 
 //Path to a library.
-pkgcfg_lib_FFMPEG_avutil:FILEPATH=/usr/local/lib/libavutil.so
+pkgcfg_lib_FFMPEG_avutil:FILEPATH=/usr/lib/aarch64-linux-gnu/libavutil.so
 
 //Path to a library.
-pkgcfg_lib_FFMPEG_swscale:FILEPATH=/usr/local/lib/libswscale.so
+pkgcfg_lib_FFMPEG_swscale:FILEPATH=/usr/lib/aarch64-linux-gnu/libswscale.so
 
 //Path to a library.
 pkgcfg_lib_GLIB_glib-2.0:FILEPATH=/usr/lib/aarch64-linux-gnu/libglib-2.0.so
@@ -287,8 +290,8 @@ rknn_yolov8_demo_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 rknn_yolov8_demo_SOURCE_DIR:STATIC=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp
 
-//The directory containing a CMake configuration file for spdlog.
-spdlog_DIR:PATH=/usr/local/lib/cmake/spdlog
+//No help, variable specified on the command line.
+spdlog_DIR:UNINITIALIZED=/usr/lib/aarch64-linux-gnu/cmake/spdlog
 
 
 ########################
@@ -442,57 +445,57 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-FFMPEG_CFLAGS:INTERNAL=-I/usr/local/include
+FFMPEG_CFLAGS:INTERNAL=-I/usr/include/aarch64-linux-gnu
 FFMPEG_CFLAGS_I:INTERNAL=
 FFMPEG_CFLAGS_OTHER:INTERNAL=
 FFMPEG_FOUND:INTERNAL=1
 FFMPEG_INCLUDEDIR:INTERNAL=
-FFMPEG_INCLUDE_DIRS:INTERNAL=/usr/local/include
-FFMPEG_LDFLAGS:INTERNAL=-L/usr/local/lib;-lavformat;-lavcodec;-lavutil;-lswscale
+FFMPEG_INCLUDE_DIRS:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lavformat;-lavcodec;-lavutil;-lswscale
 FFMPEG_LDFLAGS_OTHER:INTERNAL=
 FFMPEG_LIBDIR:INTERNAL=
 FFMPEG_LIBRARIES:INTERNAL=avformat;avcodec;avutil;swscale
-FFMPEG_LIBRARY_DIRS:INTERNAL=/usr/local/lib
+FFMPEG_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_LIBS:INTERNAL=
 FFMPEG_LIBS_L:INTERNAL=
 FFMPEG_LIBS_OTHER:INTERNAL=
 FFMPEG_LIBS_PATHS:INTERNAL=
 FFMPEG_MODULE_NAME:INTERNAL=
 FFMPEG_PREFIX:INTERNAL=
-FFMPEG_STATIC_CFLAGS:INTERNAL=-I/usr/local/include
+FFMPEG_STATIC_CFLAGS:INTERNAL=-I/usr/include/aarch64-linux-gnu
 FFMPEG_STATIC_CFLAGS_I:INTERNAL=
 FFMPEG_STATIC_CFLAGS_OTHER:INTERNAL=
-FFMPEG_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include
-FFMPEG_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-lavformat;-lm;-latomic;-lz;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-pthread;-lm;-latomic;-lrga;-llzma;-lfdk-aac;-lmp3lame;-lm;-lopus;-lvorbis;-lvorbisenc;-lx264;-lx265;-lrockchip_mpp;-lz;-lswresample;-lm;-latomic;-lswscale;-lm;-latomic;-lavutil;-pthread;-lm;-ldrm;-lrockchip_mpp;-latomic;-lX11
+FFMPEG_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/aarch64-linux-gnu;-lavformat;-lm;-lxml2;-lbz2;-lgme;-lopenmpt;-lstdc++;-lchromaprint;-lbluray;-lz;-lgnutls;-lrabbitmq;-lsrt-gnutls;-lssh;-lzmq;-lavcodec;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lwebpmux;-lwebp;-lm;-llzma;-ldav1d;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lzvbi;-lm;-lpthread;-lm;-lpng;-lz;-lsnappy;-lstdc++;-lz;-laom;-lcodec2;-lgsm;-lmp3lame;-lm;-lopenjp2;-lopus;-lm;-lshine;-lspeex;-ltheoraenc;-ltheoradec;-logg;-ltwolame;-lvorbis;-lvorbisenc;-lwebp;-lx264;-lx265;-lxvidcore;-pthread;-lva;-lswresample;-lm;-lsoxr;-lswscale;-lm;-lavutil;-pthread;-lva-drm;-lva;-lva-x11;-lva;-lvdpau;-lX11;-lm;-ldrm;-lOpenCL;-lva;-lXv;-lX11;-lXext
 FFMPEG_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
 FFMPEG_STATIC_LIBDIR:INTERNAL=
-FFMPEG_STATIC_LIBRARIES:INTERNAL=avformat;m;atomic;z;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;atomic;rga;lzma;fdk-aac;mp3lame;m;opus;vorbis;vorbisenc;x264;x265;rockchip_mpp;z;swresample;m;atomic;swscale;m;atomic;avutil;m;drm;rockchip_mpp;atomic;X11
-FFMPEG_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib
+FFMPEG_STATIC_LIBRARIES:INTERNAL=avformat;m;xml2;bz2;gme;openmpt;stdc++;chromaprint;bluray;z;gnutls;rabbitmq;srt-gnutls;ssh;zmq;avcodec;vpx;m;vpx;m;vpx;m;vpx;m;webpmux;webp;m;lzma;dav1d;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;zvbi;m;pthread;m;png;z;snappy;stdc++;z;aom;codec2;gsm;mp3lame;m;openjp2;opus;m;shine;speex;theoraenc;theoradec;ogg;twolame;vorbis;vorbisenc;webp;x264;x265;xvidcore;va;swresample;m;soxr;swscale;m;avutil;va-drm;va;va-x11;va;vdpau;X11;m;drm;OpenCL;va;Xv;X11;Xext
+FFMPEG_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_STATIC_LIBS:INTERNAL=
 FFMPEG_STATIC_LIBS_L:INTERNAL=
 FFMPEG_STATIC_LIBS_OTHER:INTERNAL=
 FFMPEG_STATIC_LIBS_PATHS:INTERNAL=
 FFMPEG_VERSION:INTERNAL=
-FFMPEG_libavcodec_INCLUDEDIR:INTERNAL=/usr/local/include
-FFMPEG_libavcodec_LIBDIR:INTERNAL=/usr/local/lib
+FFMPEG_libavcodec_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libavcodec_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavcodec_MODULE_NAME:INTERNAL=libavcodec
-FFMPEG_libavcodec_PREFIX:INTERNAL=/usr/local
-FFMPEG_libavcodec_VERSION:INTERNAL=60.31.102
-FFMPEG_libavformat_INCLUDEDIR:INTERNAL=/usr/local/include
-FFMPEG_libavformat_LIBDIR:INTERNAL=/usr/local/lib
+FFMPEG_libavcodec_PREFIX:INTERNAL=/usr
+FFMPEG_libavcodec_VERSION:INTERNAL=58.134.100
+FFMPEG_libavformat_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libavformat_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavformat_MODULE_NAME:INTERNAL=libavformat
-FFMPEG_libavformat_PREFIX:INTERNAL=/usr/local
-FFMPEG_libavformat_VERSION:INTERNAL=60.16.100
-FFMPEG_libavutil_INCLUDEDIR:INTERNAL=/usr/local/include
-FFMPEG_libavutil_LIBDIR:INTERNAL=/usr/local/lib
+FFMPEG_libavformat_PREFIX:INTERNAL=/usr
+FFMPEG_libavformat_VERSION:INTERNAL=58.76.100
+FFMPEG_libavutil_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libavutil_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libavutil_MODULE_NAME:INTERNAL=libavutil
-FFMPEG_libavutil_PREFIX:INTERNAL=/usr/local
-FFMPEG_libavutil_VERSION:INTERNAL=58.29.100
-FFMPEG_libswscale_INCLUDEDIR:INTERNAL=/usr/local/include
-FFMPEG_libswscale_LIBDIR:INTERNAL=/usr/local/lib
+FFMPEG_libavutil_PREFIX:INTERNAL=/usr
+FFMPEG_libavutil_VERSION:INTERNAL=56.70.100
+FFMPEG_libswscale_INCLUDEDIR:INTERNAL=/usr/include/aarch64-linux-gnu
+FFMPEG_libswscale_LIBDIR:INTERNAL=/usr/lib/aarch64-linux-gnu
 FFMPEG_libswscale_MODULE_NAME:INTERNAL=libswscale
-FFMPEG_libswscale_PREFIX:INTERNAL=/usr/local
-FFMPEG_libswscale_VERSION:INTERNAL=7.5.100
+FFMPEG_libswscale_PREFIX:INTERNAL=/usr
+FFMPEG_libswscale_VERSION:INTERNAL=5.9.100
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.5.4()]
 //Details about finding PkgConfig

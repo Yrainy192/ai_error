@@ -374,6 +374,33 @@ ByteTrack/BYTETracker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.s
 .PHONY : ByteTrack/BYTETracker.cpp.s
 
+ByteTrack/ConfigManager.o: ByteTrack/ConfigManager.cpp.o
+.PHONY : ByteTrack/ConfigManager.o
+
+# target to build an object file
+ByteTrack/ConfigManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ConfigManager.cpp.o
+.PHONY : ByteTrack/ConfigManager.cpp.o
+
+ByteTrack/ConfigManager.i: ByteTrack/ConfigManager.cpp.i
+.PHONY : ByteTrack/ConfigManager.i
+
+# target to preprocess a source file
+ByteTrack/ConfigManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ConfigManager.cpp.i
+.PHONY : ByteTrack/ConfigManager.cpp.i
+
+ByteTrack/ConfigManager.s: ByteTrack/ConfigManager.cpp.s
+.PHONY : ByteTrack/ConfigManager.s
+
+# target to generate assembly for a file
+ByteTrack/ConfigManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/ConfigManager.cpp.s
+.PHONY : ByteTrack/ConfigManager.cpp.s
+
 ByteTrack/DisplayManager.o: ByteTrack/DisplayManager.cpp.o
 .PHONY : ByteTrack/DisplayManager.o
 
@@ -1157,6 +1184,9 @@ help:
 	@echo "... ByteTrack/BYTETracker.o"
 	@echo "... ByteTrack/BYTETracker.i"
 	@echo "... ByteTrack/BYTETracker.s"
+	@echo "... ByteTrack/ConfigManager.o"
+	@echo "... ByteTrack/ConfigManager.i"
+	@echo "... ByteTrack/ConfigManager.s"
 	@echo "... ByteTrack/DisplayManager.o"
 	@echo "... ByteTrack/DisplayManager.i"
 	@echo "... ByteTrack/DisplayManager.s"

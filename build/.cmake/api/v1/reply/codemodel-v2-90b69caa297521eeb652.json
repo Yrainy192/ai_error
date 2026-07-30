@@ -1,0 +1,161 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-0dd83d5610d2b5df7d6a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"build" : "3rdparty.out",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-3rdparty.out-Debug-cebea11a629cf870ba1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty"
+				},
+				{
+					"build" : "utils.out",
+					"jsonFile" : "directory-utils.out-Debug-62e8073f1f98a7400751.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/utils",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "rknn_yolov8_demo",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "rknn_model_zoo_3rdparty_libs",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "rknn_model_zoo_utils",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "audioutils::@d3ad88163ad4775a7946",
+					"jsonFile" : "target-audioutils-Debug-ae9dcd02fd386dc5162a.json",
+					"name" : "audioutils",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "fileutils::@d3ad88163ad4775a7946",
+					"jsonFile" : "target-fileutils-Debug-0e1508819bc848841a34.json",
+					"name" : "fileutils",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "imagedrawing::@d3ad88163ad4775a7946",
+					"jsonFile" : "target-imagedrawing-Debug-9edd10a9e9a5e377ba46.json",
+					"name" : "imagedrawing",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "imageutils::@d3ad88163ad4775a7946",
+					"jsonFile" : "target-imageutils-Debug-2bbf29a0ecde2d519c43.json",
+					"name" : "imageutils",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rknn_yolov8_demo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rknn_yolov8_demo-Debug-0a04f0b286e430c039e5.json",
+					"name" : "rknn_yolov8_demo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "rknn_yolov8_demo_zero_copy::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-rknn_yolov8_demo_zero_copy-Debug-bcee1dd2f024e301eb3f.json",
+					"name" : "rknn_yolov8_demo_zero_copy",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/admin/Rtsp_6model/build",
+		"source" : "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

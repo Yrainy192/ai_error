@@ -181,10 +181,24 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/BYTETracker.cpp -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.s
 
+CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
+CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o: ../ByteTrack/ConfigManager.cpp
+CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ConfigManager.cpp
+
+CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ConfigManager.cpp > CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.i
+
+CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ConfigManager.cpp -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.s
+
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o: ../ByteTrack/DisplayManager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/DisplayManager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o: ../ByteTrack/H265Recorder.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265Recorder.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o: ../ByteTrack/H265RingBuffer.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/H265RingBuffer.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o: ../ByteTrack/KalmanFilter.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/KalmanFilter.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/KalmanFilter.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o: ../ByteTrack/ModelPool.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ModelPool.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ModelPool.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o: ../ByteTrack/Object.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Object.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Object.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o: ../ByteTrack/Rect.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/Rect.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/Rect.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o: ../ByteTrack/RgaWorker.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RgaWorker.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RgaWorker.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o: ../ByteTrack/RtspManager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspManager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspManager.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o: ../ByteTrack/RtspStream.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspStream.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspStream.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o: ../ByteTrack/RtspUtils.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/RtspUtils.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/RtspUtils.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o: ../ByteTrack/STrack.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/STrack.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/STrack.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o: ../ByteTrack/SdkLock.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkLock.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkLock.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o: ../ByteTrack/SdkManager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/SdkManager.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: ../ByteTrack/TrackerUtils.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/TrackerUtils.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/TrackerUtils.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o: ../ByteTrack/UploadManager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/UploadManager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.i: cmake_force
@@ -408,7 +422,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/UploadManager.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o: ../ByteTrack/YoloCache.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/YoloCache.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.i: cmake_force
@@ -422,7 +436,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/YoloCache.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o: ../ByteTrack/lapjv.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/lapjv.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.i: cmake_force
@@ -436,7 +450,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/lapjv.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: ../ByteTrack/logger.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/logger.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.i: cmake_force
@@ -450,7 +464,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/logger.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o: ../ByteTrack/mysql_client.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/mysql_client.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.i: cmake_force
@@ -464,7 +478,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/mysql_client.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o: ../ByteTrack/roi_manager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/roi_manager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.i: cmake_force
@@ -478,7 +492,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/roi_manager.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o: ../ByteTrack/task_manager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/task_manager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.i: cmake_force
@@ -492,7 +506,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: ../ByteTrack/tcp_client.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/tcp_client.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.i: cmake_force
@@ -506,7 +520,7 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/tcp_client.cpp.s: cmake_force
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/flags.make
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o: ../ByteTrack/voice_manager.cpp
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o: CMakeFiles/rknn_yolov8_demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o -MF CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o.d -o CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.o -c /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice_manager.cpp
 
 CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/voice_manager.cpp.i: cmake_force
@@ -527,6 +541,7 @@ rknn_yolov8_demo_OBJECTS = \
 "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o" \
 "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o" \
 "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.o" \
+"CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o" \
 "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o" \
 "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o" \
 "CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o" \
@@ -563,6 +578,7 @@ rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AIJsonRecorder.cpp.o
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmLight.cpp.o
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AudioManager.cpp.o
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/BYTETracker.cpp.o
+rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/ConfigManager.cpp.o
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/DisplayManager.cpp.o
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265Recorder.cpp.o
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/H265RingBuffer.cpp.o
@@ -624,15 +640,13 @@ rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_wechat_qrcode.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_xobjdetect.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_xphoto.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/libsdk.so
-rknn_yolov8_demo: /usr/local/lib/libspdlog.a
+rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libspdlog.so.1.9.2
 rknn_yolov8_demo: utils.out/libimageutils.a
 rknn_yolov8_demo: utils.out/libfileutils.a
 rknn_yolov8_demo: utils.out/libimagedrawing.a
 rknn_yolov8_demo: /usr/lib/librknnrt.so
-rknn_yolov8_demo: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so
 rknn_yolov8_demo: /usr/lib/libsdk.so
 rknn_yolov8_demo: /usr/lib/librknnrt.so
-rknn_yolov8_demo: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/rknpu2/Linux/aarch64/librknnrt.so
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_plot.so.4.5.4d
@@ -652,10 +666,11 @@ rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_flann.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.5.4d
 rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.5.4d
+rknn_yolov8_demo: /usr/lib/aarch64-linux-gnu/libfmt.so.8.1.1
 rknn_yolov8_demo: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/librga/Linux/aarch64/librga.a
 rknn_yolov8_demo: /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/3rdparty/jpeg_turbo/Linux/aarch64/libturbojpeg.a
 rknn_yolov8_demo: CMakeFiles/rknn_yolov8_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable rknn_yolov8_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable rknn_yolov8_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rknn_yolov8_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -94,7 +94,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/aarch64-linux-gnu/bits/types/__FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/FILE.h \
- /usr/include/aarch64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/11/stdexcept /usr/include/c++/11/string \
  /usr/include/c++/11/bits/char_traits.h \
  /usr/include/c++/11/bits/localefwd.h \
@@ -137,10 +136,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/aarch64-linux-gnu/sys/select.h \
  /usr/include/aarch64-linux-gnu/bits/select.h \
  /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
- /usr/include/aarch64-linux-gnu/bits/select2.h /usr/include/alloca.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
- /usr/include/aarch64-linux-gnu/bits/stdlib.h \
+ /usr/include/alloca.h /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/11/bits/std_abs.h /usr/include/c++/11/cstdio \
  /usr/include/stdio.h \
  /usr/include/aarch64-linux-gnu/bits/types/__fpos_t.h \
@@ -148,8 +144,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/aarch64-linux-gnu/bits/stdio_lim.h \
- /usr/include/aarch64-linux-gnu/bits/stdio.h \
- /usr/include/aarch64-linux-gnu/bits/stdio2.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /usr/include/c++/11/bits/std_mutex.h \
@@ -236,10 +230,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/uio_lim.h \
  /usr/lib/gcc/aarch64-linux-gnu/11/include/float.h \
  /usr/include/glib-2.0/glib/gversionmacros.h /usr/include/string.h \
- /usr/include/strings.h \
- /usr/include/aarch64-linux-gnu/bits/strings_fortified.h \
- /usr/include/aarch64-linux-gnu/bits/string_fortified.h \
- /usr/include/glib-2.0/glib/garray.h \
+ /usr/include/strings.h /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
  /usr/include/glib-2.0/glib/gthread.h \
  /usr/include/glib-2.0/glib/gatomic.h \
@@ -285,7 +276,6 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/aarch64-linux-gnu/bits/confname.h \
  /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
  /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
- /usr/include/aarch64-linux-gnu/bits/unistd.h \
  /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
  /usr/include/linux/close_range.h \
  /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
@@ -454,9 +444,8 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/gstreamer-1.0/gst/base/base-prelude.h \
  /usr/include/gstreamer-1.0/gst/app/app-prelude.h \
  /usr/include/gstreamer-1.0/gst/app/app-enumtypes.h \
- /usr/local/include/spdlog/spdlog.h /usr/local/include/spdlog/common.h \
- /usr/local/include/spdlog/tweakme.h \
- /usr/local/include/spdlog/details/null_mutex.h \
+ /usr/include/spdlog/spdlog.h /usr/include/spdlog/common.h \
+ /usr/include/spdlog/tweakme.h /usr/include/spdlog/details/null_mutex.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/functional \
  /usr/include/c++/11/bits/std_function.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
@@ -467,11 +456,11 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
- /usr/local/include/spdlog/fmt/fmt.h \
- /usr/local/include/spdlog/fmt/bundled/core.h /usr/include/c++/11/cstring \
- /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /usr/local/include/spdlog/fmt/bundled/format.h /usr/include/c++/11/cmath \
- /usr/include/math.h /usr/include/aarch64-linux-gnu/bits/math-vector.h \
+ /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
+ /usr/include/c++/11/cstring /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h /usr/include/fmt/format.h \
+ /usr/include/c++/11/cmath /usr/include/math.h \
+ /usr/include/aarch64-linux-gnu/bits/math-vector.h \
  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
  /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
@@ -491,16 +480,13 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/H265Recorder.cpp.o: \
  /usr/include/c++/11/tr1/modified_bessel_func.tcc \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /usr/local/include/spdlog/fmt/bundled/core.h \
- /usr/local/include/spdlog/details/registry.h \
- /usr/local/include/spdlog/logger.h \
- /usr/local/include/spdlog/details/log_msg.h \
- /usr/local/include/spdlog/details/backtracer.h \
- /usr/local/include/spdlog/details/log_msg_buffer.h \
- /usr/local/include/spdlog/details/circular_q.h \
- /usr/include/c++/11/cassert /usr/include/assert.h \
- /usr/local/include/spdlog/version.h \
- /usr/local/include/spdlog/details/synchronous_factory.h \
+ /usr/include/c++/11/tr1/riemann_zeta.tcc /usr/include/fmt/core.h \
+ /usr/include/spdlog/details/registry.h /usr/include/spdlog/logger.h \
+ /usr/include/spdlog/details/log_msg.h \
+ /usr/include/spdlog/details/backtracer.h \
+ /usr/include/spdlog/details/log_msg_buffer.h \
+ /usr/include/spdlog/details/circular_q.h /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/include/spdlog/version.h \
+ /usr/include/spdlog/details/synchronous_factory.h \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h
