@@ -28,7 +28,7 @@
         {
             "id": 0,
             "name": "cam0",
-            "url": "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream"
+            "url": "rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream"
         },
         {
             "id": 1,

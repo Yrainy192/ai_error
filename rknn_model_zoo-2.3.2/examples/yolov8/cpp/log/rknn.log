@@ -209,3 +209,53 @@ rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/1
 [2026-07-30 14:37:13.179] [rknn] [info] [RTSP] stopped cam1
 [2026-07-30 14:37:13.181] [rknn] [info] [RTSP] stop request cam2
 [2026-07-30 14:37:13.230] [rknn] [info] [RTSP] stopped cam2
+[2026-07-30 15:28:47.556] [rknn] [info] logger init success
+[2026-07-30 15:28:47.576] [rknn] [info] program start
+[2026-07-30 15:28:50.578] [rknn] [error] alarm light connect failed 192.168.70.8:23
+[2026-07-30 15:28:50.593] [rknn] [info] [ROI LOAD] 5
+[2026-07-30 15:28:50.594] [rknn] [info] === 程序启动 ===
+[2026-07-30 15:28:50.848] [rknn] [info] MySQL连接成功: 192.168.60.131:3306 / ai_dec
+[2026-07-30 15:28:50.930] [rknn] [info] [TaskManager] mysql attached
+[2026-07-30 15:28:50.930] [rknn] [info] TCP服务已后台启动
+[2026-07-30 15:28:50.930] [rknn] [error] [TCP] connect error: Connection refused
+[2026-07-30 15:28:50.930] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-30 15:28:50.931] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-30 15:28:50.931] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-30 15:28:51.017] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-30 15:28:51.017] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-30 15:28:51.017] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-30 15:29:21.981] [rknn] [info] receive signal 2
+[2026-07-30 15:29:22.004] [rknn] [info] [RTSP] stop request cam0
+[2026-07-30 15:29:22.028] [rknn] [info] [RTSP] stopped cam0
+[2026-07-30 15:29:22.031] [rknn] [info] [RTSP] stop request cam1
+[2026-07-30 15:29:22.059] [rknn] [info] [RTSP] stopped cam1
+[2026-07-30 15:29:22.062] [rknn] [info] [RTSP] stop request cam2
+[2026-07-30 15:29:22.079] [rknn] [info] [RTSP] stopped cam2
+[2026-07-30 15:30:20.940] [rknn] [info] logger init success
+[2026-07-30 15:30:20.940] [rknn] [info] program start
+[2026-07-30 15:30:23.942] [rknn] [error] alarm light connect failed 192.168.70.8:23
+[2026-07-30 15:30:23.942] [rknn] [info] [ROI LOAD] 5
+[2026-07-30 15:30:23.944] [rknn] [info] === 程序启动 ===
+[2026-07-30 15:30:24.000] [rknn] [info] MySQL连接成功: 192.168.60.131:3306 / ai_dec
+[2026-07-30 15:30:24.014] [rknn] [info] [TaskManager] mysql attached
+[2026-07-30 15:30:24.014] [rknn] [info] TCP服务已后台启动
+[2026-07-30 15:30:24.014] [rknn] [error] [TCP] connect error: Connection refused
+[2026-07-30 15:30:24.015] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-07-30 15:30:24.015] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-07-30 15:30:24.015] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-07-30 15:30:24.078] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-30 15:30:24.078] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-30 15:30:24.078] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-07-30 15:30:39.095] [rknn] [info] receive signal 15
+[2026-07-30 15:30:39.103] [rknn] [info] [RTSP] stop request cam0
+[2026-07-30 15:30:39.123] [rknn] [info] [RTSP] stopped cam0
+[2026-07-30 15:30:39.124] [rknn] [info] [RTSP] stop request cam1
+[2026-07-30 15:30:39.142] [rknn] [info] [RTSP] stopped cam1
+[2026-07-30 15:30:39.145] [rknn] [info] [RTSP] stop request cam2
+[2026-07-30 15:30:39.161] [rknn] [info] [RTSP] stopped cam2
