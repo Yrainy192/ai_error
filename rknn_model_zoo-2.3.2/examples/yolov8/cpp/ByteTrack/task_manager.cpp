@@ -5,6 +5,16 @@
 #include <iostream>
 #include <spdlog/spdlog.h>
 
+
+struct LineCounter
+{
+    std::atomic<int> up{0};
+    std::atomic<int> down{0};
+};
+
+LineCounter counter;
+
+
 static uint64_t getMonoTimeUs() {
     auto now = std::chrono::steady_clock::now();
     return std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch()).count();
@@ -336,12 +346,28 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
                 //           << " roi=" << roi_id
                 //           << " id=" << id << std::endl;
                 spdlog::info("[INFO] ENTER  cam={} roi={} id={}", cam_id, roi_id, id);
-                // if (cam_id == 0) {
-                //     triggerRecord(cam_id, t.code, VideoType::UP);
-                // } else {
-                //     triggerRecord(cam_id, t.code, VideoType::DOWN);
-                // }
-                break;
+            if(cam_id == 0)
+    {
+    counter.up++;
+
+    spdlog::info(
+        "[LINE COUNT] UP={} DOWN={}",
+        counter.up.load(),
+        counter.down.load()
+    );
+    }
+            else
+{
+    counter.down++;
+
+    spdlog::info(
+        "[LINE COUNT] UP={} DOWN={}",
+        counter.up.load(),
+        counter.down.load()
+    );
+}
+
+            break;
             }
         }
         state.decision_time[id] = time(nullptr);
