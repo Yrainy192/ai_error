@@ -233,8 +233,8 @@ void TCPClient::handleMessage(const Json::Value &msg) {
     // up_car：固定相机 + 固定ROI
     // =========================
     else if (action == "up_car") {
-        cam_id = 0; // 👈 你指定的相机ID（改成你的实际值）
-        roi_id = 1; // 👈 只监控一个区域
+        cam_id = 0; // 指定的相机ID
+        roi_id = 1; // 只监控一个区域
 
         msg_map["time"] = time;
     }

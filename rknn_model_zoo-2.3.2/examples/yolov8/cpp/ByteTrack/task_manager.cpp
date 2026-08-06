@@ -5,15 +5,12 @@
 #include <iostream>
 #include <spdlog/spdlog.h>
 
-
-struct LineCounter
-{
+struct LineCounter {
     std::atomic<int> up{0};
     std::atomic<int> down{0};
 };
 
 LineCounter counter;
-
 
 static uint64_t getMonoTimeUs() {
     auto now = std::chrono::steady_clock::now();
@@ -69,10 +66,10 @@ void TaskManager::initGridMap() {
         } else if (i <= 16) {
             item.cam_id = 2;
             item.roi_id = i - 8;
-        } else if (i > 16 && i <= 32) {
+        } else if (i <= 32) {
             item.cam_id = 3;
             item.roi_id = i - 16;
-        } else if (i > 24 && i <= 32) {
+        } else if (i <= 32) {
             item.cam_id = 4;
             item.roi_id = i - 24;
         } else {
@@ -346,28 +343,19 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
                 //           << " roi=" << roi_id
                 //           << " id=" << id << std::endl;
                 spdlog::info("[INFO] ENTER  cam={} roi={} id={}", cam_id, roi_id, id);
-            if(cam_id == 0)
-    {
-    counter.up++;
+                if (cam_id == 0) {
+                    counter.up++;
 
-    spdlog::info(
-        "[LINE COUNT] UP={} DOWN={}",
-        counter.up.load(),
-        counter.down.load()
-    );
-    }
-            else
-{
-    counter.down++;
+                    spdlog::info("[LINE COUNT] UP={} DOWN={}", counter.up.load(),
+                                 counter.down.load());
+                } else {
+                    counter.down++;
 
-    spdlog::info(
-        "[LINE COUNT] UP={} DOWN={}",
-        counter.up.load(),
-        counter.down.load()
-    );
-}
+                    spdlog::info("[LINE COUNT] UP={} DOWN={}", counter.up.load(),
+                                 counter.down.load());
+                }
 
-            break;
+                break;
             }
         }
         state.decision_time[id] = time(nullptr);
