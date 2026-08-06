@@ -249,7 +249,7 @@ int main() {
 
     InitLogger();
 
-    if (!config.load("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/config.json")) {
+    if (!config.load("./config/config.json")) {
         spdlog::error("config load failed");
         return -1;
     }
@@ -281,8 +281,7 @@ int main() {
 
     task_manager.initGridMap();
 
-    roi_manager.load(
-        "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/roi_config.json");
+    roi_manager.load("./config/roi_config.json");
 
     AudioManager audio;
     audio.start();
@@ -290,7 +289,7 @@ int main() {
     task_manager.setAudioManager(&audio);
 
     VoiceManager voice_mgr;
-    voice_mgr.load("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/voice.json");
+    voice_mgr.load("./config/voice.json");
 
     task_manager.setVoiceManager(&voice_mgr);
 
