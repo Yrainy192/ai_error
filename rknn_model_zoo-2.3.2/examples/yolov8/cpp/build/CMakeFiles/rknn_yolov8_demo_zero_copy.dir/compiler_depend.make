@@ -11574,6 +11574,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/c++/11/bits/fstream.tcc \
   ../ByteTrack/AIFrameCache.h \
   ../ByteTrack/AlarmLight.h \
+  ../ByteTrack/ConfigManager.h \
   ../ByteTrack/DisplayManager.h \
   ../ByteTrack/roi_manager.h \
   ../yolov8.h \
@@ -11685,8 +11686,7 @@ CMakeFiles/rknn_yolov8_demo_zero_copy.dir/main.cc.o: ../main.cc \
   /usr/include/linux/stat.h \
   /usr/include/aarch64-linux-gnu/bits/statx-generic.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h \
-  ../ByteTrack/ConfigManager.h
+  /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h
 
 CMakeFiles/rknn_yolov8_demo_zero_copy.dir/postprocess.cc.o: ../postprocess.cc \
   /usr/include/stdc-predef.h \

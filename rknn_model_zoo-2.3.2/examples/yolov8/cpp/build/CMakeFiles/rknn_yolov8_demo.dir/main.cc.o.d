@@ -814,6 +814,7 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AIFrameCache.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AlarmLight.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ConfigManager.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/DisplayManager.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/roi_manager.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/yolov8.h \
@@ -911,5 +912,4 @@ CMakeFiles/rknn_yolov8_demo.dir/main.cc.o: \
  /usr/include/aarch64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
  /usr/include/aarch64-linux-gnu/bits/statx-generic.h \
  /usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h \
- /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h \
- /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/ConfigManager.h
+ /usr/include/aarch64-linux-gnu/bits/types/struct_statx.h

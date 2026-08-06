@@ -290,8 +290,7 @@ int main() {
     task_manager.setAudioManager(&audio);
 
     VoiceManager voice_mgr;
-    voice_mgr.load(
-        "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/voice.json");
+    voice_mgr.load("/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/voice.json");
 
     task_manager.setVoiceManager(&voice_mgr);
 

@@ -13019,3 +13019,113 @@ rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/1
 [2026-07-31 15:25:54.404] [rknn] [info] [RTSP] stopped cam1
 [2026-07-31 15:25:54.407] [rknn] [info] [RTSP] stop request cam2
 [2026-07-31 15:25:54.446] [rknn] [info] [RTSP] stopped cam2
+[2026-08-06 10:44:37.752] [rknn] [info] logger init success
+[2026-08-06 10:44:37.753] [rknn] [info] program start
+[2026-08-06 10:44:40.756] [rknn] [error] alarm light connect failed 192.168.70.8:23
+[2026-08-06 10:44:40.758] [rknn] [info] [ROI LOAD] 5
+[2026-08-06 10:44:40.762] [rknn] [info] === 程序启动 ===
+[2026-08-06 10:44:41.184] [rknn] [error] MySQL连接失败: host=192.168.60.131, port=3306, user=admin, database=ai_dec, error=Can't connect to MySQL server on '192.168.60.131:3306' (113)
+[2026-08-06 10:44:41.184] [rknn] [error] 启动失败: Connect failed: Can't connect to MySQL server on '192.168.60.131:3306' (113)
+[2026-08-06 10:44:41.185] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-06 10:44:41.185] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-06 10:44:41.186] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-06 10:44:41.282] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:44:41.282] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:44:41.282] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:44:50.654] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=1
+[2026-08-06 10:44:50.654] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1785984290654 pts 9251951419
+[2026-08-06 10:44:50.655] [rknn] [info] 长报警启动 slave=1
+[2026-08-06 10:44:55.149] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-08-06 10:44:55.149] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1785984295149 pts 13731763566
+[2026-08-06 10:44:55.149] [rknn] [info] 长报警启动 slave=1
+[2026-08-06 10:44:55.790] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/104450654.json video_frames=255 json_frames=255
+[2026-08-06 10:44:55.834] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/104450654.ts
+[2026-08-06 10:44:57.666] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=3
+[2026-08-06 10:44:57.666] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1785984297666 pts 16251837234
+[2026-08-06 10:44:57.666] [rknn] [info] 长报警启动 slave=1
+[2026-08-06 10:45:00.294] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/104455149.json video_frames=267 json_frames=267
+[2026-08-06 10:45:00.337] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/104455149.ts
+[2026-08-06 10:45:02.795] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/104457666.json video_frames=255 json_frames=255
+[2026-08-06 10:45:02.834] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/104457666.ts
+[2026-08-06 10:46:31.573] [rknn] [info] receive signal 15
+[2026-08-06 10:46:31.587] [rknn] [info] [RTSP] stop request cam0
+[2026-08-06 10:46:31.613] [rknn] [info] [RTSP] stopped cam0
+[2026-08-06 10:46:31.615] [rknn] [info] [RTSP] stop request cam1
+[2026-08-06 10:46:31.636] [rknn] [info] [RTSP] stopped cam1
+[2026-08-06 10:46:31.637] [rknn] [info] [RTSP] stop request cam2
+[2026-08-06 10:46:31.678] [rknn] [info] [RTSP] stopped cam2
+[2026-08-06 10:47:46.289] [rknn] [info] logger init success
+[2026-08-06 10:47:46.290] [rknn] [info] program start
+[2026-08-06 10:47:49.292] [rknn] [error] alarm light connect failed 192.168.70.8:23
+[2026-08-06 10:47:49.294] [rknn] [info] [ROI LOAD] 5
+[2026-08-06 10:47:49.299] [rknn] [info] === 程序启动 ===
+[2026-08-06 10:47:50.825] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-08-06 10:47:50.887] [rknn] [info] [TaskManager] mysql attached
+[2026-08-06 10:47:50.888] [rknn] [info] TCP服务已后台启动
+[2026-08-06 10:47:50.889] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-06 10:47:50.889] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-06 10:47:50.889] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-06 10:47:50.889] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-08-06 10:47:51.000] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:47:51.000] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:47:51.000] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:48:10.801] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=1
+[2026-08-06 10:48:10.801] [rknn] [info] 长报警启动 slave=1
+[2026-08-06 10:48:10.801] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1785984490801 pts 19702783799
+[2026-08-06 10:48:15.917] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/104810801.json video_frames=266 json_frames=266
+[2026-08-06 10:48:15.964] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/104810801.ts
+[2026-08-06 10:49:38.553] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=3
+[2026-08-06 10:49:38.554] [rknn] [info] 长报警启动 slave=2
+[2026-08-06 10:49:38.554] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1785984578554 pts 107473223915
+[2026-08-06 10:49:43.678] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/104938554.json video_frames=259 json_frames=259
+[2026-08-06 10:49:43.730] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/104938554.ts
+[2026-08-06 10:51:00.648] [rknn] [info] receive signal 2
+[2026-08-06 10:51:00.649] [rknn] [info] [TCP] receive closed
+[2026-08-06 10:51:00.660] [rknn] [info] [RTSP] stop request cam0
+[2026-08-06 10:51:00.681] [rknn] [info] [RTSP] stopped cam0
+[2026-08-06 10:51:00.684] [rknn] [info] [RTSP] stop request cam1
+[2026-08-06 10:51:00.712] [rknn] [info] [RTSP] stopped cam1
+[2026-08-06 10:51:00.715] [rknn] [info] [RTSP] stop request cam2
+[2026-08-06 10:51:00.752] [rknn] [info] [RTSP] stopped cam2
+[2026-08-06 10:51:22.423] [rknn] [info] logger init success
+[2026-08-06 10:51:22.424] [rknn] [info] program start
+[2026-08-06 10:51:25.427] [rknn] [error] alarm light connect failed 192.168.70.8:23
+[2026-08-06 10:51:25.430] [rknn] [info] [ROI LOAD] 5
+[2026-08-06 10:51:25.434] [rknn] [info] === 程序启动 ===
+[2026-08-06 10:51:25.562] [rknn] [info] MySQL连接成功: 192.168.60.125:3306 / ai_dec
+[2026-08-06 10:51:25.621] [rknn] [info] [TaskManager] mysql attached
+[2026-08-06 10:51:25.622] [rknn] [info] TCP服务已后台启动
+[2026-08-06 10:51:25.622] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-06 10:51:25.622] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-06 10:51:25.623] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-06 10:51:25.623] [rknn] [info] [TCP] connected 192.168.70.33:2059
+[2026-08-06 10:51:25.733] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:51:25.733] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:51:25.733] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue ! mppvideodec ! video/x-raw,format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-06 10:51:44.856] [rknn] [warning] [ALARM] NO TASK cam=1 roi=1 id=2
+[2026-08-06 10:51:44.856] [rknn] [info] [AI Error] cam=1 roi=1 grid=1 trigger event 1785984704856 pts 19027167695
+[2026-08-06 10:51:44.860] [rknn] [info] 长报警启动 slave=1
+[2026-08-06 10:51:49.999] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/105144856.json video_frames=273 json_frames=273
+[2026-08-06 10:51:50.032] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/105144856.ts
+[2026-08-06 10:51:51.115] [rknn] [warning] [ALARM] NO TASK cam=1 roi=2 id=3
+[2026-08-06 10:51:51.116] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1785984711116 pts 25307755807
+[2026-08-06 10:51:51.116] [rknn] [info] 长报警启动 slave=2
+[2026-08-06 10:51:56.246] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260806/temp/105151116.json video_frames=254 json_frames=254
+[2026-08-06 10:51:56.277] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260806/AI_error/105151116.ts
+[2026-08-06 10:52:03.024] [rknn] [info] receive signal 2
+[2026-08-06 10:52:03.024] [rknn] [info] [TCP] receive closed
+[2026-08-06 10:52:03.025] [rknn] [info] [RTSP] stop request cam0
+[2026-08-06 10:52:03.051] [rknn] [info] [RTSP] stopped cam0
+[2026-08-06 10:52:03.054] [rknn] [info] [RTSP] stop request cam1
+[2026-08-06 10:52:03.069] [rknn] [info] [RTSP] stopped cam1
+[2026-08-06 10:52:03.074] [rknn] [info] [RTSP] stop request cam2
+[2026-08-06 10:52:03.112] [rknn] [info] [RTSP] stopped cam2

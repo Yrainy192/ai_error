@@ -1,14 +1,14 @@
 {
     "mysql": {
-        "host": "192.168.60.131",
+        "host": "192.168.60.125",
         "user": "admin",
         "password": "123456",
         "database": "ai_dec",
         "port": 3306
     },
     "tcp": {
-        "server_ip": "127.0.0.1",
-        "server_port": 9000
+        "server_ip": "192.168.70.33",
+        "server_port": 2059
     },
     "alarm_light": {
         "ip": "192.168.70.8",
