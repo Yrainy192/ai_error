@@ -37,7 +37,8 @@ void InitLogger() {
     spdlog::set_default_logger(logger);
 
     // 日志等级
-    spdlog::set_level(spdlog::level::debug);
+    // ⭐默认 info：每帧调试日志(debug)不打印，避免刷屏；排查问题时可临时改回 debug
+    spdlog::set_level(spdlog::level::info);
 
     // info立即刷新
     spdlog::flush_on(spdlog::level::info);

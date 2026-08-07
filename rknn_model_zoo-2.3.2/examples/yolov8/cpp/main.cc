@@ -45,6 +45,7 @@ using namespace cv;
 
 #include "AIFrameCache.h"
 #include "AlarmLight.h"
+#include "AlarmTcpClient.h"
 #include "ConfigManager.h"
 #include "DisplayManager.h"
 #include "Frame.h"
@@ -69,6 +70,8 @@ using namespace cv;
 
 std::atomic<bool> running(true);
 std::unique_ptr<TCPClient> tcp_client;
+// 独立的报警上报 TCP 客户端（给新的上位机发错分/滞留）
+std::unique_ptr<AlarmTcpClient> alarm_tcp;
 // 全局配置
 ConfigManager config;
 Json::Value cfg;
@@ -78,6 +81,9 @@ void signalHandler(int signum) {
     running = false;
     if (tcp_client) {
         tcp_client->stop();
+    }
+    if (alarm_tcp) {
+        alarm_tcp->stop();
     }
 }
 
@@ -123,9 +129,17 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
         auto &rga = *rga_workers[cam_id];
         Frame raw = get_frame_from_rtsp(*manager, cam_id);
 
-        if (!raw.data)
+        // ⭐DMABUF 零拷贝：无 data，用 fd / gst_buffer 判断
+        if (raw.fd < 0 || !raw.gst_buffer) {
+            // spdlog::debug("[AI] camera {} no frame", cam_id);
             continue;
+        }
+
+        spdlog::debug("[AI] camera={} frame={} fd={} {}x{} stride={}", cam_id, raw.frame_id, raw.fd,
+                      raw.width, raw.height, raw.width_stride);
+
         if (raw.frame_id == last_ai_frame_id[cam_id]) {
+            gst_buffer_unref(raw.gst_buffer); // 释放引用
             continue;
         }
         last_ai_frame_id[cam_id] = raw.frame_id;
@@ -135,7 +149,15 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
         //     // ⭐RGA（必须独立worker）
         //     // =========================
         image_buffer_t img;
-        if (!rga.process(raw, img))
+        bool ok = rga.process(raw, img);
+
+        // ⭐RGA 为同步模式，fd 用完立即释放引用（img 已是 RGB 拷贝，不再依赖 fd）
+        if (raw.gst_buffer) {
+            gst_buffer_unref(raw.gst_buffer);
+            raw.gst_buffer = nullptr;
+        }
+
+        if (!ok)
             continue;
 
         object_detect_result_list results{};
@@ -193,30 +215,30 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             }
         }
 
-        task_manager->updateLogic(3);
-        // update_display(img, results, cam_id, roi_manager.get(cam_id));
+        task_manager->updateLogic(0.5);
+        update_display(img, results, cam_id, roi_manager.get(cam_id));
     }
 }
 
 void start_service() {
     // std::cout << "=== 程序启动 ===" << std::endl;
     spdlog::info("=== 程序启动 ===");
-    // std::string host = "192.168.60.131";
-    // std::string user = "admin";
-    // std::string password = "123456";
-    // std::string database = "ai_dec";
-    // int port = 3306;
-    auto mysql = cfg["mysql"];
+    std::string host = "192.168.60.125";
+    std::string user = "admin";
+    std::string password = "123456";
+    std::string database = "ai_dec";
+    int port = 3306;
+    // auto mysql = cfg["mysql"];
 
-    std::string host = mysql["host"].asString();
+    // std::string host = mysql["host"].asString();
 
-    std::string user = mysql["user"].asString();
+    // std::string user = mysql["user"].asString();
 
-    std::string password = mysql["password"].asString();
+    // std::string password = mysql["password"].asString();
 
-    std::string database = mysql["database"].asString();
+    // std::string database = mysql["database"].asString();
 
-    int port = mysql["port"].asInt();
+    // int port = mysql["port"].asInt();
     try {
         static MysqlClient mysql_client(host, user, password, database, port);
         task_manager.setMysqlClient(&mysql_client);
@@ -239,6 +261,17 @@ void start_service() {
         }).detach();
         // std::cout << "✅ TCP服务已后台启动" << std::endl;
         spdlog::info("TCP服务已后台启动");
+
+        // =========================
+        // 独立的上位机 TCP 上报客户端（给新的上位机发错分/滞留）
+        // 与上面的 tcp_client（接收任务通知）完全独立
+        // =========================
+        auto tcp_alarm = cfg["tcp_alarm"];
+        alarm_tcp = std::make_unique<AlarmTcpClient>();
+        alarm_tcp->setServer(tcp_alarm["server_ip"].asString(), tcp_alarm["server_port"].asInt());
+        alarm_tcp->start();
+        task_manager.setAlarmTcpClient(alarm_tcp.get());
+        spdlog::info("报警上报TCP服务已启动");
     } catch (const std::exception &e) {
         // std::cerr << "❌ 启动失败: " << e.what() << std::endl;
         spdlog::error("启动失败: {}", e.what());
@@ -311,8 +344,8 @@ int main() {
     tracker_map[0] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     tracker_map[1] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     tracker_map[2] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[3] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[4] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    // tracker_map[3] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    // tracker_map[4] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     // tracker_map[5] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     //  3. RTSP 管理（不改）
     RtspManager manager;
@@ -338,7 +371,7 @@ int main() {
     // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101",
     // "cam3");
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
         auto stream = manager.get(i);
         if (stream) {
             task_manager.setRecorder(i, stream->getRecorder());
@@ -346,8 +379,8 @@ int main() {
     }
 
     //  4. RGA worker（⭐关键新增）
-    rga_workers.resize(5);
-    for (int i = 0; i < 5; i++) {
+    rga_workers.resize(3);
+    for (int i = 0; i < 3; i++) {
         rga_workers[i] = std::make_unique<RgaWorker>();
     }
     last_ai_frame_id.resize(5, UINT64_MAX);
@@ -370,53 +403,53 @@ int main() {
     std::thread t0(infer_worker, 0, 0, &manager, &modelPool, &task_manager);
     std::thread t1(infer_worker, 1, 1, &manager, &modelPool, &task_manager);
     std::thread t2(infer_worker, 2, 2, &manager, &modelPool, &task_manager);
-    std::thread t3(infer_worker, 3, 3, &manager, &modelPool, &task_manager);
-    std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
+    // std::thread t3(infer_worker, 3, 3, &manager, &modelPool, &task_manager);
+    // std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
     // std::thread t5(infer_worker, 5, 5, &manager, &modelPool, &task_manager);
 
     // // // 7. UI窗口
-    // cv::namedWindow("cam0");
-    // cv::namedWindow("cam1");
-    // cv::namedWindow("cam2");
+    cv::namedWindow("cam0");
+    cv::namedWindow("cam1");
+    cv::namedWindow("cam2");
     // cv::namedWindow("cam3");
     // cv::namedWindow("cam4");
     // cv::namedWindow("cam5");
     // // 8. 显示线程（主线程）
-    // while (running) {
-    //     {
-    //         std::lock_guard<std::mutex> lock(g_display[0].mtx);
-    //         if (!g_display[0].img.empty())
-    //             cv::imshow("cam0", g_display[0].img);
-    //     }
+    while (running) {
+        {
+            std::lock_guard<std::mutex> lock(g_display[0].mtx);
+            if (!g_display[0].img.empty())
+                cv::imshow("cam0", g_display[0].img);
+        }
 
-    //     {
-    //         std::lock_guard<std::mutex> lock(g_display[1].mtx);
-    //         if (!g_display[1].img.empty())
-    //             cv::imshow("cam1", g_display[1].img);
-    //     }
-    //     {
-    //         std::lock_guard<std::mutex> lock(g_display[2].mtx);
-    //         if (!g_display[2].img.empty())
-    //             cv::imshow("cam2", g_display[2].img);
-    //     }
-    //     // {
-    //     //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
-    //     //     if (!g_display[3].img.empty())
-    //     //         cv::imshow("cam3", g_display[3].img);
-    //     // }
-    //     // {
-    //     //     std::lock_guard<std::mutex> lock(g_display[4].mtx);
-    //     //     if (!g_display[4].img.empty())
-    //     //         cv::imshow("cam4", g_display[4].img);
-    //     // }
-    //     // {
-    //     //     std::lock_guard<std::mutex> lock(g_display[5].mtx);
-    //     //     if (!g_display[5].img.empty())
-    //     //         cv::imshow("cam5", g_display[5].img);
-    //     // }
-    //     if (cv::waitKey(1) == 27)
-    //         break;
-    // }
+        {
+            std::lock_guard<std::mutex> lock(g_display[1].mtx);
+            if (!g_display[1].img.empty())
+                cv::imshow("cam1", g_display[1].img);
+        }
+        {
+            std::lock_guard<std::mutex> lock(g_display[2].mtx);
+            if (!g_display[2].img.empty())
+                cv::imshow("cam2", g_display[2].img);
+        }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
+        //     if (!g_display[3].img.empty())
+        //         cv::imshow("cam3", g_display[3].img);
+        // }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[4].mtx);
+        //     if (!g_display[4].img.empty())
+        //         cv::imshow("cam4", g_display[4].img);
+        // }
+        // {
+        //     std::lock_guard<std::mutex> lock(g_display[5].mtx);
+        //     if (!g_display[5].img.empty())
+        //         cv::imshow("cam5", g_display[5].img);
+        // }
+        if (cv::waitKey(1) == 27)
+            break;
+    }
 
     // running = false;
     // if (tcp_client) {
@@ -427,8 +460,8 @@ int main() {
     t0.join();
     t1.join();
     t2.join();
-    t3.join();
-    t4.join();
+    // t3.join();
+    // t4.join();
 
     return 0;
 }

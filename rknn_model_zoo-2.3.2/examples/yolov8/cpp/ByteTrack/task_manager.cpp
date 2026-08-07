@@ -1,5 +1,6 @@
 #include "task_manager.h"
 #include "AIFrameCache.h"
+#include "AlarmTcpClient.h"
 #include "SdkManager.h"
 #include <chrono>
 #include <iostream>
@@ -53,6 +54,11 @@ void TaskManager::setRecorder(int cam_id, H265Recorder *recorder) {
 }
 
 void TaskManager::setSpeaker(SdkManager *spk) { speaker = spk; }
+
+void TaskManager::setAlarmTcpClient(AlarmTcpClient *client) {
+    alarm_tcp_ = client;
+    spdlog::info("[TaskManager] alarm tcp client attached");
+}
 
 void TaskManager::setAlarmCallback(AlarmCallback cb) { alarm_callback = cb; }
 
@@ -210,7 +216,167 @@ void TaskManager::triggerRecord(int cam_id, const std::string &code, VideoType t
     it->second->saveEvent(now_ms, code, type);
 }
 
-void TaskManager::triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts) {
+void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
+    std::lock_guard<std::mutex> lock(mutex);
+
+    auto &state = roi_state[cam_id][roi_id];
+    auto &tasks = cam_tasks[cam_id];
+
+    int grid_id = getGridId(cam_id, roi_id);
+
+    // ==================================================
+    // 空帧
+    // ==================================================
+    if (id == -1) {
+        state.state = ROIState::EMPTY;
+        state.stable_id = -1;
+        state.current_id = -1;
+        state.same_id_count = 0;
+        state.occupied_since = 0;
+        state.stuck_notified = false;
+
+        return;
+    }
+
+    // ==================================================
+    // 清理历史缓存
+    // ==================================================
+    cleanupCache(cam_id, roi_id);
+
+    // ==================================================
+    // ID稳定检测
+    // ==================================================
+    if (id == state.current_id) {
+        state.same_id_count++;
+    } else {
+        state.current_id = id;
+        state.same_id_count = 1;
+    }
+
+    // ==================================================
+    // 判断是否已有任务
+    // ==================================================
+    bool has_task = false;
+
+    for (auto &t : tasks) {
+        if (t.roi_id == roi_id && t.state == WAIT) {
+            has_task = true;
+            break;
+        }
+    }
+
+    // ==================================================
+    // EMPTY状态
+    // ==================================================
+    if (state.state == ROIState::EMPTY && state.same_id_count >= 3) {
+
+        // ----------------------------------------------
+        // 进入占用状态
+        // 无论正常还是错分，都进入这里
+        // ----------------------------------------------
+
+        state.state = ROIState::OCCUPIED;
+        state.stable_id = id;
+        state.occupied_since = time(nullptr);
+        state.stuck_notified = false;
+
+        // ==================================================
+        // 正常任务
+        // ==================================================
+        if (has_task) {
+
+            for (auto &t : tasks) {
+                if (t.roi_id == roi_id && t.state == WAIT) {
+
+                    t.state = CONSUMED;
+                    t.entered = true;
+
+                    spdlog::info("[ENTER] cam={} roi={} grid={} id={}", cam_id, roi_id, grid_id,
+                                 id);
+
+                    if (cam_id == 0) {
+                        counter.up++;
+                    } else {
+                        counter.down++;
+                    }
+
+                    spdlog::info("[COUNT] UP={} DOWN={}", counter.up.load(), counter.down.load());
+
+                    break;
+                }
+            }
+
+        }
+
+        // ==================================================
+        // 错分任务
+        // ==================================================
+        else if (cam_id != 0) {
+
+            bool already_alarm = false;
+
+            if (state.decision_time.count(id)) {
+                already_alarm = true;
+            }
+
+            if (!already_alarm) {
+
+                uint64_t now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                                      std::chrono::system_clock::now().time_since_epoch())
+                                      .count();
+
+                spdlog::warn("[MIS_SORT] cam={} roi={} grid={} id={} time={}", cam_id, roi_id,
+                             grid_id, id, now_ms);
+                // 蜂鸣器
+                // if (alarm_light_) {
+                //     triggerLongAlarm(grid_id);
+                // }
+
+                // TCP通知
+                if (alarm_tcp_) {
+
+                    alarm_tcp_->sendMessage({{"action", "mis_sort"},
+                                             {"cam_id", std::to_string(cam_id)},
+                                             {"roi_id", std::to_string(roi_id)},
+                                             {"grid", std::to_string(grid_id)},
+                                             {"track_id", std::to_string(id)},
+                                             {"time", std::to_string(now_ms)}});
+                }
+                triggerAIError(cam_id, roi_id, std::to_string(id), pts, now_ms);
+                state.decision_time[id] = time(nullptr);
+            }
+        }
+        return;
+    }
+
+    // ==================================================
+    // 已经占用
+    // 检查滞留
+    // ==================================================
+    if (state.state == ROIState::OCCUPIED && state.occupied_since > 0 && !state.stuck_notified) {
+
+        time_t now = time(nullptr);
+
+        if (now - state.occupied_since >= 10) {
+
+            state.stuck_notified = true;
+
+            spdlog::warn("[GRID STUCK] cam={} roi={} grid={} id={} stay={}s", cam_id, roi_id,
+                         grid_id, state.stable_id, now - state.occupied_since);
+
+            if (alarm_tcp_) {
+                alarm_tcp_->sendMessage({{"action", "grid_stuck"},
+                                         {"cam_id", std::to_string(cam_id)},
+                                         {"roi_id", std::to_string(roi_id)},
+                                         {"grid", std::to_string(grid_id)},
+                                         {"track_id", std::to_string(state.stable_id)}});
+            }
+        }
+    }
+}
+
+void TaskManager::triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts,
+                                 uint64_t now_ms) {
     auto it = recorders.find(cam_id);
 
     if (it == recorders.end()) {
@@ -219,18 +385,10 @@ void TaskManager::triggerAIError(int cam_id, int roi_id, const std::string &id, 
     }
 
     // 根据摄像头和ROI计算格口
-
     int grid_id = getGridId(cam_id, roi_id);
-
     std::string grid = std::to_string(grid_id);
-
-    uint64_t now_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-                          std::chrono::system_clock::now().time_since_epoch())
-                          .count();
-
     spdlog::info("[AI Error] cam={} roi={} grid={} trigger event {} pts {}", cam_id, roi_id, grid,
                  now_ms, pts);
-
     it->second->saveAIError(now_ms, grid, id);
 }
 
@@ -253,118 +411,8 @@ void TaskManager::cleanupCache(int cam_id, int roi_id) {
     }
 }
 
-// 核心状态机
-void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
-    std::lock_guard<std::mutex> lock(mutex);
-
-    auto &state = roi_state[cam_id][roi_id];
-    auto &tasks = cam_tasks[cam_id];
-
-    // =========================
-    // 空帧 reset
-    // =========================
-    if (id == -1) {
-        state.state = ROIState::EMPTY;
-        state.stable_id = -1;
-        state.current_id = -1;
-        state.same_id_count = 0;
-        return;
-    }
-
-    // =========================
-    // TTL清理
-    // =========================
-    cleanupCache(cam_id, roi_id);
-
-    // =========================
-    // 3帧稳定计数
-    // =========================
-    if (id == state.current_id)
-        state.same_id_count++;
-    else {
-        state.current_id = id;
-        state.same_id_count = 1;
-    }
-
-    // =========================
-    // ROI级去重
-    // =========================
-    if (state.decision_time.count(id))
-        return;
-
-    bool has_task = false;
-    for (auto &t : tasks)
-        if (t.roi_id == roi_id && t.state == WAIT)
-            has_task = true;
-
-    // =========================
-    // NO TASK
-    // =========================
-
-    if (!has_task && cam_id != 0) {
-        spdlog::warn("[ALARM] NO TASK cam={} roi={} id={}", cam_id, roi_id, id);
-        std::string wav;
-        if (voice_mgr) {
-            wav = voice_mgr->get(cam_id, roi_id);
-        } else {
-            wav =
-                "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/speaker/test.wav";
-        }
-        std::string cmd = "play -id 1 -s " + wav + " -d 2 -v 100 -fast";
-
-        int grid_id = getGridId(cam_id, roi_id);
-        //控制对应蜂鸣器报警
-        if (alarm_light_) {
-            triggerLongAlarm(grid_id);
-        }
-
-        if (audio_mgr) {
-            audio_mgr->post(cmd);
-        }
-
-        triggerAIError(cam_id, roi_id, std::to_string(id), pts);
-
-        state.decision_time[id] = time(nullptr);
-        return;
-    }
-
-    // =========================
-    // ENTER（必须3帧稳定）
-    // =========================
-    if (state.state == ROIState::EMPTY && state.same_id_count >= 3) {
-        state.state = ROIState::OCCUPIED;
-        state.stable_id = id;
-        for (auto &t : tasks) {
-            if (t.roi_id == roi_id && t.state == WAIT) {
-                t.state = CONSUMED;
-                t.entered = true;
-                // std::cout << "[INFO] ENTER cam="
-                //           << cam_id
-                //           << " roi=" << roi_id
-                //           << " id=" << id << std::endl;
-                spdlog::info("[INFO] ENTER  cam={} roi={} id={}", cam_id, roi_id, id);
-                if (cam_id == 0) {
-                    counter.up++;
-
-                    spdlog::info("[LINE COUNT] UP={} DOWN={}", counter.up.load(),
-                                 counter.down.load());
-                } else {
-                    counter.down++;
-
-                    spdlog::info("[LINE COUNT] UP={} DOWN={}", counter.up.load(),
-                                 counter.down.load());
-                }
-
-                break;
-            }
-        }
-        state.decision_time[id] = time(nullptr);
-        return;
-    }
-}
-
 // =========================
-void TaskManager::updateLogic(int timeout_sec) {
+void TaskManager::updateLogic(float timeout_sec) {
     std::vector<std::tuple<int, int, std::string>> alarms;
     time_t now = time(nullptr);
     {
@@ -379,7 +427,17 @@ void TaskManager::updateLogic(int timeout_sec) {
 
                     int grid_id = getGridId(t.cam_id, t.roi_id);
                     // int slave_id = getSlaveId(cam_id, roi_id);
-                    triggerShortAlarm(grid_id);
+                    // triggerShortAlarm(grid_id);
+
+                    if (alarm_tcp_) {
+                        alarm_tcp_->sendMessage({
+                            {"action", "time_out"},
+                            {"cam_id", std::to_string(t.cam_id)},
+                            {"roi_id", std::to_string(t.roi_id)},
+                            {"grid", std::to_string(grid_id)},
+                        });
+                    }
+
                     if (t.cam_id == 0) {
                         triggerRecord(t.cam_id, t.code, VideoType::UP_ERROR);
                     } else {
