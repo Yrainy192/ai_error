@@ -10,6 +10,10 @@
         "server_ip": "192.168.70.33",
         "server_port": 2059
     },
+    "tcp_alarm": {
+        "server_ip": "192.168.60.125",
+        "server_port": 2026
+    },
     "alarm_light": {
         "ip": "192.168.70.8",
         "port": 23

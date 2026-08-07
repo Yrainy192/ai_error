@@ -312,6 +312,14 @@ CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/task_manager.cpp.o: \
  /usr/include/c++/11/bits/stl_multiset.h \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
+ /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/AlarmTcpClient.h \
+ /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/config.h \
+ /usr/include/jsoncpp/json/allocator.h \
+ /usr/include/jsoncpp/json/version.h \
+ /usr/include/jsoncpp/json/json_features.h \
+ /usr/include/jsoncpp/json/forwards.h /usr/include/jsoncpp/json/reader.h \
+ /usr/include/jsoncpp/json/value.h /usr/include/c++/11/stack \
+ /usr/include/c++/11/bits/stl_stack.h /usr/include/jsoncpp/json/writer.h \
  /home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ByteTrack/SdkManager.h \
  /usr/include/c++/11/iostream /usr/include/spdlog/spdlog.h \
  /usr/include/spdlog/common.h /usr/include/spdlog/tweakme.h \

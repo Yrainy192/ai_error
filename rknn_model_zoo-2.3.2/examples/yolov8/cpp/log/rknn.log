@@ -1,7 +1,0 @@
-[2026-08-06 11:35:07.534] [rknn] [info] receive signal 15
-[2026-08-06 11:35:07.536] [rknn] [info] [RTSP] stop request cam0
-[2026-08-06 11:35:07.552] [rknn] [info] [RTSP] stopped cam0
-[2026-08-06 11:35:07.555] [rknn] [info] [RTSP] stop request cam1
-[2026-08-06 11:35:07.572] [rknn] [info] [RTSP] stopped cam1
-[2026-08-06 11:35:07.576] [rknn] [info] [RTSP] stop request cam2
-[2026-08-06 11:35:07.586] [rknn] [info] [RTSP] stopped cam2

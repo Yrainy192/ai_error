@@ -12,5 +12,6 @@ class RgaWorker {
     bool process(const Frame &f, image_buffer_t &out);
 
   private:
-    std::shared_ptr<std::vector<uint8_t>> cache;
+    // ⭐复用目标 buffer，避免每帧分配
+    std::vector<uint8_t> rgb_;
 };

@@ -12,9 +12,7 @@ AudioManager::~AudioManager() { stop(); }
 //启动
 //==============================
 void AudioManager::start() {
-
     running = true;
-
     workerThread = std::thread(&AudioManager::workerLoop, this);
 }
 
@@ -22,11 +20,8 @@ void AudioManager::start() {
 //停止
 //==============================
 void AudioManager::stop() {
-
     running = false;
-
     cv.notify_all();
-
     if (workerThread.joinable()) {
         workerThread.join();
     }
@@ -36,16 +31,11 @@ void AudioManager::stop() {
 //加入播放队列
 //==============================
 void AudioManager::post(const std::string &cmd) {
-
     {
-
         std::lock_guard<std::mutex> lock(queueMutex);
-
         audioQueue.push(cmd);
-
         std::cout << "[AUDIO QUEUE] size=" << audioQueue.size() << std::endl;
     }
-
     cv.notify_one();
 }
 

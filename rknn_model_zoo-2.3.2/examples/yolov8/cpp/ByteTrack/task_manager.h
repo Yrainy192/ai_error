@@ -27,6 +27,7 @@ using AlarmCallback = std::function<void(int cam_id, int roi_id, uint64_t event_
 
 class SdkManager;
 class H265Recorder;
+class AlarmTcpClient;
 
 using json = nlohmann::json;
 
@@ -113,6 +114,11 @@ struct ROIStateInfo {
 
     // 🔥 ROI级 decision cache（带时间）
     std::unordered_map<int, time_t> decision_time;
+
+    // 🔥 滞留检测：开始占用时间（0 表示无占用）
+    time_t occupied_since = 0;
+    // 🔥 滞留检测：是否已发送过滞留通知（防重复）
+    bool stuck_notified = false;
 };
 
 // =========================
@@ -132,11 +138,13 @@ class TaskManager {
 
     void setSpeaker(SdkManager *speaker);
 
+    void setAlarmTcpClient(AlarmTcpClient *client);
+
     void setAlarmCallback(AlarmCallback cb);
 
     void updateEnter(int cam_id, int roi_id, int id, uint64_t pts);
 
-    void updateLogic(int timeout_sec);
+    void updateLogic(float timeout_sec);
 
     void cleanupCache(int cam_id, int roi_id);
 
@@ -153,7 +161,8 @@ class TaskManager {
   private:
     void triggerRecord(int cam_id, const std::string &code, VideoType type);
 
-    void triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts);
+    void triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts,
+                        uint64_t now_ms);
 
     // AI短报警3秒自动关闭
     void triggerShortAlarm(int slave_id);
@@ -176,6 +185,9 @@ class TaskManager {
     std::unordered_map<int, std::vector<Task>> cam_tasks;
 
     SdkManager *speaker = nullptr;
+
+    // 独立的报警上报 TCP 客户端（给新的上位机发错分/滞留）
+    AlarmTcpClient *alarm_tcp_ = nullptr;
 
     VoiceManager *voice_mgr = nullptr;
 

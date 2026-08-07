@@ -320,6 +320,33 @@ ByteTrack/AlarmLight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.s
 .PHONY : ByteTrack/AlarmLight.cpp.s
 
+ByteTrack/AlarmTcpClient.o: ByteTrack/AlarmTcpClient.cpp.o
+.PHONY : ByteTrack/AlarmTcpClient.o
+
+# target to build an object file
+ByteTrack/AlarmTcpClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmTcpClient.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmTcpClient.cpp.o
+.PHONY : ByteTrack/AlarmTcpClient.cpp.o
+
+ByteTrack/AlarmTcpClient.i: ByteTrack/AlarmTcpClient.cpp.i
+.PHONY : ByteTrack/AlarmTcpClient.i
+
+# target to preprocess a source file
+ByteTrack/AlarmTcpClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmTcpClient.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmTcpClient.cpp.i
+.PHONY : ByteTrack/AlarmTcpClient.cpp.i
+
+ByteTrack/AlarmTcpClient.s: ByteTrack/AlarmTcpClient.cpp.s
+.PHONY : ByteTrack/AlarmTcpClient.s
+
+# target to generate assembly for a file
+ByteTrack/AlarmTcpClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo.dir/build.make CMakeFiles/rknn_yolov8_demo.dir/ByteTrack/AlarmTcpClient.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rknn_yolov8_demo_zero_copy.dir/build.make CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmTcpClient.cpp.s
+.PHONY : ByteTrack/AlarmTcpClient.cpp.s
+
 ByteTrack/AudioManager.o: ByteTrack/AudioManager.cpp.o
 .PHONY : ByteTrack/AudioManager.o
 
@@ -1178,6 +1205,9 @@ help:
 	@echo "... ByteTrack/AlarmLight.o"
 	@echo "... ByteTrack/AlarmLight.i"
 	@echo "... ByteTrack/AlarmLight.s"
+	@echo "... ByteTrack/AlarmTcpClient.o"
+	@echo "... ByteTrack/AlarmTcpClient.i"
+	@echo "... ByteTrack/AlarmTcpClient.s"
 	@echo "... ByteTrack/AudioManager.o"
 	@echo "... ByteTrack/AudioManager.i"
 	@echo "... ByteTrack/AudioManager.s"

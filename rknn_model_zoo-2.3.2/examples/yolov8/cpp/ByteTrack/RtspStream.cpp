@@ -5,8 +5,9 @@
 #include <ctime>
 #include <filesystem>
 
-#include <spdlog/spdlog.h>
+#include <gst/allocators/allocators.h>
 #include <gst/video/video.h>
+#include <spdlog/spdlog.h>
 
 // RtspStream::RtspStream(const std::string &url, const std::string &id)
 //     : rtsp_url(url), camera_id(id) {
@@ -30,6 +31,16 @@ void RtspStream::stop() {
     if (worker.joinable()) {
         worker.join();
     }
+
+    // 释放最新帧持有的 DMABUF 引用
+    {
+        std::lock_guard<std::mutex> lock(frame_mutex);
+        if (latest_frame.gst_buffer) {
+            gst_buffer_unref(latest_frame.gst_buffer);
+            latest_frame.gst_buffer = nullptr;
+        }
+    }
+
     spdlog::info("[RTSP] stopped {}", camera_id);
 }
 
@@ -71,10 +82,16 @@ bool RtspStream::start() {
 // =========================
 bool RtspStream::getLatest(Frame &out) {
     std::lock_guard<std::mutex> lock(frame_mutex);
-    if (!latest_frame.data)
+    if (!latest_frame.data && latest_frame.fd < 0)
         return false;
 
     out = latest_frame;
+
+    // ⭐拷贝时增加引用，保证使用期间 DMABUF fd 有效
+    if (out.gst_buffer) {
+        out.gst_buffer = gst_buffer_ref(out.gst_buffer);
+    }
+
     return true;
 }
 
@@ -160,9 +177,9 @@ void RtspStream::buildPipeline() {
 
         /******** YOLO ********/
 
-        "t. ! queue ! "
-        "mppvideodec ! "
-        "video/x-raw,format=NV12 ! "
+        "t. ! queue max-size-buffers=2 ! "
+        "mppvideodec dma-feature=true ! "
+        "video/x-raw(memory:DMABuf),format=NV12 ! "
         "appsink "
         "name=sink "
         "emit-signals=true "
@@ -324,7 +341,7 @@ GstFlowReturn RtspStream::on_h265_sample(GstElement *sink) {
 }
 
 // =========================
-// ⭐核心：只取 NV12，不处理
+// ⭐核心：只取 DMABUF fd，不拷贝
 // =========================
 GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
 
@@ -333,57 +350,86 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
     }
 
     GstSample *sample = nullptr;
+
     g_signal_emit_by_name(sink, "pull-sample", &sample);
 
-    if (!sample)
-        return GST_FLOW_ERROR;
-    GstBuffer *buffer = gst_sample_get_buffer(sample);
-    GstMapInfo map;
-    if (!gst_buffer_map(buffer, &map, GST_MAP_READ)) {
-        gst_sample_unref(sample);
+    if (!sample) {
+        spdlog::error("[RTSP] sample null");
         return GST_FLOW_ERROR;
     }
-    // =========================
-    // ⭐只做数据拷贝（NV12）
-    // =========================
-    auto frame_data = std::make_shared<std::vector<uint8_t>>();
-    frame_data->resize(map.size);
-    memcpy(frame_data->data(), map.data, map.size);
-    Frame f;
-    f.data = frame_data;
-    f.width = 1920;
-    f.height = 1080;
-    f.width_stride = f.width;
-    f.height_stride = f.height;
-    // ⭐读取MPP真实stride
-    GstVideoMeta *meta =
-    gst_buffer_get_video_meta(buffer);
 
-    if(meta)
-    {
-    f.width_stride = meta->stride[0];
-    f.height_stride = meta->height;
-    // spdlog::info(
-    //     "[NV12] width={} height={} stride={} meta_height={} size={}",
-    //     f.width,
-    //     f.height,
-    //     f.width_stride,
-    //     f.height_stride,
-    //     map.size
-    // );
+    GstBuffer *buffer = gst_sample_get_buffer(sample);
+
+    if (!buffer) {
+        spdlog::error("[RTSP] buffer null");
+
+        gst_sample_unref(sample);
+
+        return GST_FLOW_ERROR;
     }
-    else
-    {
-    spdlog::warn(
-        "[NV12] no GstVideoMeta"
-    );
+
+    Frame f;
+
+    //---------------------------------
+    // 获取DMABUF fd
+    //---------------------------------
+
+    GstMemory *memory = gst_buffer_peek_memory(buffer, 0);
+
+    if (gst_is_dmabuf_memory(memory)) {
+
+        int fd = gst_dmabuf_memory_get_fd(memory);
+
+        f.fd = fd;
+
+    } else {
+
+        spdlog::error("[RTSP] not dmabuf");
+
+        gst_sample_unref(sample);
+
+        return GST_FLOW_ERROR;
     }
-    // f.timestamp = std::chrono::steady_clock::now().time_since_epoch().count();
-    // 新增
+
+    //---------------------------------
+    // 获取视频信息
+    //---------------------------------
+
+    GstCaps *caps = gst_sample_get_caps(sample);
+
+    GstVideoInfo info;
+
+    if (!gst_video_info_from_caps(&info, caps)) {
+
+        spdlog::error("[RTSP] get video info failed");
+
+        gst_sample_unref(sample);
+
+        return GST_FLOW_ERROR;
+    }
+
+    f.width = GST_VIDEO_INFO_WIDTH(&info);
+
+    f.height = GST_VIDEO_INFO_HEIGHT(&info);
+
+    //---------------------------------
+    // stride
+    //---------------------------------
+
+    f.width_stride = GST_VIDEO_INFO_PLANE_STRIDE(&info, 0);
+
+    f.height_stride = GST_VIDEO_INFO_HEIGHT(&info);
+
+    //---------------------------------
+    // frame id
+    //---------------------------------
 
     f.frame_id = frame_counter.fetch_add(1);
 
-    // f.pts = GST_BUFFER_PTS(buffer);
+    //---------------------------------
+    // 时间
+    //---------------------------------
+
     if (GST_BUFFER_PTS_IS_VALID(buffer)) {
         f.pts = GST_BUFFER_PTS(buffer);
     } else {
@@ -393,12 +439,26 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
     f.real_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
                          std::chrono::system_clock::now().time_since_epoch())
                          .count();
+
+    //---------------------------------
+    // 保存最新帧（持有 buffer 引用保证 fd 有效）
+    //---------------------------------
+
     {
         std::lock_guard<std::mutex> lock(frame_mutex);
+
+        if (latest_frame.gst_buffer) {
+            gst_buffer_unref(latest_frame.gst_buffer);
+            latest_frame.gst_buffer = nullptr;
+        }
+
         latest_frame = f;
+
+        latest_frame.gst_buffer = gst_buffer_ref(buffer);
     }
-    gst_buffer_unmap(buffer, &map);
+
     gst_sample_unref(sample);
+
     return GST_FLOW_OK;
 }
 

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AIJsonRecorder.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmLight.cpp.o.d"
+  "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmTcpClient.cpp.o"
+  "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AlarmTcpClient.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/AudioManager.cpp.o.d"
   "CMakeFiles/rknn_yolov8_demo_zero_copy.dir/ByteTrack/BYTETracker.cpp.o"
