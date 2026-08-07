@@ -11,8 +11,8 @@
         "server_port": 2059
     },
     "tcp_alarm": {
-        "server_ip": "127.0.0.1",
-        "server_port": 9001
+        "server_ip": "192.168.60.125",
+        "server_port": 2026
     },
     "alarm_light": {
         "ip": "192.168.70.8",

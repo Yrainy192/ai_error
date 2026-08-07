@@ -413,12 +413,19 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
     f.height = GST_VIDEO_INFO_HEIGHT(&info);
 
     //---------------------------------
-    // stride
+    // stride：必须用 GstVideoMeta 的真实行距！
+    //   mppvideodec 的 NV12 每行有 padding（1920→2304），caps 的
+    //   GST_VIDEO_INFO_PLANE_STRIDE 只报 1920，用错会导致 RGA 条纹花屏。
     //---------------------------------
 
     f.width_stride = GST_VIDEO_INFO_PLANE_STRIDE(&info, 0);
 
     f.height_stride = GST_VIDEO_INFO_HEIGHT(&info);
+
+    GstVideoMeta *vmeta = gst_buffer_get_video_meta(buffer);
+    if (vmeta && vmeta->n_planes > 0) {
+        f.width_stride = vmeta->stride[0];
+    }
 
     //---------------------------------
     // frame id

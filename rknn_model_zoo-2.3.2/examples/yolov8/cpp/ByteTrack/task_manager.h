@@ -119,6 +119,10 @@ struct ROIStateInfo {
     time_t occupied_since = 0;
     // 🔥 滞留检测：是否已发送过滞留通知（防重复）
     bool stuck_notified = false;
+
+    // 新增
+    int empty_count = 0; // 连续空帧计数
+    int miss_count = 0;  // ID丢失次数
 };
 
 // =========================
@@ -131,12 +135,6 @@ class TaskManager {
     void setTask(const std::string &code, const std::string &grid, int cam_id, int roi_id);
 
     std::vector<Task> getTasks(int cam_id);
-
-    void setVoiceManager(VoiceManager *vm);
-
-    void setAudioManager(AudioManager *audio);
-
-    void setSpeaker(SdkManager *speaker);
 
     void setAlarmTcpClient(AlarmTcpClient *client);
 
@@ -152,8 +150,6 @@ class TaskManager {
 
     void setRecorder(int cam_id, H265Recorder *recorder);
 
-    void setAlarmLight(AlarmLight *light);
-
     void setMysqlClient(MysqlClient *db);
 
     int getGridId(int cam_id, int roi_id);
@@ -163,11 +159,6 @@ class TaskManager {
 
     void triggerAIError(int cam_id, int roi_id, const std::string &id, uint64_t pts,
                         uint64_t now_ms);
-
-    // AI短报警3秒自动关闭
-    void triggerShortAlarm(int slave_id);
-    //长报警等待人工解除
-    void triggerLongAlarm(int slave_id);
 
     void setAICache(int cam_id, AIFrameCache *cache);
 
@@ -189,13 +180,7 @@ class TaskManager {
     // 独立的报警上报 TCP 客户端（给新的上位机发错分/滞留）
     AlarmTcpClient *alarm_tcp_ = nullptr;
 
-    VoiceManager *voice_mgr = nullptr;
-
-    AudioManager *audio_mgr = nullptr;
-
     MysqlClient *mysql_client = nullptr;
-
-    AlarmLight *alarm_light_ = nullptr;
 
     // H265Recorder *recorder = nullptr;
     std::map<int, H265Recorder *> recorders;

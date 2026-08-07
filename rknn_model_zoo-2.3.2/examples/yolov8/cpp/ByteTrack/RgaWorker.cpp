@@ -7,7 +7,6 @@
 #include <algorithm>
 #include <cstring>
 #include <gst/gst.h>
-#include <gst/video/video.h>
 #include <mutex>
 #include <spdlog/spdlog.h>
 
@@ -47,9 +46,10 @@ bool RgaWorker::process(const Frame &f, image_buffer_t &out) {
     spdlog::debug("[RGA INPUT] fd={} {}x{} stride={}x{}", f.fd, f.width, f.height, f.width_stride,
                   f.height_stride);
 
-    // ⭐需要 gst_buffer 引用，用它 mmap 出 DMABUF 的用户态虚拟地址供 RGA 使用
-    if (!f.gst_buffer) {
-        spdlog::error("[RGA] no gst_buffer");
+    // ⭐零拷贝：直接用 DMABUF fd 导入 RGA，不 mmap、不 CPU 拷贝
+    //   （frame 持有 gst_buffer 引用，保证使用期间 fd 有效）
+    if (f.fd < 0) {
+        spdlog::error("[RGA] invalid dmabuf fd");
         return false;
     }
 
@@ -70,40 +70,19 @@ bool RgaWorker::process(const Frame &f, image_buffer_t &out) {
     spdlog::debug("[LETTERBOX] new={}x{} pad={} {}", lb.new_w, lb.new_h, lb.pad_x, lb.pad_y);
 
     //===========================
-    // source：DMABUF -> 用户态虚拟地址
-    // ⭐平台限制：RK3588 CMA 池在物理 4G 处，mppvideodec 的 DMABUF 物理地址全 >4G，
-    //   当前 RGA 内核驱动不支持映射 >4G（内核日志：RGA_MMU unsupported memory larger
-    //   than 4G! / src channel map job buffer failed），wrapbuffer_fd 会满屏条纹花屏。
-    //   改用 gst_buffer_map 取用户态虚拟地址 + wrapbuffer_virtualaddr，由 RGA MMU
-    //   按虚拟地址访问，规避 >4G 限制（实测画面正常）。
+    // source：DMABUF fd 直接导入（零拷贝）
+    // ⭐stride 已在 RtspStream 用 GstVideoMeta 修正为真实行距（如 2304），
+    //   不能再用 caps 的 PLANE_STRIDE(1920)，否则条纹花屏。
     //===========================
 
-    GstMapInfo map;
+    rga_buffer_t src = wrapbuffer_fd(f.fd, f.width, f.height, RK_FORMAT_YCbCr_420_SP,
+                                     f.width_stride, f.height_stride);
 
-    if (!gst_buffer_map(f.gst_buffer, &map, GST_MAP_READ)) {
-        spdlog::error("[RGA] gst_buffer_map failed");
-        return false;
-    }
+    spdlog::debug("[RGA SRC] handle={} fd={} {}x{} stride={}x{}", src.handle, f.fd, src.width,
+                  src.height, src.wstride, src.hstride);
 
-    // ⭐关键：mppvideodec 输出的 NV12 buffer 每行有 padding（例如 1920→2304，64 对齐）。
-    //   caps 的 GST_VIDEO_INFO_PLANE_STRIDE 报告 1920，但 buffer 实际行距更大，必须用
-    //   GstVideoMeta 的真实 stride，否则 RGA 按错误行距读取 → 条纹花屏。
-    int wstride = f.width_stride;
-    GstVideoMeta *vmeta = gst_buffer_get_video_meta(f.gst_buffer);
-    if (vmeta && vmeta->n_planes > 0) {
-        wstride = vmeta->stride[0];
-    }
-
-    rga_buffer_t src = wrapbuffer_virtualaddr(map.data, f.width, f.height, RK_FORMAT_YCbCr_420_SP,
-                                              wstride, f.height_stride);
-
-    spdlog::debug("[RGA SRC] addr={} fd={} {}x{} stride={}x{}", (void *)src.vir_addr, f.fd,
-                  src.width, src.height, src.wstride, src.hstride);
-
-    if (src.vir_addr == nullptr || src.width <= 0 || src.height <= 0) {
-        spdlog::error("[RGA] invalid src addr={} {}x{}", (void *)src.vir_addr, src.width,
-                      src.height);
-        gst_buffer_unmap(f.gst_buffer, &map);
+    if (src.fd <= 0 || src.width <= 0 || src.height <= 0) {
+        spdlog::error("[RGA] invalid src fd={} {}x{}", src.fd, src.width, src.height);
         return false;
     }
 
@@ -115,7 +94,6 @@ bool RgaWorker::process(const Frame &f, image_buffer_t &out) {
 
     if (dst.vir_addr == nullptr) {
         spdlog::error("[RGA] dst create failed");
-        gst_buffer_unmap(f.gst_buffer, &map);
         return false;
     }
 
@@ -138,9 +116,6 @@ bool RgaWorker::process(const Frame &f, image_buffer_t &out) {
 
         ret = improcess(src, dst, {}, srect, drect, {}, IM_SYNC);
     }
-
-    // ⭐RGA 同步完成，释放 DMABUF 映射
-    gst_buffer_unmap(f.gst_buffer, &map);
 
     if (ret != IM_STATUS_SUCCESS) {
         spdlog::error("[RGA FAILED] ret={}", ret);

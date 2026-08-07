@@ -216,29 +216,29 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
         }
 
         task_manager->updateLogic(0.5);
-        update_display(img, results, cam_id, roi_manager.get(cam_id));
+        // update_display(img, results, cam_id, roi_manager.get(cam_id));
     }
 }
 
 void start_service() {
     // std::cout << "=== 程序启动 ===" << std::endl;
     spdlog::info("=== 程序启动 ===");
-    std::string host = "192.168.60.125";
-    std::string user = "admin";
-    std::string password = "123456";
-    std::string database = "ai_dec";
-    int port = 3306;
-    // auto mysql = cfg["mysql"];
+    // std::string host = "192.168.60.125";
+    // std::string user = "admin";
+    // std::string password = "123456";
+    // std::string database = "ai_dec";
+    // int port = 3306;
+    auto mysql = cfg["mysql"];
 
-    // std::string host = mysql["host"].asString();
+    std::string host = mysql["host"].asString();
 
-    // std::string user = mysql["user"].asString();
+    std::string user = mysql["user"].asString();
 
-    // std::string password = mysql["password"].asString();
+    std::string password = mysql["password"].asString();
 
-    // std::string database = mysql["database"].asString();
+    std::string database = mysql["database"].asString();
 
-    // int port = mysql["port"].asInt();
+    int port = mysql["port"].asInt();
     try {
         static MysqlClient mysql_client(host, user, password, database, port);
         task_manager.setMysqlClient(&mysql_client);
@@ -292,49 +292,9 @@ int main() {
 
     spdlog::info("program start");
 
-    auto alarm_cfg = cfg["alarm_light"];
-
-    std::string alarm_ip = alarm_cfg["ip"].asString();
-
-    int alarm_port = alarm_cfg["port"].asInt();
-
-    AlarmLight alarm(alarm_ip, alarm_port);
-
-    if (!alarm.connect()) {
-
-        spdlog::error("alarm light connect failed {}:{}", alarm_ip, alarm_port);
-    }
-
-    // AlarmLight alarm("192.168.70.8", 23);
-    // if (!alarm.connect()) {
-    //     spdlog::error("alarm light connect failed");
-    // };
-
-    task_manager.setAlarmLight(&alarm);
-
     task_manager.initGridMap();
 
     roi_manager.load("./config/roi_config.json");
-
-    AudioManager audio;
-    audio.start();
-
-    task_manager.setAudioManager(&audio);
-
-    VoiceManager voice_mgr;
-    voice_mgr.load("./config/voice.json");
-
-    task_manager.setVoiceManager(&voice_mgr);
-
-    SdkManager speaker;
-
-    if (!speaker.init(
-            "init -node 300 -ip eth1 -path "
-            "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp/ -debug -noalsa")) {
-        std::cout << "init failed\n";
-        return 1;
-    }
-    speaker.start();
 
     //  =========================
     //  1. 服务初始化
@@ -354,24 +314,8 @@ int main() {
         int id = cam["id"].asInt();
         manager.addStream(cam["url"].asString(), cam["name"].asString());
     }
-    // manager.addStream("rtsp://192.168.70.12:554/"
-    //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-    //                   "cam0");
-    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101",
-    // "cam1");
-    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101",
-    // "cam2"); manager.addStream("rtsp://192.168.70.10:554/"
-    //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-    //                   "cam1");
 
-    // manager.addStream("rtsp://192.168.70.11:554/"
-    //                   "user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream",
-    //                   "cam2");
-
-    // manager.addStream("rtsp://admin:qwerqaz1022@192.168.70.64:554/Streaming/Channels/101",
-    // "cam3");
-
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 6; i++) {
         auto stream = manager.get(i);
         if (stream) {
             task_manager.setRecorder(i, stream->getRecorder());
@@ -379,19 +323,11 @@ int main() {
     }
 
     //  4. RGA worker（⭐关键新增）
-    rga_workers.resize(3);
-    for (int i = 0; i < 3; i++) {
+    rga_workers.resize(6);
+    for (int i = 0; i < 6; i++) {
         rga_workers[i] = std::make_unique<RgaWorker>();
     }
     last_ai_frame_id.resize(5, UINT64_MAX);
-
-    //    // 5. 模型池（6 core）
-    //     std::string model_path =
-    //     "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/"
-    //                              "yolov8_new.rknn";
-
-    //     ModelPool modelPool;
-    //     modelPool.init(model_path, 5);
 
     std::string model_path = cfg["model"]["path"].asString();
 
@@ -407,53 +343,48 @@ int main() {
     // std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
     // std::thread t5(infer_worker, 5, 5, &manager, &modelPool, &task_manager);
 
-    // // // 7. UI窗口
-    cv::namedWindow("cam0");
-    cv::namedWindow("cam1");
-    cv::namedWindow("cam2");
-    // cv::namedWindow("cam3");
-    // cv::namedWindow("cam4");
-    // cv::namedWindow("cam5");
-    // // 8. 显示线程（主线程）
-    while (running) {
-        {
-            std::lock_guard<std::mutex> lock(g_display[0].mtx);
-            if (!g_display[0].img.empty())
-                cv::imshow("cam0", g_display[0].img);
-        }
+    // // // // // 7. UI窗口
+    // cv::namedWindow("cam0");
+    // cv::namedWindow("cam1");
+    // cv::namedWindow("cam2");
+    // // cv::namedWindow("cam3");
+    // // cv::namedWindow("cam4");
+    // // cv::namedWindow("cam5");
+    // // // 8. 显示线程（主线程）
+    // while (running) {
+    //     {
+    //         std::lock_guard<std::mutex> lock(g_display[0].mtx);
+    //         if (!g_display[0].img.empty())
+    //             cv::imshow("cam0", g_display[0].img);
+    //     }
 
-        {
-            std::lock_guard<std::mutex> lock(g_display[1].mtx);
-            if (!g_display[1].img.empty())
-                cv::imshow("cam1", g_display[1].img);
-        }
-        {
-            std::lock_guard<std::mutex> lock(g_display[2].mtx);
-            if (!g_display[2].img.empty())
-                cv::imshow("cam2", g_display[2].img);
-        }
-        // {
-        //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
-        //     if (!g_display[3].img.empty())
-        //         cv::imshow("cam3", g_display[3].img);
-        // }
-        // {
-        //     std::lock_guard<std::mutex> lock(g_display[4].mtx);
-        //     if (!g_display[4].img.empty())
-        //         cv::imshow("cam4", g_display[4].img);
-        // }
-        // {
-        //     std::lock_guard<std::mutex> lock(g_display[5].mtx);
-        //     if (!g_display[5].img.empty())
-        //         cv::imshow("cam5", g_display[5].img);
-        // }
-        if (cv::waitKey(1) == 27)
-            break;
-    }
-
-    // running = false;
-    // if (tcp_client) {
-    //     tcp_client->stop();
+    //     {
+    //         std::lock_guard<std::mutex> lock(g_display[1].mtx);
+    //         if (!g_display[1].img.empty())
+    //             cv::imshow("cam1", g_display[1].img);
+    //     }
+    //     {
+    //         std::lock_guard<std::mutex> lock(g_display[2].mtx);
+    //         if (!g_display[2].img.empty())
+    //             cv::imshow("cam2", g_display[2].img);
+    //     }
+    //     // {
+    //     //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
+    //     //     if (!g_display[3].img.empty())
+    //     //         cv::imshow("cam3", g_display[3].img);
+    //     // }
+    //     // {
+    //     //     std::lock_guard<std::mutex> lock(g_display[4].mtx);
+    //     //     if (!g_display[4].img.empty())
+    //     //         cv::imshow("cam4", g_display[4].img);
+    //     // }
+    //     // {
+    //     //     std::lock_guard<std::mutex> lock(g_display[5].mtx);
+    //     //     if (!g_display[5].img.empty())
+    //     //         cv::imshow("cam5", g_display[5].img);
+    //     // }
+    //     if (cv::waitKey(1) == 27)
+    //         break;
     // }
 
     //等待推理线程退出

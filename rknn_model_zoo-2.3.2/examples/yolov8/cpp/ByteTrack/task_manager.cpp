@@ -34,12 +34,6 @@ void TaskManager::setMysqlClient(MysqlClient *db) {
     spdlog::info("[TaskManager] mysql attached");
 }
 
-void TaskManager::setAlarmLight(AlarmLight *light) { alarm_light_ = light; }
-
-void TaskManager::setVoiceManager(VoiceManager *vm) { voice_mgr = vm; }
-
-void TaskManager::setAudioManager(AudioManager *audio) { audio_mgr = audio; }
-
 void TaskManager::setRecorder(int cam_id, H265Recorder *recorder) {
     if (!recorder) {
         spdlog::error("[TaskManager] recorder null cam={}", cam_id);
@@ -52,8 +46,6 @@ void TaskManager::setRecorder(int cam_id, H265Recorder *recorder) {
 
     spdlog::info("[TaskManager] bind recorder cam={}", cam_id);
 }
-
-void TaskManager::setSpeaker(SdkManager *spk) { speaker = spk; }
 
 void TaskManager::setAlarmTcpClient(AlarmTcpClient *client) {
     alarm_tcp_ = client;
@@ -125,80 +117,6 @@ void TaskManager::setAICache(int cam_id, AIFrameCache *cache) {
     ai_caches[cam_id] = cache;
 }
 
-void TaskManager::triggerLongAlarm(int slave_id) {
-    if (!alarm_light_)
-        return;
-
-    {
-        std::lock_guard<std::mutex> lock(alarm_mutex_);
-
-        long_alarm_active_.insert(slave_id);
-    }
-
-    std::thread([this, slave_id]() {
-        alarm_light_->on(slave_id);
-
-        spdlog::info("长报警启动 slave={}", slave_id);
-
-        if (alarm_light_->waitAlarmClear(slave_id)) {
-            if (mysql_client) {
-                mysql_client->clearAIError(std::to_string(slave_id));
-            }
-        }
-
-        {
-            std::lock_guard<std::mutex> lock(alarm_mutex_);
-
-            long_alarm_active_.erase(slave_id);
-        }
-
-        spdlog::info("长报警结束 slave={}", slave_id);
-    }).detach();
-}
-
-void TaskManager::triggerShortAlarm(int slave_id) {
-    spdlog::info("[ShortAlarm] trigger slave={}", slave_id);
-
-    if (!alarm_light_) {
-        spdlog::error("[ShortAlarm] alarm_light nullptr");
-        return;
-    }
-
-    std::thread([this, slave_id]() {
-        // 开灯
-        if (!alarm_light_->on(slave_id)) {
-            spdlog::error("短报警启动失败 slave={}", slave_id);
-
-            return;
-        }
-
-        spdlog::info("短报警启动 slave={}", slave_id);
-
-        // 持续3秒
-        // sleep(3);
-        std::this_thread::sleep_for(std::chrono::seconds(3));
-
-        bool can_off = false;
-
-        {
-            std::lock_guard<std::mutex> lock(alarm_mutex_);
-
-            // 如果没有长报警，占用灯的权利归短报警，可以关闭
-            if (long_alarm_active_.count(slave_id) == 0) {
-                can_off = true;
-            }
-        }
-
-        if (can_off) {
-            alarm_light_->off(slave_id);
-
-            spdlog::info("短报警关闭灯 slave={}", slave_id);
-        } else {
-            spdlog::info("存在长报警，短报警不关闭灯 slave={}", slave_id);
-        }
-    }).detach();
-}
-
 void TaskManager::triggerRecord(int cam_id, const std::string &code, VideoType type) {
     auto it = recorders.find(cam_id);
 
@@ -227,17 +145,59 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
     // ==================================================
     // 空帧
     // ==================================================
+    // if (id == -1) {
+    //     state.state = ROIState::EMPTY;
+    //     state.stable_id = -1;
+    //     state.current_id = -1;
+    //     state.same_id_count = 0;
+    //     state.occupied_since = 0;
+    //     state.stuck_notified = false;
+
+    //     return;
+    // }
+    // ==================================================
+    // 空帧处理
+    // ==================================================
     if (id == -1) {
-        state.state = ROIState::EMPTY;
-        state.stable_id = -1;
-        state.current_id = -1;
-        state.same_id_count = 0;
-        state.occupied_since = 0;
-        state.stuck_notified = false;
 
-        return;
+        // 当前没有检测到包裹
+        state.empty_count++;
+
+        // 如果当前已经占用
+        if (state.state == ROIState::OCCUPIED) {
+
+            // 允许短暂漏检
+            if (state.empty_count < 3) {
+                return;
+            }
+
+            // 连续多帧为空
+            spdlog::info("[ROI CLEAR] cam={} roi={} id={} empty_frames={}", cam_id, roi_id,
+                         state.stable_id, state.empty_count);
+
+            state.state = ROIState::EMPTY;
+
+            state.stable_id = -1;
+            state.current_id = -1;
+
+            state.same_id_count = 0;
+
+            state.occupied_since = 0;
+
+            state.stuck_notified = false;
+
+            state.empty_count = 0;
+
+            return;
+
+        }
+
+        // 本来就是空
+        else {
+            state.empty_count = 0;
+            return;
+        }
     }
-
     // ==================================================
     // 清理历史缓存
     // ==================================================
@@ -327,10 +287,6 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
 
                 spdlog::warn("[MIS_SORT] cam={} roi={} grid={} id={} time={}", cam_id, roi_id,
                              grid_id, id, now_ms);
-                // 蜂鸣器
-                // if (alarm_light_) {
-                //     triggerLongAlarm(grid_id);
-                // }
 
                 // TCP通知
                 if (alarm_tcp_) {
@@ -348,7 +304,6 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
         }
         return;
     }
-
     // ==================================================
     // 已经占用
     // 检查滞留
