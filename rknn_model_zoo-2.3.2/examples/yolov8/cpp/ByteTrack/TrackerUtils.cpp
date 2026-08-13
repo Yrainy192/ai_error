@@ -5,6 +5,24 @@
 #include <spdlog/spdlog.h>
 extern ROIManager roi_manager;
 
+// 射线法：判断点 (cx, cy) 是否在多边形 poly 内（C++ 多边形点内判断）
+static bool pointInPolygon(int cx, int cy, const std::vector<std::pair<int, int>> &poly) {
+    if (poly.size() < 3)
+        return false;
+    bool inside = false;
+    size_t n = poly.size();
+    for (size_t i = 0, j = n - 1; i < n; j = i++) {
+        const auto &a = poly[i];
+        const auto &b = poly[j];
+        if (((a.second > cy) != (b.second > cy)) &&
+            (cx < (double)(b.first - a.first) * (cy - a.second) / (double)(b.second - a.second) +
+                      a.first)) {
+            inside = !inside;
+        }
+    }
+    return inside;
+}
+
 std::vector<byte_track::Object>
 convertToByteTrackObjects(const object_detect_result_list &results) {
 
@@ -71,7 +89,15 @@ handle_tracks(const std::vector<byte_track::BYTETracker::STrackPtr> &tracks, int
 
         for (const auto &roi : rois) {
 
-            if (cx >= roi.x1 && cx <= roi.x2 && cy >= roi.y1 && cy <= roi.y2) {
+            bool hit = false;
+            if (!roi.points.empty()) {
+                // 多边形：点内判断
+                hit = pointInPolygon(static_cast<int>(cx), static_cast<int>(cy), roi.points);
+            } else {
+                // 矩形（兼容旧格式）
+                hit = (cx >= roi.x1 && cx <= roi.x2 && cy >= roi.y1 && cy <= roi.y2);
+            }
+            if (hit) {
                 hit_roi = roi.id;
                 break;
             }

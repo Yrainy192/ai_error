@@ -6,7 +6,18 @@ void draw_rois(cv::Mat &img, const std::vector<ROI> &rois) {
 
     for (const auto &r : rois) {
 
-        cv::rectangle(img, cv::Point(r.x1, r.y1), cv::Point(r.x2, r.y2), cv::Scalar(255, 0, 0), 2);
+        if (!r.points.empty()) {
+            // 多边形
+            std::vector<cv::Point> pts;
+            pts.reserve(r.points.size());
+            for (const auto &p : r.points)
+                pts.emplace_back(p.first, p.second);
+            cv::polylines(img, pts, true, cv::Scalar(255, 0, 0), 2);
+        } else {
+            // 矩形（兼容旧格式）
+            cv::rectangle(img, cv::Point(r.x1, r.y1), cv::Point(r.x2, r.y2), cv::Scalar(255, 0, 0),
+                          2);
+        }
 
         cv::putText(img, std::to_string(r.id), cv::Point(r.x1, r.y1 - 5), cv::FONT_HERSHEY_SIMPLEX,
                     0.6, cv::Scalar(255, 255, 0), 2);

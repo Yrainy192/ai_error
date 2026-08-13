@@ -304,9 +304,9 @@ int main() {
     tracker_map[0] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     tracker_map[1] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     tracker_map[2] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    // tracker_map[3] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    // tracker_map[4] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    // tracker_map[5] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    tracker_map[3] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    tracker_map[4] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    tracker_map[5] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
     //  3. RTSP 管理（不改）
     RtspManager manager;
     auto cameras = cfg["camera"];
@@ -327,7 +327,7 @@ int main() {
     for (int i = 0; i < 6; i++) {
         rga_workers[i] = std::make_unique<RgaWorker>();
     }
-    last_ai_frame_id.resize(5, UINT64_MAX);
+    last_ai_frame_id.resize(6, UINT64_MAX);
 
     std::string model_path = cfg["model"]["path"].asString();
 
@@ -339,14 +339,14 @@ int main() {
     std::thread t0(infer_worker, 0, 0, &manager, &modelPool, &task_manager);
     std::thread t1(infer_worker, 1, 1, &manager, &modelPool, &task_manager);
     std::thread t2(infer_worker, 2, 2, &manager, &modelPool, &task_manager);
-    // std::thread t3(infer_worker, 3, 3, &manager, &modelPool, &task_manager);
-    // std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
-    // std::thread t5(infer_worker, 5, 5, &manager, &modelPool, &task_manager);
+    std::thread t3(infer_worker, 3, 3, &manager, &modelPool, &task_manager);
+    std::thread t4(infer_worker, 4, 4, &manager, &modelPool, &task_manager);
+    std::thread t5(infer_worker, 5, 5, &manager, &modelPool, &task_manager);
 
     // // // // // 7. UI窗口
     // cv::namedWindow("cam0");
     // cv::namedWindow("cam1");
-    // cv::namedWindow("cam2");
+    // // cv::namedWindow("cam2");
     // // cv::namedWindow("cam3");
     // // cv::namedWindow("cam4");
     // // cv::namedWindow("cam5");
@@ -363,11 +363,11 @@ int main() {
     //         if (!g_display[1].img.empty())
     //             cv::imshow("cam1", g_display[1].img);
     //     }
-    //     {
-    //         std::lock_guard<std::mutex> lock(g_display[2].mtx);
-    //         if (!g_display[2].img.empty())
-    //             cv::imshow("cam2", g_display[2].img);
-    //     }
+    //     // {
+    //     //     std::lock_guard<std::mutex> lock(g_display[2].mtx);
+    //     //     if (!g_display[2].img.empty())
+    //     //         cv::imshow("cam2", g_display[2].img);
+    //     // }
     //     // {
     //     //     std::lock_guard<std::mutex> lock(g_display[3].mtx);
     //     //     if (!g_display[3].img.empty())
@@ -391,8 +391,8 @@ int main() {
     t0.join();
     t1.join();
     t2.join();
-    // t3.join();
-    // t4.join();
-
+    t3.join();
+    t4.join();
+    t5.join();
     return 0;
 }

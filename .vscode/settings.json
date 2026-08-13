@@ -3,6 +3,7 @@
     "cmake.sourceDirectory": "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/cpp",
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python.defaultInterpreterPath": "/home/admin/miniconda3/envs/rknn/bin/python",
     "clangd.path": "/usr/bin/clangd",
     "clangd.arguments": [
         "--background-index",

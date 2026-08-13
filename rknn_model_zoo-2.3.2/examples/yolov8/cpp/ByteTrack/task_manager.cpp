@@ -141,20 +141,6 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
     auto &tasks = cam_tasks[cam_id];
 
     int grid_id = getGridId(cam_id, roi_id);
-
-    // ==================================================
-    // 空帧
-    // ==================================================
-    // if (id == -1) {
-    //     state.state = ROIState::EMPTY;
-    //     state.stable_id = -1;
-    //     state.current_id = -1;
-    //     state.same_id_count = 0;
-    //     state.occupied_since = 0;
-    //     state.stuck_notified = false;
-
-    //     return;
-    // }
     // ==================================================
     // 空帧处理
     // ==================================================

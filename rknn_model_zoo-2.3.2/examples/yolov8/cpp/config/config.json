@@ -1,6 +1,6 @@
 {
     "mysql": {
-        "host": "192.168.60.125",
+        "host": "192.168.70.9",
         "user": "admin",
         "password": "123456",
         "database": "ai_dec",
@@ -11,7 +11,7 @@
         "server_port": 2059
     },
     "tcp_alarm": {
-        "server_ip": "192.168.60.125",
+        "server_ip": "192.168.66.81",
         "server_port": 2026
     },
     "alarm_light": {
@@ -26,23 +26,38 @@
     },
     "model": {
         "path": "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/yolov8_new.rknn",
-        "count": 5
+        "count": 6
     },
     "camera": [
         {
             "id": 0,
             "name": "cam0",
-            "url": "rtsp://192.168.70.12:554/user=admin_password=tlJwpbo6_channel=0_stream=0&onvif=0.sdp?real_stream"
+            "url": "rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101"
         },
         {
             "id": 1,
             "name": "cam1",
-            "url": "rtsp://admin:qwerqaz1022@192.168.70.66:554/Streaming/Channels/101"
+            "url": "rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101"
         },
         {
             "id": 2,
             "name": "cam2",
-            "url": "rtsp://admin:qwerqaz1022@192.168.70.65:554/Streaming/Channels/101"
+            "url": "rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101"
+        },
+           {
+            "id": 3,
+            "name": "cam3",
+            "url": "rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101"
+        },
+           {
+            "id": 4,
+            "name": "cam4",
+            "url": "rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101"
+        },
+           {
+            "id": 5,
+            "name": "cam5",
+            "url": "rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101"
         }
     ]
 }

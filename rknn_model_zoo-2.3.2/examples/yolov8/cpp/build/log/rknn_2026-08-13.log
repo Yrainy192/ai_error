@@ -1,0 +1,792 @@
+[2026-08-13 10:30:35.970] [rknn] [info] logger init success
+[2026-08-13 10:30:35.971] [rknn] [info] program start
+[2026-08-13 10:30:35.972] [rknn] [info] [ROI LOAD] 5
+[2026-08-13 10:30:35.973] [rknn] [info] === 程序启动 ===
+[2026-08-13 10:30:50.338] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 10:30:50.351] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 10:30:50.352] [rknn] [info] TCP服务已后台启动
+[2026-08-13 10:30:50.352] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 10:30:50.352] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 10:30:50.353] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 10:30:50.354] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 10:30:50.354] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 10:30:50.354] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 10:30:50.354] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 10:30:50.354] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 10:30:50.354] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 10:30:50.413] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:30:50.414] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:30:50.414] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:30:50.414] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:30:50.414] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:30:50.414] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.70.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:31:05.765] [rknn] [info] receive signal 2
+[2026-08-13 10:31:08.360] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 10:31:08.377] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 10:31:08.377] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 10:31:08.383] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 10:31:08.383] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 10:31:08.393] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 10:31:08.393] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 10:31:08.406] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 10:31:08.407] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 10:31:08.416] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 10:31:08.416] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 10:31:08.421] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 10:32:27.939] [rknn] [info] logger init success
+[2026-08-13 10:32:27.940] [rknn] [info] program start
+[2026-08-13 10:32:27.940] [rknn] [info] [ROI LOAD] 5
+[2026-08-13 10:32:27.940] [rknn] [info] === 程序启动 ===
+[2026-08-13 10:32:27.980] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 10:32:27.984] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 10:32:27.985] [rknn] [info] TCP服务已后台启动
+[2026-08-13 10:32:27.985] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 10:32:27.985] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 10:32:27.985] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 10:32:27.986] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 10:32:27.986] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 10:32:27.986] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 10:32:27.986] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 10:32:27.986] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 10:32:27.986] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 10:32:28.063] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:32:28.064] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:32:28.064] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:32:28.064] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:32:28.064] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:32:28.064] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:32:28.781] [rknn] [warning] [MIS_SORT] cam=4 roi=1 grid=25 id=2 time=1786588348781
+[2026-08-13 10:32:28.782] [rknn] [info] [AI Error] cam=4 roi=1 grid=25 trigger event 1786588348781 pts 586171495
+[2026-08-13 10:32:28.782] [rknn] [warning] [RingBuffer] no keyframe before 1786588343781
+[2026-08-13 10:32:33.792] [rknn] [error] [AI] no IDR
+[2026-08-13 10:32:38.011] [rknn] [warning] [GRID STUCK] cam=4 roi=1 grid=25 id=2 stay=10s
+[2026-08-13 10:32:50.316] [rknn] [info] receive signal 2
+[2026-08-13 10:32:52.001] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 10:32:52.050] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 10:32:52.050] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 10:32:52.096] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 10:32:52.096] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 10:32:52.131] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 10:32:52.131] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 10:32:52.153] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 10:32:52.154] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 10:32:52.195] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 10:32:52.195] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 10:32:52.220] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 10:33:41.847] [rknn] [info] logger init success
+[2026-08-13 10:33:41.848] [rknn] [info] program start
+[2026-08-13 10:33:41.848] [rknn] [info] [ROI LOAD] 5
+[2026-08-13 10:33:41.848] [rknn] [info] === 程序启动 ===
+[2026-08-13 10:33:41.864] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 10:33:41.868] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 10:33:41.868] [rknn] [info] TCP服务已后台启动
+[2026-08-13 10:33:41.868] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 10:33:41.868] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 10:33:41.869] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 10:33:41.869] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 10:33:41.869] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 10:33:41.869] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 10:33:41.869] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 10:33:41.869] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 10:33:41.869] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 10:33:41.937] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:33:41.938] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:33:41.938] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:33:41.939] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:33:41.940] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:33:41.940] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:33:42.526] [rknn] [warning] [MIS_SORT] cam=4 roi=1 grid=25 id=2 time=1786588422526
+[2026-08-13 10:33:42.526] [rknn] [info] [AI Error] cam=4 roi=1 grid=25 trigger event 1786588422526 pts 472763128
+[2026-08-13 10:33:42.526] [rknn] [warning] [RingBuffer] no keyframe before 1786588417526
+[2026-08-13 10:33:47.532] [rknn] [error] [AI] no IDR
+[2026-08-13 10:33:52.017] [rknn] [warning] [GRID STUCK] cam=4 roi=1 grid=25 id=2 stay=10s
+[2026-08-13 10:46:37.178] [rknn] [warning] [H265] invalid PTS frame=19366
+[2026-08-13 10:46:37.183] [rknn] [warning] [H265] invalid PTS frame=19367
+[2026-08-13 10:46:37.185] [rknn] [warning] [H265] invalid PTS frame=19368
+[2026-08-13 10:46:37.199] [rknn] [warning] [H265] invalid PTS frame=19364
+[2026-08-13 10:46:37.199] [rknn] [warning] [H265] invalid PTS frame=19365
+[2026-08-13 10:46:37.202] [rknn] [warning] [H265] invalid PTS frame=19369
+[2026-08-13 10:46:37.208] [rknn] [warning] [H265] invalid PTS frame=19366
+[2026-08-13 10:46:37.208] [rknn] [warning] [H265] invalid PTS frame=19367
+[2026-08-13 10:46:37.208] [rknn] [warning] [H265] invalid PTS frame=19368
+[2026-08-13 10:46:37.211] [rknn] [warning] [H265] invalid PTS frame=19366
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19367
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19368
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19369
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19370
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19371
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19372
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19373
+[2026-08-13 10:46:37.238] [rknn] [warning] [H265] invalid PTS frame=19374
+[2026-08-13 10:46:37.213] [rknn] [warning] [H265] invalid PTS frame=19370
+[2026-08-13 10:46:37.240] [rknn] [warning] [H265] invalid PTS frame=19371
+[2026-08-13 10:46:37.240] [rknn] [warning] [H265] invalid PTS frame=19372
+[2026-08-13 10:46:37.240] [rknn] [warning] [H265] invalid PTS frame=19373
+[2026-08-13 10:46:37.226] [rknn] [warning] [H265] invalid PTS frame=19366
+[2026-08-13 10:46:37.219] [rknn] [warning] [H265] invalid PTS frame=19369
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19367
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19368
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19370
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19369
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19371
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19370
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19372
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19373
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19374
+[2026-08-13 10:46:37.241] [rknn] [warning] [H265] invalid PTS frame=19374
+[2026-08-13 10:46:37.249] [rknn] [warning] [H265] invalid PTS frame=19371
+[2026-08-13 10:46:37.255] [rknn] [warning] [H265] invalid PTS frame=19372
+[2026-08-13 10:46:37.256] [rknn] [warning] [H265] invalid PTS frame=19373
+[2026-08-13 10:46:37.258] [rknn] [warning] [H265] invalid PTS frame=19375
+[2026-08-13 10:46:37.258] [rknn] [warning] [H265] invalid PTS frame=19374
+[2026-08-13 10:46:37.270] [rknn] [warning] [H265] invalid PTS frame=19375
+[2026-08-13 10:46:37.272] [rknn] [warning] [H265] invalid PTS frame=19375
+[2026-08-13 10:46:37.279] [rknn] [warning] [H265] invalid PTS frame=19375
+[2026-08-13 10:46:37.296] [rknn] [warning] [H265] invalid PTS frame=19376
+[2026-08-13 10:46:37.303] [rknn] [warning] [H265] invalid PTS frame=19376
+[2026-08-13 10:46:37.305] [rknn] [warning] [H265] invalid PTS frame=19376
+[2026-08-13 10:46:37.319] [rknn] [warning] [H265] invalid PTS frame=19376
+[2026-08-13 10:46:37.366] [rknn] [warning] [H265] invalid PTS frame=19377
+[2026-08-13 10:46:37.372] [rknn] [warning] [H265] invalid PTS frame=19378
+[2026-08-13 10:46:37.382] [rknn] [warning] [H265] invalid PTS frame=19377
+[2026-08-13 10:46:37.389] [rknn] [warning] [H265] invalid PTS frame=19377
+[2026-08-13 10:46:37.399] [rknn] [warning] [H265] invalid PTS frame=19378
+[2026-08-13 10:46:37.400] [rknn] [warning] [H265] invalid PTS frame=19378
+[2026-08-13 10:46:37.411] [rknn] [warning] [H265] invalid PTS frame=19377
+[2026-08-13 10:46:37.412] [rknn] [warning] [H265] invalid PTS frame=19378
+[2026-08-13 10:46:37.424] [rknn] [warning] [H265] invalid PTS frame=19379
+[2026-08-13 10:46:37.426] [rknn] [warning] [H265] invalid PTS frame=19379
+[2026-08-13 10:46:37.426] [rknn] [warning] [H265] invalid PTS frame=19379
+[2026-08-13 10:46:37.437] [rknn] [warning] [H265] invalid PTS frame=19379
+[2026-08-13 10:46:37.455] [rknn] [warning] [H265] invalid PTS frame=19380
+[2026-08-13 10:46:37.468] [rknn] [warning] [H265] invalid PTS frame=19380
+[2026-08-13 10:46:37.468] [rknn] [warning] [H265] invalid PTS frame=19380
+[2026-08-13 10:46:37.476] [rknn] [warning] [H265] invalid PTS frame=19380
+[2026-08-13 10:46:37.494] [rknn] [warning] [H265] invalid PTS frame=19381
+[2026-08-13 10:46:37.506] [rknn] [warning] [H265] invalid PTS frame=19381
+[2026-08-13 10:46:37.507] [rknn] [warning] [H265] invalid PTS frame=19381
+[2026-08-13 10:46:37.516] [rknn] [warning] [H265] invalid PTS frame=19381
+[2026-08-13 10:46:37.539] [rknn] [warning] [H265] invalid PTS frame=19382
+[2026-08-13 10:46:37.539] [rknn] [warning] [H265] invalid PTS frame=19382
+[2026-08-13 10:46:37.545] [rknn] [warning] [H265] invalid PTS frame=19382
+[2026-08-13 10:46:37.557] [rknn] [warning] [H265] invalid PTS frame=19382
+[2026-08-13 10:46:59.269] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:46:59.385] [rknn] [warning] [MIS_SORT] cam=4 roi=1 grid=25 id=2 time=1786589219385
+[2026-08-13 10:46:59.386] [rknn] [info] [AI Error] cam=4 roi=1 grid=25 trigger event 1786589219385 pts 797316366709
+[2026-08-13 10:47:04.711] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam4/20260813/temp/104659385.json video_frames=254 json_frames=254
+[2026-08-13 10:47:04.727] [rknn] [info] [AI READY] /home/admin/Videos/cam4/20260813/AI_error/104659385.ts
+[2026-08-13 10:47:09.012] [rknn] [warning] [GRID STUCK] cam=4 roi=1 grid=25 id=2 stay=10s
+[2026-08-13 10:47:11.402] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:47:11.781] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:47:21.020] [rknn] [warning] [GRID STUCK] cam=4 roi=1 grid=25 id=2 stay=10s
+[2026-08-13 10:47:38.837] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:47:39.015] [rknn] [warning] [MIS_SORT] cam=4 roi=1 grid=25 id=2 time=1786589259015
+[2026-08-13 10:47:39.015] [rknn] [info] [AI Error] cam=4 roi=1 grid=25 trigger event 1786589259015 pts 836915447075
+[2026-08-13 10:47:44.313] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam4/20260813/temp/104739015.json video_frames=271 json_frames=271
+[2026-08-13 10:47:44.342] [rknn] [info] [AI READY] /home/admin/Videos/cam4/20260813/AI_error/104739015.ts
+[2026-08-13 10:47:45.535] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:47:46.164] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:47:56.043] [rknn] [warning] [GRID STUCK] cam=4 roi=1 grid=25 id=2 stay=10s
+[2026-08-13 10:48:12.873] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:48:13.021] [rknn] [warning] [MIS_SORT] cam=4 roi=1 grid=25 id=2 time=1786589293021
+[2026-08-13 10:48:13.022] [rknn] [info] [AI Error] cam=4 roi=1 grid=25 trigger event 1786589293021 pts 870954625906
+[2026-08-13 10:48:18.361] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam4/20260813/temp/104813021.json video_frames=271 json_frames=271
+[2026-08-13 10:48:18.397] [rknn] [info] [AI READY] /home/admin/Videos/cam4/20260813/AI_error/104813021.ts
+[2026-08-13 10:48:19.722] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:48:21.988] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:48:29.037] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:48:33.563] [rknn] [warning] [H265] invalid PTS frame=22264
+[2026-08-13 10:48:33.565] [rknn] [warning] [H265] invalid PTS frame=22265
+[2026-08-13 10:48:33.567] [rknn] [warning] [H265] invalid PTS frame=22266
+[2026-08-13 10:48:33.574] [rknn] [warning] [H265] invalid PTS frame=22267
+[2026-08-13 10:48:33.575] [rknn] [warning] [H265] invalid PTS frame=22268
+[2026-08-13 10:48:33.582] [rknn] [warning] [H265] invalid PTS frame=22269
+[2026-08-13 10:48:33.584] [rknn] [warning] [H265] invalid PTS frame=22267
+[2026-08-13 10:48:33.584] [rknn] [warning] [H265] invalid PTS frame=22270
+[2026-08-13 10:48:33.587] [rknn] [warning] [H265] invalid PTS frame=22268
+[2026-08-13 10:48:33.588] [rknn] [warning] [H265] invalid PTS frame=22271
+[2026-08-13 10:48:33.592] [rknn] [warning] [H265] invalid PTS frame=22275
+[2026-08-13 10:48:33.598] [rknn] [warning] [H265] invalid PTS frame=22276
+[2026-08-13 10:48:33.598] [rknn] [warning] [H265] invalid PTS frame=22272
+[2026-08-13 10:48:33.599] [rknn] [warning] [H265] invalid PTS frame=22269
+[2026-08-13 10:48:33.599] [rknn] [warning] [H265] invalid PTS frame=22277
+[2026-08-13 10:48:33.601] [rknn] [warning] [H265] invalid PTS frame=22270
+[2026-08-13 10:48:33.606] [rknn] [warning] [H265] invalid PTS frame=22273
+[2026-08-13 10:48:33.608] [rknn] [warning] [H265] invalid PTS frame=22274
+[2026-08-13 10:48:33.609] [rknn] [warning] [H265] invalid PTS frame=22271
+[2026-08-13 10:48:33.611] [rknn] [warning] [H265] invalid PTS frame=22278
+[2026-08-13 10:48:33.625] [rknn] [warning] [H265] invalid PTS frame=22272
+[2026-08-13 10:48:33.626] [rknn] [warning] [H265] invalid PTS frame=22273
+[2026-08-13 10:48:33.630] [rknn] [warning] [H265] invalid PTS frame=22274
+[2026-08-13 10:48:33.632] [rknn] [warning] [H265] invalid PTS frame=22279
+[2026-08-13 10:48:33.642] [rknn] [warning] [H265] invalid PTS frame=22275
+[2026-08-13 10:48:33.644] [rknn] [warning] [H265] invalid PTS frame=22275
+[2026-08-13 10:48:33.646] [rknn] [warning] [H265] invalid PTS frame=22269
+[2026-08-13 10:48:33.653] [rknn] [warning] [H265] invalid PTS frame=22276
+[2026-08-13 10:48:33.655] [rknn] [warning] [H265] invalid PTS frame=22270
+[2026-08-13 10:48:33.655] [rknn] [warning] [H265] invalid PTS frame=22280
+[2026-08-13 10:48:33.655] [rknn] [warning] [H265] invalid PTS frame=22281
+[2026-08-13 10:48:33.659] [rknn] [warning] [H265] invalid PTS frame=22282
+[2026-08-13 10:48:33.670] [rknn] [warning] [H265] invalid PTS frame=22271
+[2026-08-13 10:48:33.670] [rknn] [warning] [H265] invalid PTS frame=22272
+[2026-08-13 10:48:33.671] [rknn] [warning] [H265] invalid PTS frame=22273
+[2026-08-13 10:48:33.675] [rknn] [warning] [H265] invalid PTS frame=22274
+[2026-08-13 10:48:33.675] [rknn] [warning] [H265] invalid PTS frame=22275
+[2026-08-13 10:48:33.678] [rknn] [warning] [H265] invalid PTS frame=22277
+[2026-08-13 10:48:33.681] [rknn] [warning] [H265] invalid PTS frame=22276
+[2026-08-13 10:48:33.682] [rknn] [warning] [H265] invalid PTS frame=22283
+[2026-08-13 10:48:33.683] [rknn] [warning] [H265] invalid PTS frame=22284
+[2026-08-13 10:48:33.683] [rknn] [warning] [H265] invalid PTS frame=22278
+[2026-08-13 10:48:33.689] [rknn] [warning] [H265] invalid PTS frame=22279
+[2026-08-13 10:48:33.691] [rknn] [warning] [H265] invalid PTS frame=22285
+[2026-08-13 10:48:33.701] [rknn] [warning] [H265] invalid PTS frame=22277
+[2026-08-13 10:48:33.701] [rknn] [warning] [H265] invalid PTS frame=22278
+[2026-08-13 10:48:33.701] [rknn] [warning] [H265] invalid PTS frame=22279
+[2026-08-13 10:48:33.702] [rknn] [warning] [H265] invalid PTS frame=22280
+[2026-08-13 10:48:33.702] [rknn] [warning] [H265] invalid PTS frame=22281
+[2026-08-13 10:48:33.704] [rknn] [warning] [H265] invalid PTS frame=22282
+[2026-08-13 10:48:33.704] [rknn] [warning] [H265] invalid PTS frame=22283
+[2026-08-13 10:48:33.704] [rknn] [warning] [H265] invalid PTS frame=22284
+[2026-08-13 10:48:33.712] [rknn] [warning] [H265] invalid PTS frame=22276
+[2026-08-13 10:48:33.716] [rknn] [warning] [H265] invalid PTS frame=22280
+[2026-08-13 10:48:33.716] [rknn] [warning] [H265] invalid PTS frame=22281
+[2026-08-13 10:48:33.716] [rknn] [warning] [H265] invalid PTS frame=22282
+[2026-08-13 10:48:33.716] [rknn] [warning] [H265] invalid PTS frame=22283
+[2026-08-13 10:48:33.717] [rknn] [warning] [H265] invalid PTS frame=22284
+[2026-08-13 10:48:33.717] [rknn] [warning] [H265] invalid PTS frame=22285
+[2026-08-13 10:48:33.717] [rknn] [warning] [H265] invalid PTS frame=22285
+[2026-08-13 10:48:33.719] [rknn] [warning] [H265] invalid PTS frame=22286
+[2026-08-13 10:48:33.719] [rknn] [warning] [H265] invalid PTS frame=22286
+[2026-08-13 10:48:33.720] [rknn] [warning] [H265] invalid PTS frame=22277
+[2026-08-13 10:48:33.721] [rknn] [warning] [H265] invalid PTS frame=22278
+[2026-08-13 10:48:33.722] [rknn] [warning] [H265] invalid PTS frame=22279
+[2026-08-13 10:48:33.723] [rknn] [warning] [H265] invalid PTS frame=22280
+[2026-08-13 10:48:33.724] [rknn] [warning] [H265] invalid PTS frame=22281
+[2026-08-13 10:48:33.724] [rknn] [warning] [H265] invalid PTS frame=22282
+[2026-08-13 10:48:33.724] [rknn] [warning] [H265] invalid PTS frame=22283
+[2026-08-13 10:48:33.725] [rknn] [warning] [H265] invalid PTS frame=22284
+[2026-08-13 10:48:33.725] [rknn] [warning] [H265] invalid PTS frame=22285
+[2026-08-13 10:48:33.731] [rknn] [warning] [H265] invalid PTS frame=22286
+[2026-08-13 10:48:33.731] [rknn] [warning] [H265] invalid PTS frame=22286
+[2026-08-13 10:48:33.733] [rknn] [warning] [H265] invalid PTS frame=22287
+[2026-08-13 10:48:33.742] [rknn] [warning] [H265] invalid PTS frame=22288
+[2026-08-13 10:48:33.742] [rknn] [warning] [H265] invalid PTS frame=22289
+[2026-08-13 10:48:33.750] [rknn] [warning] [H265] invalid PTS frame=22287
+[2026-08-13 10:48:33.755] [rknn] [warning] [H265] invalid PTS frame=22287
+[2026-08-13 10:48:33.766] [rknn] [warning] [H265] invalid PTS frame=22290
+[2026-08-13 10:48:33.771] [rknn] [warning] [H265] invalid PTS frame=22287
+[2026-08-13 10:48:33.789] [rknn] [warning] [H265] invalid PTS frame=22288
+[2026-08-13 10:48:33.795] [rknn] [warning] [H265] invalid PTS frame=22291
+[2026-08-13 10:48:33.797] [rknn] [warning] [H265] invalid PTS frame=22288
+[2026-08-13 10:48:33.812] [rknn] [warning] [H265] invalid PTS frame=22288
+[2026-08-13 10:48:33.829] [rknn] [warning] [H265] invalid PTS frame=22289
+[2026-08-13 10:48:33.834] [rknn] [warning] [H265] invalid PTS frame=22289
+[2026-08-13 10:48:33.835] [rknn] [warning] [H265] invalid PTS frame=22292
+[2026-08-13 10:48:33.852] [rknn] [warning] [H265] invalid PTS frame=22289
+[2026-08-13 10:48:33.872] [rknn] [warning] [H265] invalid PTS frame=22290
+[2026-08-13 10:48:33.875] [rknn] [warning] [H265] invalid PTS frame=22290
+[2026-08-13 10:48:33.875] [rknn] [warning] [H265] invalid PTS frame=22293
+[2026-08-13 10:48:33.883] [rknn] [warning] [H265] invalid PTS frame=22290
+[2026-08-13 10:48:33.911] [rknn] [warning] [H265] invalid PTS frame=22291
+[2026-08-13 10:48:33.916] [rknn] [warning] [H265] invalid PTS frame=22291
+[2026-08-13 10:48:33.921] [rknn] [warning] [H265] invalid PTS frame=22294
+[2026-08-13 10:48:33.957] [rknn] [warning] [H265] invalid PTS frame=22292
+[2026-08-13 10:48:38.548] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:48:46.043] [rknn] [info] [ROI CLEAR] cam=4 roi=1 id=2 empty_frames=3
+[2026-08-13 10:48:46.145] [rknn] [warning] [MIS_SORT] cam=4 roi=1 grid=25 id=2 time=1786589326145
+[2026-08-13 10:48:46.145] [rknn] [info] [AI Error] cam=4 roi=1 grid=25 trigger event 1786589326145 pts 904073631243
+[2026-08-13 10:48:46.783] [rknn] [info] receive signal 2
+[2026-08-13 10:48:48.478] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 10:48:48.512] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 10:48:48.512] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 10:48:48.567] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 10:48:48.568] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 10:48:48.607] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 10:48:48.607] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 10:48:48.656] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 10:48:48.656] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 10:48:48.696] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 10:48:48.696] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 10:48:48.752] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 10:57:55.528] [rknn] [info] logger init success
+[2026-08-13 10:57:55.529] [rknn] [info] program start
+[2026-08-13 10:57:55.532] [rknn] [info] [ROI LOAD] 6
+[2026-08-13 10:57:55.533] [rknn] [info] === 程序启动 ===
+[2026-08-13 10:57:55.556] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 10:57:55.560] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 10:57:55.560] [rknn] [info] TCP服务已后台启动
+[2026-08-13 10:57:55.560] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 10:57:55.560] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 10:57:55.560] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 10:57:55.561] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 10:57:55.561] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 10:57:55.561] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 10:57:55.561] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 10:57:55.561] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 10:57:55.561] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 10:57:55.638] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:57:55.638] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:57:55.638] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:57:55.638] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:57:55.638] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:57:55.638] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 10:58:01.754] [rknn] [info] [ROI CLEAR] cam=0 roi=2 id=2 empty_frames=3
+[2026-08-13 10:58:06.044] [rknn] [warning] [GRID STUCK] cam=0 roi=3 grid=32 id=1 stay=10s
+[2026-08-13 10:58:11.714] [rknn] [info] [ROI CLEAR] cam=0 roi=2 id=3 empty_frames=3
+[2026-08-13 10:58:15.069] [rknn] [info] [ROI CLEAR] cam=0 roi=2 id=4 empty_frames=3
+[2026-08-13 10:58:17.016] [rknn] [info] receive signal 2
+[2026-08-13 10:58:19.579] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 10:58:19.605] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 10:58:19.606] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 10:58:19.647] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 10:58:19.647] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 10:58:19.674] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 10:58:19.674] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 10:58:19.701] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 10:58:19.701] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 10:58:19.726] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 10:58:19.727] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 10:58:19.748] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 12:57:05.015] [rknn] [info] logger init success
+[2026-08-13 12:57:05.016] [rknn] [info] program start
+[2026-08-13 12:57:05.019] [rknn] [info] [ROI LOAD] 6
+[2026-08-13 12:57:05.019] [rknn] [info] === 程序启动 ===
+[2026-08-13 12:57:05.037] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 12:57:05.041] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 12:57:05.042] [rknn] [info] TCP服务已后台启动
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 12:57:05.042] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 12:57:05.042] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 12:57:05.042] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 12:57:05.112] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:05.112] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:05.112] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:05.112] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:05.112] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:05.113] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:09.435] [rknn] [info] [ROI CLEAR] cam=0 roi=3 id=1 empty_frames=3
+[2026-08-13 12:57:11.626] [rknn] [info] [ROI CLEAR] cam=0 roi=3 id=1 empty_frames=3
+[2026-08-13 12:57:11.743] [rknn] [info] [ROI CLEAR] cam=0 roi=2 id=2 empty_frames=3
+[2026-08-13 12:57:12.521] [rknn] [info] [ROI CLEAR] cam=0 roi=3 id=1 empty_frames=3
+[2026-08-13 12:57:14.057] [rknn] [info] [ROI CLEAR] cam=0 roi=3 id=1 empty_frames=3
+[2026-08-13 12:57:15.694] [rknn] [info] [ROI CLEAR] cam=0 roi=3 id=1 empty_frames=3
+[2026-08-13 12:57:15.804] [rknn] [info] receive signal 2
+[2026-08-13 12:57:17.049] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 12:57:17.084] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 12:57:17.085] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 12:57:17.112] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 12:57:17.113] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 12:57:17.153] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 12:57:17.153] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 12:57:17.184] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 12:57:17.184] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 12:57:17.220] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 12:57:17.221] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 12:57:17.242] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 12:57:28.560] [rknn] [info] logger init success
+[2026-08-13 12:57:28.561] [rknn] [info] program start
+[2026-08-13 12:57:28.567] [rknn] [info] [ROI LOAD] 6
+[2026-08-13 12:57:28.568] [rknn] [info] === 程序启动 ===
+[2026-08-13 12:57:28.587] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 12:57:28.590] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 12:57:28.590] [rknn] [info] TCP服务已后台启动
+[2026-08-13 12:57:28.590] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 12:57:28.591] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 12:57:28.591] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 12:57:28.591] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 12:57:28.591] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 12:57:28.591] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 12:57:28.591] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 12:57:28.591] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 12:57:28.591] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 12:57:28.655] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:28.656] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:28.656] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:28.656] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:28.656] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:57:28.656] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 12:59:37.682] [rknn] [info] [AlarmTcp] connected 192.168.66.81:2026
+[2026-08-13 13:00:36.330] [rknn] [warning] [MIS_SORT] cam=1 roi=4 grid=4 id=5 time=1786597236330
+[2026-08-13 13:00:36.331] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "1",
+	"grid" : "4",
+	"roi_id" : "4",
+	"time" : "1786597236330",
+	"track_id" : "5"
+}#
+[2026-08-13 13:00:36.331] [rknn] [info] [AI Error] cam=1 roi=4 grid=4 trigger event 1786597236330 pts 187653407557
+[2026-08-13 13:00:36.528] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:00:39.208] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:00:41.158] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:00:41.622] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260813/temp/130036330.json video_frames=260 json_frames=260
+[2026-08-13 13:00:41.683] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260813/AI_error/130036330.ts
+[2026-08-13 13:00:50.496] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:00:53.713] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:00:54.840] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:01.096] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:02.841] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:04.155] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:04.878] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:15.047] [rknn] [warning] [GRID STUCK] cam=1 roi=4 grid=4 id=5 stay=10s
+[2026-08-13 13:01:15.047] [rknn] [info] [AlarmTcp] send: {
+	"action" : "grid_stuck",
+	"cam_id" : "1",
+	"grid" : "4",
+	"roi_id" : "4",
+	"track_id" : "5"
+}#
+[2026-08-13 13:01:25.569] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:25.694] [rknn] [warning] [MIS_SORT] cam=1 roi=4 grid=4 id=5 time=1786597285694
+[2026-08-13 13:01:25.694] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "1",
+	"grid" : "4",
+	"roi_id" : "4",
+	"time" : "1786597285694",
+	"track_id" : "5"
+}#
+[2026-08-13 13:01:25.695] [rknn] [info] [AI Error] cam=1 roi=4 grid=4 trigger event 1786597285694 pts 236901865532
+[2026-08-13 13:01:30.962] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260813/temp/130125694.json video_frames=269 json_frames=269
+[2026-08-13 13:01:31.013] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260813/AI_error/130125694.ts
+[2026-08-13 13:01:35.067] [rknn] [warning] [GRID STUCK] cam=1 roi=4 grid=4 id=5 stay=10s
+[2026-08-13 13:01:35.068] [rknn] [info] [AlarmTcp] send: {
+	"action" : "grid_stuck",
+	"cam_id" : "1",
+	"grid" : "4",
+	"roi_id" : "4",
+	"track_id" : "5"
+}#
+[2026-08-13 13:01:35.582] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:35.974] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:38.567] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:40.332] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:40.605] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:43.324] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:47.759] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:49.116] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:50.225] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:50.759] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:52.161] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:57.020] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:57.624] [rknn] [warning] [MIS_SORT] cam=1 roi=4 grid=4 id=5 time=1786597317624
+[2026-08-13 13:01:57.624] [rknn] [warning] [AlarmTcp] send failed: Connection reset by peer
+[2026-08-13 13:01:57.624] [rknn] [info] [AI Error] cam=1 roi=4 grid=4 trigger event 1786597317624 pts 268824748810
+[2026-08-13 13:01:57.939] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:58.529] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:58.918] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:01:59.798] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=5 empty_frames=3
+[2026-08-13 13:02:01.193] [rknn] [info] receive signal 2
+[2026-08-13 13:02:01.701] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 13:02:01.735] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 13:02:01.736] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 13:02:01.774] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 13:02:01.774] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 13:02:01.812] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 13:02:01.813] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 13:02:01.856] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 13:02:01.857] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 13:02:01.890] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 13:02:01.890] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 13:02:01.919] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 13:05:35.158] [rknn] [info] logger init success
+[2026-08-13 13:05:35.159] [rknn] [info] program start
+[2026-08-13 13:05:35.163] [rknn] [info] [ROI LOAD] 6
+[2026-08-13 13:05:35.163] [rknn] [info] === 程序启动 ===
+[2026-08-13 13:05:35.181] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 13:05:35.185] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 13:05:35.185] [rknn] [info] TCP服务已后台启动
+[2026-08-13 13:05:35.185] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 13:05:35.185] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 13:05:35.186] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 13:05:35.186] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 13:05:35.186] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 13:05:35.186] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 13:05:35.186] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 13:05:35.186] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 13:05:35.186] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 13:05:35.186] [rknn] [info] [AlarmTcp] connected 192.168.66.81:2026
+[2026-08-13 13:05:35.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:05:35.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:05:35.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:05:35.247] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:05:35.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:05:35.246] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:05:35.880] [rknn] [warning] [MIS_SORT] cam=1 roi=4 grid=4 id=1 time=1786597535880
+[2026-08-13 13:05:35.880] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "1",
+	"grid" : "4",
+	"roi_id" : "4",
+	"time" : "1786597535880",
+	"track_id" : "1"
+}#
+[2026-08-13 13:05:35.880] [rknn] [info] [AI Error] cam=1 roi=4 grid=4 trigger event 1786597535880 pts 506546417
+[2026-08-13 13:05:35.880] [rknn] [warning] [RingBuffer] no keyframe before 1786597530880
+[2026-08-13 13:05:40.886] [rknn] [error] [AI] no IDR
+[2026-08-13 13:05:44.875] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=1 empty_frames=3
+[2026-08-13 13:05:45.476] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=1 empty_frames=3
+[2026-08-13 13:05:47.386] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=1 empty_frames=3
+[2026-08-13 13:05:51.272] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=1 empty_frames=3
+[2026-08-13 13:05:52.148] [rknn] [info] [ROI CLEAR] cam=1 roi=4 id=1 empty_frames=3
+[2026-08-13 13:06:02.786] [rknn] [warning] [MIS_SORT] cam=1 roi=6 grid=6 id=3 time=1786597562786
+[2026-08-13 13:06:02.787] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "1",
+	"grid" : "6",
+	"roi_id" : "6",
+	"time" : "1786597562786",
+	"track_id" : "3"
+}#
+[2026-08-13 13:06:02.787] [rknn] [info] [AI Error] cam=1 roi=6 grid=6 trigger event 1786597562786 pts 27420264681
+[2026-08-13 13:06:03.735] [rknn] [info] [ROI CLEAR] cam=1 roi=6 id=3 empty_frames=3
+[2026-08-13 13:06:08.000] [rknn] [warning] [MIS_SORT] cam=1 roi=8 grid=8 id=5 time=1786597568000
+[2026-08-13 13:06:08.000] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "1",
+	"grid" : "8",
+	"roi_id" : "8",
+	"time" : "1786597568000",
+	"track_id" : "5"
+}#
+[2026-08-13 13:06:08.000] [rknn] [info] [AI Error] cam=1 roi=8 grid=8 trigger event 1786597568000 pts 32620818811
+[2026-08-13 13:06:08.055] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260813/temp/130602786.json video_frames=258 json_frames=258
+[2026-08-13 13:06:08.111] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260813/AI_error/130602786.ts
+[2026-08-13 13:06:09.339] [rknn] [info] [ROI CLEAR] cam=1 roi=8 id=5 empty_frames=3
+[2026-08-13 13:06:13.311] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260813/temp/130608000.json video_frames=263 json_frames=263
+[2026-08-13 13:06:13.346] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260813/AI_error/130608000.ts
+[2026-08-13 13:06:21.633] [rknn] [warning] [MIS_SORT] cam=2 roi=2 grid=10 id=3 time=1786597581633
+[2026-08-13 13:06:21.634] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "2",
+	"grid" : "10",
+	"roi_id" : "2",
+	"time" : "1786597581633",
+	"track_id" : "3"
+}#
+[2026-08-13 13:06:21.634] [rknn] [info] [AI Error] cam=2 roi=2 grid=10 trigger event 1786597581633 pts 46208603027
+[2026-08-13 13:06:21.909] [rknn] [info] [ROI CLEAR] cam=2 roi=2 id=3 empty_frames=3
+[2026-08-13 13:06:23.473] [rknn] [info] [ROI CLEAR] cam=2 roi=2 id=3 empty_frames=3
+[2026-08-13 13:06:24.923] [rknn] [warning] [MIS_SORT] cam=2 roi=4 grid=12 id=4 time=1786597584922
+[2026-08-13 13:06:24.923] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "2",
+	"grid" : "12",
+	"roi_id" : "4",
+	"time" : "1786597584922",
+	"track_id" : "4"
+}#
+[2026-08-13 13:06:24.923] [rknn] [info] [AI Error] cam=2 roi=4 grid=12 trigger event 1786597584922 pts 49528780835
+[2026-08-13 13:06:25.200] [rknn] [info] [ROI CLEAR] cam=2 roi=4 id=4 empty_frames=3
+[2026-08-13 13:06:26.482] [rknn] [warning] [MIS_SORT] cam=2 roi=4 grid=12 id=5 time=1786597586482
+[2026-08-13 13:06:26.482] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "2",
+	"grid" : "12",
+	"roi_id" : "4",
+	"time" : "1786597586482",
+	"track_id" : "5"
+}#
+[2026-08-13 13:06:26.482] [rknn] [info] [AI Error] cam=2 roi=4 grid=12 trigger event 1786597586482 pts 51130019303
+[2026-08-13 13:06:26.730] [rknn] [info] [ROI CLEAR] cam=2 roi=4 id=5 empty_frames=3
+[2026-08-13 13:06:26.908] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260813/temp/130621633.json video_frames=253 json_frames=253
+[2026-08-13 13:06:26.973] [rknn] [info] [AI READY] /home/admin/Videos/cam2/20260813/AI_error/130621633.ts
+[2026-08-13 13:06:30.203] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260813/temp/130624922.json video_frames=260 json_frames=260
+[2026-08-13 13:06:30.252] [rknn] [info] [AI READY] /home/admin/Videos/cam2/20260813/AI_error/130624922.ts
+[2026-08-13 13:06:31.267] [rknn] [warning] [MIS_SORT] cam=2 roi=6 grid=14 id=8 time=1786597591267
+[2026-08-13 13:06:31.268] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "2",
+	"grid" : "14",
+	"roi_id" : "6",
+	"time" : "1786597591267",
+	"track_id" : "8"
+}#
+[2026-08-13 13:06:31.268] [rknn] [info] [AI Error] cam=2 roi=6 grid=14 trigger event 1786597591267 pts 55889502580
+[2026-08-13 13:06:31.515] [rknn] [info] [ROI CLEAR] cam=2 roi=6 id=8 empty_frames=3
+[2026-08-13 13:06:31.809] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260813/temp/130626482.json video_frames=274 json_frames=274
+[2026-08-13 13:06:31.858] [rknn] [info] [AI READY] /home/admin/Videos/cam2/20260813/AI_error/130626482.ts
+[2026-08-13 13:06:33.204] [rknn] [warning] [MIS_SORT] cam=2 roi=6 grid=14 id=9 time=1786597593204
+[2026-08-13 13:06:33.204] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "2",
+	"grid" : "14",
+	"roi_id" : "6",
+	"time" : "1786597593204",
+	"track_id" : "9"
+}#
+[2026-08-13 13:06:33.204] [rknn] [info] [AI Error] cam=2 roi=6 grid=14 trigger event 1786597593204 pts 57809506105
+[2026-08-13 13:06:33.514] [rknn] [info] [ROI CLEAR] cam=2 roi=6 id=9 empty_frames=3
+[2026-08-13 13:06:36.566] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260813/temp/130631267.json video_frames=269 json_frames=269
+[2026-08-13 13:06:36.597] [rknn] [info] [AI READY] /home/admin/Videos/cam2/20260813/AI_error/130631267.ts
+[2026-08-13 13:06:38.473] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260813/temp/130633204.json video_frames=267 json_frames=267
+[2026-08-13 13:06:38.528] [rknn] [info] [AI READY] /home/admin/Videos/cam2/20260813/AI_error/130633204.ts
+[2026-08-13 13:06:41.155] [rknn] [warning] [MIS_SORT] cam=2 roi=8 grid=16 id=12 time=1786597601155
+[2026-08-13 13:06:41.155] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "2",
+	"grid" : "16",
+	"roi_id" : "8",
+	"time" : "1786597601155",
+	"track_id" : "12"
+}#
+[2026-08-13 13:06:41.155] [rknn] [info] [AI Error] cam=2 roi=8 grid=16 trigger event 1786597601155 pts 65770582467
+[2026-08-13 13:06:41.277] [rknn] [info] [ROI CLEAR] cam=2 roi=8 id=12 empty_frames=3
+[2026-08-13 13:06:46.410] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam2/20260813/temp/130641155.json video_frames=266 json_frames=266
+[2026-08-13 13:06:46.460] [rknn] [info] [AI READY] /home/admin/Videos/cam2/20260813/AI_error/130641155.ts
+[2026-08-13 13:06:49.542] [rknn] [warning] [MIS_SORT] cam=3 roi=2 grid=18 id=1 time=1786597609542
+[2026-08-13 13:06:49.543] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "3",
+	"grid" : "18",
+	"roi_id" : "2",
+	"time" : "1786597609542",
+	"track_id" : "1"
+}#
+[2026-08-13 13:06:49.543] [rknn] [info] [AI Error] cam=3 roi=2 grid=18 trigger event 1786597609542 pts 74183496309
+[2026-08-13 13:06:49.938] [rknn] [info] [ROI CLEAR] cam=3 roi=2 id=1 empty_frames=3
+[2026-08-13 13:06:53.993] [rknn] [warning] [MIS_SORT] cam=3 roi=4 grid=20 id=2 time=1786597613993
+[2026-08-13 13:06:53.993] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "3",
+	"grid" : "20",
+	"roi_id" : "4",
+	"time" : "1786597613993",
+	"track_id" : "2"
+}#
+[2026-08-13 13:06:53.993] [rknn] [info] [AI Error] cam=3 roi=4 grid=20 trigger event 1786597613993 pts 78623562478
+[2026-08-13 13:06:54.848] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam3/20260813/temp/130649542.json video_frames=275 json_frames=275
+[2026-08-13 13:06:54.892] [rknn] [info] [AI READY] /home/admin/Videos/cam3/20260813/AI_error/130649542.ts
+[2026-08-13 13:06:55.994] [rknn] [info] [ROI CLEAR] cam=3 roi=4 id=2 empty_frames=3
+[2026-08-13 13:06:57.317] [rknn] [warning] [MIS_SORT] cam=3 roi=6 grid=22 id=3 time=1786597617317
+[2026-08-13 13:06:57.317] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "3",
+	"grid" : "22",
+	"roi_id" : "6",
+	"time" : "1786597617317",
+	"track_id" : "3"
+}#
+[2026-08-13 13:06:57.317] [rknn] [info] [AI Error] cam=3 roi=6 grid=22 trigger event 1786597617317 pts 81943859976
+[2026-08-13 13:06:57.833] [rknn] [info] [ROI CLEAR] cam=3 roi=6 id=3 empty_frames=3
+[2026-08-13 13:06:58.664] [rknn] [info] [ROI CLEAR] cam=3 roi=6 id=3 empty_frames=3
+[2026-08-13 13:06:59.116] [rknn] [info] [ROI CLEAR] cam=3 roi=6 id=3 empty_frames=3
+[2026-08-13 13:06:59.231] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam3/20260813/temp/130653993.json video_frames=262 json_frames=262
+[2026-08-13 13:06:59.282] [rknn] [info] [AI READY] /home/admin/Videos/cam3/20260813/AI_error/130653993.ts
+[2026-08-13 13:07:02.665] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam3/20260813/temp/130657317.json video_frames=270 json_frames=270
+[2026-08-13 13:07:02.732] [rknn] [info] [AI READY] /home/admin/Videos/cam3/20260813/AI_error/130657317.ts
+[2026-08-13 13:07:07.242] [rknn] [warning] [MIS_SORT] cam=1 roi=2 grid=2 id=6 time=1786597627242
+[2026-08-13 13:07:07.243] [rknn] [info] [AlarmTcp] send: {
+	"action" : "mis_sort",
+	"cam_id" : "1",
+	"grid" : "2",
+	"roi_id" : "2",
+	"time" : "1786597627242",
+	"track_id" : "6"
+}#
+[2026-08-13 13:07:07.244] [rknn] [info] [AI Error] cam=1 roi=2 grid=2 trigger event 1786597627242 pts 91866927087
+[2026-08-13 13:07:10.501] [rknn] [info] [ROI CLEAR] cam=1 roi=2 id=6 empty_frames=3
+[2026-08-13 13:07:12.528] [rknn] [info] [AIJsonRecorder] save /home/admin/Videos/cam1/20260813/temp/130707242.json video_frames=269 json_frames=269
+[2026-08-13 13:07:12.602] [rknn] [info] [AI READY] /home/admin/Videos/cam1/20260813/AI_error/130707242.ts
+[2026-08-13 13:08:35.614] [rknn] [info] receive signal 2
+[2026-08-13 13:08:38.211] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 13:08:38.234] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 13:08:38.235] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 13:08:38.278] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 13:08:38.279] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 13:08:38.309] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 13:08:38.310] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 13:08:38.333] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 13:08:38.334] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 13:08:38.368] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 13:08:38.369] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 13:08:38.405] [rknn] [info] [RTSP] stopped cam5
+[2026-08-13 13:12:59.783] [rknn] [info] logger init success
+[2026-08-13 13:12:59.784] [rknn] [info] program start
+[2026-08-13 13:12:59.796] [rknn] [info] [ROI LOAD] 6
+[2026-08-13 13:12:59.798] [rknn] [info] === 程序启动 ===
+[2026-08-13 13:12:59.850] [rknn] [info] MySQL连接成功: 192.168.66.81:3306 / ai_dec
+[2026-08-13 13:12:59.854] [rknn] [info] [TaskManager] mysql attached
+[2026-08-13 13:12:59.854] [rknn] [info] TCP服务已后台启动
+[2026-08-13 13:12:59.855] [rknn] [info] [TaskManager] alarm tcp client attached
+[2026-08-13 13:12:59.855] [rknn] [info] 报警上报TCP服务已启动
+[2026-08-13 13:12:59.855] [rknn] [error] [TCP] connect error: Connection refused
+[2026-08-13 13:12:59.855] [rknn] [info] [AlarmTcp] connected 192.168.66.81:2026
+[2026-08-13 13:12:59.856] [rknn] [info] [TaskManager] bind recorder cam=0
+[2026-08-13 13:12:59.856] [rknn] [info] [TaskManager] bind recorder cam=1
+[2026-08-13 13:12:59.856] [rknn] [info] [TaskManager] bind recorder cam=2
+[2026-08-13 13:12:59.856] [rknn] [info] [TaskManager] bind recorder cam=3
+[2026-08-13 13:12:59.856] [rknn] [info] [TaskManager] bind recorder cam=4
+[2026-08-13 13:12:59.856] [rknn] [info] [TaskManager] bind recorder cam=5
+[2026-08-13 13:12:59.958] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.70:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:12:59.959] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:12:59.959] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:12:59.959] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:12:59.959] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:12:59.959] [rknn] [info] Pipeline:
+rtspsrc location=rtsp://admin:qwerqaz1022@192.168.66.71:554/Streaming/Channels/101 latency=100 protocols=tcp ! rtph265depay ! h265parse config-interval=-1 ! tee name=t t. ! queue max-size-buffers=2 ! mppvideodec dma-feature=true ! video/x-raw(memory:DMABuf),format=NV12 ! appsink name=sink emit-signals=true sync=false drop=true max-buffers=1 t. ! queue ! h265parse ! splitmuxsink name=recorder muxer-factory=mpegtsmux location=dummy.ts max-size-time=60000000000 t. ! queue ! h265parse disable-passthrough=true config-interval=-1 ! video/x-h265,stream-format=byte-stream,alignment=au ! appsink name=h265cache emit-signals=true sync=false drop=false max-buffers=600 
+[2026-08-13 13:13:20.110] [rknn] [info] receive signal 2
+[2026-08-13 13:13:20.858] [rknn] [info] [RTSP] stop request cam0
+[2026-08-13 13:13:20.899] [rknn] [info] [RTSP] stopped cam0
+[2026-08-13 13:13:20.899] [rknn] [info] [RTSP] stop request cam1
+[2026-08-13 13:13:20.942] [rknn] [info] [RTSP] stopped cam1
+[2026-08-13 13:13:20.943] [rknn] [info] [RTSP] stop request cam2
+[2026-08-13 13:13:20.981] [rknn] [info] [RTSP] stopped cam2
+[2026-08-13 13:13:20.982] [rknn] [info] [RTSP] stop request cam3
+[2026-08-13 13:13:21.001] [rknn] [info] [RTSP] stopped cam3
+[2026-08-13 13:13:21.001] [rknn] [info] [RTSP] stop request cam4
+[2026-08-13 13:13:21.044] [rknn] [info] [RTSP] stopped cam4
+[2026-08-13 13:13:21.045] [rknn] [info] [RTSP] stop request cam5
+[2026-08-13 13:13:21.073] [rknn] [info] [RTSP] stopped cam5
