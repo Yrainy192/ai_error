@@ -1,6 +1,6 @@
 {
     "mysql": {
-        "host": "192.168.66.81",
+        "host": "192.168.66.80",
         "user": "admin",
         "password": "123456",
         "database": "ai_dec",
@@ -11,14 +11,14 @@
         "server_port": 2059
     },
     "tcp_alarm": {
-        "server_ip": "192.168.66.81",
+        "server_ip": "192.168.66.80",
         "server_port": 2026
     },
     "roi": {
         "file": "roi_config.json"
     },
     "model": {
-        "path": "/home/admin/Rtsp_6model/rknn_model_zoo-2.3.2/examples/yolov8/model/yolov8_new.rknn",
+        "path": "/home/admin/Rtsp_6model/rknn_demo_release/model/yolov8.rknn",
         "count": 6
     },
     "camera": [

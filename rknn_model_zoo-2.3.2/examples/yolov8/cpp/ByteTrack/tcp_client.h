@@ -27,6 +27,7 @@ class TCPClient {
 
     bool connect();
     void close();
+    void reconnectLoop();
 
   private:
     std::string host;
@@ -36,7 +37,8 @@ class TCPClient {
     bool running;
     bool connected;
 
-    std::thread recv_thread;
+    std::thread thread_;     // 重连保活线程
+    std::mutex state_mutex_; // 保护 connected / sock_fd
     std::mutex send_mutex;
 
     TaskManager *task_manager;

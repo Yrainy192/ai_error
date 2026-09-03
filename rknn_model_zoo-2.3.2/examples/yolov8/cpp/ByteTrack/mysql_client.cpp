@@ -44,31 +44,34 @@ bool MysqlClient::initTables() {
     std::string sql;
 
     sql = "CREATE TABLE IF NOT EXISTS package("
-          "id BIGINT AUTO_INCREMENT PRIMARY KEY,"
-          "code VARCHAR(255) UNIQUE,"
+          "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+          "code VARCHAR(64) NOT NULL,"
           "car VARCHAR(64),"
           "pc VARCHAR(64),"
           "grid VARCHAR(64),"
-          "up_time DATETIME,"
-          "down_time DATETIME,"
+          "up_time DATETIME(6),"
+          "down_time DATETIME(6),"
           "up_video VARCHAR(255),"
           "down_video VARCHAR(255),"
           "up_error VARCHAR(255),"
-          "down_error VARCHAR(255)"
-          ")";
+          "down_error VARCHAR(255),"
+          "UNIQUE KEY uk_code (code),"
+          "KEY idx_up_time (up_time),"
+          "KEY idx_down_time (down_time)"
+          ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
     if (!executeQuery(sql)) {
         return false;
     }
 
-    sql = "CREATE TABLE IF NOT EXISTS AI_error("
-          "id BIGINT AUTO_INCREMENT PRIMARY KEY,"
+    sql = "CREATE TABLE IF NOT EXISTS ai_error("
+          "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
           "grid VARCHAR(64),"
-          "create_time DATETIME,"
+          "create_time DATETIME(3),"
           "beep_state TINYINT(1) DEFAULT 1,"
           "video VARCHAR(255),"
           "package_id VARCHAR(64)"
-          ")";
+          ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
     if (!executeQuery(sql)) {
         return false;
@@ -159,21 +162,15 @@ bool MysqlClient::saveRecord(const std::map<std::string, std::string> &msg) {
               "ON DUPLICATE KEY UPDATE "
               "car=VALUES(car), pc=VALUES(pc), grid=VALUES(grid), up_time=VALUES(up_time)";
     } else if (action == "down_car") {
-        sql = "UPDATE package "
-              "SET down_time='" +
+        // 改为 UPSERT：即使没有先收到 up_car，也能创建记录；已有记录则只更新下件信息
+        sql = "INSERT INTO package(code, car, pc, grid, down_time) "
+              "VALUES('" +
+              std::string(escapedCode) + "', '" + std::string(escapedCar) + "', '" +
+              std::string(escapedPc) + "', '" + std::string(escapedGrid) + "', '" +
               std::string(timeBuffer) +
-              "', "
-              "grid='" +
-              std::string(escapedGrid) +
-              "', "
-              "car='" +
-              std::string(escapedCar) +
-              "', "
-              "pc='" +
-              std::string(escapedPc) +
-              "' "
-              "WHERE code='" +
-              std::string(escapedCode) + "'";
+              "') "
+              "ON DUPLICATE KEY UPDATE "
+              "grid=VALUES(grid), car=VALUES(car), pc=VALUES(pc), down_time=VALUES(down_time)";
     } else {
         std::cerr << "❌ 未知action: " << action << std::endl;
         return false;

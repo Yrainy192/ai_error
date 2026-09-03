@@ -108,6 +108,9 @@ struct ROIStateInfo {
     int current_id = -1;
     int same_id_count = 0;
 
+    // 🔥 ID 短暂跳变容忍：3 帧内跳回主 ID 不清零
+    int flicker_count = 0;
+
     // 🔥 防重复触发
     bool enter_triggered = false;
     bool alarm_triggered = false;

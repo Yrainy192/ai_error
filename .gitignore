@@ -1,0 +1,54 @@
+# ===== 构建产物 =====
+build/
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.d
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+build.ninja
+
+# ===== 可执行文件 =====
+rknn_yolov8_demo
+rknn_yolov8_demo_zero_copy
+
+# ===== 模型转换中间产物（*.rknn 模型保留）=====
+*.onnx
+*.wav
+check*.onnx
+
+# ===== 第三方/官方资源目录（仅保留 yolov8 源码与 utils，其余不上传）=====
+/rknn_model_zoo-2.3.2/3rdparty/
+/rknn_model_zoo-2.3.2/datasets/
+/rknn_model_zoo-2.3.2/docs/
+/rknn_model_zoo-2.3.2/asset/
+/rknn_model_zoo-2.3.2/examples/python/
+
+# ===== 语音功能已弃用 =====
+/rknn_model_zoo-2.3.2/examples/yolov8/cpp/speaker/
+
+# ===== model_zoo 根目录临时文件 =====
+/rknn_model_zoo-2.3.2/model_channel
+/rknn_model_zoo-2.3.2/model_height
+/rknn_model_zoo-2.3.2/model_width
+
+# ===== 日志 =====
+log/
+*.log
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# ===== IDE / 系统 =====
+.vscode/
+.idea/
+*.swp
+.DS_Store

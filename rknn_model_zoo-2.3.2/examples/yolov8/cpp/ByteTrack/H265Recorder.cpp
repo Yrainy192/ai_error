@@ -32,11 +32,13 @@ std::string H265Recorder::getTimeString(uint64_t time_ms) {
 
 std::string H265Recorder::msToDatetimeString(uint64_t time_ms) {
     time_t sec = time_ms / 1000;
+    uint64_t ms = time_ms % 1000;
     struct tm tm_time;
     localtime_r(&sec, &tm_time);
 
     std::stringstream ss;
     ss << std::put_time(&tm_time, "%Y-%m-%d %H:%M:%S");
+    ss << '.' << std::setfill('0') << std::setw(3) << ms;
     return ss.str();
 }
 

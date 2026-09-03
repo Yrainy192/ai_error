@@ -543,6 +543,7 @@ int post_process(rknn_app_context_t *app_ctx, void *outputs, letterbox_t *letter
         float y1 = filterBoxes[n * 4 + 1] - letter_box->y_pad;
         float x2 = x1 + filterBoxes[n * 4 + 2];
         float y2 = y1 + filterBoxes[n * 4 + 3];
+
         int id = classId[n];
         int target_class_id = 1;
         // ⭐⭐⭐ 在这里过滤类别 ⭐⭐⭐

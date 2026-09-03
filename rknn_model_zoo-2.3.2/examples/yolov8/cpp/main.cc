@@ -215,7 +215,7 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
             }
         }
 
-        task_manager->updateLogic(0.5);
+        task_manager->updateLogic(2.0);
         // update_display(img, results, cam_id, roi_manager.get(cam_id));
     }
 }
@@ -223,11 +223,7 @@ void infer_worker(int cam_id, int model_id, RtspManager *manager, ModelPool *poo
 void start_service() {
     // std::cout << "=== 程序启动 ===" << std::endl;
     spdlog::info("=== 程序启动 ===");
-    // std::string host = "192.168.60.125";
-    // std::string user = "admin";
-    // std::string password = "123456";
-    // std::string database = "ai_dec";
-    // int port = 3306;
+
     auto mysql = cfg["mysql"];
 
     std::string host = mysql["host"].asString();
@@ -246,12 +242,6 @@ void start_service() {
         auto tcp = cfg["tcp"];
         tcp_client = std::make_unique<TCPClient>(
             tcp["server_ip"].asString(), tcp["server_port"].asInt(), &task_manager, &mysql_client);
-        // tcp_client =
-        //     std::make_unique<TCPClient>("192.168.70.33", 2059, &task_manager, &mysql_client);
-        // tcp_client = std::make_unique<TCPClient>("127.0.0.1", 9000, &task_manager,
-        // &mysql_client); static TCPClient tcp_client("127.0.0.1", 9000, &task_manager,
-        // &mysql_client);
-        //   启动 TCP线程（后台运行）
         std::thread([]() {
             tcp_client->start();
             // ⚠️保持线程存活（但不阻塞main）
@@ -301,12 +291,12 @@ int main() {
     //  =========================
     start_service();
     // 2. Tracker 初始化（每路一个）
-    tracker_map[0] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[1] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[2] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[3] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[4] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
-    tracker_map[5] = std::make_unique<byte_track::BYTETracker>(30, 30, 0.3f, 0.4f, 0.8f);
+    tracker_map[0] = std::make_unique<byte_track::BYTETracker>(25, 30, 0.5f, 0.5f, 0.65f);
+    tracker_map[1] = std::make_unique<byte_track::BYTETracker>(25, 30, 0.5f, 0.5f, 0.65f);
+    tracker_map[2] = std::make_unique<byte_track::BYTETracker>(25, 30, 0.5f, 0.5f, 0.65f);
+    tracker_map[3] = std::make_unique<byte_track::BYTETracker>(25, 30, 0.5f, 0.5f, 0.65f);
+    tracker_map[4] = std::make_unique<byte_track::BYTETracker>(25, 30, 0.5f, 0.5f, 0.65f);
+    tracker_map[5] = std::make_unique<byte_track::BYTETracker>(25, 30, 0.5f, 0.5f, 0.65f);
     //  3. RTSP 管理（不改）
     RtspManager manager;
     auto cameras = cfg["camera"];
