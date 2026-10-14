@@ -286,6 +286,9 @@ int main() {
 
     roi_manager.load("./config/roi_config.json");
 
+    // 屏蔽格口（回流格口 / 异格口等）：从 json 加载，文件缺失时用内置默认值
+    task_manager.loadExcludedGrids("./config/exclude_config.json");
+
     //  =========================
     //  1. 服务初始化
     //  =========================

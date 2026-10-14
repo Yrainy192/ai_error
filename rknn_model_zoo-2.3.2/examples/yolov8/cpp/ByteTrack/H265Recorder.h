@@ -66,7 +66,8 @@ class H265Recorder {
     void saveAIError(uint64_t event_time_ms, const std::string &grid, const std::string &id);
 
   private:
-    void savePackets(const std::vector<H265Packet> &packets, const std::string &filename);
+    // 写完整段TS，成功返回true（失败不会留下半截文件）
+    bool savePackets(const std::vector<H265Packet> &packets, const std::string &filename);
 
   private:
     std::string prefix;

@@ -18,22 +18,6 @@ static uint64_t getMonoTimeUs() {
     return std::chrono::duration_cast<std::chrono::microseconds>(now.time_since_epoch()).count();
 }
 
-// ==================================================
-// 需要排除检测的格口（回流格口等）
-// 当前：格口1 = 相机1(cam_id=1) 的第一个 ROI(roi_id=1)
-//      格口39 = 相机5(cam_id=5) 的第7个 ROI(roi_id=7)
-// 如需排除其它格口，在此追加 {cam_id, roi_id} 即可
-// ==================================================
-static bool isExcludedGrid(int cam_id, int roi_id) {
-    if (cam_id == 1 && roi_id == 1) { // 格口1：回流格口，不检测
-        return true;
-    }
-    if (cam_id == 5 && roi_id == 7) { // 格口39：与格口1一致，不检测
-        return true;
-    }
-    return false;
-}
-
 //计算报警灯对应的首地址，上车相机对应32。其余相机对应1-40
 int TaskManager::getGridId(int cam_id, int roi_id) {
     int grid_id;
@@ -43,6 +27,131 @@ int TaskManager::getGridId(int cam_id, int roi_id) {
         grid_id = cam_id * 8 + roi_id - 8;
     }
     return grid_id;
+}
+
+// ==================================================
+// 屏蔽格口（回流格口 / 异格口等，不参与检测）
+// 配置来源：./config/exclude_config.json
+// 加载失败时退回内置默认值（格口1 回流、格口2 异格口）
+// ==================================================
+static std::set<std::pair<int, int>> defaultExcludedGrids() {
+    // {cam_id, roi_id}
+    return {{1, 1},  // 格口1：回流格口
+            {1, 2}}; // 格口2：异格口
+}
+
+// 格口编号(1~40) -> {cam_id, roi_id}
+static bool gridIdToCamRoi(int grid, int &cam_id, int &roi_id) {
+    if (grid < 1 || grid > 40)
+        return false;
+
+    cam_id = (grid - 1) / 8 + 1; // 1~8 -> cam1 ... 33~40 -> cam5
+    roi_id = (grid - 1) % 8 + 1;
+    return true;
+}
+
+bool TaskManager::loadExcludedGrids(const std::string &path) {
+    // ----------------------------------------------
+    // 文件格式（两种均可）：
+    // {
+    //   "excluded_grids": [
+    //     { "grid": 1, "reason": "回流格口" },
+    //     { "cam_id": 1, "roi_id": 2, "reason": "异格口" }
+    //   ]
+    // }
+    // 也可直接写成数组：[ { "grid": 1 }, { "grid": 2 } ]
+    // ----------------------------------------------
+    auto fallback = [&](const std::string &why) {
+        {
+            std::lock_guard<std::mutex> lock(exclude_mutex_);
+            excluded_grids_ = defaultExcludedGrids();
+        }
+        spdlog::warn("[Exclude] {} -> 使用内置默认屏蔽格口: {}", why, formatExcludedGrids());
+    };
+
+    std::ifstream f(path);
+    if (!f.is_open()) {
+        fallback("open failed: " + path);
+        return false;
+    }
+
+    json j;
+    try {
+        f >> j;
+    } catch (const std::exception &e) {
+        fallback("parse failed: " + path + " (" + e.what() + ")");
+        return false;
+    }
+
+    const json *arr = nullptr;
+    if (j.is_array()) {
+        arr = &j;
+    } else if (j.is_object() && j.contains("excluded_grids") && j["excluded_grids"].is_array()) {
+        arr = &j["excluded_grids"];
+    }
+
+    if (arr == nullptr) {
+        fallback("invalid format: " + path);
+        return false;
+    }
+
+    std::set<std::pair<int, int>> loaded;
+
+    for (const auto &item : *arr) {
+        if (!item.is_object()) {
+            spdlog::warn("[Exclude] skip invalid entry (not an object)");
+            continue;
+        }
+
+        int cam_id = item.value("cam_id", -1);
+        int roi_id = item.value("roi_id", -1);
+
+        // 只给了格口编号时，由编号反推 cam_id / roi_id
+        if ((cam_id < 0 || roi_id < 0) && item.contains("grid") && item["grid"].is_number()) {
+            int grid = item["grid"].get<int>();
+            if (!gridIdToCamRoi(grid, cam_id, roi_id)) {
+                spdlog::warn("[Exclude] skip invalid grid={} (合法范围 1~40)", grid);
+                continue;
+            }
+        }
+
+        if (cam_id < 0 || roi_id < 0) {
+            spdlog::warn("[Exclude] skip entry without valid cam_id/roi_id or grid");
+            continue;
+        }
+
+        loaded.insert({cam_id, roi_id});
+
+        spdlog::info("[Exclude] 屏蔽格口{} (cam={} roi={}) {}", getGridId(cam_id, roi_id), cam_id,
+                     roi_id, item.value("reason", std::string("")));
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(exclude_mutex_);
+        excluded_grids_ = loaded;
+    }
+
+    spdlog::info("[Exclude] 从 {} 加载屏蔽格口 {} 个: {}", path, loaded.size(),
+                 formatExcludedGrids());
+    return true;
+}
+
+bool TaskManager::isExcludedGrid(int cam_id, int roi_id) const {
+    std::lock_guard<std::mutex> lock(exclude_mutex_);
+    return excluded_grids_.count({cam_id, roi_id}) > 0;
+}
+
+// 屏蔽格口列表（日志用），如 "1,2"
+std::string TaskManager::formatExcludedGrids() const {
+    std::lock_guard<std::mutex> lock(exclude_mutex_);
+
+    std::string s;
+    for (const auto &[cam_id, roi_id] : excluded_grids_) {
+        if (!s.empty())
+            s += ",";
+        s += std::to_string(cam_id * 8 + roi_id - 8);
+    }
+    return s.empty() ? "<none>" : s;
 }
 
 void TaskManager::setMysqlClient(MysqlClient *db) {
@@ -107,7 +216,7 @@ bool TaskManager::mapGrid(int grid_id, GridMapItem &item) {
 // =========================
 void TaskManager::setTask(const std::string &code, const std::string &grid, int cam_id,
                           int roi_id) {
-    // 回流格口不接收任务
+    // 屏蔽格口不接收任务
     if (isExcludedGrid(cam_id, roi_id))
         return;
 
@@ -159,7 +268,7 @@ void TaskManager::triggerRecord(int cam_id, const std::string &code, VideoType t
 }
 
 void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
-    // 回流格口不参与检测（进入/错分/滞留均跳过）
+    // 屏蔽格口不参与检测（进入/错分/滞留均跳过）
     if (isExcludedGrid(cam_id, roi_id))
         return;
 
@@ -266,8 +375,12 @@ void TaskManager::updateEnter(int cam_id, int roi_id, int id, uint64_t pts) {
 
     // ==================================================
     // EMPTY状态
+    // 进入判定：同一 track_id 连续出现 kEnterFrames 帧后，才认为包裹"进入"区域。
+    // 2026-09-23 由 3 帧改为 2 帧，缩短进入判定的响应延迟。
     // ==================================================
-    if (state.state == ROIState::EMPTY && state.same_id_count >= 3) {
+    constexpr int kEnterFrames = 2; // 判定包裹进入区域所需的最少连续帧数
+
+    if (state.state == ROIState::EMPTY && state.same_id_count >= kEnterFrames) {
 
         // ----------------------------------------------
         // 进入占用状态
@@ -422,7 +535,7 @@ void TaskManager::updateLogic(float timeout_sec) {
             for (auto &t : kv.second) {
                 if (t.state != WAIT)
                     continue;
-                // 回流格口不参与超时报警
+                // 屏蔽格口不参与超时报警
                 if (isExcludedGrid(t.cam_id, t.roi_id))
                     continue;
                 if (!t.entered && now - t.create_time > timeout_sec) {

@@ -4,16 +4,18 @@
 #include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
 
+#include "FileStore.h"
+
 using json = nlohmann::json;
 
-void AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
+bool AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
                                 const std::vector<AIFrame> &ai_frames,
                                 const std::string &filename) {
 
     if (video_frames.empty()) {
         spdlog::warn("[AIJsonRecorder] video empty");
 
-        return;
+        return false;
     }
 
     json root;
@@ -144,18 +146,67 @@ void AIJsonRecorder::saveAIJson(const std::vector<H265Packet> &video_frames,
 
     root["frames"] = frames;
 
-    std::ofstream ofs(filename);
+    /*
+     * 先写 .part，落盘后再原子改名，
+     * 保证 filename 出现时内容一定完整
+     */
 
-    if (!ofs.is_open()) {
-        spdlog::error("[AIJsonRecorder] open failed {}", filename);
+    std::string part = filename + ".part";
 
-        return;
+    if (!filestore::ensureDir(filestore::parentDir(filename))) {
+        spdlog::error("[AIJsonRecorder] mkdir failed {}", filename);
+
+        return false;
     }
 
-    ofs << root.dump(4);
+    std::string payload;
 
-    ofs.close();
+    try {
+        payload = root.dump(4);
+    } catch (const std::exception &e) {
+        spdlog::error("[AIJsonRecorder] dump failed {}", e.what());
 
-    spdlog::info("[AIJsonRecorder] save {} video_frames={} json_frames={}", filename,
-                 video_frames.size(), frames.size());
+        return false;
+    }
+
+    {
+        std::ofstream ofs(part, std::ios::binary | std::ios::trunc);
+
+        if (!ofs.is_open()) {
+            spdlog::error("[AIJsonRecorder] open failed {}", part);
+
+            return false;
+        }
+
+        ofs.write(payload.data(), static_cast<std::streamsize>(payload.size()));
+
+        ofs.flush();
+
+        if (!ofs.good()) {
+
+            spdlog::error("[AIJsonRecorder] write failed {}", part);
+
+            ofs.close();
+
+            filestore::removeQuiet(part);
+
+            return false;
+        }
+    }
+
+    std::string err;
+
+    if (!filestore::publishFile(part, filename, &err)) {
+
+        spdlog::error("[AIJsonRecorder] publish failed {} ({})", filename, err);
+
+        filestore::removeQuiet(part);
+
+        return false;
+    }
+
+    spdlog::info("[AIJsonRecorder] save {} video_frames={} json_frames={} bytes={}", filename,
+                 video_frames.size(), frames.size(), payload.size());
+
+    return true;
 }

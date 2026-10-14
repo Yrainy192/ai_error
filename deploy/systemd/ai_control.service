@@ -1,0 +1,24 @@
+[Unit]
+Description=AI Remote Control Server
+After=network.target
+
+
+[Service]
+
+Type=simple
+
+User=admin
+
+ExecStart=/home/admin/ai_control/ai_control_server
+StandardOutput=append:/home/admin/ai_control/ai_control_server.log
+StandardError=append:/home/admin/ai_control/ai_control_server.log
+
+
+Restart=always
+
+RestartSec=3
+
+
+[Install]
+
+WantedBy=multi-user.target

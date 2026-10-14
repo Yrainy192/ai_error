@@ -157,6 +157,19 @@ class TaskManager {
 
     int getGridId(int cam_id, int roi_id);
 
+    // ==================================================
+    // 屏蔽格口（回流格口 / 异格口等，不检测）
+    // 从 json 文件加载，格式见 exclude_config.json
+    // 加载失败时退回内置默认值（格口1、格口2）
+    // ==================================================
+    bool loadExcludedGrids(const std::string &path);
+
+    // 该格口是否被屏蔽
+    bool isExcludedGrid(int cam_id, int roi_id) const;
+
+    // 屏蔽格口列表字符串（日志用）
+    std::string formatExcludedGrids() const;
+
   private:
     void triggerRecord(int cam_id, const std::string &code, VideoType type);
 
@@ -194,6 +207,10 @@ class TaskManager {
 
     std::unordered_set<int> long_alarm_active_;
     std::mutex alarm_mutex_;
+
+    // 屏蔽格口集合：{cam_id, roi_id}，启动时由 json 加载
+    std::set<std::pair<int, int>> excluded_grids_;
+    mutable std::mutex exclude_mutex_;
 
     // 每个摄像头AI缓存
     std::vector<AIFrameCache *> ai_caches;

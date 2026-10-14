@@ -546,10 +546,10 @@ int post_process(rknn_app_context_t *app_ctx, void *outputs, letterbox_t *letter
 
         int id = classId[n];
         int target_class_id = 1;
-        // ⭐⭐⭐ 在这里过滤类别 ⭐⭐⭐
-        if (target_class_id >= 0 && id != target_class_id) {
-            continue;
-        }
+        // // ⭐⭐⭐ 在这里过滤类别 ⭐⭐⭐
+        // if (target_class_id >= 0 && id != target_class_id) {
+        //     continue;
+        // }
 
         float obj_conf = objProbs[i];
 

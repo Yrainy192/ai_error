@@ -3,9 +3,26 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
+#include <json/json.h>
 #include <spdlog/fmt/ostr.h>
 #include <spdlog/spdlog.h>
 extern ROIManager roi_manager;
+extern Json::Value cfg;
+
+// 进入判定阈值：包围框与 ROI 相交面积占包围框面积的比例，
+// 从 config.json 的 roi.enter_ratio 加载（缺失/非法时用默认值 0.40）
+static float getRoiEnterRatio() {
+    constexpr float kDefaultRatio = 0.40f;
+    if (cfg.isNull() || !cfg.isMember("roi"))
+        return kDefaultRatio;
+    const Json::Value &roi = cfg["roi"];
+    if (!roi.isMember("enter_ratio"))
+        return kDefaultRatio;
+    const float ratio = roi["enter_ratio"].asFloat();
+    if (ratio <= 0.0f || ratio > 1.0f)
+        return kDefaultRatio;
+    return ratio;
+}
 
 // 鞋带公式：计算多边形面积（结果恒为非负）
 static float polygonArea(const std::vector<std::pair<float, float>> &poly) {
@@ -85,6 +102,31 @@ clipPolygonByRect(const std::vector<std::pair<float, float>> &subject, float xmi
     return input;
 }
 
+// 射线法：判断点 (px, py) 是否在多边形 poly 内
+static bool pointInPolygon(float px, float py, const std::vector<std::pair<int, int>> &poly) {
+    if (poly.size() < 3)
+        return false;
+    bool inside = false;
+    const size_t n = poly.size();
+    for (size_t i = 0, j = n - 1; i < n; j = i++) {
+        const auto &a = poly[i];
+        const auto &b = poly[j];
+        if (((a.second > py) != (b.second > py)) &&
+            (px <
+             (b.first - a.first) * (py - a.second) / (double)(b.second - a.second) + a.first)) {
+            inside = !inside;
+        }
+    }
+    return inside;
+}
+
+// 判断点 (px, py) 是否在 ROI 内（多边形或矩形，兼容旧格式）
+static bool pointInRoi(float px, float py, const ROI &roi) {
+    if (!roi.points.empty())
+        return pointInPolygon(px, py, roi.points);
+    return px >= roi.x1 && px <= roi.x2 && py >= roi.y1 && py <= roi.y2;
+}
+
 // 计算轴对齐检测框 (bx1,by1)-(bx2,by2) 与一个 ROI 的相交面积
 static float roiOverlapArea(float bx1, float by1, float bx2, float by2, const ROI &roi) {
     if (!roi.points.empty()) {
@@ -154,6 +196,9 @@ handle_tracks(const std::vector<byte_track::BYTETracker::STrackPtr> &tracks, int
 
     auto &rois = roi_manager.get(cam_id);
 
+    // 面积阈值从 config.json 读取一次
+    const float kEnterRatio = getRoiEnterRatio();
+
     for (auto &t : tracks) {
 
         const auto &r = t->getRect();
@@ -167,8 +212,7 @@ handle_tracks(const std::vector<byte_track::BYTETracker::STrackPtr> &tracks, int
         float cx = x + w * 0.5f;
         float cy = y + h * 0.5f;
 
-        // 包围框与 ROI 的相交面积 ≥ 包围框面积的 30% 即视为进入
-        const float kEnterRatio = 0.30f;
+        // 进入条件：中心点在 ROI 内 且 相交面积 ≥ 包围框面积的 kEnterRatio
         const float box_area = w * h;
         const float bx1 = x, by1 = y;
         const float bx2 = x + w, by2 = y + h;
@@ -176,6 +220,10 @@ handle_tracks(const std::vector<byte_track::BYTETracker::STrackPtr> &tracks, int
         int hit_roi = -1;
 
         for (const auto &roi : rois) {
+            // 1) 中心点必须在 ROI 内
+            if (!pointInRoi(cx, cy, roi))
+                continue;
+            // 2) 相交面积需达到阈值
             const float inter = roiOverlapArea(bx1, by1, bx2, by2, roi);
             if (box_area > 0.0f && inter >= kEnterRatio * box_area) {
                 hit_roi = roi.id;

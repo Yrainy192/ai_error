@@ -36,6 +36,14 @@
 
 class AIJsonRecorder {
   public:
-    void saveAIJson(const std::vector<H265Packet> &video_frames,
+    /**
+     * 保存AI检测结果JSON
+     *
+     * 先写 <filename>.part，fsync 落盘后再 rename 成 filename，
+     * 因此 filename 一旦出现就是完整可解析的JSON。
+     *
+     * 返回 false 表示保存失败（不会留下半截文件）。
+     */
+    bool saveAIJson(const std::vector<H265Packet> &video_frames,
                     const std::vector<AIFrame> &ai_frames, const std::string &filename);
 };

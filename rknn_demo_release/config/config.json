@@ -15,10 +15,11 @@
         "server_port": 2026
     },
     "roi": {
-        "file": "roi_config.json"
+        "file": "roi_config.json",
+        "enter_ratio": 0.2
     },
     "model": {
-        "path": "/home/admin/Rtsp_6model/rknn_demo_release/model/yolov8.rknn",
+        "path": "/home/admin/Rtsp_6model/rknn_demo_release/model/H3_1006.rknn",
         "count": 6
     },
     "camera": [
@@ -37,17 +38,17 @@
             "name": "cam2",
             "url": "rtsp://admin:qwerqaz1022@192.168.66.72:554/Streaming/Channels/101"
         },
-           {
+        {
             "id": 3,
             "name": "cam3",
             "url": "rtsp://admin:qwerqaz1022@192.168.66.73:554/Streaming/Channels/101"
         },
-           {
+        {
             "id": 4,
             "name": "cam4",
             "url": "rtsp://admin:qwerqaz1022@192.168.66.74:554/Streaming/Channels/101"
         },
-           {
+        {
             "id": 5,
             "name": "cam5",
             "url": "rtsp://admin:qwerqaz1022@192.168.66.75:554/Streaming/Channels/101"

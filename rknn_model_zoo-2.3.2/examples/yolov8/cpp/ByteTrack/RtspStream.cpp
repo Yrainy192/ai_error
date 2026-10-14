@@ -1,5 +1,6 @@
 #include "RtspStream.h"
 
+#include <algorithm>
 #include <chrono>
 #include <cstring>
 #include <ctime>
@@ -8,6 +9,8 @@
 #include <gst/allocators/allocators.h>
 #include <gst/video/video.h>
 #include <spdlog/spdlog.h>
+
+#include "FileStore.h"
 
 // RtspStream::RtspStream(const std::string &url, const std::string &id)
 //     : rtsp_url(url), camera_id(id) {
@@ -98,6 +101,13 @@ bool RtspStream::getLatest(Frame &out) {
 void RtspStream::run() {
     gst_init(nullptr, nullptr);
 
+    /*
+     * 上次异常退出可能残留在 temp 下的文件：
+     * 完整的TS补发到正式目录，未写完的 .part 直接清理
+     */
+
+    filestore::recoverTempFiles(camera_id, 60);
+
     buildPipeline();
 
     if (!pipeline) {
@@ -160,10 +170,24 @@ void RtspStream::run() {
         gst_object_unref(pipeline);
         pipeline = nullptr;
     }
+
+    /*
+     * pipeline置NULL后splitmuxsink才关闭最后一段文件，
+     * 此时把它以及残留的临时TS发布到正式目录
+     */
+
+    publishCurrentRecord();
+
+    {
+        std::lock_guard<std::mutex> lock(record_mutex);
+
+        for (const auto &dir : record_temp_dirs) {
+            flushRecordTempDir(dir);
+        }
+    }
 }
 
 void RtspStream::buildPipeline() {
-    std::string record_file = "/home/admin/Videos/" + camera_id + ".ts";
     std::string pipeline_str =
 
         "rtspsrc location=" + rtsp_url +
@@ -470,27 +494,160 @@ GstFlowReturn RtspStream::on_new_sample(GstElement *sink) {
 }
 
 std::string RtspStream::makeRecordDir() {
-    namespace fs = std::filesystem;
-    auto now = std::chrono::system_clock::now();
-    auto tt = std::chrono::system_clock::to_time_t(now);
-    tm tm_time;
-    localtime_r(&tt, &tm_time);
-    char date[16];
-    strftime(date, sizeof(date), "%Y%m%d", &tm_time);
-    std::string dir = "/home/admin/Videos/" + camera_id + "/" + date;
-    fs::create_directories(dir);
+    /*
+     * 主录像正式目录 = 日期目录本身（与 FTP 服务器结构一致，不带 record 子目录）
+     */
+
+    std::string dir = filestore::readyDir(camera_id, filestore::dateStringNow(), "record");
+
+    filestore::ensureDir(dir);
+
     return dir;
+}
+
+std::string RtspStream::makeRecordTempDir() {
+    std::string temp_dir = filestore::tempDir(camera_id, filestore::dateStringNow(), "record");
+
+    if (!filestore::ensureDir(temp_dir)) {
+
+        spdlog::error("[REC] mkdir failed {}", temp_dir);
+
+        return std::string();
+    }
+
+    {
+        std::lock_guard<std::mutex> lock(record_mutex);
+
+        if (std::find(record_temp_dirs.begin(), record_temp_dirs.end(), temp_dir) ==
+            record_temp_dirs.end()) {
+
+            record_temp_dirs.push_back(temp_dir);
+        }
+    }
+
+    return temp_dir;
+}
+
+void RtspStream::publishRecordFile(const std::string &temp_path) {
+    namespace fs = std::filesystem;
+
+    std::error_code ec;
+
+    if (temp_path.empty() || !fs::is_regular_file(temp_path, ec)) {
+        return;
+    }
+
+    /*
+     * <cam>/<date>/temp/record/xxx.ts  ->  <cam>/<date>/xxx.ts
+     */
+
+    fs::path src(temp_path);
+
+    std::string ready = filestore::readyDirOfTemp(temp_path);
+
+    std::string name =
+        filestore::uniqueBaseName(ready, src.stem().string()) + src.extension().string();
+
+    std::string dst = (fs::path(ready) / name).string();
+
+    std::string err;
+
+    if (!filestore::publishFile(temp_path, dst, &err)) {
+
+        spdlog::error("[REC publish] {} ({})", dst, err);
+
+        return;
+    }
+
+    std::error_code size_ec;
+
+    spdlog::info("[REC READY] {} bytes={}", dst, fs::file_size(dst, size_ec));
+}
+
+void RtspStream::publishCurrentRecord() {
+    std::string temp_path;
+
+    {
+        std::lock_guard<std::mutex> lock(record_mutex);
+
+        temp_path = current_record_path;
+
+        current_record_path.clear();
+    }
+
+    if (temp_path.empty()) {
+        return;
+    }
+
+    publishRecordFile(temp_path);
+}
+
+void RtspStream::flushRecordTempDir(const std::string &temp_dir) {
+    namespace fs = std::filesystem;
+
+    std::error_code ec;
+
+    if (!fs::is_directory(temp_dir, ec)) {
+        return;
+    }
+
+    std::vector<std::string> files;
+
+    for (const auto &entry : fs::directory_iterator(temp_dir, ec)) {
+
+        if (ec) {
+            break;
+        }
+
+        if (entry.is_regular_file() && entry.path().extension() == ".ts") {
+            files.push_back(entry.path().string());
+        }
+    }
+
+    for (const auto &f : files) {
+        publishRecordFile(f);
+    }
 }
 
 gchar *RtspStream::format_location_cb(GstElement *, guint, gpointer user_data) {
     RtspStream *self = static_cast<RtspStream *>(user_data);
+
+    /*
+     * splitmuxsink 在调用本回调前会先关闭上一段文件，
+     * 所以此刻上一段才是完整的，可以发布到正式目录
+     */
+
+    self->publishCurrentRecord();
+
     auto now = std::chrono::system_clock::now();
     auto tt = std::chrono::system_clock::to_time_t(now);
     tm tm_time;
     localtime_r(&tt, &tm_time);
     char time_name[32];
     strftime(time_name, sizeof(time_name), "%H%M%S.ts", &tm_time);
-    std::string dir = self->makeRecordDir();
-    std::string filename = dir + "/" + time_name;
+
+    std::string temp_dir = self->makeRecordTempDir();
+
+    if (temp_dir.empty()) {
+
+        /*
+         * 临时目录不可用时退化为直接写正式目录，保证录像不中断
+         */
+
+        std::string fallback = self->makeRecordDir() + "/" + time_name;
+
+        spdlog::warn("[REC] temp dir unavailable, write to {}", fallback);
+
+        return g_strdup(fallback.c_str());
+    }
+
+    std::string filename = temp_dir + "/" + time_name;
+
+    {
+        std::lock_guard<std::mutex> lock(self->record_mutex);
+
+        self->current_record_path = filename;
+    }
+
     return g_strdup(filename.c_str());
 }

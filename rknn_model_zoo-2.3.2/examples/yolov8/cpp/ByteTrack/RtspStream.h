@@ -4,6 +4,7 @@
 #include <mutex>
 #include <string>
 #include <thread>
+#include <vector>
 
 #include <gst/gst.h>
 
@@ -44,7 +45,20 @@ class RtspStream {
 
     void buildPipeline();
 
+    // <root>/<cam>/<date>/record：主录像正式目录（一段写完才放进来）
     std::string makeRecordDir();
+
+    // <root>/<cam>/<date>/temp/record：主录像写入中的目录
+    std::string makeRecordTempDir();
+
+    // 把上一段已写完的临时TS发布到正式目录
+    void publishCurrentRecord();
+
+    // 发布单个临时TS
+    void publishRecordFile(const std::string &temp_path);
+
+    // 扫描 temp/record，发布残留的完整TS（异常退出/最后一段）
+    void flushRecordTempDir(const std::string &temp_dir);
 
     static gchar *format_location_cb(GstElement *, guint, gpointer user_data);
 
@@ -76,6 +90,13 @@ class RtspStream {
     std::atomic<uint64_t> frame_counter{0};
     std::atomic<uint64_t> h265_counter{0};
     std::mutex frame_mutex;
+
+    // 正在写入的临时TS（splitmuxsink 当前片段）
+    std::mutex record_mutex;
+    std::string current_record_path;
+
+    // 本次运行使用过的 temp/record 目录（跨天/跨目录时都能收尾）
+    std::vector<std::string> record_temp_dirs;
 
     AIFrameCache *ai_cache = nullptr;
     AIFrameCache ai_frame_cache{600};
